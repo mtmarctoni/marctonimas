@@ -1,0 +1,26 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import Hero from "@/components/sections/Hero.vue";
+import About from "@/components/sections/About.vue";
+import Skills from "@/components/sections/Skills.vue";
+import Projects from "@/components/sections/Projects.vue";
+import Background from "@/components/sections/Background.vue";
+import Contact from "@/components/sections/Contact.vue";
+import BlockchainCanvas from "@/components/BlockchainCanvas.vue";
+import { getLangFromUrl, useTranslations } from "@/i18n/utils";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+---
+
+<Layout title={t("site.title")} lang={lang}>
+  <div class="relative">
+    <BlockchainCanvas client:load client:only />
+    <Hero client:load client:only />
+  </div>
+  <About client:visible client:only />
+  <Skills client:visible client:only />
+  <Projects client:visible client:only />
+  <Background client:visible client:only />
+  <Contact client:visible client:only />
+</Layout>
