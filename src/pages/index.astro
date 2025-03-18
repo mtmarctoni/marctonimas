@@ -1,11 +1,28 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
+import "../styles/global.css";
 
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import Layout from "@/layouts/Layout.astro";
+import Hero from "@/components/sections/Hero.vue";
+import About from "@/components/sections/About.vue";
+import Skills from "@/components/sections/Skills.vue";
+import Projects from "@/components/sections/Projects.vue";
+import Background from "@/components/sections/Background.vue";
+import Contact from "@/components/sections/Contact.vue";
+import BlockchainCanvas from "@/components/BlockchainCanvas.vue";
+import { getLangFromUrl, useTranslations } from "@/i18n/utils";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
 ---
 
-<Layout>
-	<Welcome />
+<Layout title={t("site.title")} lang={lang}>
+  <div class="relative">
+    <BlockchainCanvas client:load client:only />
+    <Hero client:load client:only />
+  </div>
+  <About client:visible client:only />
+  <Skills client:visible client:only />
+  <Projects client:visible client:only />
+  <Background client:visible client:only />
+  <Contact client:visible client:only />
 </Layout>
