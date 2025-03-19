@@ -17,12 +17,12 @@ const t = useTranslations(lang);
 
 <Layout title={t("site.title")} lang={lang}>
   <div class="relative">
-    <BlockchainCanvas client:load client:only />
-    <Hero client:load client:only />
+    <BlockchainCanvas client:load client:only="canvas" />
+    <Hero client:load client:only="hero" />
   </div>
-  <About client:visible client:only />
-  <Skills client:visible client:only />
-  <Projects client:visible client:only />
-  <Background client:visible client:only />
-  <Contact client:visible client:only />
+  <About client:visible client:only="about" />
+  <Skills client:visible client:only="skills" />
+  <Projects client:visible client:only="projects" />
+  <Background client:visible client:only="background" />
+  <Contact client:visible client:only="contact" />
 </Layout>

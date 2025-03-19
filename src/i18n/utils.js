@@ -1,16 +1,16 @@
-"use client"
+"use client";
 
 // Get the language from the URL
 export function getLangFromUrl(url) {
-  const pathname = url.pathname
-  const langMatch = pathname.match(/^\/(es)\//)
-  return langMatch ? langMatch[1] : "en"
+  const pathname = url.pathname;
+  const langMatch = pathname.match(/^\/(es)\//);
+  return langMatch ? langMatch[1] : "en";
 }
 
 // Dictionary of translations
 const translations = {
   en: {
-    "site.cvLink":"/transcripts/CV_MarcToniMas.pdf",
+    "site.cvLink": "/transcripts/CV_MarcToniMas.pdf",
     "site.title": "Web3 Developer Portfolio",
 
     // Navigation
@@ -28,7 +28,8 @@ const translations = {
 
     // Hero
     "hero.title": "Web3 Developer & Blockchain Enthusiast",
-    "hero.subtitle": "Building the decentralized future with smart contracts, DeFi, and blockchain technology",
+    "hero.subtitle":
+      "Building the decentralized future with smart contracts, DeFi, and blockchain technology",
     "hero.cta_primary": "View Projects",
     "hero.cta_secondary": "Contact Me",
 
@@ -36,7 +37,8 @@ const translations = {
     "wallet.connect": "Connect Wallet",
     "wallet.connected_with": "Connected with",
     "wallet.modal_title": "Connect Wallet",
-    "wallet.modal_description": "Connect with one of our available wallet providers or create a new one.",
+    "wallet.modal_description":
+      "Connect with one of our available wallet providers or create a new one.",
     "wallet.cancel": "Cancel",
 
     // About
@@ -45,15 +47,15 @@ const translations = {
     "about.CV": "Resume",
     "about.bio":
       "I'm a motivated developer with a strong interest in Web3 and blockchain technology. With a solid foundation in both frontend and backend development, I'm well-equipped to build comprehensive decentralized applications (dApps) that leverage blockchain technology for secure, scalable, and user-friendly solutions.",
-      //  "I'm a passionate Web3 developer with expertise in blockchain technology, smart contracts, and decentralized applications. With a strong foundation in both frontend and backend development, I specialize in building secure, scalable, and user-friendly blockchain solutions.",
+    //  "I'm a passionate Web3 developer with expertise in blockchain technology, smart contracts, and decentralized applications. With a strong foundation in both frontend and backend development, I specialize in building secure, scalable, and user-friendly blockchain solutions.",
     "about.what_i_do_title": "What I Do",
     "about.what_i_do_description":
       "I'm skilled in developing applications using blockchain technology, including smart contracts and decentralized systems. My knowledge spans both public and private blockchains, and I'm eager to apply my skills in real-world projects.",
-      // "I develop smart contracts, build decentralized applications (dApps), and create innovative solutions using blockchain technology. My expertise spans across DeFi protocols, NFT marketplaces, DAOs, and custom blockchain implementations.",
+    // "I develop smart contracts, build decentralized applications (dApps), and create innovative solutions using blockchain technology. My expertise spans across DeFi protocols, NFT marketplaces, DAOs, and custom blockchain implementations.",
     "about.looking_for_title": "What I'm Looking For",
     "about.looking_for_description":
       "I'm excited to join a team working on innovative Web3 projects that push the boundaries of what's possible in the decentralized space. I'm looking for a collaborative environment where I can grow professionally and contribute to the development of cutting-edge Web3 applications.",
-      // "I'm seeking opportunities to work on challenging blockchain projects that push the boundaries of what's possible in the Web3 space. I'm particularly interested in DeFi innovations, cross-chain solutions, and projects focused on improving blockchain scalability and user experience.",
+    // "I'm seeking opportunities to work on challenging blockchain projects that push the boundaries of what's possible in the Web3 space. I'm particularly interested in DeFi innovations, cross-chain solutions, and projects focused on improving blockchain scalability and user experience.",
 
     // Skills
     "skills.title": "My Skills",
@@ -72,7 +74,8 @@ const translations = {
     "projects.project2.description":
       "A decentralized lending platform allowing users to lend and borrow crypto assets with dynamic interest rates.",
     "projects.project3.title": "NFT Collection",
-    "projects.project3.description": "A generative art NFT collection with on-chain metadata and interactive features.",
+    "projects.project3.description":
+      "A generative art NFT collection with on-chain metadata and interactive features.",
     "projects.project4.title": "DAO Governance Platform",
     "projects.project4.description":
       "A decentralized governance platform for DAOs with proposal creation, voting, and execution.",
@@ -80,7 +83,8 @@ const translations = {
     "projects.project5.description":
       "An automated tool for auditing Solidity smart contracts and identifying security vulnerabilities.",
     "projects.project6.title": "Layer 2 Bridge",
-    "projects.project6.description": "A bridge for transferring assets between Ethereum and Layer 2 scaling solutions.",
+    "projects.project6.description":
+      "A bridge for transferring assets between Ethereum and Layer 2 scaling solutions.",
 
     // Background
     "background.title": "Background & Education",
@@ -90,16 +94,19 @@ const translations = {
     "background.education.institution1": "Stanford University",
     "background.education.description1":
       "Specialized in blockchain technology and distributed systems. Thesis on scalable consensus mechanisms for public blockchains.",
-    "background.education.degree2": "Bachelor of Science in Computer Engineering",
+    "background.education.degree2":
+      "Bachelor of Science in Computer Engineering",
     "background.education.institution2": "MIT",
-    "background.education.description2": "Focused on cryptography, algorithms, and software engineering fundamentals.",
+    "background.education.description2":
+      "Focused on cryptography, algorithms, and software engineering fundamentals.",
     "background.certifications.cert1.name": "Certified Blockchain Developer",
     "background.certifications.cert1.issuer": "Blockchain Council",
     "background.certifications.cert1.date": "January 2023",
     "background.certifications.cert2.name": "Ethereum Developer Certification",
     "background.certifications.cert2.issuer": "ConsenSys Academy",
     "background.certifications.cert2.date": "August 2022",
-    "background.certifications.cert3.name": "Smart Contract Security Professional",
+    "background.certifications.cert3.name":
+      "Smart Contract Security Professional",
     "background.certifications.cert3.issuer": "OpenZeppelin",
     "background.certifications.cert3.date": "March 2022",
     "background.certifications.cert4.name": "DeFi Developer Certification",
@@ -109,17 +116,20 @@ const translations = {
     // Contact
     "contact.title": "Get In Touch",
     "contact.get_in_touch": "Let's Talk",
-    "contact.description": "Interested in working together? Have a project in mind? Feel free to reach out!",
+    "contact.description":
+      "Interested in working together? Have a project in mind? Feel free to reach out!",
     "contact.social_media": "Find me on",
     "contact.form.name": "Name",
     "contact.form.email": "Email",
     "contact.form.message": "Message",
     "contact.form.submit": "Send Message",
     "contact.form.sending": "Sending...",
-    "contact.form.success": "Your message has been sent successfully! I'll get back to you soon.",
+    "contact.form.success":
+      "Your message has been sent successfully! I'll get back to you soon.",
 
     // Footer
-    "footer.description": "Building the decentralized future with blockchain technology and Web3 development.",
+    "footer.description":
+      "Building the decentralized future with blockchain technology and Web3 development.",
     "footer.links": "Quick Links",
     "footer.resources": "Resources",
     "footer.legal": "Legal",
@@ -134,7 +144,7 @@ const translations = {
   },
 
   es: {
-    "site.cvLink":"/transcripts/CV_MarcToniMas_ES.pdf",
+    "site.cvLink": "/transcripts/CV_MarcToniMas_ES.pdf",
     "site.title": "Portafolio de Desarrollador Web3",
 
     // Navigation
@@ -152,7 +162,8 @@ const translations = {
 
     // Hero
     "hero.title": "Desarrollador Web3 & Entusiasta de Blockchain",
-    "hero.subtitle": "Construyendo el futuro descentralizado con contratos inteligentes, DeFi y tecnología blockchain",
+    "hero.subtitle":
+      "Construyendo el futuro descentralizado con contratos inteligentes, DeFi y tecnología blockchain",
     "hero.cta_primary": "Ver Proyectos",
     "hero.cta_secondary": "Contáctame",
 
@@ -160,7 +171,8 @@ const translations = {
     "wallet.connect": "Conectar Wallet",
     "wallet.connected_with": "Conectado con",
     "wallet.modal_title": "Conectar Wallet",
-    "wallet.modal_description": "Conecta con uno de nuestros proveedores de wallet disponibles o crea uno nuevo.",
+    "wallet.modal_description":
+      "Conecta con uno de nuestros proveedores de wallet disponibles o crea uno nuevo.",
     "wallet.cancel": "Cancelar",
 
     // About
@@ -218,33 +230,40 @@ const translations = {
     "background.education.institution2": "MIT",
     "background.education.description2":
       "Enfocado en criptografía, algoritmos y fundamentos de ingeniería de software.",
-    "background.certifications.cert1.name": "Desarrollador Blockchain Certificado",
+    "background.certifications.cert1.name":
+      "Desarrollador Blockchain Certificado",
     "background.certifications.cert1.issuer": "Blockchain Council",
     "background.certifications.cert1.date": "Enero 2023",
-    "background.certifications.cert2.name": "Certificación de Desarrollador Ethereum",
+    "background.certifications.cert2.name":
+      "Certificación de Desarrollador Ethereum",
     "background.certifications.cert2.issuer": "ConsenSys Academy",
     "background.certifications.cert2.date": "Agosto 2022",
-    "background.certifications.cert3.name": "Profesional de Seguridad en Contratos Inteligentes",
+    "background.certifications.cert3.name":
+      "Profesional de Seguridad en Contratos Inteligentes",
     "background.certifications.cert3.issuer": "OpenZeppelin",
     "background.certifications.cert3.date": "Marzo 2022",
-    "background.certifications.cert4.name": "Certificación de Desarrollador DeFi",
+    "background.certifications.cert4.name":
+      "Certificación de Desarrollador DeFi",
     "background.certifications.cert4.issuer": "Chainlink",
     "background.certifications.cert4.date": "Noviembre 2021",
 
     // Contact
     "contact.title": "Ponte en Contacto",
     "contact.get_in_touch": "Hablemos",
-    "contact.description": "¿Interesado en trabajar juntos? ¿Tienes un proyecto en mente? ¡No dudes en contactarme!",
+    "contact.description":
+      "¿Interesado en trabajar juntos? ¿Tienes un proyecto en mente? ¡No dudes en contactarme!",
     "contact.social_media": "Encuéntrame en",
     "contact.form.name": "Nombre",
     "contact.form.email": "Correo Electrónico",
     "contact.form.message": "Mensaje",
     "contact.form.submit": "Enviar Mensaje",
     "contact.form.sending": "Enviando...",
-    "contact.form.success": "Tu mensaje ha sido enviado con éxito. Me pondré en contacto contigo pronto.",
+    "contact.form.success":
+      "Tu mensaje ha sido enviado con éxito. Me pondré en contacto contigo pronto.",
 
     // Footer
-    "footer.description": "Construyendo el futuro descentralizado con tecnología blockchain y desarrollo Web3.",
+    "footer.description":
+      "Construyendo el futuro descentralizado con tecnología blockchain y desarrollo Web3.",
     "footer.links": "Enlaces Rápidos",
     "footer.resources": "Recursos",
     "footer.legal": "Legal",
@@ -257,11 +276,11 @@ const translations = {
     "footer.cookies": "Política de Cookies",
     "footer.copyright": "Todos los derechos reservados.",
   },
-}
+};
 
 // Return the translation function
 export function useTranslations(lang) {
   return function t(key) {
-    return translations[lang][key] || key
-  }
+    return translations[lang][key] || key;
+  };
 }

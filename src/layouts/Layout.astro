@@ -3,11 +3,11 @@ import Header from "@/components/sections/Header.vue";
 import Footer from "@/components/sections/Footer.vue";
 import "@/styles/global.css";
 
-interface Props {
-  title: string;
-  description?: string;
-  lang?: string;
-}
+// interface Props {
+//   title: string;
+//   description?: string;
+//   lang?: string;
+// }
 
 const {
   title,
@@ -21,10 +21,22 @@ const {
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="generator" content={Astro.generator} />
-    <meta name="description" content={description} />
     <title>{title}</title>
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <!-- <meta name="generator" content={Astro.generator} /> -->
+    <meta name="description" content={description} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@mtmarctoni" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content="https://marctonimas.com/og-image.jpg" />
+    <meta name="twitter:creator" content="@mtmarctoni" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content="https://marctonimas.com/og-image.jpg" />
+    <meta property="og:url" content="https://marctonimas.com" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Marc Antoni Mas" />
     <script is:inline>
       // Initialize theme based on user preference or system setting
       const getThemePreference = () => {
@@ -51,10 +63,10 @@ const {
   <body
     class="bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100 transition-colors duration-300"
   >
-    <Header client:load client:only />
+    <Header client:load client:only="header" />
     <main class="min-h-screen">
       <slot />
     </main>
-    <Footer client:only />
+    <Footer client:only="footer" />
   </body>
 </html>
