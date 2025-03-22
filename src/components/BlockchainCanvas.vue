@@ -92,10 +92,12 @@ const createParticles = () => {
 
 const getRandomColor = (alpha = 1) => {
   const colors = [
-    `rgba(147, 51, 234, ${alpha})`, // Purple
+    `rgba(135, 206, 235, ${alpha})`, // lighter blue
+    // `rgba(147, 51, 234, ${alpha})`, // Purple
     `rgba(79, 70, 229, ${alpha})`, // Indigo
     `rgba(59, 130, 246, ${alpha})`, // Blue
-    `rgba(236, 72, 153, ${alpha})`, // Pink
+    `rgba(16, 185, 129, ${alpha})`, // Greenish
+    // `rgba(236, 72, 153, ${alpha})`, // Pink
   ];
   return colors[Math.floor(Math.random() * colors.length)];
 };

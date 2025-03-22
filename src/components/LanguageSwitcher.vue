@@ -3,7 +3,7 @@
     <ToggleDropDown>
       <template #button-content>
         <button
-          class="flex items-center justify-center w-8 h-8 rounded-full border border-gray-300 dark:border-gray-700 focus:outline-none"
+          class="flex items-center justify-center w-8 h-8 rounded-full border border-primary dark:border-secondary hover:bg-primary/20 dark:hover:bg-secondary/20 focus:outline-none"
           aria-label="Change language"
         >
           <span class="text-sm font-medium">{{
@@ -14,8 +14,10 @@
       <template #default>
         <a
           href="/"
-          class="flex items-center w-full px-4 py-2 text-sm hover:bg-gray-100 dark:hover:bg-gray-700"
-          :class="{ 'text-purple-500': currentLang === 'en' }"
+          class="flex items-center w-full px-4 py-2 text-sm hover:bg-primary/10"
+          :class="{
+            'text-secondary': currentLang === 'en',
+          }"
           @click="setLang('en')"
         >
           <span class="mr-2">🇺🇸</span>
@@ -23,8 +25,8 @@
         </a>
         <a
           href="/es/"
-          class="flex items-center w-full px-4 py-2 text-sm hover:bg-gray-100 dark:hover:bg-gray-700"
-          :class="{ 'text-purple-500': currentLang === 'es' }"
+          class="flex items-center w-full px-4 py-2 text-sm hover:bg-primary/10"
+          :class="{ 'text-secondary': currentLang === 'es' }"
           @click="setLang('es')"
         >
           <span class="mr-2">🇪🇸</span>

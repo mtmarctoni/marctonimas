@@ -1,15 +1,17 @@
 ---
-import "../styles/global.css";
+import "@/styles/global.css";
 
 import Layout from "@/layouts/Layout.astro";
 import Hero from "@/components/sections/Hero.vue";
-import About from "@/components/sections/About.vue";
-import Skills from "@/components/sections/Skills.vue";
-import Projects from "@/components/sections/Projects.vue";
-import Background from "@/components/sections/Background.vue";
-import Contact from "@/components/sections/Contact.vue";
+import About from "@/components/sections/About.astro";
+import Skills from "@/components/sections/Skills.astro";
+import Projects from "@/components/sections/Projects.astro";
+import Contact from "@/components/sections/Contact.astro";
 import BlockchainCanvas from "@/components/BlockchainCanvas.vue";
 import { getLangFromUrl, useTranslations } from "@/i18n/utils";
+import Languages from "@/components/sections/Languages.astro";
+import Certificates from "@/components/sections/Certificates.astro";
+import BackgroundPreview from "@/components/sections/BackgroundPreview.astro";
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
@@ -20,9 +22,11 @@ const t = useTranslations(lang);
     <BlockchainCanvas client:load client:only="canvas" />
     <Hero client:load client:only="hero" />
   </div>
-  <About client:visible client:only="about" />
-  <Skills client:visible client:only="skills" />
-  <Projects client:visible client:only="projects" />
-  <Background client:visible client:only="background" />
-  <Contact client:visible client:only="contact" />
+  <About />
+  <Skills />
+  <Projects />
+  <BackgroundPreview />
+  <Certificates />
+  <Languages />
+  <Contact />
 </Layout>

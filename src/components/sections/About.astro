@@ -1,0 +1,252 @@
+---
+import { Image } from "astro:assets";
+import { BulbIcon, ZoomCheckIcon } from "@/utils/icons";
+import ResumeIcon from "@/assets/resume-color.svg?component";
+import SectionContainer from "../containers/SectionContainer.astro";
+import { useTranslations, getLangFromUrl } from "@/i18n/utils";
+
+const url = new URL(Astro.url);
+const lang = getLangFromUrl(url);
+const t = useTranslations(lang);
+
+// Define key skills/attributes for the interactive elements
+const keyAttributes = [
+  {
+    icon: "💻",
+    label: t("about.attribute.developer"),
+    className: "bg-primary/20 border-primary/30 text-primary",
+  },
+  {
+    icon: "🔗",
+    label: t("about.attribute.blockchain"),
+    className: "bg-secondary/20 border-secondary/30 text-secondary",
+  },
+  {
+    icon: "🚀",
+    label: t("about.attribute.innovator"),
+    className: `bg-secondary/20 border-accent-secondary/30 text-accent-secondary`,
+  },
+  {
+    icon: "🌐",
+    label: t("about.attribute.web3"),
+    className: "bg-accent/20 border-accent/30 text-accent",
+  },
+];
+---
+
+<SectionContainer sectionId="about">
+  <div class="relative min-h-[80vh] flex flex-col justify-center">
+    <!-- Animated background blobs -->
+    <div
+      class="blob-1 absolute top-10 left-10 w-64 h-64 bg-primary/20 rounded-full blur-3xl"
+    >
+    </div>
+    <div
+      class="blob-2 absolute bottom-1/4 right-1/4 w-64 h-64 bg-secondary/20 rounded-full blur-3xl"
+    >
+    </div>
+
+    <!-- Main content -->
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+      <!-- Left column: Visual profile -->
+      <div class="flex flex-col items-center lg:items-end">
+        <div class="relative group">
+          <!-- Profile image with interactive frame -->
+          <div
+            class="absolute -inset-0.5 bg-gradient-to-r from-primary to-secondary rounded-full blur opacity-75 group-hover:opacity-100 transition duration-1000"
+          >
+          </div>
+          <div
+            class="relative rounded-full overflow-hidden w-64 h-64 lg:w-80 lg:h-80"
+          >
+            <Image
+              src="/profile-picture.jpeg"
+              alt="Profile Picture"
+              width={500}
+              height={500}
+              class="w-full h-full object-cover transition-all duration-700 group-hover:scale-110"
+            />
+          </div>
+
+          <!-- Floating attribute bubbles -->
+          {
+            keyAttributes.map((attr, index) => (
+              <div
+                class={`${attr.className} absolute attribute-bubble-${index + 1} flex items-center justify-center w-16 h-16 rounded-full backdrop-blur-sm border text-xl shadow-lg`}
+              >
+                {attr.icon}
+                <span class="absolute opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-bg-secondary px-2 py-1 rounded text-base whitespace-nowrap">
+                  {attr.label}
+                </span>
+              </div>
+            ))
+          }
+        </div>
+
+        <!-- CV card -->
+        <div class="relative group mt-8 w-full max-w-xs">
+          <div
+            class="absolute -inset-0.5 bg-gradient-to-r from-primary to-secondary rounded-lg blur opacity-50 group-hover:opacity-100 transition duration-1000"
+          >
+          </div>
+          <div class="relative bg-bg-secondary rounded-lg p-4">
+            <div class="flex items-center mb-2 justify-center">
+              <h3 class="text-xl font-bold text-fg">{t("about.CV")}</h3>
+              <!-- <ResumeIcon class="w-6 h-6 text-primary" /> -->
+            </div>
+            <div class="flex space-x-2">
+              <a
+                href={t("site.cvLink")}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="flex-1 bg-primary/10 hover:scale-111 hover:text-white hover:bg-primary/40 text-primary text-sm font-semibold py-2 px-3 rounded transition-all duration-300 text-center"
+              >
+                {t("about.view_CV")}
+              </a>
+              <a
+                href={t("site.cvLink")}
+                target="_blank"
+                download={`CV_MarcAntoniMas_${lang.toUpperCase()}`}
+                class="flex-1 bg-secondary/10 hover:scale-111 hover:text-white hover:bg-secondary/40 text-secondary text-sm font-medium py-2 px-3 rounded transition-all duration-300 text-center"
+              >
+                {t("about.download_CV")}
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right column: Interactive info cards -->
+      <div class="space-y-6">
+        <h2 class="text-4xl font-bold relative">
+          <span
+            class="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent"
+          >
+            {t("about.name")}
+          </span>
+        </h2>
+
+        <!-- Bio summary - much shorter than before -->
+        <p
+          set:html={t("about.short_bio")}
+          class="text-fg text-lg leading-relaxed max-w-md"
+        />
+
+        <!-- Interactive skill cards -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-1 gap-4">
+          <!-- What I Do Card -->
+          <div
+            class="group bg-bg-secondary/80 backdrop-blur-sm rounded-xl p-6 border border-primary/10 hover:border-primary/30 transition-all ease-in duration-300 hover:shadow-lg hover:shadow-primary/5 hover:-translate-y-1"
+          >
+            <div class="flex items-center mb-2">
+              <BulbIcon
+                class="w-10 h-10 rounded-full flex items-center justify-center text-secondary text-xl mr-2 group-what-i-do-hover:scale-110 transition-transform duration-300"
+              />
+              <h3 class="text-lg font-bold">{t("about.what_i_do_title")}</h3>
+            </div>
+            <div
+              class="h-0 group-hover:h-26 transition-all duration-500 overflow-hidden"
+            >
+              <p
+                class="text-fg-alt text-sm opacity-0 group-hover:opacity-100 text-justify transition-all duration-300 delay-300"
+              >
+                {t("about.what_i_do_description")}
+              </p>
+            </div>
+          </div>
+
+          <!-- Looking For Card -->
+          <div
+            class="group bg-bg-secondary/80 backdrop-blur-sm rounded-xl p-6 border border-secondary/10 hover:border-primary/30 transition-all ease-in duration-300 hover:shadow-lg hover:shadow-secondary/5 hover:-translate-y-1"
+          >
+            <div class="flex items-center mb-2">
+              <ZoomCheckIcon
+                class="w-10 h-10 rounded-full flex items-center justify-center text-secondary text-xl mr-3 group-looking-for-hover:scale-110 transition-transform duration-300"
+              />
+              <h3 class="text-lg font-bold">{t("about.looking_for_title")}</h3>
+            </div>
+            <div
+              class="h-0 group-hover:h-30 transition-all duration-500 overflow-hidden"
+            >
+              <p
+                class="text-fg-alt text-sm opacity-0 group-hover:opacity-100 text-justify transition-all duration-300 delay-300"
+              >
+                {t("about.looking_for_description")}
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</SectionContainer>
+
+<style>
+  /* Animated blobs */
+  .blob-1 {
+    animation: float1 20s ease-in-out infinite alternate;
+  }
+
+  .blob-2 {
+    animation: float2 15s ease-in-out infinite alternate;
+  }
+
+  @keyframes float1 {
+    0% {
+      transform: translate(0, 0) scale(1);
+    }
+    50% {
+      transform: translate(-100px, 50px) scale(1.2);
+    }
+    100% {
+      transform: translate(50px, -50px) scale(0.8);
+    }
+  }
+
+  @keyframes float2 {
+    0% {
+      transform: translate(0, 0) scale(1);
+    }
+    50% {
+      transform: translate(100px, -50px) scale(1.2);
+    }
+    100% {
+      transform: translate(-50px, 100px) scale(0.8);
+    }
+  }
+
+  /* Floating attribute bubbles */
+  .attribute-bubble-1 {
+    top: 10%;
+    right: 10%;
+    animation: floatBubble 8s ease-in-out infinite;
+  }
+
+  .attribute-bubble-2 {
+    top: 70%;
+    right: 15%;
+    animation: floatBubble 12s ease-in-out infinite 1s;
+  }
+
+  .attribute-bubble-3 {
+    top: 30%;
+    left: 5%;
+    animation: floatBubble 10s ease-in-out infinite 2s;
+  }
+
+  .attribute-bubble-4 {
+    bottom: 10%;
+    left: 15%;
+    animation: floatBubble 9s ease-in-out infinite 3s;
+  }
+
+  @keyframes floatBubble {
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-15px);
+    }
+  }
+</style>

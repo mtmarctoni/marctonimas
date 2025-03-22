@@ -1,6 +1,7 @@
 <script setup>
 import { useTranslations, getLangFromUrl } from "@/i18n/utils";
 import WalletConnect from "@/components/WalletConnect.vue";
+import { ArrowDownIcon } from "@/utils/icons";
 
 // Get current language from URL
 const lang = getLangFromUrl(new URL(window.location.href));
@@ -44,20 +45,7 @@ const t = useTranslations(lang);
       class="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce"
     >
       <a href="#about" class="text-gray-500 dark:text-gray-400">
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          class="h-8 w-8"
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke="currentColor"
-        >
-          <path
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="2"
-            d="M19 14l-7 7m0 0l-7-7m7 7V3"
-          />
-        </svg>
+        <ArrowDownIcon class="h-8 w-8" />
       </a>
     </div>
   </section>

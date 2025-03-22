@@ -1,0 +1,17 @@
+---
+// Define the Astro component
+const { name, Icon, link, username } = Astro.props;
+---
+
+<a
+  href={link}
+  class={`w-10 h-10 rounded-full bg-gray-700 flex items-center justify-center
+          hover:bg-primary transition-all duration-300 transform hover:scale-110`}
+  target="_blank"
+  rel="noopener noreferrer"
+  aria-label={`Visit ${name}`}
+>
+  <div class="min-w-6 min-h-6 flex items-center justify-center">
+    <Icon />
+  </div>
+</a>

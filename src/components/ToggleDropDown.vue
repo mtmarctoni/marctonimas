@@ -1,8 +1,8 @@
 <template>
-  <div class="relative">
+  <div class="relative" ref="dropdown">
     <button
       @click="toggleDropdown"
-      class="flex items-center justify-center w-8 h-8 rounded-full border border-gray-300 dark:border-gray-700 focus:outline-none"
+      class="flex items-center justify-center w-8 h-8 rounded-full border border-secondary/50 focus:outline-none"
       aria-label="Toggle dropdown"
     >
       <slot name="button-content"></slot>
@@ -10,7 +10,7 @@
 
     <div
       v-if="dropdownOpen"
-      class="absolute right-0 mt-2 w-36 bg-white dark:bg-gray-800 rounded-md shadow-lg py-1 z-10 border border-gray-200 dark:border-gray-700"
+      class="absolute left-0 mt-3 w-36 bg-bg-secondary rounded-md shadow-lg py-1 z-10 border border-fg"
     >
       <slot></slot>
     </div>
@@ -18,15 +18,26 @@
 </template>
 
 <script setup>
-import { ref } from "vue";
+import { ref, onMounted, onUnmounted } from "vue";
 
 const dropdownOpen = ref(false);
+const dropdown = ref(null);
 
 const toggleDropdown = () => {
   dropdownOpen.value = !dropdownOpen.value;
 };
-</script>
 
-<style scoped>
-/* Add any necessary styles here */
-</style>
+const handleClickOutside = (event) => {
+  if (dropdown.value && !dropdown.value.contains(event.target)) {
+    dropdownOpen.value = false;
+  }
+};
+
+onMounted(() => {
+  document.addEventListener("click", handleClickOutside);
+});
+
+onUnmounted(() => {
+  document.removeEventListener("click", handleClickOutside);
+});
+</script>

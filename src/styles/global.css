@@ -4,21 +4,104 @@
 @custom-variant dark (&:where(.dark, .dark *));
 
 @theme {
-  /* Blue */
-  --color-primary: #4f46e5;
-  /* Purple */
-  --color-secondary: #9333ea;
-  /* Neon green */
-  /* --color-secondary: #39FF14; */
-  /* Blue green */
-  /* --color-secondary: #088F8F; */
+  --color-primary: var(--primary); /* A deep, rich blue */
+  --color-secondary: var(--secondary); /* A lighter, more vibrant blue */
+  --color-tertiary: var(--tertiary); /* A softer, sky blue */
+  --color-accent: var(--accent); /* A greenish accent for contrast */
+  --color-accent-secondary: var(
+    --accent-secondary
+  ); /* An orange accent for highlights */
 
-  /* Chart colors */
-  --color-chart-1: 147 51 234;
-  --chart-2: 79 70 229;
-  --chart-3: 59 130 246;
-  --chart-4: 236 72 153;
-  --chart-5: 16 185 129;
+  /* Backgrounds */
+  --color-bg: var(--background);
+  --color-bg-secondary: var(--background-secondary);
+  --color-bg-alt: var(--background-alt);
+  --color-bg-alt-secondary: var(--background-alt-secondary);
+  --color-bg-highlight: var(--background-highlight);
+
+  /* Foreground/Text Colors */
+  --color-fg: var(--foreground);
+  --color-fg-secondary: var(--foreground-secondary);
+  --color-fg-alt: var(--foreground-secondary-alt);
+
+  /* Chart Colors */
+  --color-chart-1: var(--chart-1); /* Purple */
+  --color-chart-2: var(--chart-2); /* Indigo */
+  --color-chart-3: var(--chart-3); /* Blue */
+  --color-chart-4: var(--chart-4); /* Pink */
+
+  --animate-infinte: moveContinuous10s ease-in-out infinite;
+
+  @keyframes moveContinuous {
+    0% {
+      transform: translateX(0);
+      opacity: 1;
+    }
+    50% {
+      transform: translateX(100px);
+      opacity: 0;
+    }
+    100% {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+}
+
+.blob {
+  @apply animate-infinite hover:scale-125;
+}
+
+:root {
+  --primary: #4f46e5; /* A deep, rich blue */
+  --secondary: #59c9f9; /* A lighter, more vibrant blue */
+  --tertiary: #87ceeb; /* A softer, sky blue */
+  --accent: #10b981; /* A greenish accent for contrast */
+  --accent-secondary: #f59e0b; /* An orange accent for highlights */
+
+  /* Backgrounds */
+  --background: #f9fafb; /* A light neutral background */
+  --background-secondary: #f3f4f6; /* A slightly darker neutral background */
+  --background-alt: #e5e7eb; /* An alternative lighter background */
+  --background-alt-secondary: #d1d5db; /* An alternative slightly darker background */
+  --background-highlight: #c9e4ca; /* A light greenish background gradient */
+
+  /* Foreground/Text Colors */
+  --foreground: #333; /* Dark gray for text */
+  --foreground-secondary: #666; /* Medium gray for secondary text */
+  --foreground-alt: #999; /* Light gray for subtle text */
+
+  /* Chart Colors */
+  --chart-1: 135 206 235; /* lighter blue */
+  --chart-2: 79 70 229; /* Indigo */
+  --chart-3: 59 130 246; /* Blue */
+  --chart-4: 16 185 129; /* greenish */
+}
+
+.dark {
+  --primary: #4f46e5; /* A deep, rich blue */
+  --secondary: #59c9f9; /* A lighter, more vibrant blue */
+  --tertiary: #87ceeb; /* A softer, sky blue */
+  --accent: #10b981; /* A greenish accent for contrast */
+  --accent-secondary: #f59e0b; /* An orange accent for highlights */
+
+  /* Dark Mode Backgrounds */
+  --background: #121212; /* Charcoal black */
+  --background-secondary: #1a1a1a; /* Rich black */
+  --background-alt: #2c2c2c; /* Slate gray */
+  --background-alt-secondary: #333333; /* Darker slate gray */
+  --background-highlight: #2f4f7f; /* A darker background gradient */
+
+  /* Dark Mode Foreground/Text Colors */
+  --foreground: #e0e0e0; /* Light gray for text */
+  --foreground-secondary: #b0b0b0; /* Medium gray for secondary text */
+  --foreground-alt: #999999; /* Light gray for subtle text */
+
+  /* Chart Colors */
+  --chart-1: 147 51 234; /* Purple */
+  --chart-2: 79 70 229; /* Indigo */
+  --chart-3: 59 130 246; /* Blue */
+  --chart-4: 236 72 153; /* Pink */
 }
 
 @layer {

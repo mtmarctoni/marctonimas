@@ -1,0 +1,145 @@
+---
+import { Image } from "astro:assets";
+import {
+  MY_EMAIL,
+  MY_GITHUB,
+  MY_LINKEDIN,
+  MY_LOCATION,
+  MY_NAME,
+  MY_PHONE,
+} from "@/utils/constants";
+import { useTranslations, getLangFromUrl } from "@/i18n/utils";
+import {
+  GithubIcon,
+  LinkedInIcon,
+  EmailIcon,
+  LocationIcon,
+  PhoneIcon,
+} from "@/utils/icons";
+import SectionContainer from "../containers/SectionContainer.astro";
+import ContactItem from "../ContactItem.astro";
+
+// Get current language from URL
+const url = new URL(Astro.url);
+const lang = getLangFromUrl(url);
+const t = useTranslations(lang);
+---
+
+<!-- Render the component -->
+<SectionContainer sectionId="contact">
+  <div class="relative">
+    <!-- Background decorative elements -->
+    <div
+      class="absolute -top-20 -left-20 w-100 h-100 bg-primary/20 rounded-full blur-3xl"
+    >
+    </div>
+    <div
+      class="absolute -bottom-20 -right-20 w-80 h-80 bg-secondary/30 rounded-full blur-3xl"
+    >
+    </div>
+
+    <!-- Main content container with diagonal design -->
+    <div
+      class="relative bg-bg-secondary rounded-3xl overflow-hidden shadow-2xl border-2 border-primary/20 hover:border-primary/80 transition-colors duration-1000 linear backdrop-blur-sm z-10"
+    >
+      <!-- Diagonal divider -->
+      <div class="absolute top-0 left-0 w-full h-full">
+        <div
+          class="absolute top-0 left-0 w-full h-full transform -skew-x-12 bg-gradient-to-r from-primary to-secondary opacity-80 translate-x-1/3"
+        >
+        </div>
+      </div>
+
+      <div class="relative z-10">
+        <h3
+          class="border-b border-fg-alt text-3xl font-bold p-4 text-center bg-gradient-to-r from-bg-secondary via-bg-secondary to-transparent"
+        >
+          <span
+            class="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent"
+          >
+            {t("contact.title")}
+          </span>
+        </h3>
+
+        <div class="grid md:grid-cols-2 gap-0">
+          <!-- Left section (Contact Info) -->
+          <div class="p-10 text-fg">
+            <div class="">
+              <h3
+                class="text-2xl font-bold mb-4 relative after:content-[''] after:block after:w-20 after:h-1 after:bg-secondary after:mt-2"
+              >
+                {t("contact.get_in_touch")}
+              </h3>
+              <p class="mb-4 relative">{t("contact.invite")}</p>
+
+              <!-- Contact cards -->
+              <div class="flex flex-col space-y-2 relative">
+                <ContactItem
+                  icon={EmailIcon}
+                  text="Email"
+                  value={MY_EMAIL}
+                  href={`mailto:${MY_EMAIL}`}
+                />
+                <ContactItem icon={PhoneIcon} text="Phone" value={MY_PHONE} />
+                <ContactItem
+                  icon={LinkedInIcon}
+                  text="LinkedIn"
+                  value={`@${MY_LINKEDIN}`}
+                  href={`https://www.linkedin.com/in/${MY_LINKEDIN}`}
+                />
+                <ContactItem
+                  icon={GithubIcon}
+                  text="GitHub"
+                  value={MY_GITHUB}
+                  href={`
+                  https://github.com/${MY_GITHUB}
+                  `}
+                />
+                <ContactItem
+                  icon={LocationIcon}
+                  text="Location"
+                  value={MY_LOCATION}
+                />
+              </div>
+            </div>
+          </div>
+          <!-- Right section (Profile) -->
+          <div class="p-10 flex flex-col justify-center items-center relative">
+            <div class="text-center max-w-md mx-auto">
+              <!-- Profile picture with 3D effect -->
+              <div class="mb-8 mx-auto">
+                <div class="">
+                  <Image
+                    src="/profile-picture.jpeg"
+                    alt="Profile picture"
+                    width={200}
+                    height={200}
+                    class="rounded-full border-4 border-secondary shadow-lg mx-auto transform-3d ease-in-out duration-700 hover:rotate-x-20 hover:rotate-y-10 hover:shadow-2xl"
+                  />
+                </div>
+              </div>
+
+              <a
+                href={`mailto:${MY_EMAIL}`}
+                class="inline-block bg-accent text-white text-center rounded-full py-4 px-8 font-medium shadow-lg transition-all duration-300 ease-in-out hover:-translate-y-1 hover:shadow-xl"
+              >
+                <div class="flex items-center justify-center">
+                  <EmailIcon class="h-5 w-5 mr-2" />
+                  {t("contact.cta")}
+                </div>
+              </a>
+
+              <div
+                class="mt-12 p-6 bg-bg-alt rounded-xl border border-primary/10 quote-card"
+              >
+                <p class="text-fg-secondary text-sm italic">
+                  "{t("contact.quote")}"
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div></SectionContainer
+>

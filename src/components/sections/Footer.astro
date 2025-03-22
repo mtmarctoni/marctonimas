@@ -1,0 +1,60 @@
+---
+import { useTranslations, getLangFromUrl } from "@/i18n/utils";
+import { MY_GITHUB, MY_LINKEDIN, MY_EMAIL } from "@/utils/constants";
+import { GithubIcon, LinkedInIcon, EmailIcon } from "@/utils/icons";
+
+const url = new URL(Astro.url);
+const lang = getLangFromUrl(url);
+const t = useTranslations(lang);
+
+const currentYear = new Date().getFullYear();
+---
+
+<footer class="bg-bg text-fg py-8">
+  <div class="container max-w-5xl mx-auto px-4">
+    <div
+      class="border-t border-secondary/50 pt-8 flex flex-col md:flex-row justify-between items-center"
+    >
+      <p class="text-fg-alt text-sm mb-4 md:mb-0">
+        &copy; {currentYear}
+        {t("nav.name")}. {t("footer.copyright")}
+      </p>
+      <div
+        class="flex flex-col md:flex-row items-center space-y-4 md:space-y-0 md:space-x-6"
+      >
+        <div class="flex space-x-4">
+          <a
+            href={`https://github.com/${MY_GITHUB}`}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="text-fg-alt hover:text-fg transition-all duration-300 ease-in-out transform hover:scale-110"
+          >
+            <GithubIcon class="h-6 w-6" />
+          </a>
+          <a
+            href={`https://linkedin.com/in/${MY_LINKEDIN}`}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="text-fg-alt hover:text-fg transition-all duration-300 ease-in-out transform hover:scale-110"
+          >
+            <LinkedInIcon class="h-6 w-6" />
+          </a>
+          <a
+            href={`mailto:${MY_EMAIL}`}
+            class="text-fg-alt hover:text-fg transition-all duration-300 transform hover:scale-110"
+          >
+            <EmailIcon class="h-6 w-6" />
+          </a>
+        </div>
+        <div class="flex items-center">
+          <button
+            class="text-fg-secondary hover:text-fg transition-all duration-300 ease-in-out text-sm flex items-center px-3 py-1"
+          >
+            <span class="mr-2">{lang === "en" ? "🇺🇸" : "🇪🇸"}</span>
+            {lang === "en" ? "English" : "Español"}
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>

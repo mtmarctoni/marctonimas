@@ -14,7 +14,7 @@ const translations = {
     "site.title": "Web3 Developer Portfolio",
 
     // Navigation
-    "nav.name": "Marc Antoni Mas",
+    "nav.name": "Marc Toni Mas",
     "nav.about": "About",
     "nav.skills": "Skills",
     "nav.projects": "Projects",
@@ -45,9 +45,13 @@ const translations = {
     "about.title": "About Me",
     "about.name": "Marc Antoni Mas",
     "about.CV": "Resume",
+    "about.view_CV": "View",
+    "about.download_CV": "Download",
     "about.bio":
-      "I'm a motivated developer with a strong interest in Web3 and blockchain technology. With a solid foundation in both frontend and backend development, I'm well-equipped to build comprehensive decentralized applications (dApps) that leverage blockchain technology for secure, scalable, and user-friendly solutions.",
+      "I'm a motivated developer with a strong interest in <strong>Web3</strong> and blockchain technology. With a solid foundation in both frontend and backend development, I'm well-equipped to build comprehensive decentralized applications (dApps) that leverage blockchain technology for secure, scalable, and user-friendly solutions.",
     //  "I'm a passionate Web3 developer with expertise in blockchain technology, smart contracts, and decentralized applications. With a strong foundation in both frontend and backend development, I specialize in building secure, scalable, and user-friendly blockchain solutions.",
+    "about.short_bio":
+      "I'm a <span class='text-primary font-semibold underline'>developer</span> with a passion for <span class='text-primary font-semibold text-2xl'>blockchain</span> technology and <span class='text-primary font-semibold text-2xl'>web3</span> applications.",
     "about.what_i_do_title": "What I Do",
     "about.what_i_do_description":
       "I'm skilled in developing applications using blockchain technology, including smart contracts and decentralized systems. My knowledge spans both public and private blockchains, and I'm eager to apply my skills in real-world projects.",
@@ -56,12 +60,22 @@ const translations = {
     "about.looking_for_description":
       "I'm excited to join a team working on innovative Web3 projects that push the boundaries of what's possible in the decentralized space. I'm looking for a collaborative environment where I can grow professionally and contribute to the development of cutting-edge Web3 applications.",
     // "I'm seeking opportunities to work on challenging blockchain projects that push the boundaries of what's possible in the Web3 space. I'm particularly interested in DeFi innovations, cross-chain solutions, and projects focused on improving blockchain scalability and user experience.",
+    "about.attribute.innovator": "Innovator",
+    "about.attribute.developer": "Developer",
+    "about.attribute.web3": "Web3",
+    "about.attribute.blockchain": "Blockchain",
 
     // Skills
     "skills.title": "My Skills",
     "skills.blockchain_title": "Blockchain",
+    "skills.languages_title": "Languages",
     "skills.frontend_title": "Frontend",
+    "skills.backend_title": "Backend",
     "skills.tools_title": "Tools & Infrastructure",
+    "skills.all": "All",
+    "skills.advanced_title": "Advanced",
+    "skills.intermediate_title": "Intermediate",
+    "skills.basic_title": "Basic",
 
     // Projects
     "projects.title": "My Projects",
@@ -113,12 +127,24 @@ const translations = {
     "background.certifications.cert4.issuer": "Chainlink",
     "background.certifications.cert4.date": "November 2021",
 
+    "background.title": "Professional Background",
+    "background.career_transition_title": "My Journey to Web3",
+    "background.career_transition_description":
+      "After several years in renewable energy technology, I've transitioned to blockchain development, bringing valuable experience in software development, automation, and technical leadership. My background in creating custom tools and implementing data systems provides a strong foundation for building decentralized applications.",
+    "background.relevant_experience_title": "Relevant Technical Experience",
+    "background.transferable_skills_title": "Transferable Skills",
+    "background.view_full_background": "View My Full Background",
+
     // Contact
     "contact.title": "Get In Touch",
     "contact.get_in_touch": "Let's Talk",
+    "contact.invite":
+      "Whether you have questions, ideas, or just want to chat, I'd love to hear from you. Let's start a conversation and see where it leads!",
+    "contact.quote":
+      "To give real service you must add something which cannot be bought or measured with money, and that is sincerity and integrity.",
     "contact.description":
       "Interested in working together? Have a project in mind? Feel free to reach out!",
-    "contact.social_media": "Find me on",
+    "contact.cta": "Contact Me",
     "contact.form.name": "Name",
     "contact.form.email": "Email",
     "contact.form.message": "Message",
@@ -141,6 +167,18 @@ const translations = {
     "footer.terms": "Terms of Service",
     "footer.cookies": "Cookie Policy",
     "footer.copyright": "All rights reserved.",
+
+    // languages
+    "languages.title": "Languages",
+    "languages.description": "Speak, Code and Design",
+    "languages.spanish": "Spanish",
+    "languages.spanish_level": "Native",
+    "languages.catalan": "Catalan",
+    "languages.catalan_level": "Native",
+    "languages.english": "English",
+    "languages.english_level": "Professional Use",
+    "languages.german": "German",
+    "languages.german_level": "Basic Level",
   },
 
   es: {
@@ -192,8 +230,14 @@ const translations = {
     // Skills
     "skills.title": "Mis Habilidades",
     "skills.blockchain_title": "Blockchain",
+    "skills.languages_title": "Lenguajes",
     "skills.frontend_title": "Frontend",
+    "skills.backend_title": "Backend",
     "skills.tools_title": "Herramientas & Infraestructura",
+    "skills.all": "Todas",
+    "skills.advanced_title": "Avanzado",
+    "skills.intermediate_title": "Intermedio",
+    "skills.basic_title": "Básico",
 
     // Projects
     "projects.title": "Mis Proyectos",
@@ -250,9 +294,14 @@ const translations = {
     // Contact
     "contact.title": "Ponte en Contacto",
     "contact.get_in_touch": "Hablemos",
+    "contact.invite":
+      "I'm always excited to connect with fellow professionals and discuss potential collaborations. Whether you have questions, ideas, or just want to chat, I'd love to hear from you. Let's start a conversation and see where it leads!",
+    "contact.quote":
+      "To give real service you must add something which cannot be bought or measured with money, and that is sincerity and integrity.",
     "contact.description":
       "¿Interesado en trabajar juntos? ¿Tienes un proyecto en mente? ¡No dudes en contactarme!",
     "contact.social_media": "Encuéntrame en",
+    "contact.cta": "Contáctame",
     "contact.form.name": "Nombre",
     "contact.form.email": "Correo Electrónico",
     "contact.form.message": "Mensaje",
@@ -275,6 +324,18 @@ const translations = {
     "footer.terms": "Términos de Servicio",
     "footer.cookies": "Política de Cookies",
     "footer.copyright": "Todos los derechos reservados.",
+
+    // languages
+    "languages.title": "Idiomas",
+    "languages.description": "que Hablo, Programo y Diseño",
+    "languages.spanish": "Castellano",
+    "languages.spanish_level": "Nativo",
+    "languages.catalan": "Catalán",
+    "languages.catalan_level": "Nativo",
+    "languages.english": "Inglés",
+    "languages.english_level": "Uso Profesional",
+    "languages.german": "Alemán",
+    "languages.german_level": "Nivel Básico",
   },
 };
 

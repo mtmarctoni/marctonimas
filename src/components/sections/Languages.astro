@@ -1,0 +1,82 @@
+---
+// Import necessary utilities
+import SectionContainer from "../containers/SectionContainer.astro";
+import {
+  SpanishFlagIcon,
+  EnglishFlagIcon,
+  GermanFlagIcon,
+  CatalanFlagIcon,
+} from "@/utils/flagIcons";
+import { useTranslations, getLangFromUrl } from "@/i18n/utils";
+
+// Get current language from URL
+const url = new URL(Astro.url);
+const lang = getLangFromUrl(url);
+const t = useTranslations(lang);
+
+const languages = [
+  {
+    name: t("languages.spanish"),
+    level: t("languages.spanish_level"),
+    flagIcon: SpanishFlagIcon,
+  },
+  {
+    name: t("languages.catalan"),
+    level: t("languages.catalan_level"),
+    flagIcon: CatalanFlagIcon,
+  },
+  {
+    name: t("languages.english"),
+    level: t("languages.english_level"),
+    flagIcon: EnglishFlagIcon,
+  },
+  {
+    name: t("languages.german"),
+    level: t("languages.german_level"),
+    flagIcon: GermanFlagIcon,
+  },
+];
+---
+
+<!-- Render the component -->
+<div class="border-y border-secondary/50 max-w-5xl mx-auto">
+  <SectionContainer sectionId="languages">
+    <div class="flex flex-row justify-between items-center gap-4">
+      <div class="flex flex-col">
+        <h3 class="text-xl font-bold">{t("languages.title")}</h3>
+        <p class="text-lg">{t("languages.description")}</p>
+      </div>
+
+      <div class="flex flex-wrap gap-6">
+        {
+          languages.map((language) => (
+            <div
+              class="flex items
+          -center gap-2 items-center"
+            >
+              <language.flagIcon class="w-7 h-7" />
+              <div class="flex flex-col">
+                <span class="text-fg-alt font-semibold text-lg">
+                  {language.name}
+                </span>
+                <span class="text-fg-secondary text-sm">{language.level}</span>
+              </div>
+            </div>
+          ))
+        }
+      </div>
+      <!-- <span class="px-3 py-1 bg-tertiary text-fg-alt rounded-full text-sm">
+      {t("languages.spanish")}
+      </span>
+      <span class="px-3 py-1 bg-tertiary text-fg-alt rounded-full text-sm">
+        {t("languages.catalan")}
+        </span>
+      <span class="px-3 py-1 bg-tertiary text-fg-alt rounded-full text-sm">
+        {t("languages.english")}
+        </span>
+        <span class="px-3 py-1 bg-tertiary text-fg-alt rounded-full text-sm">
+          {t("languages.german")}
+          </span> -->
+    </div>
+  </SectionContainer>
+</div>

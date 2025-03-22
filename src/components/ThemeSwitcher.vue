@@ -3,7 +3,7 @@
     <ToggleDropDown>
       <template #button-content>
         <button
-          class="flex items-center justify-center w-8 h-8 rounded-full border border-gray-300 dark:border-gray-700 focus:outline-none"
+          class="flex items-center justify-center w-8 h-8 rounded-full border focus:outline-none border-primary dark:border-secondary hover:bg-primary/20 dark:hover:bg-secondary/20"
           aria-label="Toggle theme"
         >
           <svg
@@ -56,8 +56,8 @@
       <template #default>
         <button
           @click="setTheme('light')"
-          class="flex items-center w-full px-4 py-2 text-sm hover:bg-gray-100 dark:hover:bg-gray-700"
-          :class="{ 'text-purple-500': currentTheme === 'light' }"
+          class="flex items-center w-full px-4 py-2 text-sm hover:bg-primary/10 dark:hover:bg-primary/40"
+          :class="{ 'text-secondary': currentTheme === 'light' }"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -77,8 +77,8 @@
         </button>
         <button
           @click="setTheme('dark')"
-          class="flex items-center w-full px-4 py-2 text-sm hover:bg-gray-100 dark:hover:bg-gray-700"
-          :class="{ 'text-purple-500': currentTheme === 'dark' }"
+          class="flex items-center w-full px-4 py-2 text-sm hover:bg-primary/10 dark:hover:bg-primary/40"
+          :class="{ 'text-secondary': currentTheme === 'dark' }"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -98,7 +98,7 @@
         </button>
         <button
           @click="setTheme('system')"
-          class="flex items-center w-full px-4 py-2 text-sm hover:bg-gray-100 dark:hover:bg-gray-700"
+          class="flex items-center w-full px-4 py-2 text-sm hover:bg-primary/10 dark:hover:bg-primary/40"
           :class="{ 'text-purple-500': currentTheme === 'system' }"
         >
           <svg

@@ -1,6 +1,6 @@
 ---
 import Header from "@/components/sections/Header.vue";
-import Footer from "@/components/sections/Footer.vue";
+import Footer from "@/components/sections/Footer.astro";
 import "@/styles/global.css";
 
 // interface Props {
@@ -60,13 +60,11 @@ const {
       }
     </script>
   </head>
-  <body
-    class="bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100 transition-colors duration-300"
-  >
+  <body class="bg-bg text-fg transition-colors duration-300">
     <Header client:load client:only="header" />
     <main class="min-h-screen">
       <slot />
     </main>
-    <Footer client:only="footer" />
+    <Footer />
   </body>
 </html>

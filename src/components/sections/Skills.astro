@@ -1,0 +1,341 @@
+---
+import SectionContainer from "@/components/containers/SectionContainer.astro";
+import { useTranslations, getLangFromUrl } from "@/i18n/utils";
+import {
+  BlockchainIcon,
+  CodeIcon,
+  ToolsIcon,
+  FrameIcon,
+  DatabaseIcon,
+} from "@/utils/icons";
+import {
+  JavaScriptIcon,
+  ReactIcon,
+  CssIcon,
+  HtmlIcon,
+  ExcelIcon,
+  ExpressIcon,
+  GitIcon,
+  HardhatIcon,
+  MongodbIcon,
+  NodeIcon,
+  PythonIcon,
+  PowerAppsIcon,
+  PowerAutomateIcon,
+  SolidityIcon,
+  VbaIcon,
+  SqlIcon,
+  PowerBiIcon,
+  TailwindIcon,
+  TypescriptIcon,
+  VsCodeIcon,
+  VueIcon,
+  AstroIcon,
+  EthersjsIcon,
+  MetamaskIcon,
+  NextjsIcon,
+  EthereumIcon,
+  DockerIcon,
+} from "@/utils/skillIcons";
+
+const url = new URL(Astro.url);
+const lang = getLangFromUrl(url);
+const t = useTranslations(lang);
+
+interface Skill {
+  name: string;
+  level: number;
+  icon?: any;
+  category: string;
+}
+
+// Reorganize skills into a flat array with category information
+const skills: Skill[] = [
+  // Languages
+  {
+    name: "JavaScript",
+    level: 95,
+    icon: JavaScriptIcon,
+    category: "languages",
+  },
+  {
+    name: "TypeScript",
+    level: 95,
+    icon: TypescriptIcon,
+    category: "languages",
+  },
+  { name: "Solidity", level: 90, icon: SolidityIcon, category: "languages" },
+  { name: "Python", level: 85, icon: PythonIcon, category: "languages" },
+
+  // Blockchain
+  { name: "Ethereum", level: 85, icon: EthereumIcon, category: "blockchain" },
+  { name: "Foundry", level: 80, icon: null, category: "blockchain" },
+  { name: "Metamask", level: 85, icon: MetamaskIcon, category: "blockchain" },
+  { name: "Hardhat", level: 85, icon: HardhatIcon, category: "blockchain" },
+  { name: "ethers.js", level: 85, icon: EthersjsIcon, category: "blockchain" },
+
+  // Frontend
+  { name: "React", level: 90, icon: ReactIcon, category: "frontend" },
+  { name: "Vue.js", level: 85, icon: VueIcon, category: "frontend" },
+  { name: "HTML", level: 90, icon: HtmlIcon, category: "frontend" },
+  { name: "CSS", level: 90, icon: CssIcon, category: "frontend" },
+  { name: "TailwindCSS", level: 85, icon: TailwindIcon, category: "frontend" },
+  { name: "Next.js", level: 85, icon: NextjsIcon, category: "frontend" },
+  { name: "Astro", level: 85, icon: AstroIcon, category: "frontend" },
+
+  // Backend
+  { name: "Express", level: 85, icon: ExpressIcon, category: "backend" },
+  { name: "MongoDB", level: 85, icon: MongodbIcon, category: "backend" },
+  { name: "SQL", level: 85, icon: SqlIcon, category: "backend" },
+  { name: "Node.js", level: 85, icon: NodeIcon, category: "backend" },
+  { name: "Docker", level: 75, icon: DockerIcon, category: "backend" },
+
+  // Tools
+  { name: "Git", level: 90, icon: GitIcon, category: "tools" },
+  { name: "VBA", level: 85, icon: VbaIcon, category: "tools" },
+  { name: "VS Code", level: 90, icon: VsCodeIcon, category: "tools" },
+];
+
+// Define categories for the filter
+const categories = [
+  { id: "all", label: t("skills.all"), icon: null },
+  { id: "languages", label: t("skills.languages_title"), icon: CodeIcon },
+  {
+    id: "blockchain",
+    label: t("skills.blockchain_title"),
+    icon: BlockchainIcon,
+  },
+  { id: "frontend", label: t("skills.frontend_title"), icon: FrameIcon },
+  { id: "backend", label: t("skills.backend_title"), icon: DatabaseIcon },
+  { id: "tools", label: t("skills.tools_title"), icon: ToolsIcon },
+];
+
+// Group skills by proficiency
+const expertSkills = skills.filter((skill) => skill.level >= 90);
+const advancedSkills = skills.filter(
+  (skill) => skill.level >= 80 && skill.level < 90,
+);
+const intermediateSkills = skills.filter((skill) => skill.level < 80);
+---
+
+<SectionContainer sectionId="skills">
+  <h2 class="text-3xl font-bold mb-8 text-center">
+    <span
+      class="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent"
+    >
+      {t("skills.title")}
+    </span>
+  </h2>
+
+  <!-- Interactive Skill Showcase -->
+  <div class="mb-16">
+    <!-- Category Filter Tabs -->
+    <div class="flex flex-wrap justify-center gap-2 mb-8" id="skill-tabs">
+      {
+        categories.map((category, index) => (
+          <button
+            class="skill-tab data-[active=true]:bg-primary/10 data-[active=true]:border-primary data-[active=true]:text-primary data-[active=true]:shadow-lg data-[active=true]:transform data-[active=true]:scale-105
+              px-4 py-2 rounded-full border border-fg-alt/20 transition-all duration-300 hover:border-primary/50 hover:bg-secondary/30 flex items-center gap-2 text-sm"
+            data-category={category.id}
+            data-active={index === 0 ? "true" : "false"}
+          >
+            {category.icon && <category.icon class="w-6 h-6" />}
+            {category.label}
+          </button>
+        ))
+      }
+    </div>
+
+    <!-- Skills Grid -->
+    <div
+      class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4"
+      id="skills-grid"
+    >
+      {
+        skills.map((skill) => (
+          <div
+            class="skill-item opacity-0 transform translate-y-2 bg-bg-secondary rounded-xl p-4 border border-fg-alt/10 hover:border-primary/30 transition-all duration-300 hover:shadow-md hover:-translate-y-1 flex flex-col items-center text-center"
+            data-category={skill.category}
+            data-level={
+              skill.level >= 90
+                ? "expert"
+                : skill.level >= 80
+                  ? "advanced"
+                  : "intermediate"
+            }
+          >
+            <div class="w-12 h-12 mb-3 flex items-center justify-center">
+              {skill.icon ? (
+                <skill.icon class="w-10 h-10" />
+              ) : (
+                <div class="w-10 h-10 rounded-full bg-primary/20 flex items-center justify-center text-primary">
+                  {skill.name.charAt(0)}
+                </div>
+              )}
+            </div>
+            <h3 class="font-medium text-sm mb-1">{skill.name}</h3>
+            <div class="mt-auto pt-2 w-full">
+              <div class="w-full h-1.5 bg-bg-alt rounded-full overflow-hidden">
+                <div
+                  class={`h-full rounded-full ${skill.level >= 90 ? "bg-primary" : skill.level >= 80 ? "bg-secondary" : "bg-tertiary"}`}
+                  style={`width: ${skill.level}%`}
+                />
+              </div>
+            </div>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+
+  <!-- Skill Proficiency Overview -->
+  <div class="grid md:grid-cols-3 gap-6">
+    <!-- Expert Skills -->
+    <div
+      class="bg-bg-secondary rounded-xl p-6 border border-primary/20 hover:border-primary/50 transition-all duration-300"
+    >
+      <div class="flex items-center mb-4">
+        <div
+          class="w-10 h-10 rounded-full bg-primary/20 flex items-center justify-center mr-3 text-primary"
+        >
+          ⭐
+        </div>
+        <h3 class="text-lg font-bold">{t("skills.advanced_title")}</h3>
+      </div>
+      <div class="flex flex-wrap gap-2">
+        {
+          expertSkills.map((skill) => (
+            <span class="px-3 py-1 bg-primary/10 text-primary rounded-full text-sm flex items-center gap-1">
+              {skill.icon && <skill.icon class="w-3 h-3" />}
+              {skill.name}
+            </span>
+          ))
+        }
+      </div>
+    </div>
+
+    <!-- Advanced Skills -->
+    <div
+      class="bg-bg-secondary rounded-xl p-6 border border-secondary/20 hover:border-secondary/50 transition-all duration-300"
+    >
+      <div class="flex items-center mb-4">
+        <div
+          class="w-10 h-10 rounded-full bg-secondary/20 flex items-center justify-center mr-3 text-secondary"
+        >
+          💪
+        </div>
+        <h3 class="text-lg font-bold">{t("skills.intermediate_title")}</h3>
+      </div>
+      <div class="flex flex-wrap gap-2">
+        {
+          advancedSkills.map((skill) => (
+            <span class="px-3 py-1 bg-secondary/10 text-secondary rounded-full text-sm flex items-center gap-1">
+              {skill.icon && <skill.icon class="w-3 h-3" />}
+              {skill.name}
+            </span>
+          ))
+        }
+      </div>
+    </div>
+
+    <!-- Intermediate Skills -->
+    <div
+      class="bg-bg-secondary rounded-xl p-6 border border-tertiary/20 hover:border-tertiary/50 transition-all duration-300"
+    >
+      <div class="flex items-center mb-4">
+        <div
+          class="w-10 h-10 rounded-full bg-tertiary/20 flex items-center justify-center mr-3 text-tertiary"
+        >
+          📚
+        </div>
+        <h3 class="text-lg font-bold">{t("skills.basic_title")}</h3>
+      </div>
+      <div class="flex flex-wrap gap-2">
+        {
+          intermediateSkills.map((skill) => (
+            <span class="px-3 py-1 bg-tertiary/10 text-tertiary rounded-full text-sm flex items-center gap-1">
+              {skill.icon && <skill.icon class="w-3 h-3" />}
+              {skill.name}
+            </span>
+          ))
+        }
+      </div>
+    </div>
+  </div>
+</SectionContainer>
+
+<script>
+  // Add interactive filtering
+  document.addEventListener("DOMContentLoaded", () => {
+    const tabs = document.querySelectorAll(".skill-tab");
+    const skillItems = document.querySelectorAll(".skill-item");
+
+    tabs.forEach((tab) => {
+      tab.addEventListener("click", () => {
+        // Update active tab
+        tabs.forEach((t) => t.setAttribute("data-active", "false"));
+        tab.setAttribute("data-active", "true");
+
+        const category = tab.getAttribute("data-category");
+
+        // Reset animations by removing and re-adding the animation class
+        skillItems.forEach((i) => {
+          const item = i as HTMLElement;
+          item.classList.remove("animated");
+
+          // Force a reflow to restart animations
+          void item.offsetWidth;
+
+          // Filter skills
+          if (
+            category === "all" ||
+            item.getAttribute("data-category") === category
+          ) {
+            item.classList.remove("hidden");
+
+            // Small timeout to ensure DOM updates before adding animation class
+            setTimeout(() => {
+              item.classList.add("animated");
+            }, 10);
+          } else {
+            item.classList.add("hidden");
+          }
+        });
+
+        // Reapply staggered delays to visible items
+        const visibleItems = document.querySelectorAll(
+          ".skill-item:not(.hidden)",
+        );
+        visibleItems.forEach((i, index) => {
+          const item = i as HTMLElement;
+
+          item.style.animationDelay = `${0.1 * index}s`;
+        });
+      });
+    });
+
+    // Initialize with all items animated
+    skillItems.forEach((i, index) => {
+      const item = i as HTMLElement;
+      item.style.animationDelay = `${0.2 * index}s`;
+      item.classList.add("animated");
+    });
+  });
+</script>
+<style>
+  /* Animation class that will be added/removed */
+  .skill-item.animated {
+    animation: fadeIn 0.5s ease-out forwards;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+</style>

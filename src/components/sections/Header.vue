@@ -33,17 +33,19 @@ const navItems = computed(() => [
   <header
     class="fixed w-full top-0 z-50 bg-white/80 dark:bg-gray-900/80 backdrop-blur-sm border-b border-gray-200 dark:border-gray-800"
   >
-    <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+    <div
+      class="container mx-auto max-w-5xl px-4 py-3 flex justify-between items-center"
+    >
       <a href="/" class="text-xl font-bold flex items-center gap-2">
         <div class="relative w-8 h-8">
           <div
-            class="absolute inset-0 bg-gradient-to-r from-purple-500 to-blue-500 rounded-full animate-pulse"
+            class="absolute inset-0 bg-gradient-to-r from-secondary to-primary rounded-full animate-pulse"
           ></div>
           <div
-            class="absolute inset-1 bg-white dark:bg-gray-900 rounded-full flex items-center justify-center"
+            class="text-center absolute inset-1 bg-white dark:bg-gray-900 rounded-full flex items-center justify-center"
           >
             <span
-              class="text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-blue-500 text-sm font-bold"
+              class="text-transparent bg-clip-text bg-gradient-to-r from-secondary to-primary text-sm font-bold"
               >W3</span
             >
           </div>
@@ -57,7 +59,7 @@ const navItems = computed(() => [
             v-for="item in navItems"
             :key="item.href"
             :href="item.href"
-            class="hover:text-purple-500 dark:hover:text-purple-400 transition-colors"
+            class="hover:text-secondary transition-all ease-in-out duration-300 font-semibold border-b-2 border-transparent hover:border-secondary"
           >
             {{ item.label }}
           </a>
@@ -99,7 +101,7 @@ const navItems = computed(() => [
       v-if="mobileMenuOpen"
       class="md:hidden absolute w-full bg-white dark:bg-gray-900 border-b border-gray-200 dark:border-gray-800"
     >
-      <nav class="container mx-auto px-4 py-4 flex flex-col gap-4">
+      <nav class="container mx-auto px-4 py-4 flex flex-col gap-1">
         <a
           v-for="item in navItems"
           :key="item.href"
