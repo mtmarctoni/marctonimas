@@ -1,0 +1,184 @@
+{
+  "1": {
+    "name": "Ethereum Mainnet",
+    "nativeCurrency": {
+      "name": "Ether",
+      "symbol": "ETH"
+    }
+  },
+  "5": {
+    "name": "Goerli Testnet",
+    "nativeCurrency": {
+      "name": "Goerli Ether",
+      "symbol": "ETH"
+    }
+  },
+  "10": {
+    "name": "OP Mainnet",
+    "nativeCurrency": {
+      "name": "Ether",
+      "symbol": "ETH"
+    }
+  },
+  "11": {
+    "name": "Metadium Testnet",
+    "nativeCurrency": {
+      "name": "Metadium Testnet Ether",
+      "symbol": "KAL"
+    }
+  },
+  "17": {
+    "name": "ThunderCore Testnet",
+    "nativeCurrency": {
+      "name": "ThunderCore Testnet Ether",
+      "symbol": "TST"
+    }
+  },
+  "21": {
+    "name": "Elastos Testnet",
+    "nativeCurrency": {
+      "name": "Elastos",
+      "symbol": "tELA"
+    }
+  },
+  "56": {
+    "name": "Binance Smart Chain",
+    "nativeCurrency": {
+      "name": "Binance Coin",
+      "symbol": "BNB"
+    }
+  },
+  "61": {
+    "name": "Ethereum Classic",
+    "nativeCurrency": {
+      "name": "Ethereum Classic",
+      "symbol": "ETC"
+    }
+  },
+  "63": {
+    "name": "Mordor Testnet",
+    "nativeCurrency": {
+      "name": "Ethereum Classic",
+      "symbol": "ETC"
+    }
+  },
+  "100": {
+    "name": "Gnosis",
+    "nativeCurrency": {
+      "name": "xDai",
+      "symbol": "xDAI"
+    }
+  },
+  "137": {
+    "name": "Polygon Mainnet",
+    "nativeCurrency": {
+      "name": "Polygon",
+      "symbol": "POL"
+    }
+  },
+  "250": {
+    "name": "Fantom Opera",
+    "nativeCurrency": {
+      "name": "Fantom",
+      "symbol": "FTM"
+    }
+  },
+  "1088": {
+    "name": "Metis Andromeda",
+    "nativeCurrency": {
+      "name": "Metis",
+      "symbol": "METIS"
+    }
+  },
+  "1101": {
+    "name": "Polygon zkEVM",
+    "nativeCurrency": {
+      "name": "Ether",
+      "symbol": "ETH"
+    }
+  },
+  "1284": {
+    "name": "Moonbeam",
+    "nativeCurrency": {
+      "name": "Glimmer",
+      "symbol": "GLMR"
+    }
+  },
+  "1285": {
+    "name": "Moonriver",
+    "nativeCurrency": {
+      "name": "Moonriver",
+      "symbol": "MOVR"
+    }
+  },
+  "1337": {
+    "name": "Ganache",
+    "nativeCurrency": {
+      "name": "Ether",
+      "symbol": "ETH"
+    }
+  },
+  "2018": {
+    "name": "Dev",
+    "nativeCurrency": {
+      "name": "Ether",
+      "symbol": "ETH"
+    }
+  },
+  "5000": {
+    "name": "Mantle",
+    "nativeCurrency": {
+      "name": "Mantle",
+      "symbol": "MNT"
+    }
+  },
+  "8453": {
+    "name": "Base",
+    "nativeCurrency": {
+      "name": "Ether",
+      "symbol": "ETH"
+    }
+  },
+  "11155111": {
+    "name": "Sepolia Testnet",
+    "nativeCurrency": {
+      "name": "Sepolia Ether",
+      "symbol": "ETH"
+    }
+  },
+  "31337": {
+    "name": "Hardhat Network",
+    "nativeCurrency": {
+      "name": "Ether",
+      "symbol": "ETH"
+    }
+  },
+  "42161": {
+    "name": "Arbitrum One",
+    "nativeCurrency": {
+      "name": "Ether",
+      "symbol": "ETH"
+    }
+  },
+  "42220": {
+    "name": "Celo",
+    "nativeCurrency": {
+      "name": "Celo",
+      "symbol": "CELO"
+    }
+  },
+  "43114": {
+    "name": "Avalanche C-Chain",
+    "nativeCurrency": {
+      "name": "Avalanche",
+      "symbol": "AVAX"
+    }
+  },
+  "534352": {
+    "name": "Scroll",
+    "nativeCurrency": {
+      "name": "Ether",
+      "symbol": "ETH"
+    }
+  }
+}

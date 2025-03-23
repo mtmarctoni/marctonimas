@@ -48,9 +48,9 @@
   }
 }
 
-.blob {
+/* .blob {
   @apply animate-infinite hover:scale-125;
-}
+} */
 
 :root {
   --primary: #4f46e5; /* A deep, rich blue */

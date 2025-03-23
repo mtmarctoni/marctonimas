@@ -13,6 +13,7 @@
     "@astrojs/vue": "^5.0.7",
     "@typescript-eslint/parser": "^8.27.0",
     "astro": "^5.4.3",
+    "ethers": "^6.13.5",
     "vue": "^3.5.13"
   },
   "devDependencies": {

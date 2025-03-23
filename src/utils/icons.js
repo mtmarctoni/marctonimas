@@ -15,6 +15,9 @@ import Certificate from "@/assets/certificate.svg?component";
 import Research from "@/assets/research.svg?component";
 import Work from "@/assets/work.svg?component";
 import Rocket from "@/assets/rocket.svg?component";
+import Login from "@/assets/login.svg?component";
+import Logout from "@/assets/logout.svg?component";
+import Check from "@/assets/check.svg?component";
 
 export const GithubIcon = Github;
 export const LinkedInIcon = LinkedIn;
@@ -33,6 +36,9 @@ export const CertificateIcon = Certificate;
 export const ResearchIcon = Research;
 export const WorkIcon = Work;
 export const RocketIcon = Rocket;
+export const LoginIcon = Login;
+export const LogoutIcon = Logout;
+export const CheckIcon = Check;
 
 export default {
   GithubIcon,
@@ -52,4 +58,7 @@ export default {
   ResearchIcon,
   WorkIcon,
   RocketIcon,
+  LoginIcon,
+  LogoutIcon,
+  CheckIcon,
 };

@@ -27,7 +27,8 @@ const translations = {
     "theme.system": "System",
 
     // Hero
-    "hero.title": "Web3 Developer & Blockchain Enthusiast",
+    "hero.title":
+      "<h1 class='text-6xl font-bold'>Full Stack Developer & <span class='text-accent'>Blockchain</span> Enthusiast</h1>",
     "hero.subtitle":
       "Building the decentralized future with smart contracts, DeFi, and blockchain technology",
     "hero.cta_primary": "View Projects",
@@ -35,11 +36,14 @@ const translations = {
 
     // Wallet
     "wallet.connect": "Connect Wallet",
-    "wallet.connected_with": "Connected with",
+    "wallet.connected": "Connected!",
     "wallet.modal_title": "Connect Wallet",
     "wallet.modal_description":
       "Connect with one of our available wallet providers or create a new one.",
-    "wallet.cancel": "Cancel",
+    "wallet.disconnect": "Disconnect",
+    "wallet.chainId": "Chain ID",
+    "wallet.balance": "Balance",
+    "wallet.network": "Network",
 
     // About
     "about.title": "About Me",

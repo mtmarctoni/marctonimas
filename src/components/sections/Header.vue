@@ -36,7 +36,7 @@ const navItems = computed(() => [
     <div
       class="container mx-auto max-w-5xl px-4 py-3 flex justify-between items-center"
     >
-      <a href="/" class="text-xl font-bold flex items-center gap-2">
+      <a href="/#" class="text-xl font-bold flex items-center gap-2">
         <div class="relative w-8 h-8">
           <div
             class="absolute inset-0 bg-gradient-to-r from-secondary to-primary rounded-full animate-pulse"

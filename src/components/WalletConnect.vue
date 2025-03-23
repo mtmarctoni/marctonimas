@@ -1,133 +1,113 @@
 <template>
   <div class="wallet-connect">
-    <button
-      @click="connectWallet"
-      class="flex items-center gap-2 px-4 py-2 bg-gray-100 dark:bg-gray-800 rounded-full border border-gray-300 dark:border-gray-700 hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors"
-      :class="{
-        'bg-green-100 dark:bg-green-900 border-green-300 dark:border-green-700':
-          isConnected,
-      }"
-    >
+    <!-- Connected state with dropdown menu -->
+    <div v-if="isConnected" class="relative">
+      <button
+        @click="toggleDropdown"
+        :class="{
+          'hover:bg-accent/40': !showDropdown,
+        }"
+        class="flex items-center gap-2 px-4 py-2 bg-accent/70 rounded-full transition-all duration-300 hover:shadow-md group"
+      >
+        <div class="w-3 h-3 rounded-full bg-green-500"></div>
+        <span class="font-medium">{{ shortenAddress(account) }}</span>
+        <CheckIcon
+          class="w-4 h-4 transform transition-transform"
+          :class="{ 'rotate-180': showDropdown }"
+        />
+      </button>
+
+      <!-- Dropdown menu -->
       <div
-        class="w-3 h-3 rounded-full"
-        :class="isConnected ? 'bg-green-500' : 'bg-gray-500'"
-      ></div>
-      <span v-if="isConnected">{{ shortenAddress(account) }}</span>
-      <span v-else>{{ t("wallet.connect") }}</span>
-    </button>
-
-    <div
-      v-if="showModal"
-      class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50"
-    >
-      <div class="bg-white dark:bg-gray-900 rounded-lg p-6 max-w-md w-full">
-        <h3 class="text-xl font-bold mb-4">{{ t("wallet.modal_title") }}</h3>
-        <p class="mb-6 text-gray-600 dark:text-gray-400">
-          {{ t("wallet.modal_description") }}
-        </p>
-
-        <div class="grid grid-cols-2 gap-4">
-          <button
-            @click="mockConnect('MetaMask')"
-            class="flex flex-col items-center justify-center p-4 border border-gray-200 dark:border-gray-700 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-800"
-          >
-            <div
-              class="w-12 h-12 mb-2 bg-orange-500 rounded-full flex items-center justify-center"
-            >
-              <span class="text-white font-bold">M</span>
-            </div>
-            <span>MetaMask</span>
-          </button>
-
-          <button
-            @click="mockConnect('WalletConnect')"
-            class="flex flex-col items-center justify-center p-4 border border-gray-200 dark:border-gray-700 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-800"
-          >
-            <div
-              class="w-12 h-12 mb-2 bg-blue-500 rounded-full flex items-center justify-center"
-            >
-              <span class="text-white font-bold">W</span>
-            </div>
-            <span>WalletConnect</span>
-          </button>
-
-          <button
-            @click="mockConnect('Coinbase')"
-            class="flex flex-col items-center justify-center p-4 border border-gray-200 dark:border-gray-700 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-800"
-          >
-            <div
-              class="w-12 h-12 mb-2 bg-blue-700 rounded-full flex items-center justify-center"
-            >
-              <span class="text-white font-bold">C</span>
-            </div>
-            <span>Coinbase</span>
-          </button>
-
-          <button
-            @click="mockConnect('Trust Wallet')"
-            class="flex flex-col items-center justify-center p-4 border border-gray-200 dark:border-gray-700 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-800"
-          >
-            <div
-              class="w-12 h-12 mb-2 bg-purple-600 rounded-full flex items-center justify-center"
-            >
-              <span class="text-white font-bold">T</span>
-            </div>
-            <span>Trust Wallet</span>
-          </button>
+        v-if="showDropdown"
+        class="absolute -left-10 mt-2 w-64 rounded-md shadow-lg bg-bg-secondary border border-fg-alt/10 overflow-hidden z-10"
+      >
+        <div class="p-3 border-b border-fg-alt/10">
+          <p class="text-base text-fg-alt font-bold">
+            {{ t("wallet.connected") }}
+          </p>
         </div>
-
-        <div class="mt-6 flex justify-end">
-          <button
-            @click="showModal = false"
-            class="px-4 py-2 text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200"
-          >
-            {{ t("wallet.cancel") }}
-          </button>
+        <div class="p-3 space-y-1 text-sm">
+          <div class="flex justify-between">
+            <span class="text-fg-alt font-semibold"
+              >{{ t("wallet.chainId") }}:
+            </span>
+            <span class="font-medium">{{ networkInfo.chainId }}</span>
+          </div>
+          <div class="flex justify-between">
+            <span class="text-fg-alt font-semibold"
+              >{{ t("wallet.network") }}:
+            </span>
+            <span class="font-medium">{{ networkInfo.chainName }}</span>
+          </div>
+          <div class="flex justify-between">
+            <span class="text-fg-alt font-semibold"
+              >{{ t("wallet.balance") }}:
+            </span>
+            <span class="font-medium"
+              >{{ balance }} {{ networkInfo.tokenSymbol }}</span
+            >
+          </div>
         </div>
+        <button
+          @click="disconnectWallet"
+          class="w-full p-3 text-red-500 hover:bg-red-50 dark:hover:bg-red-900/50 transition-colors flex items-center gap-2"
+        >
+          <LogoutIcon class="w-4 h-4" />
+          {{ t("wallet.disconnect") }}
+        </button>
       </div>
     </div>
+
+    <!-- Not connected state -->
+    <button
+      v-else
+      @click="connectWallet"
+      class="flex items-center gap-2 px-4 py-2 text-fg bg-bg-alt rounded-full border-2 border-primary hover:bg-secondary/50 transition-all duration-300 hover:shadow-xl"
+    >
+      <div class="w-3 h-3 rounded-full bg-fg"></div>
+      <span>{{ t("wallet.connect") }}</span>
+    </button>
   </div>
 </template>
 
 <script setup>
-import { ref } from "vue";
+import { ref, onMounted, onUnmounted } from "vue";
 import { useTranslations, getLangFromUrl } from "@/i18n/utils";
+import { LogoutIcon, CheckIcon } from "@/utils/icons";
+import { useWallet } from "@/composables/useWallet";
 
-const isConnected = ref(false);
-const account = ref("");
-const showModal = ref(false);
 const lang = getLangFromUrl(new URL(window.location.href));
 const t = useTranslations(lang);
+const showDropdown = ref(false);
 
-const connectWallet = () => {
-  if (isConnected.value) {
-    // If already connected, disconnect
-    isConnected.value = false;
-    account.value = "";
-  } else {
-    // Show wallet selection modal
-    showModal.value = true;
+const {
+  isConnected,
+  account,
+  networkInfo,
+  balance,
+  connectWallet,
+  disconnectWallet,
+  shortenAddress,
+} = useWallet(t);
+
+const toggleDropdown = () => {
+  showDropdown.value = !showDropdown.value;
+};
+
+// Close dropdown when clicking outside
+const closeDropdown = (e) => {
+  if (!e.target.closest(".wallet-connect")) {
+    showDropdown.value = false;
   }
 };
 
-const mockConnect = (walletType) => {
-  // Generate a random Ethereum address
-  const randomAddr =
-    "0x" +
-    Array.from({ length: 40 }, () =>
-      Math.floor(Math.random() * 16).toString(16),
-    ).join("");
+// Add and remove event listener
+onMounted(() => {
+  document.addEventListener("click", closeDropdown);
+});
 
-  account.value = randomAddr;
-  isConnected.value = true;
-  showModal.value = false;
-
-  // Show notification
-  alert(`${t("wallet.connected_with")} ${walletType}!`);
-};
-
-const shortenAddress = (address) => {
-  if (!address) return "";
-  return `${address.slice(0, 6)}...${address.slice(-4)}`;
-};
+onUnmounted(() => {
+  document.removeEventListener("click", closeDropdown);
+});
 </script>
