@@ -18,6 +18,10 @@ import Rocket from "@/assets/rocket.svg?component";
 import Login from "@/assets/login.svg?component";
 import Logout from "@/assets/logout.svg?component";
 import Check from "@/assets/check.svg?component";
+import Clipboard from "@/assets/clipboard.svg?component";
+import Sun from "@/assets/sun.svg?component";
+import Moon from "@/assets/moon.svg?component";
+import System from "@/assets/system.svg?component";
 
 export const GithubIcon = Github;
 export const LinkedInIcon = LinkedIn;
@@ -39,6 +43,10 @@ export const RocketIcon = Rocket;
 export const LoginIcon = Login;
 export const LogoutIcon = Logout;
 export const CheckIcon = Check;
+export const ClipboardIcon = Clipboard;
+export const SunIcon = Sun;
+export const MoonIcon = Moon;
+export const SystemIcon = System;
 
 export default {
   GithubIcon,
@@ -61,4 +69,8 @@ export default {
   LoginIcon,
   LogoutIcon,
   CheckIcon,
+  ClipboardIcon,
+  SunIcon,
+  MoonIcon,
+  SystemIcon,
 };

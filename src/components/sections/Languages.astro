@@ -41,20 +41,20 @@ const languages = [
 <!-- Render the component -->
 <div class="border-y border-secondary/50 max-w-5xl mx-auto">
   <SectionContainer sectionId="languages">
-    <div class="flex flex-row justify-between items-center gap-4">
+    <div class="flex flex-col md:flex-row justify-between items-center gap-4">
       <div class="flex flex-col">
         <h3 class="text-xl font-bold">{t("languages.title")}</h3>
         <p class="text-lg">{t("languages.description")}</p>
       </div>
 
-      <div class="flex flex-wrap gap-6">
+      <div class="flex flex-wrap gap-6 justify-between">
         {
           languages.map((language) => (
             <div
               class="flex items
           -center gap-2 items-center"
             >
-              <language.flagIcon class="w-7 h-7" />
+              <language.flagIcon class="w-6 h-6 md:w-7 md:h-7" />
               <div class="flex flex-col">
                 <span class="text-fg-alt font-semibold text-lg">
                   {language.name}

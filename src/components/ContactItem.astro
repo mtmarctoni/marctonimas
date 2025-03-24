@@ -1,4 +1,6 @@
 ---
+import { ClipboardIcon } from "@/utils/icons";
+
 interface Props {
   className?: string;
   icon: any;
@@ -10,89 +12,76 @@ interface Props {
 const { className = "", icon, text, value, href = "" } = Astro.props as Props;
 
 const Icon = icon;
-
-const isLink = href !== "";
 ---
 
-{
-  isLink ? (
-    <a class="group" href={href} target="_blank" rel="noopener noreferrer">
-      <div class="bg-fg/10 backdrop-blur-sm rounded-xl p-2 transform transition-all duration-300 group-hover:translate-x-2 group-hover:bg-secondary/20 group-hover:shadow-lg">
-        <div class="flex items-center">
-          <div class="w-12 h-12 rounded-full bg-white/20 flex items-center justify-center mr-4 group-hover:scale-110 transition-transform duration-300">
-            <Icon class="h-6 w-6 text-fg" />
-          </div>
-          <div>
-            <p class="text-fg/70 text-sm">{text}</p>
-            <span class="font-medium">{value}</span>
-          </div>
-        </div>
-      </div>
-    </a>
-  ) : (
-<a class="group cursor-pointer" data-value={value} id={`copy-item-${text}`}>
-  <div class="bg-fg/10 backdrop-blur-sm rounded-xl p-2 transform transition-all duration-300 group-hover:translate-x-2 group-hover:bg-secondary/20 group-hover:shadow-lg relative">
+<a
+  href={href === "" ? "#" : href}
+  class="group cursor-pointer"
+  rel=" noopener noreferrer"
+  target="_blank"
+>
+  <div
+    class="bg-fg/10 backdrop-blur-sm rounded-xl p-2 transform transition-all duration-300 group-hover:translate-x-2 group-hover:bg-secondary/20 group-hover:shadow-lg relative"
+  >
     <div class="flex items-center">
-      <div class="w-12 h-12 rounded-full bg-white/20 flex items-center justify-center mr-4 group-hover:scale-110 transition-transform duration-300">
+      <div
+        class="w-10 h-10 rounded-full bg-white/20 flex items-center justify-center mr-4 group-hover:scale-110 transition-transform duration-300"
+      >
         <Icon class="h-6 w-6 text-fg" />
       </div>
       <div>
         <p class="text-fg/70 text-sm">{text}</p>
-        <span class="font-medium">{value}</span>
+        <span class="text-base font-medium">{value}</span>
       </div>
-    </div>
-    
-    <!-- Tooltip that appears when copied -->
-    <div class="copy-tooltip absolute -top-8 left-1/2 transform -translate-x-1/2 bg-bg-secondary text-fg px-2 py-1 rounded text-sm opacity-0 transition-opacity duration-300">
-      Copied!
+      <div
+        class="absolute right-2 top-2"
+        data-value={value}
+        id={`copy-item-${text}`}
+      >
+        <ClipboardIcon class="h-5 w-5 text-fg" />
+        {/* Tooltip that appears when copied */}
+        <div
+          class="copy-tooltip absolute -top-8 left-0 transform -translate-x-1/2 bg-bg-secondary text-fg px-2 py-1 rounded text-sm opacity-0 transition-opacity duration-300"
+        >
+          Copied!
+        </div>
+      </div>
     </div>
   </div>
 </a>
-    // <a class="group">
-    //   <div class="bg-fg/10 backdrop-blur-sm rounded-xl p-2 transform transition-all duration-300 group-hover:translate-x-2 group-hover:bg-secondary/20 group-hover:shadow-lg">
-    //     <div class="flex items-center">
-    //       <div class="w-12 h-12 rounded-full bg-white/20 flex items-center justify-center mr-4 group-hover:scale-110 transition-transform duration-300">
-    //         <Icon class="h-6 w-6 text-fg" />
-    //       </div>
-    //       <div>
-    //         <p class="text-fg/70 text-sm">{text}</p>
-    //         <span class="font-medium">{value}</span>
-    //       </div>
-    //     </div>
-    //   </div>
-    // </a>
-  )
-}
+
 <script>
-document.addEventListener('DOMContentLoaded', () => {
-  document.querySelectorAll('[id^="copy-item-"]').forEach(element => {
-    element.addEventListener('click', (e) => {
-      e.preventDefault(); // Prevent default link behavior
-      
-      const valueToCopy = element.getAttribute('data-value') || '';
-      const tooltip = element.querySelector('.copy-tooltip') as HTMLElement;
-      const colorAfterCopy = 'bg-tertiary/30';
-      
-      navigator.clipboard.writeText(valueToCopy)
-        .then(() => {
-          // Show the tooltip
-          tooltip.classList.remove('opacity-0');
-          tooltip.classList.add('opacity-100');
-          
-          // Add a subtle flash effect to the entire card
-          element.querySelector('div')!.classList.add(colorAfterCopy);
-          
-          // Hide the tooltip and remove the flash effect after 2 seconds
-          setTimeout(() => {
-            tooltip.classList.remove('opacity-100');
-            tooltip.classList.add('opacity-0');
-            element.querySelector('div')!.classList.remove(colorAfterCopy);
-          }, 3000);
-        })
-        .catch(err => {
-          console.error('Failed to copy text: ', err);
-        });
+  document.addEventListener("DOMContentLoaded", () => {
+    document.querySelectorAll('[id^="copy-item-"]').forEach((element) => {
+      element.addEventListener("click", (e) => {
+        e.preventDefault(); // Prevent default link behavior
+        console.log(element);
+
+        const valueToCopy = element.getAttribute("data-value") || "";
+        const tooltip = element.querySelector(".copy-tooltip") as Element;
+        const colorAfterCopy = "bg-tertiary/30";
+
+        navigator.clipboard
+          .writeText(valueToCopy)
+          .then(() => {
+            // Show the tooltip
+            tooltip.classList.remove("opacity-0");
+            tooltip.classList.add("opacity-100");
+
+            // Add a subtle flash effect to the entire card
+            element.querySelector("div")!.classList.add(colorAfterCopy);
+
+            // Hide the tooltip and remove the flash effect after 2 seconds
+            setTimeout(() => {
+              tooltip.classList.remove("opacity-100");
+              tooltip.classList.add("opacity-0");
+              element.querySelector("div")!.classList.remove(colorAfterCopy);
+            }, 3000);
+          })
+          .catch((err) => {
+            console.error("Failed to copy text: ", err);
+          });
+      });
     });
   });
-});
 </script>
