@@ -1,0 +1,63 @@
+---
+interface Props {
+  skill: {
+    name: string;
+    level: number;
+    icon?: any;
+    category: string;
+  };
+  className: string;
+}
+
+const { skill, className } = Astro.props as Props;
+---
+
+<div
+  class={`${className} opacity-0 transform translate-y-2 bg-bg-secondary rounded-xl p-4 border-2 border-fg/10 hover:border-secondary/70 transition-all duration-300 hover:shadow-md hover:scale-y-113 lg:hover:scale-x-110 md:hover:scale-x-109 sm:hover:scale-x-108 hover:scale-x-106 flex flex-col items-center text-center`}
+  data-category={skill.category}
+  data-level={skill.level >= 90
+    ? "expert"
+    : skill.level >= 80
+      ? "advanced"
+      : "intermediate"}
+>
+  <div class="w-10 h-10 mb-3 flex items-center justify-center">
+    {
+      skill.icon ? (
+        <skill.icon class="w-10 h-10" />
+      ) : (
+        <div class="w-10 h-10 rounded-full bg-primary/20 flex items-center justify-center text-primary">
+          {skill.name.charAt(0)}
+        </div>
+      )
+    }
+  </div>
+  <h3 class="font-medium text-sm mb-1">{skill.name}</h3>
+  <div class="mt-auto pt-2 w-full">
+    <div class="w-full h-1.5 bg-bg-alt rounded-full overflow-hidden">
+      <div
+        class={`h-full rounded-full ${skill.level >= 90 ? "bg-primary" : skill.level >= 80 ? "bg-secondary" : "bg-tertiary"}`}
+        style={`width: ${skill.level}%`}
+      >
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  /* Animation class that will be added/removed */
+  .skill-item.animated {
+    animation: fadeIn 0.5s ease-out forwards;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+</style>
