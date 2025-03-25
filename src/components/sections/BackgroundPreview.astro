@@ -130,7 +130,7 @@ const t = useTranslations(lang);
   <!-- View Full Background Button -->
   <div class="flex justify-center mt-8">
     <a
-      href="/background"
+      href={lang === "es" ? "/es/background" : "/background/"}
       class="group flex items-center gap-2 bg-bg-alt px-6 py-3 rounded-full border border-fg-alt/10 hover:border-primary/30 transition-all duration-300 hover:shadow-md"
     >
       <span>{t("background.view_full_background")}</span>
