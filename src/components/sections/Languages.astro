@@ -47,14 +47,14 @@ const languages = [
         <p class="text-lg">{t("languages.description")}</p>
       </div>
 
-      <div class="flex flex-wrap gap-6 justify-between">
+      <div class="flex flex-wrap gap-6 justify-between px-4">
         {
           languages.map((language) => (
             <div
               class="flex items
           -center gap-2 items-center"
             >
-              <language.flagIcon class="w-6 h-6 md:w-7 md:h-7" />
+              <language.flagIcon class="w-7 h-7 md:w-7 md:h-7" />
               <div class="flex flex-col">
                 <span class="text-fg-alt font-semibold text-lg">
                   {language.name}

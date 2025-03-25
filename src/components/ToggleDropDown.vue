@@ -10,7 +10,7 @@
 
     <div
       v-if="dropdownOpen"
-      class="absolute left-0 mt-3 w-36 bg-bg-secondary rounded-md shadow-lg py-1 z-10 border border-fg"
+      class="absolute right-0 mt-3 w-auto bg-bg-secondary rounded-md shadow-lg py-1 z-50 border border-primary/50"
     >
       <slot></slot>
     </div>

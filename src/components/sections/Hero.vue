@@ -48,7 +48,7 @@ const htmlString = t("hero.title");
       class="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce"
     >
       <a href="#about" class="text-gray-500 dark:text-gray-400">
-        <ArrowDownIcon class="h-8 w-8" />
+        <ArrowDownIcon class="h-8 w-8 text-primary/80" />
       </a>
     </div>
   </section>

@@ -1,6 +1,8 @@
 import { EmailIcon, LinkedInIcon, GithubIcon } from "@/utils/icons";
 
 export const MY_NAME = "Marc Antoni Mas";
+export const MY_NAME_LOGO = "Marc Toni Mas";
+export const MY_MTM = "MTM";
 export const MY_LINKEDIN = "marctonimas";
 export const MY_GITHUB = "mtmarctoni";
 export const MY_LOCATION = "Palma de Mallorca";

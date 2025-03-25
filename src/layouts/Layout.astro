@@ -1,5 +1,5 @@
 ---
-import Header from "@/components/sections/Header.vue";
+import NavBar from "@/components/navigation/NavBar.vue";
 import Footer from "@/components/sections/Footer.astro";
 import "@/styles/global.css";
 
@@ -61,7 +61,7 @@ const {
     </script>
   </head>
   <body class="bg-bg text-fg transition-colors duration-300">
-    <Header client:load client:only="header" />
+    <NavBar client:load client:only="header" />
     <main class="min-h-screen">
       <slot />
     </main>
