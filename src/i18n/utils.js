@@ -20,6 +20,8 @@ const translations = {
     "nav.projects": "Projects",
     "nav.background": "Background",
     "nav.contact": "Contact",
+    "nav.connect": "Find me on",
+    "nav.mobile_menu_footer": "Marc Toni Mas. All rights reserved.",
 
     // Theme
     "theme.light": "Light",
@@ -30,16 +32,13 @@ const translations = {
     "hero.title":
       "<h1 class='text-6xl font-bold'>Full Stack Developer & <span class='text-accent'>Blockchain</span> Enthusiast</h1>",
     "hero.subtitle":
-      "Building the decentralized future with smart contracts, DeFi, and blockchain technology",
+      "<p class=''>Bridging the gap between traditional web and <span class='font-semibold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent text-2xl md:text-3xl'>decentralized technologies</span></p>",
     "hero.cta_primary": "View Projects",
     "hero.cta_secondary": "Contact Me",
 
     // Wallet
     "wallet.connect": "Connect Wallet",
     "wallet.connected": "Connected!",
-    "wallet.modal_title": "Connect Wallet",
-    "wallet.modal_description":
-      "Connect with one of our available wallet providers or create a new one.",
     "wallet.disconnect": "Disconnect",
     "wallet.chainId": "Chain ID",
     "wallet.balance": "Balance",
@@ -51,23 +50,18 @@ const translations = {
     "about.CV": "Resume",
     "about.view_CV": "View",
     "about.download_CV": "Download",
-    "about.bio":
-      "I'm a motivated developer with a strong interest in <strong>Web3</strong> and blockchain technology. With a solid foundation in both frontend and backend development, I'm well-equipped to build comprehensive decentralized applications (dApps) that leverage blockchain technology for secure, scalable, and user-friendly solutions.",
-    //  "I'm a passionate Web3 developer with expertise in blockchain technology, smart contracts, and decentralized applications. With a strong foundation in both frontend and backend development, I specialize in building secure, scalable, and user-friendly blockchain solutions.",
+    "about.attribute.innovator": "Innovator",
+    "about.attribute.developer": "Developer",
+    "about.attribute.web3": "Web3",
+    "about.attribute.blockchain": "Blockchain",
     "about.short_bio":
       "I'm a <span class='text-primary font-semibold underline'>developer</span> with a passion for <span class='text-primary font-semibold text-2xl'>blockchain</span> technology and <span class='text-primary font-semibold text-2xl'>web3</span> applications.",
     "about.what_i_do_title": "What I Do",
     "about.what_i_do_description":
       "I'm skilled in developing applications using blockchain technology, including smart contracts and decentralized systems. My knowledge spans both public and private blockchains, and I'm eager to apply my skills in real-world projects.",
-    // "I develop smart contracts, build decentralized applications (dApps), and create innovative solutions using blockchain technology. My expertise spans across DeFi protocols, NFT marketplaces, DAOs, and custom blockchain implementations.",
     "about.looking_for_title": "What I'm Looking For",
     "about.looking_for_description":
       "I'm excited to join a team working on innovative Web3 projects that push the boundaries of what's possible in the decentralized space. I'm looking for a collaborative environment where I can grow professionally and contribute to the development of cutting-edge Web3 applications.",
-    // "I'm seeking opportunities to work on challenging blockchain projects that push the boundaries of what's possible in the Web3 space. I'm particularly interested in DeFi innovations, cross-chain solutions, and projects focused on improving blockchain scalability and user experience.",
-    "about.attribute.innovator": "Innovator",
-    "about.attribute.developer": "Developer",
-    "about.attribute.web3": "Web3",
-    "about.attribute.blockchain": "Blockchain",
 
     // Skills
     "skills.title": "My Skills",
@@ -149,27 +143,8 @@ const translations = {
     "contact.description":
       "Interested in working together? Have a project in mind? Feel free to reach out!",
     "contact.cta": "Contact Me",
-    "contact.form.name": "Name",
-    "contact.form.email": "Email",
-    "contact.form.message": "Message",
-    "contact.form.submit": "Send Message",
-    "contact.form.sending": "Sending...",
-    "contact.form.success":
-      "Your message has been sent successfully! I'll get back to you soon.",
 
     // Footer
-    "footer.description":
-      "Building the decentralized future with blockchain technology and Web3 development.",
-    "footer.links": "Quick Links",
-    "footer.resources": "Resources",
-    "footer.legal": "Legal",
-    "footer.blog": "Blog",
-    "footer.tutorials": "Tutorials",
-    "footer.docs": "Documentation",
-    "footer.newsletter": "Newsletter",
-    "footer.privacy": "Privacy Policy",
-    "footer.terms": "Terms of Service",
-    "footer.cookies": "Cookie Policy",
     "footer.copyright": "All rights reserved.",
 
     // languages
@@ -180,9 +155,9 @@ const translations = {
     "languages.catalan": "Catalan",
     "languages.catalan_level": "Native",
     "languages.english": "English",
-    "languages.english_level": "Professional Use",
+    "languages.english_level": "Professional",
     "languages.german": "German",
-    "languages.german_level": "Basic Level",
+    "languages.german_level": "Basic",
   },
 
   es: {
@@ -190,12 +165,14 @@ const translations = {
     "site.title": "Portafolio de Desarrollador Web3",
 
     // Navigation
-    "nav.name": "John Doe",
+    "nav.name": "Marc Toni Mas",
     "nav.about": "Sobre Mí",
-    "nav.skills": "Habilidades",
+    "nav.skills": "Aptitudes",
     "nav.projects": "Proyectos",
     "nav.background": "Experiencia",
     "nav.contact": "Contacto",
+    "nav.connect": "Contáctame en",
+    "nav.mobile_menu_footer": " Marc Toni Mas. Todos los derechos reservados.",
 
     // Theme
     "theme.light": "Claro",
@@ -203,36 +180,43 @@ const translations = {
     "theme.system": "Sistema",
 
     // Hero
-    "hero.title": "Desarrollador Web3 & Entusiasta de Blockchain",
+    "hero.title":
+      "<h1 class='text-6xl font-bold'>Desarrollador Full Stack orientado a <span class='text-accent'>Blockchain</span></h1>",
     "hero.subtitle":
-      "Construyendo el futuro descentralizado con contratos inteligentes, DeFi y tecnología blockchain",
+      "<p class=''>Integrando <span class='font-semibold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent text-2xl md:text-3xl'>web3</span> y tecnologías <span class='font-semibold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent text-2xl md:text-3xl'>descentralizadas</span> en la web tradicional </p>",
     "hero.cta_primary": "Ver Proyectos",
-    "hero.cta_secondary": "Contáctame",
+    "hero.cta_secondary": "Contacto",
 
     // Wallet
-    "wallet.connect": "Conectar Wallet",
-    "wallet.connected_with": "Conectado con",
-    "wallet.modal_title": "Conectar Wallet",
-    "wallet.modal_description":
-      "Conecta con uno de nuestros proveedores de wallet disponibles o crea uno nuevo.",
-    "wallet.cancel": "Cancelar",
+    "wallet.connect": "Conectar Billetera",
+    "wallet.connected": "¡Conectado!",
+    "wallet.disconnect": "Desconectar",
+    "wallet.chainId": "ID de cadena",
+    "wallet.balance": "Saldo",
+    "wallet.network": "Red",
 
     // About
     "about.title": "Sobre Mí",
     "about.name": "Marc Antoni Mas",
     "about.CV": "Currículo",
+    "about.view_CV": "Ver",
+    "about.download_CV": "Descargar",
+    "about.attribute.innovator": "Inovador",
+    "about.attribute.developer": "Desarrollador",
+    "about.attribute.web3": "Web3",
+    "about.attribute.blockchain": "Blockchain",
+    "about.short_bio":
+      "<span class='text-primary font-semibold underline'>Desarrollador</span> apasionado por la tecnología <span class='text-primary font-semibold text-2xl'>blockchain</span> y las aplicaciones <span class='text-primary font-semibold text-2xl'>web3</span>.",
 
-    "about.bio":
-      "Soy un desarrollador Web3 apasionado con experiencia en tecnología blockchain, contratos inteligentes y aplicaciones descentralizadas. Con una sólida base en desarrollo frontend y backend, me especializo en construir soluciones blockchain seguras, escalables y fáciles de usar.",
     "about.what_i_do_title": "Lo Que Hago",
     "about.what_i_do_description":
-      "Desarrollo contratos inteligentes, construyo aplicaciones descentralizadas (dApps) y creo soluciones innovadoras utilizando tecnología blockchain. Mi experiencia abarca protocolos DeFi, mercados de NFT, DAOs e implementaciones personalizadas de blockchain.",
+      "Desarrollo de aplicaciones utilizando tecnología blockchain, incluyendo contratos inteligentes y sistemas descentralizados. Mi conocimiento abarca tanto blockchains públicas como privadas, y estoy ansioso por aplicar mis habilidades en proyectos del mundo real.",
     "about.looking_for_title": "Lo Que Busco",
     "about.looking_for_description":
-      "Busco oportunidades para trabajar en proyectos blockchain desafiantes que amplíen los límites de lo posible en el espacio Web3. Estoy particularmente interesado en innovaciones DeFi, soluciones cross-chain y proyectos enfocados en mejorar la escalabilidad y experiencia de usuario en blockchain.",
+      "Unirme a un equipo que trabaje en proyectos innovadores de Web3 que amplíen los límites de lo posible en el espacio descentralizado. Busco un entorno colaborativo donde pueda crecer profesionalmente y contribuir al desarrollo de aplicaciones Web3 de vanguardia.",
 
     // Skills
-    "skills.title": "Mis Habilidades",
+    "skills.title": "Mis Aptitudes",
     "skills.blockchain_title": "Blockchain",
     "skills.languages_title": "Lenguajes",
     "skills.frontend_title": "Frontend",
@@ -296,37 +280,18 @@ const translations = {
     "background.certifications.cert4.date": "Noviembre 2021",
 
     // Contact
-    "contact.title": "Ponte en Contacto",
+    "contact.title": "Contacto",
     "contact.get_in_touch": "Hablemos",
     "contact.invite":
-      "I'm always excited to connect with fellow professionals and discuss potential collaborations. Whether you have questions, ideas, or just want to chat, I'd love to hear from you. Let's start a conversation and see where it leads!",
+      "Siempre es emocionante conectar con otros profesionales y discutir posibles colaboraciones. Si tienes preguntas, ideas o simplemente quieres charlar, me encantaría saber de ti. ¡Empecemos y a ver hasta dónde llegamos!",
     "contact.quote":
-      "To give real service you must add something which cannot be bought or measured with money, and that is sincerity and integrity.",
+      "Para ofrecer un servicio genuino, hay que agregar algo que no se compra ni se mide con dinero, y eso es sinceridad e integridad.",
     "contact.description":
       "¿Interesado en trabajar juntos? ¿Tienes un proyecto en mente? ¡No dudes en contactarme!",
     "contact.social_media": "Encuéntrame en",
     "contact.cta": "Contáctame",
-    "contact.form.name": "Nombre",
-    "contact.form.email": "Correo Electrónico",
-    "contact.form.message": "Mensaje",
-    "contact.form.submit": "Enviar Mensaje",
-    "contact.form.sending": "Enviando...",
-    "contact.form.success":
-      "Tu mensaje ha sido enviado con éxito. Me pondré en contacto contigo pronto.",
 
     // Footer
-    "footer.description":
-      "Construyendo el futuro descentralizado con tecnología blockchain y desarrollo Web3.",
-    "footer.links": "Enlaces Rápidos",
-    "footer.resources": "Recursos",
-    "footer.legal": "Legal",
-    "footer.blog": "Blog",
-    "footer.tutorials": "Tutoriales",
-    "footer.docs": "Documentación",
-    "footer.newsletter": "Boletín",
-    "footer.privacy": "Política de Privacidad",
-    "footer.terms": "Términos de Servicio",
-    "footer.cookies": "Política de Cookies",
     "footer.copyright": "Todos los derechos reservados.",
 
     // languages
@@ -337,9 +302,9 @@ const translations = {
     "languages.catalan": "Catalán",
     "languages.catalan_level": "Nativo",
     "languages.english": "Inglés",
-    "languages.english_level": "Uso Profesional",
+    "languages.english_level": "Profesional",
     "languages.german": "Alemán",
-    "languages.german_level": "Nivel Básico",
+    "languages.german_level": "Básico",
   },
 };
 

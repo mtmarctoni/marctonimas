@@ -1,6 +1,6 @@
-import Github from "@/assets/github.svg?component";
-import LinkedIn from "@/assets/linkedin.svg?component";
-import Email from "@/assets/email.svg?component";
+import Github from "@/assets/socialIcons/github.svg?component";
+import LinkedIn from "@/assets/socialIcons/linkedin.svg?component";
+import Email from "@/assets/socialIcons/email.svg?component";
 import ArrorDown from "@/assets/arrow-down.svg?component";
 import Blockchain from "@/assets/Blockchain.svg?component";
 import Code from "@/assets/code.svg?component";
@@ -8,7 +8,7 @@ import Tools from "@/assets/tools.svg?component";
 import Frame from "@/assets/frame.svg?component";
 import Database from "@/assets/database.svg?component";
 import Location from "@/assets/location.svg?component";
-import Phone from "@/assets/phone.svg?component";
+import Phone from "@/assets/socialIcons/phone.svg?component";
 import Bulb from "@/assets/bulb.svg?component";
 import ZoomCheck from "@/assets/zoom-check.svg?component";
 import Certificate from "@/assets/certificate.svg?component";
@@ -24,6 +24,10 @@ import Moon from "@/assets/moon.svg?component";
 import System from "@/assets/system.svg?component";
 import Menu from "@/assets/menu.svg?component";
 import Cross from "@/assets/cross.svg?component";
+import Telegram from "@/assets/socialIcons/telegram.svg?component";
+import Whatsapp from "@/assets/socialIcons/whatsapp.svg?component";
+
+let Icons = {};
 
 export const GithubIcon = Github;
 export const LinkedInIcon = LinkedIn;
@@ -51,32 +55,36 @@ export const MoonIcon = Moon;
 export const SystemIcon = System;
 export const MenuIcon = Menu;
 export const CrossIcon = Cross;
+export const TelegramIcon = Telegram;
+export const WhatsappIcon = Whatsapp;
 
-// export default {
-//   GithubIcon,
-//   LinkedInIcon,
-//   EmailIcon,
-//   ArrowDownIcon,
-//   BlockchainIcon,
-//   CodeIcon,
-//   ToolsIcon,
-//   FrameIcon,
-//   DatabaseIcon,
-//   LocationIcon,
-//   PhoneIcon,
-//   BulbIcon,
-//   ZoomCheckIcon,
-//   CertificateIcon,
-//   ResearchIcon,
-//   WorkIcon,
-//   RocketIcon,
-//   LoginIcon,
-//   LogoutIcon,
-//   CheckIcon,
-//   ClipboardIcon,
-//   SunIcon,
-//   MoonIcon,
-//   SystemIcon,
-//   MenuIcon,
-//   CrossIcon,
-// };
+export default Icons = {
+  GithubIcon,
+  LinkedInIcon,
+  EmailIcon,
+  ArrowDownIcon,
+  BlockchainIcon,
+  CodeIcon,
+  ToolsIcon,
+  FrameIcon,
+  DatabaseIcon,
+  LocationIcon,
+  PhoneIcon,
+  BulbIcon,
+  ZoomCheckIcon,
+  CertificateIcon,
+  ResearchIcon,
+  WorkIcon,
+  RocketIcon,
+  LoginIcon,
+  LogoutIcon,
+  CheckIcon,
+  ClipboardIcon,
+  SunIcon,
+  MoonIcon,
+  SystemIcon,
+  MenuIcon,
+  CrossIcon,
+  TelegramIcon,
+  WhatsappIcon,
+};

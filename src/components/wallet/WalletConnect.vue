@@ -34,9 +34,9 @@
     <button
       v-else
       @click="connectWallet"
-      class="flex items-center gap-2 px-4 py-2 text-fg bg-bg-alt rounded-full border-2 border-primary hover:bg-secondary/50 transition-all duration-300 hover:shadow-xl"
+      class="flex items-center gap-2 px-4 py-2 text-bg bg-gradient-to-r from-secondary to-tertiary rounded-full border-2 border-primary/50 hover:scale-105 transition-all duration-300 hover:shadow-xl"
     >
-      <div class="w-3 h-3 rounded-full bg-fg"></div>
+      <div class="w-3 h-3 rounded-full bg-bg"></div>
       <span>{{ t("wallet.connect") }}</span>
     </button>
   </div>

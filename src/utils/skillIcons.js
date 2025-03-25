@@ -25,6 +25,7 @@ import Metamask from "@/assets/skill-icons/metamask.svg?component";
 import Nextjs from "@/assets/skill-icons/nextjs.svg?component";
 import Ethereum from "@/assets/skill-icons/ethereum.svg?component";
 import Docker from "@/assets/skill-icons/docker.svg?component";
+import Foundry from "@/assets/skill-icons/foundry.svg?component";
 
 let SkillIcons = {};
 
@@ -55,6 +56,7 @@ export const MetamaskIcon = Metamask;
 export const NextjsIcon = Nextjs;
 export const EthereumIcon = Ethereum;
 export const DockerIcon = Docker;
+export const FoundryIcon = Foundry;
 
 export default SkillIcons = {
   JavaScriptIcon,
@@ -84,4 +86,5 @@ export default SkillIcons = {
   NextjsIcon,
   Ethereum,
   DockerIcon,
+  FoundryIcon,
 };

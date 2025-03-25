@@ -103,7 +103,7 @@ export function useWallet(t) {
     balance.value = null;
     provider = null;
     network = null;
-    networkInfo = null;
+    networkInfo.value = null;
   };
 
   const shortenAddress = (address) => {

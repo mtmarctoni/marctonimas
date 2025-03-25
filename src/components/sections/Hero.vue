@@ -1,29 +1,24 @@
 <script setup>
 import { useTranslations, getLangFromUrl } from "@/i18n/utils";
-import WalletConnect from "@/components/WalletConnect.vue";
+import WalletConnect from "@/components/wallet/WalletConnect.vue";
 import { ArrowDownIcon } from "@/utils/icons";
 
 // Get current language from URL
 const lang = getLangFromUrl(new URL(window.location.href));
 const t = useTranslations(lang);
 
-const htmlString = t("hero.title");
+const titleHtmlString = t("hero.title");
+const subtitleHtmlString = t("hero.subtitle");
 </script>
 
 <template>
   <section class="relative min-h-screen flex items-center pt-20">
     <div class="container mx-auto px-4 py-16 md:py-32 z-10">
-      <div class="max-w-3xl mx-auto text-center">
-        <div v-html="htmlString"></div>
-        <!-- <h1
-          class="text-4xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent"
-        >
-          {{ t("hero.title") }}
-        </h1> -->
-        <p class="text-xl md:text-2xl mb-8 text-gray-700 dark:text-gray-300">
-          {{ t("hero.subtitle") }}
-        </p>
-        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+      <div class="max-w-3xl mx-auto px-8 text-center">
+        <div v-html="titleHtmlString"></div>
+        <div v-html="subtitleHtmlString" class="text-xl md:text-2xl my-8"></div>
+
+        <div class="flex flex-col sm:flex-row gap-4 justify-center p-10">
           <a
             href="#projects"
             class="px-6 py-3 bg-gradient-to-r from-primary to-secondary text-white font-medium rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"

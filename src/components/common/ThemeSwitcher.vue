@@ -46,7 +46,7 @@
 <script setup>
 import { ref, onMounted, onUnmounted } from "vue";
 import ToggleDropDown from "./ToggleDropDown.vue";
-import { useTranslations, getLangFromUrl } from "../i18n/utils";
+import { useTranslations, getLangFromUrl } from "../../i18n/utils";
 import { MoonIcon, SunIcon, SystemIcon } from "@/utils/icons";
 
 const themeDropdownOpen = ref(false);

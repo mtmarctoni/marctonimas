@@ -9,12 +9,13 @@ interface Props {
   href?: string;
 }
 
-const { className = "", icon, text, value, href = "" } = Astro.props as Props;
+const { icon, text, value, href = "" } = Astro.props as Props;
 
 const Icon = icon;
 
 const url: string = String(new URL(Astro.url));
 const lan = url.includes("es") ? "es" : "en";
+const copiedValue = href.includes("http") ? href : value;
 ---
 
 <a
@@ -38,7 +39,7 @@ const lan = url.includes("es") ? "es" : "en";
       </div>
       <div
         class="absolute right-2 top-2"
-        data-value={value}
+        data-value={copiedValue}
         id={`copy-item-${text}`}
       >
         <ClipboardIcon class="h-5 w-5 text-fg hover:text-primary" />
@@ -46,7 +47,7 @@ const lan = url.includes("es") ? "es" : "en";
         <div
           class="copy-tooltip absolute -top-8 left-0 transform -translate-x-1/2 bg-bg-secondary text-fg px-2 py-1 rounded text-sm opacity-0 transition-opacity duration-300"
         >
-          {lan === "en" ? "Copied!" : "Copiado!"}
+          {lan === "en" ? "Copied!" : "¡Copiado!"}
         </div>
       </div>
     </div>

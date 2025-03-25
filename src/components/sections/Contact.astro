@@ -5,8 +5,7 @@ import {
   MY_GITHUB,
   MY_LINKEDIN,
   MY_LOCATION,
-  MY_NAME,
-  MY_PHONE,
+  MY_TELEGRAM,
 } from "@/utils/constants";
 import { useTranslations, getLangFromUrl } from "@/i18n/utils";
 import {
@@ -14,10 +13,10 @@ import {
   LinkedInIcon,
   EmailIcon,
   LocationIcon,
-  PhoneIcon,
+  TelegramIcon,
 } from "@/utils/icons";
 import SectionContainer from "../containers/SectionContainer.astro";
-import ContactItem from "../ContactItem.astro";
+import ContactItem from "@/components/containers/ContactItem.astro";
 
 // Get current language from URL
 const url = new URL(Astro.url);
@@ -80,7 +79,12 @@ const t = useTranslations(lang);
                   value={MY_EMAIL}
                   href={`mailto:${MY_EMAIL}`}
                 />
-                <ContactItem icon={PhoneIcon} text="Phone" value={MY_PHONE} />
+                <ContactItem
+                  icon={TelegramIcon}
+                  text="Telegram"
+                  value={`@${MY_TELEGRAM}`}
+                  href={`https://t.me/${MY_TELEGRAM}`}
+                />
                 <ContactItem
                   icon={LinkedInIcon}
                   text="LinkedIn"
@@ -97,7 +101,7 @@ const t = useTranslations(lang);
                 />
                 <ContactItem
                   icon={LocationIcon}
-                  text="Location"
+                  text={String(url).includes("es") ? "Ubicación" : "Location"}
                   value={MY_LOCATION}
                 />
               </div>

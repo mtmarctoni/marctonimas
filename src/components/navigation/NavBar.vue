@@ -2,8 +2,8 @@
 import { ref, computed } from "vue";
 
 import MobileMenu from "./MobileMenu.vue";
-import ThemeSwitcher from "@/components/ThemeSwitcher.vue";
-import LanguageSwitcher from "@/components/LanguageSwitcher.vue";
+import ThemeSwitcher from "@/components/common/ThemeSwitcher.vue";
+import LanguageSwitcher from "@/components/common/LanguageSwitcher.vue";
 import NavLogo from "./NavLogo.vue";
 import NavLinks from "./NavLinks.vue";
 
