@@ -3,6 +3,7 @@ import Layout from "@/layouts/Layout.astro";
 import { getLangFromUrl, useTranslations } from "@/i18n/utils";
 import WorkExperience from "@/components/sections/WorkExperience.astro";
 import Education from "@/components/sections/Education.astro";
+import Contact from "@/components/sections/Contact.astro";
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
@@ -12,4 +13,5 @@ const t = useTranslations(lang);
   <div class="h-[57px]"></div>
   <WorkExperience />
   <Education />
+  <Contact />
 </Layout>

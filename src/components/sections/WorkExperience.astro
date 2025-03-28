@@ -1,126 +1,59 @@
 ---
-import { Image } from 'astro:assets';
-import { useTranslations, getLangFromUrl } from "@/i18n/utils";
-
-import SectionContainer from '../containers/SectionContainer.astro';
+import SectionContainer from "../containers/SectionContainer.astro";
+import { workExperience as rawWorkExperience } from "@/i18n/workExperience";
+import { getLangFromUrl } from "@/i18n/utils";
+import WorkExperienceCard from "../containers/WorkExperienceCard.vue";
 
 const url = new URL(Astro.url);
-const lang = getLangFromUrl(url);
-const t = useTranslations(lang);
+const lang = getLangFromUrl(url) as "es" | "en";
 
 interface Job {
   id: string;
   company: string;
+  link: string;
+  img: string;
+  imgD: string;
   title: string;
   period: string;
   city: string;
   description?: string;
   duties: string[];
-  img: string;
-  link: string;
 }
 
 interface WorkExperience {
-      title: string;
-      subtitle: string;
-      dropdown: string[];
-      jobList: Job[];
+  title: string;
+  subtitle: string;
+  dropdown: string[];
+  jobList: Job[];
 }
 
-const workExperience: WorkExperience = {
-  title: t('workExperience'),
-  subtitle: t('workExperienceSubtitle'),
-  dropdown: [t('dropdown.show_less'), t('dropdown.show_more')],
-  jobList: [
-    {
-      id: '1',
-      company: 'Company 1',
-      title: 'Job Title 1',
-      period: '2020-2022',
-      city: 'City 1',
-      description: 'Description 1',
-      duties: ['Duty 1', 'Duty 2'],
-      img: 'https://upload.wikimedia.org/wikipedia/commons/e/e8/Binance_Logo.svg',
-      link: 'https://example.com',
-      },
-      {
-        id: '2',
-        company: 'Company 2',
-        title: 'Job Title 2',
-        period: '2022-2024',
-        city: 'City 2',
-        description: 'Description 2',
-        duties: ['Duty 3', 'Duty 4'],
-        img: 'https://upload.wikimedia.org/wikipedia/commons/e/e8/Binance_Logo.svg',
-        link: 'https://example.com',
-        },
-        ],
-};
+const workExperience = rawWorkExperience[lang] as unknown as WorkExperience;
 
 const { title, subtitle, dropdown, jobList } = workExperience;
 ---
 
-<SectionContainer sectionId="background-full">
-
-  <h2 class="text-3xl font-bold text-primary mb-8">{title}</h2>
-  {jobList.map((job) => (
-    <div class="mb-5 bg-bg-secondary rounded-lg shadow-lg overflow-hidden">
-      <div class="md:flex">
-        <div class="md:flex-shrink-0 md:w-48 flex flex-col items-center md:border-r-2 border-b-2 md:border-b-bg-secondary border-fg-alt/20">
-          <div class="w-64 md:w-36 h-36 flex items-center justify-center">
-            <a href={job.link} target="_blank" rel="noopener noreferrer">
-              <Image
-                class="max-w-full max-h-full object-contain"
-                src={job.img}
-                alt={job.company}
-                width={144}
-                height={144}
-              />
-            </a>
-          </div>
-          <p class="p-4 px-8 text-center text-sm text-fg-alt">{job.period}</p>
-          <p class="px-6 pb-4 text-center text-sm text-fg">{job.city}</p>
-        </div>
-        <div class="py-4 px-8 flex-grow text-center md:text-left content-center">
-          <div class="uppercase tracking-wide text-sm text-secondary font-semibold">{job.company}</div>
-          <h3 class="mt-1 text-2xl leading-tight font-medium text-primary">{job.title}</h3>
-          {job.description && <p class="mt-4 text-fg">{job.description}</p>}
-          
-          <!-- Dropdown for duties -->
-          <div class="duties-dropdown" data-job-id={job.id}>
-            <button class="text-primary hover:text-secondary transition-colors duration-300">
-              {dropdown[1]}
-            </button>
-            <ul class="hidden list-disc list-inside mt-2 text-fg">
-              {job.duties.map((duty, index) => (
-                <li class="flex items-start">
-                  <svg class="h-6 w-6 text-accent mr-2 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-                  </svg>
-                  <span class="text-fg text-start">{duty}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
-        </div>
-      </div>
+<SectionContainer sectionId="work-experience">
+  <div class="relative">
+    <!-- Decorative background element -->
+    <div
+      class="absolute -top-20 -left-20 w-72 h-72 bg-primary/10 rounded-full blur-3xl"
+    >
     </div>
-  ))}
+
+    <h2 class="text-4xl font-bold text-center mb-12">
+      <span
+        class="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent"
+      >
+        {title}
+      </span>
+    </h2>
+
+    <div class="flex flex-col gap-6">
+      {
+        jobList.map((job) => (
+          <WorkExperienceCard job={job} dropdown={dropdown} client:load />
+        ))
+      }
+    </div>
+  </div>
 </SectionContainer>
-
-
-<script>
-  document.addEventListener('DOMContentLoaded', () => {
-    const dropdowns = document.querySelectorAll('.duties-dropdown');
-    dropdowns.forEach(dropdown => {
-      const button = dropdown.querySelector('button');
-      const list = dropdown.querySelector('ul');
-      button?.addEventListener('click', () => {
-        const isHidden = list?.classList.contains('hidden');
-        list?.classList.toggle('hidden');
-        button.textContent = isHidden ? dropdown.getAttribute('data-hide-text') : dropdown.getAttribute('data-show-text');
-      });
-    });
-  });
-</script>
-

@@ -1,5 +1,85 @@
 ---
 import SectionContainer from "@/components/containers/SectionContainer.astro";
+import CertificateCard from "@/components/containers/CertificateCard.vue";
+import { certifications as rawCertifications } from "@/i18n/certifications";
+import { getLangFromUrl } from "@/i18n/utils";
+
+const url = new URL(Astro.url);
+const lang = getLangFromUrl(url) as "en" | "es";
+
+interface Certificate {
+  id: string;
+  name: string;
+  link: string;
+  description?: string;
+  institution: string;
+  date: string;
+  img: string;
+  imgD: string;
+}
+
+interface Certifications {
+  title: string;
+  subtitle: string;
+  button: string;
+  certificationList: Certificate[];
+}
+
+const certifications = rawCertifications[lang] as unknown as Certifications;
+const { title, button, certificationList } = certifications;
+---
+
+<SectionContainer sectionId="certifications">
+  <div class="relative">
+    <!-- Decorative element -->
+    <div
+      class="absolute -top-20 left-1/2 w-[500px] h-[500px] bg-gradient-to-r from-primary/20 to-secondary/20 rounded-full blur-3xl -translate-x-1/2"
+    >
+    </div>
+
+    <h2 class="text-4xl font-bold text-center mb-12">
+      <span
+        class="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent"
+      >
+        {title}
+      </span>
+    </h2>
+
+    <div class="grid grid-cols-1 gap-4">
+      {
+        certificationList.map((cert: Certificate) => (
+          <CertificateCard
+            class:list={"dark:hidden"}
+            name={cert.name}
+            description={cert.description}
+            issuer={cert.institution}
+            date={cert.date}
+            link={cert.link}
+            issuerLink={cert.link}
+            icon={cert.img}
+            button={button}
+            client:load
+          />
+          <CertificateCard
+            class:list={"hidden dark:grid"}
+            name={cert.name}
+            description={cert.description}
+            issuer={cert.institution}
+            date={cert.date}
+            link={cert.link}
+            issuerLink={cert.link}
+            icon={cert.imgD}
+            button={button}
+            client:load
+          />
+        ))
+      }
+    </div>
+  </div>
+</SectionContainer>
+
+<!-- ---
+import SectionContainer from "@/components/containers/SectionContainer.astro";
 import { useTranslations, getLangFromUrl } from "@/i18n/utils";
 import { CertificateIcon } from "@/utils/icons"; // Assuming you have this icon
 
@@ -80,4 +160,4 @@ const certifications = [
       ))
     }
   </div>
-</SectionContainer>
+</SectionContainer> -->

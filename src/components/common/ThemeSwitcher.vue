@@ -3,7 +3,7 @@
     <ToggleDropDown>
       <template #button-content>
         <button
-          class="flex items-center justify-center w-8 h-8 rounded-full border focus:outline-none border-primary dark:border-secondary hover:bg-primary/20 dark:hover:bg-secondary/20"
+          class="flex items-center justify-center w-8 h-8 rounded-full border focus:outline-none border-primary/50 dark:border-secondary/50 hover:bg-primary/20 dark:hover:bg-secondary/20"
           aria-label="Toggle theme"
         >
           <SunIcon v-if="currentTheme === 'light'" class="w-4 h-4" />

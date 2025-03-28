@@ -99,18 +99,40 @@ const translations = {
       "A bridge for transferring assets between Ethereum and Layer 2 scaling solutions.",
 
     // Background
-    "background.title": "Background & Education",
-    "background.education_title": "Education",
-    "background.certifications_title": "Certifications",
-    "background.education.degree1": "Master of Science in Computer Science",
-    "background.education.institution1": "Stanford University",
-    "background.education.description1":
-      "Specialized in blockchain technology and distributed systems. Thesis on scalable consensus mechanisms for public blockchains.",
-    "background.education.degree2":
-      "Bachelor of Science in Computer Engineering",
-    "background.education.institution2": "MIT",
-    "background.education.description2":
-      "Focused on cryptography, algorithms, and software engineering fundamentals.",
+    "background.title": "Professional Background",
+    "background.opening_statement":
+      "Transitioning from renewable energy, I bring a robust foundation in software development and problem-solving, aiming to leverage my skills in full-stack development and contribute to innovative Web3 projects.",
+    "background.career_transition_title": "My Journey to Full-Stack & Web3",
+    "background.career_transition_description":
+      "Driven by a passion for building dynamic web applications and exploring the potential of decentralized technologies, I've dedicated myself to mastering full-stack development.  My experience in creating custom software solutions and managing complex data systems provides a strong base for building both traditional and Web3 applications.  I've also been actively learning Solidity and exploring blockchain architecture, building personal projects to deepen my understanding of decentralized technologies.",
+    "background.relevant_experience_title": "Relevant Technical Experience",
+    "background.relevant_experience.job1_title":
+      "Software Development & Automation",
+    "background.relevant_experience.job1_date": "2021-2024",
+    "background.relevant_experience.job1_duty1":
+      "Spearheaded development of custom JavaScript tools, enhancing front-end functionality and team productivity",
+    "background.relevant_experience.job1_duty2":
+      "Engineered data pipelines and analysis systems, including working with APIs and databases, automating reporting and saving many hours weekly",
+    "background.relevant_experience.job1_duty3":
+      "Implemented project monitoring solutions, improving efficiency",
+    "background.relevant_experience.job1_duty4":
+      "Developed and mantain VBA applications for technical studies.",
+    "background.relevant_experience.job2_title": "Technical Leadership",
+    "background.relevant_experience.job2_date": "2022-2024",
+    "background.relevant_experience.job2_duty1":
+      "Led a team of 3 in implementing innovative technical solutions",
+    "background.relevant_experience.job2_duty2":
+      "Managed 5+ complex projects simultaneously, all delivered on time and within budget",
+    "background.relevant_experience.job2_duty3":
+      "Optimized system efficiency, leading to a significant increase in overall productivity",
+    "background.transferable_skills_title": "Key Transferable Skills",
+    "background.web3_connection_title":
+      "Full-Stack Development Focus with Web3 Interest",
+    "background.web3_connection_description":
+      "My experience in building robust software solutions, combined with my passion for Web3, positions me as a versatile full-stack developer eager to contribute to innovative projects. I'm particularly interested in applying my skills to develop decentralized applications and explore the potential of blockchain technology.",
+    "background.view_full_background": "View My Full Background",
+
+    // Certifications
     "background.certifications.cert1.name": "Certified Blockchain Developer",
     "background.certifications.cert1.issuer": "Blockchain Council",
     "background.certifications.cert1.date": "January 2023",
@@ -124,14 +146,6 @@ const translations = {
     "background.certifications.cert4.name": "DeFi Developer Certification",
     "background.certifications.cert4.issuer": "Chainlink",
     "background.certifications.cert4.date": "November 2021",
-
-    "background.title": "Professional Background",
-    "background.career_transition_title": "My Journey to Web3",
-    "background.career_transition_description":
-      "After several years in renewable energy technology, I've transitioned to blockchain development, bringing valuable experience in software development, automation, and technical leadership. My background in creating custom tools and implementing data systems provides a strong foundation for building decentralized applications.",
-    "background.relevant_experience_title": "Relevant Technical Experience",
-    "background.transferable_skills_title": "Transferable Skills",
-    "background.view_full_background": "View My Full Background",
 
     // Contact
     "contact.title": "Get In Touch",
@@ -251,33 +265,40 @@ const translations = {
       "Un puente para transferir activos entre Ethereum y soluciones de escalado de Capa 2.",
 
     // Background
-    "background.title": "Experiencia y Educación",
-    "background.education_title": "Educación",
-    "background.certifications_title": "Certificaciones",
-    "background.education.degree1": "Maestría en Ciencias de la Computación",
-    "background.education.institution1": "Universidad de Stanford",
-    "background.education.description1":
-      "Especializado en tecnología blockchain y sistemas distribuidos. Tesis sobre mecanismos de consenso escalables para blockchains públicas.",
-    "background.education.degree2": "Licenciatura en Ingeniería Informática",
-    "background.education.institution2": "MIT",
-    "background.education.description2":
-      "Enfocado en criptografía, algoritmos y fundamentos de ingeniería de software.",
-    "background.certifications.cert1.name":
-      "Desarrollador Blockchain Certificado",
-    "background.certifications.cert1.issuer": "Blockchain Council",
-    "background.certifications.cert1.date": "Enero 2023",
-    "background.certifications.cert2.name":
-      "Certificación de Desarrollador Ethereum",
-    "background.certifications.cert2.issuer": "ConsenSys Academy",
-    "background.certifications.cert2.date": "Agosto 2022",
-    "background.certifications.cert3.name":
-      "Profesional de Seguridad en Contratos Inteligentes",
-    "background.certifications.cert3.issuer": "OpenZeppelin",
-    "background.certifications.cert3.date": "Marzo 2022",
-    "background.certifications.cert4.name":
-      "Certificación de Desarrollador DeFi",
-    "background.certifications.cert4.issuer": "Chainlink",
-    "background.certifications.cert4.date": "Noviembre 2021",
+    "background.title": "Experiencia Profesional",
+    "background.opening_statement":
+      "Con una transición desde energías renovables, aporto una sólida base en desarrollo de software y resolución de problemas, con el objetivo de aplicar mis habilidades en desarrollo full-stack y contribuir a proyectos innovadores en Web3.",
+    "background.career_transition_title": "Mi Transición a Full-Stack y Web3",
+    "background.career_transition_description":
+      "Impulsado por la pasión de crear aplicaciones web dinámicas y explorar el potencial de las tecnologías descentralizadas, me he dedicado a dominar el desarrollo full-stack. Mi experiencia en la creación de soluciones de software personalizadas y la gestión de sistemas de datos complejos proporciona una base sólida para construir tanto aplicaciones tradicionales como Web3. Además, he estado aprendiendo activamente Solidity y explorando la arquitectura blockchain, desarrollando proyectos personales para profundizar mi comprensión de las tecnologías descentralizadas.",
+    "background.relevant_experience_title": "Experiencia Técnica Relevante",
+    "background.relevant_experience.job1_title":
+      "Desarrollo de Software y Automatización",
+    "background.relevant_experience.job1_date": "2021-2024",
+    "background.relevant_experience.job1_duty1":
+      "Liderar el desarrollo de herramientas JavaScript personalizadas, mejorando la funcionalidad del front-end y la productividad del equipo",
+    "background.relevant_experience.job1_duty2":
+      "Gestión y análisis de datos, incluyendo el trabajo con APIs y bases de datos, automatizando informes y ahorrando muchas horas semanales",
+    "background.relevant_experience.job1_duty3":
+      "Implementación de soluciones de monitorización de proyectos, mejorando la eficiencia",
+    "background.relevant_experience.job1_duty4":
+      "Desarrollo y mantenimiento de aplicaciones con VBA para estudios técnicos.",
+    "background.relevant_experience.job2_title": "Liderazgo Técnico",
+    "background.relevant_experience.job2_date": "2022-2024",
+    "background.relevant_experience.job2_duty1":
+      "Liderar un equipo de 3 personas en la implementación de soluciones técnicas innovadoras",
+    "background.relevant_experience.job2_duty2":
+      "Gestion de más de 5 proyectos complejos simultáneamente, todos entregados a tiempo y dentro del presupuesto",
+    "background.relevant_experience.job2_duty3":
+      "Optimización de la eficiencia del sistema, logrando un aumento significativo en la productividad general",
+    "background.transferable_skills_title": "Habilidades Transferibles Clave",
+    "background.web3_connection_title":
+      "Enfoque en Desarrollo Full-Stack con Interés en Web3",
+    "background.web3_connection_description":
+      "Mi experiencia en la construcción de soluciones de software robustas, combinada con mi pasión por Web3, me posiciona como un desarrollador full-stack versátil, ansioso por contribuir a proyectos innovadores. Estoy particularmente interesado en aplicar mis habilidades para desarrollar aplicaciones descentralizadas y explorar el potencial de la tecnología blockchain.",
+    "background.view_full_background": "Ver Mi Experiencia Completa",
+
+    // Certificados
 
     // Contact
     "contact.title": "Contacto",

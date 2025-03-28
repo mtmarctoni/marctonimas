@@ -1,7 +1,7 @@
 ---
 import SectionContainer from "@/components/containers/SectionContainer.astro";
 import { useTranslations, getLangFromUrl } from "@/i18n/utils";
-import { CodeIcon, RocketIcon, ToolsIcon } from "@/utils/icons"; // Assuming you have these
+import { CodeIcon, RocketIcon, ToolsIcon } from "@/utils/icons";
 
 const url = new URL(Astro.url);
 const lang = getLangFromUrl(url);
@@ -9,13 +9,22 @@ const t = useTranslations(lang);
 ---
 
 <SectionContainer sectionId="background">
-  <h2 class="text-3xl font-bold mb-8 text-center">
+  <h2 class="text-4xl font-bold mb-8 text-center">
     <span
       class="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent"
     >
       {t("background.title")}
     </span>
   </h2>
+
+  <!-- Strong opening statement -->
+  <div
+    class="mb-10 bg-bg-secondary p-6 rounded-lg border-l-4 border-primary shadow-lg"
+  >
+    <p class="text-lg font-semibold text-fg">
+      {t("background.opening_statement")}
+    </p>
+  </div>
 
   <!-- Career Transition Story -->
   <div class="mb-10">
@@ -42,28 +51,27 @@ const t = useTranslations(lang);
         <div
           class="flex flex-col md:flex-row md:items-center md:justify-between mb-2"
         >
-          <h4 class="text-lg font-bold">Software Development & Automation</h4>
+          <h4 class="text-lg font-bold">
+            {t("background.relevant_experience.job1_title")}
+          </h4>
           <span
             class="px-3 py-1 bg-primary/10 text-primary rounded-full text-sm"
           >
-            2021-2024
+            {t("background.relevant_experience.job1_date")}
           </span>
         </div>
         <ul class="list-disc pl-5 space-y-2 text-fg-alt">
           <li>
-            Led software development initiatives, creating custom tools using
-            JavaScript
+            {t("background.relevant_experience.job1_duty1")}
           </li>
           <li>
-            Developed comprehensive data analysis systems with automated
-            reporting
+            {t("background.relevant_experience.job1_duty2")}
           </li>
           <li>
-            Implemented automated solutions for project monitoring and
-            optimization
+            {t("background.relevant_experience.job1_duty3")}
           </li>
           <li>
-            Created custom software for technical studies using Excel and VBA
+            {t("background.relevant_experience.job1_duty4")}
           </li>
         </ul>
       </div>
@@ -74,21 +82,24 @@ const t = useTranslations(lang);
         <div
           class="flex flex-col md:flex-row md:items-center md:justify-between mb-2"
         >
-          <h4 class="text-lg font-bold">Technical Leadership</h4>
+          <h4 class="text-lg font-bold">
+            {t("background.relevant_experience.job2_title")}
+          </h4>
           <span
             class="px-3 py-1 bg-primary/10 text-primary rounded-full text-sm"
           >
-            2022-2024
+            {t("background.relevant_experience.job1_date")}
           </span>
         </div>
         <ul class="list-disc pl-5 space-y-2 text-fg-alt">
           <li>
-            Led technical department operations and innovation initiatives
+            {t("background.relevant_experience.job2_duty1")}
           </li>
-          <li>Managed end-to-end technical operations for complex projects</li>
           <li>
-            Optimized system efficiency through technical design and equipment
-            selection
+            {t("background.relevant_experience.job2_duty2")}
+          </li>
+          <li>
+            {t("background.relevant_experience.job2_duty3")}
           </li>
         </ul>
       </div>
@@ -103,39 +114,43 @@ const t = useTranslations(lang);
     </h3>
 
     <div class="flex flex-wrap gap-3">
-      <span class="px-3 py-1 bg-tertiary/10 text-tertiary rounded-full text-sm"
-        >JavaScript</span
-      >
-      <span class="px-3 py-1 bg-tertiary/10 text-tertiary rounded-full text-sm"
-        >Data Analysis</span
-      >
-      <span class="px-3 py-1 bg-tertiary/10 text-tertiary rounded-full text-sm"
-        >Automation</span
-      >
-      <span class="px-3 py-1 bg-tertiary/10 text-tertiary rounded-full text-sm"
-        >Technical Leadership</span
-      >
-      <span class="px-3 py-1 bg-tertiary/10 text-tertiary rounded-full text-sm"
-        >Project Management</span
-      >
-      <span class="px-3 py-1 bg-tertiary/10 text-tertiary rounded-full text-sm"
-        >System Optimization</span
-      >
-      <span class="px-3 py-1 bg-tertiary/10 text-tertiary rounded-full text-sm"
-        >Software Development</span
-      >
+      {
+        [
+          "JavaScript",
+          "Data Analysis",
+          "Automation",
+          "Technical Leadership",
+          "Project Management",
+          "System Optimization",
+          "Software Development",
+        ].map((skill) => (
+          <span class="px-3 py-1 bg-secondary/30 text-fg rounded-full text-sm hover:bg-secondary hover:text-bg transition-colors duration-300">
+            {skill}
+          </span>
+        ))
+      }
     </div>
+  </div>
+
+  <!-- Web3 Connection -->
+  <div class="mb-10 bg-bg-alt/50 p-6 rounded-lg border border-secondary/20">
+    <h3 class="text-xl font-bold mb-4 text-secondary">
+      {t("background.web3_connection_title")}
+    </h3>
+    <p class="text-fg leading-relaxed">
+      {t("background.web3_connection_description")}
+    </p>
   </div>
 
   <!-- View Full Background Button -->
   <div class="flex justify-center mt-8">
     <a
       href={lang === "es" ? "/es/background" : "/background/"}
-      class="group flex items-center gap-2 bg-bg-alt px-6 py-3 rounded-full border border-fg-alt/10 hover:border-primary/30 transition-all duration-300 hover:shadow-md"
+      class="group flex items-center gap-2 bg-accent/70 px-6 py-3 rounded-full border border-fg-alt/10 hover:border-accent hover:bg-accent/30 transition-all duration-300 hover:shadow-md"
     >
       <span>{t("background.view_full_background")}</span>
       <span
-        class="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300"
+        class="w-4 h-4 pb-6 group-hover:translate-x-3 transition-transform duration-300 align-middle"
         >→</span
       >
     </a>
