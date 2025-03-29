@@ -59,7 +59,6 @@ const copiedValue = href.includes("http") ? href : value;
     document.querySelectorAll('[id^="copy-item-"]').forEach((element) => {
       element.addEventListener("click", (e) => {
         e.preventDefault(); // Prevent default link behavior
-        console.log(element);
 
         const valueToCopy = element.getAttribute("data-value") || "";
         const tooltip = element.querySelector(".copy-tooltip") as Element;
