@@ -1,5 +1,3 @@
-"use client";
-
 // Get the language from the URL
 export function getLangFromUrl(url) {
   const pathname = url.pathname;
