@@ -22,14 +22,14 @@ interface Job {
 
 interface WorkExperience {
   title: string;
-  subtitle: string;
+  subtitle?: string;
   dropdown: string[];
   jobList: Job[];
 }
 
 const workExperience = rawWorkExperience[lang] as unknown as WorkExperience;
 
-const { title, subtitle, dropdown, jobList } = workExperience;
+const { title, dropdown, jobList } = workExperience;
 ---
 
 <SectionContainer sectionId="work-experience">

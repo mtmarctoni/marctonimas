@@ -27,8 +27,6 @@ import Cross from "@/assets/cross.svg?component";
 import Telegram from "@/assets/socialIcons/telegram.svg?component";
 import Whatsapp from "@/assets/socialIcons/whatsapp.svg?component";
 
-let Icons = {};
-
 export const GithubIcon = Github;
 export const LinkedInIcon = LinkedIn;
 export const EmailIcon = Email;
@@ -58,7 +56,7 @@ export const CrossIcon = Cross;
 export const TelegramIcon = Telegram;
 export const WhatsappIcon = Whatsapp;
 
-export default Icons = {
+export default {
   GithubIcon,
   LinkedInIcon,
   EmailIcon,

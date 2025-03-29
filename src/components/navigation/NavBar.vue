@@ -9,14 +9,7 @@ import NavLinks from "./NavLinks.vue";
 
 import { useTranslations, getLangFromUrl } from "@/i18n/utils";
 import { useNavigation } from "@/composables/useNavigation";
-import {
-  EmailIcon,
-  LinkedInIcon,
-  GithubIcon,
-  MenuIcon,
-  CrossIcon,
-} from "@/utils/icons";
-import { MY_EMAIL, MY_LINKEDIN, MY_GITHUB } from "@/utils/constants";
+import { MenuIcon, CrossIcon } from "@/utils/icons";
 
 const mobileMenuOpen = ref(false);
 
@@ -63,21 +56,6 @@ const navItems = computed(() => [
     id: "contact",
   },
 ]);
-
-// Social links
-const socialLinks = [
-  { href: `mailto:${MY_EMAIL}`, icon: EmailIcon, label: MY_EMAIL },
-  {
-    href: `https://linkedin.com/in/${MY_LINKEDIN}`,
-    icon: LinkedInIcon,
-    label: `LinkedIn: ${MY_LINKEDIN}`,
-  },
-  {
-    href: `https://github.com/${MY_GITHUB}`,
-    icon: GithubIcon,
-    label: `GitHub: ${MY_GITHUB}`,
-  },
-];
 
 const { activeSection, isScrolled } = useNavigation(navItems.value);
 </script>

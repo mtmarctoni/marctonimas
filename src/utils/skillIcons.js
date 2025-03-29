@@ -27,8 +27,6 @@ import Ethereum from "@/assets/skill-icons/ethereum.svg?component";
 import Docker from "@/assets/skill-icons/docker.svg?component";
 import Foundry from "@/assets/skill-icons/foundry.svg?component";
 
-let SkillIcons = {};
-
 export const JavaScriptIcon = JavaScript;
 export const ReactIcon = React;
 export const CssIcon = Css;
@@ -58,7 +56,7 @@ export const EthereumIcon = Ethereum;
 export const DockerIcon = Docker;
 export const FoundryIcon = Foundry;
 
-export default SkillIcons = {
+export default {
   JavaScriptIcon,
   ReactIcon,
   CssIcon,
