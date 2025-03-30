@@ -9,7 +9,8 @@ export function getLangFromUrl(url) {
 const translations = {
   en: {
     "site.cvLink": "/transcripts/CV_MarcToniMas.pdf",
-    "site.title": "Web3 Developer Portfolio",
+    "site.title": "Marc Toni Mas",
+    "site.description": "Web3 Developer Portfolio",
 
     // Navigation
     "nav.name": "Marc Toni Mas",

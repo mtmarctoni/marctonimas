@@ -63,7 +63,7 @@ const { activeSection, isScrolled } = useNavigation(navItems.value);
 <template>
   <header
     :class="[
-      'fixed w-full top-0 z-50 transition-all duration-300 border-b',
+      'fixed w-full top-0 z-100 transition-all duration-300 border-b',
       isScrolled
         ? 'bg-bg-secondary shadow-md border-primary/40 py-2'
         : 'bg-transparent border-transparent py-4',

@@ -3,24 +3,20 @@ import NavBar from "@/components/navigation/NavBar.vue";
 import Footer from "@/components/sections/Footer.astro";
 import "@/styles/global.css";
 
-// interface Props {
-//   title: string;
-//   description?: string;
-//   lang?: string;
-// }
+interface Props {
+  title: string;
+  description?: string;
+  lang?: string;
+}
 
-const {
-  title,
-  description = "Web3 Developer Portfolio",
-  lang = "en",
-} = Astro.props;
+const { title, description, lang = "en" } = Astro.props;
 ---
 
 <!doctype html>
-<html lang={lang} class="scroll-smooth dark">
+<html lang={lang} class="scroll-smooth">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{title}</title>
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <!-- <meta name="generator" content={Astro.generator} /> -->
@@ -62,7 +58,7 @@ const {
   </head>
   <body class="bg-bg text-fg transition-colors duration-300">
     <NavBar client:load client:only="header" />
-    <main class="min-h-screen">
+    <main class="min-w-screen">
       <slot />
     </main>
     <Footer />
