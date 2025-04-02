@@ -63,7 +63,7 @@ const { activeSection, isScrolled } = useNavigation(navItems.value);
 <template>
   <header
     :class="[
-      'fixed w-full top-0 z-100 transition-all duration-300 border-b',
+      'fixed w-full top-0 z-100 transition-all duration-300 border-b min-w-[410px]',
       isScrolled
         ? 'bg-bg-secondary shadow-md border-primary/40 py-2'
         : 'bg-transparent border-transparent py-4',
@@ -90,10 +90,10 @@ const { activeSection, isScrolled } = useNavigation(navItems.value);
             class="md:hidden p-2 rounded-lg hover:bg-fg-alt/10 transition-colors"
             aria-label="Toggle menu"
           >
-            <div v-if="!mobileMenuOpen" class="h-6 w-6">
+            <div v-if="!mobileMenuOpen" class="h-10 w-10 md:h-6 md:w-6">
               <MenuIcon />
             </div>
-            <div v-else class="h-6 w-6">
+            <div v-else class="h-10 w-10 md:h-6 md:w-6">
               <CrossIcon />
             </div>
           </button>

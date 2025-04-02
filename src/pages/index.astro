@@ -10,7 +10,7 @@ import Projects from "@/components/sections/Projects.astro";
 import Contact from "@/components/sections/Contact.astro";
 import BlockchainCanvas from "@/components/common/BlockchainCanvas.vue";
 import Languages from "@/components/sections/Languages.astro";
-import Certificates from "@/components/sections/Certificates.astro";
+// import Certificates from "@/components/sections/Certificates.astro";
 import BackgroundPreview from "@/components/sections/BackgroundPreview.astro";
 
 const lang = getLangFromUrl(Astro.url);
@@ -25,8 +25,8 @@ const t = useTranslations(lang);
   <About />
   <Skills />
   <Projects />
-  <Certificates />
-  <Languages />
+  <!-- <Certificates /> Better inside BackgroundPreview section -->
   <BackgroundPreview />
+  <Languages />
   <Contact />
 </Layout>

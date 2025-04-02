@@ -12,7 +12,7 @@ export function useNavigation(navItems) {
       const element = document.getElementById(section);
       if (element) {
         const rect = element.getBoundingClientRect();
-        const offset = 100; // Adjust based on your header height
+        const offset = 200; // Adjust based on your header height
 
         if (rect.top <= offset && rect.bottom > offset) {
           activeSection.value = section;

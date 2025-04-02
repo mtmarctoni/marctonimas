@@ -2,11 +2,8 @@
   <div class="relative">
     <ToggleDropDown>
       <template #button-content>
-        <button
-          class="flex items-center justify-center w-8 h-8 rounded-full border border-primary/50 dark:border-secondary/50 hover:bg-primary/20 dark:hover:bg-secondary/20 focus:outline-none"
-          aria-label="Change language"
-        >
-          <span class="text-sm font-medium">{{
+        <button aria-label="Change language">
+          <span class="text-xl md:text-base font-medium">{{
             currentLang.toUpperCase()
           }}</span>
         </button>

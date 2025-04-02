@@ -57,7 +57,7 @@ const currentYear = new Date().getFullYear();
   >
     <div
       v-show="isOpen"
-      class="md:hidden fixed inset-0 top-[57px] bg-bg flex flex-col h-[75vh] transform rounded-b-4xl border-b-2 border-primary/50"
+      class="md:hidden overflow-y-auto fixed inset-0 top-[73px] bg-bg flex flex-col h-[75vh] transform rounded-b-4xl border-b-2 border-primary/50"
     >
       <nav class="container mx-auto px-4 pt-8 flex flex-col">
         <a

@@ -158,3 +158,11 @@ body {
 * {
   box-sizing: border-box;
 }
+
+#about,
+#projects,
+#background,
+#contact,
+#skills {
+  scroll-margin-top: 40px;
+}

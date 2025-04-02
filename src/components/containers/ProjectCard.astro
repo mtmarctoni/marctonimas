@@ -1,23 +1,14 @@
 ---
 import { Image } from "astro:assets";
-import { useTranslations, getLangFromUrl } from "@/i18n/utils";
-
-const url = new URL(Astro.url);
-const lang = getLangFromUrl(url);
-const t = useTranslations(lang);
+import type { Project } from "../sections/Projects.astro";
 
 interface Props {
-  project: {
-    image: string;
-    title: string;
-    demoUrl: string;
-    codeUrl: string;
-    description: string;
-    tags: string[];
-  };
+  buttonCode: string;
+  buttonDemo: string;
+  project: Project;
 }
 
-const { project } = Astro.props as Props;
+const { project, buttonCode, buttonDemo } = Astro.props as Props;
 ---
 
 <div
@@ -35,21 +26,25 @@ const { project } = Astro.props as Props;
       class="scroll-element absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 md:group-hover:opacity-100 transition-opacity flex items-end p-4"
     >
       <div class="flex gap-2">
-        <a
-          href={project.demoUrl}
-          target="_blank"
-          rel="noopener noreferrer"
-          class="px-3 py-1 bg-accent text-gray-200 rounded-full text-sm font-medium hover:bg-accent/50 transition-colors hover:text-white"
-        >
-          {t("projects.live_demo")}
-        </a>
+        {
+          project.demoUrl && (
+            <a
+              href={project.demoUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="px-3 py-1 bg-accent text-gray-200 rounded-full text-sm font-medium hover:bg-accent/50 transition-colors hover:text-white cursor-pointer"
+            >
+              {buttonDemo}
+            </a>
+          )
+        }
         <a
           href={project.codeUrl}
           target="_blank"
           rel="noopener noreferrer"
-          class="px-3 py-1 bg-primary text-gray-300 rounded-full text-sm font-medium hover:bg-primary/50 transition-colors hover:text-white"
+          class="px-3 py-1 bg-primary text-gray-300 rounded-full text-sm font-medium hover:bg-primary/50 transition-colors hover:text-white cursor-pointer"
         >
-          {t("projects.view_code")}
+          {buttonCode}
         </a>
       </div>
     </div>
@@ -61,8 +56,8 @@ const { project } = Astro.props as Props;
 
     <div class="flex flex-wrap gap-2 mb-4">
       {
-        project.tags.map((tag) => (
-          <span class="px-2 py-1 bg-bg-alt text-fg rounded-md text-xs">
+        project.tags.map((tag: string) => (
+          <span class="px-2 py-1 bg-accent/20 text-fg rounded-full text-xs hover:bg-accent/70">
             {tag}
           </span>
         ))

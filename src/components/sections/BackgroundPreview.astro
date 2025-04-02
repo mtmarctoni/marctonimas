@@ -2,6 +2,7 @@
 import SectionContainer from "@/components/containers/SectionContainer.astro";
 import { useTranslations, getLangFromUrl } from "@/i18n/utils";
 import { CodeIcon, RocketIcon, ToolsIcon } from "@/utils/icons";
+import Certificates from "./Certificates.astro";
 
 const url = new URL(Astro.url);
 const lang = getLangFromUrl(url);
@@ -146,7 +147,7 @@ const t = useTranslations(lang);
   <div class="flex justify-center mt-8">
     <a
       href={lang === "es" ? "/es/background" : "/background/"}
-      class="group flex items-center gap-2 bg-accent/70 px-6 py-3 rounded-full border border-fg-alt/10 hover:border-accent hover:bg-accent/30 transition-all duration-300 hover:shadow-md"
+      class="group z-50 flex items-center gap-2 bg-accent/70 px-6 py-3 rounded-full border border-fg-alt/10 hover:border-accent hover:bg-accent/30 transition-all duration-300 hover:shadow-md"
     >
       <span>{t("background.view_full_background")}</span>
       <span
@@ -155,4 +156,7 @@ const t = useTranslations(lang);
       >
     </a>
   </div>
+
+  <!-- Certificates -->
+  <Certificates />
 </SectionContainer>

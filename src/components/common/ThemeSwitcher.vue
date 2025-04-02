@@ -2,13 +2,16 @@
   <div class="relative">
     <ToggleDropDown>
       <template #button-content>
-        <button
-          class="flex items-center justify-center w-8 h-8 rounded-full border focus:outline-none border-primary/50 dark:border-secondary/50 hover:bg-primary/20 dark:hover:bg-secondary/20"
-          aria-label="Toggle theme"
-        >
-          <SunIcon v-if="currentTheme === 'light'" class="w-4 h-4" />
-          <MoonIcon v-else-if="currentTheme === 'dark'" class="w-4 h-4" />
-          <SystemIcon v-else class="w-4 h-4" />
+        <button aria-label="Toggle theme">
+          <SunIcon
+            v-if="currentTheme === 'light'"
+            class="w-8 h-8 md:w-5 md:h-5"
+          />
+          <MoonIcon
+            v-else-if="currentTheme === 'dark'"
+            class="w-8 h-8 md:w-5 md:h-5"
+          />
+          <SystemIcon v-else class="w-8 h-8 md:w-5 md:h-5" />
         </button>
       </template>
       <template #default>

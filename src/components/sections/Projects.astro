@@ -1,72 +1,31 @@
 ---
 import SectionContainer from "../containers/SectionContainer.astro";
-import { useTranslations, getLangFromUrl } from "@/i18n/utils";
+import { getLangFromUrl } from "@/i18n/utils";
+import { projectSection } from "@/i18n/projects";
 import ProjectCard from "../containers/ProjectCard.astro";
 
 const url = new URL(Astro.url);
-const lang = getLangFromUrl(url);
-const t = useTranslations(lang);
+const lang = getLangFromUrl(url) as "en" | "es";
 
-const projects = [
-  {
-    id: 1,
-    title: t("projects.project1.title"),
-    description: t("projects.project1.description"),
-    image: "",
+export interface Project {
+  title: string;
+  description: string;
+  image: string;
+  tags: string[];
+  demoUrl: string;
+  codeUrl: string;
+}
 
-    tags: ["Solidity", "React", "Ethers.js", "Hardhat", "IPFS"],
-    demoUrl: "#",
-    codeUrl: "#",
-  },
-  {
-    id: 2,
-    title: t("projects.project2.title"),
-    description: t("projects.project2.description"),
-    image: "",
+interface ProjectSection {
+  title: string;
+  subtitle?: string;
+  buttonCode: string;
+  buttonDemo: string;
+  projectList: Project[];
+}
 
-    tags: ["DeFi", "Solidity", "React", "Web3.js", "Truffle"],
-    demoUrl: "#",
-    codeUrl: "#",
-  },
-  {
-    id: 3,
-    title: t("projects.project3.title"),
-    description: t("projects.project3.description"),
-    image: "",
-
-    tags: ["NFT", "Marketplace", "React", "Solidity", "IPFS"],
-    demoUrl: "#",
-    codeUrl: "#",
-  },
-  {
-    id: 4,
-    title: t("projects.project4.title"),
-    description: t("projects.project4.description"),
-    image: "",
-
-    tags: ["DAO", "Governance", "React", "Solidity", "The Graph"],
-    demoUrl: "#",
-    codeUrl: "#",
-  },
-  {
-    id: 5,
-    title: t("projects.project5.title"),
-    description: t("projects.project5.description"),
-    image: "",
-    tags: ["Smart Contract", "Security", "Auditing", "Solidity"],
-    demoUrl: "#",
-    codeUrl: "#",
-  },
-  {
-    id: 6,
-    title: t("projects.project6.title"),
-    description: t("projects.project6.description"),
-    image: "/default-web3-image.jpg",
-    tags: ["Layer 2", "Scaling", "Optimism", "React"],
-    demoUrl: "#",
-    codeUrl: "#",
-  },
-];
+const projects = projectSection[lang] as unknown as ProjectSection;
+const { title, buttonCode, buttonDemo, projectList } = projects;
 ---
 
 <SectionContainer sectionId="projects">
@@ -74,11 +33,19 @@ const projects = [
     <span
       class="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent"
     >
-      {t("projects.title")}
+      {title}
     </span>
   </h2>
 
   <div class="grid grid-cols-1 md:grid-cols-2 gap-3.5">
-    {projects.map((project) => <ProjectCard project={project} />)}
+    {
+      projectList.map((project) => (
+        <ProjectCard
+          project={project}
+          buttonCode={buttonCode}
+          buttonDemo={buttonDemo}
+        />
+      ))
+    }
   </div>
 </SectionContainer>
