@@ -142,16 +142,16 @@ const keyAttributes = [
                 <h3 class="text-lg font-bold">{t("about.what_i_do_title")}</h3>
               </div>
               <span
-                class="expand-icon text-secondary md:hidden transition-transform duration-300"
+                class="expand-icon text-secondary transition-transform duration-300"
                 >▼</span
               >
             </div>
             <div
               data-expanded="false"
-              class="card-description h-0 md:h-0 md:group-hover:h-30 duration-500 overflow-hidden"
+              class="card-description h-0 group-hover:h-30 duration-500 overflow-hidden"
             >
               <p
-                class="text-fg-alt text-sm md:opacity-0 group-hover:opacity-100 text-justify transition-all duration-300 delay-300"
+                class="text-fg-alt text-sm group-hover:opacity-100 text-justify transition-all duration-300 delay-300"
               >
                 {t("about.what_i_do_description")}
               </p>
@@ -172,11 +172,21 @@ const keyAttributes = [
                 </h3>
               </div>
               <span
-                class="expand-icon text-secondary md:hidden transition-transform duration-300"
+                class="expand-icon text-secondary transition-transform duration-300"
                 >▼</span
               >
             </div>
             <div
+              data-expanded="false"
+              class="card-description h-0 group-hover:h-30 duration-500 overflow-hidden"
+            >
+              <p
+                class="text-fg-alt text-sm group-hover:opacity-100 text-justify transition-all duration-300 delay-300"
+              >
+                {t("about.looking_for_description")}
+              </p>
+            </div>
+            <!-- <div
               data-expanded="false"
               class="card-description h-0 md:h-0 md:group-hover:h-30 transition-all duration-500 overflow-hidden"
             >
@@ -185,7 +195,7 @@ const keyAttributes = [
               >
                 {t("about.looking_for_description")}
               </p>
-            </div>
+            </div> -->
           </div>
         </div>
       </div>
@@ -194,13 +204,19 @@ const keyAttributes = [
 </SectionContainer>
 
 <script>
+  import { isTouchDevice } from '@/utils/deviceDetection.js';
+  
+  // Initialize touch detection on client side
+  const isTouch = isTouchDevice();
+  console.log('Is touch device:', isTouch);
+
   function isElementInCenter(el: Element) {
     const rect = el.getBoundingClientRect();
     const windowHeight =
       window.innerHeight || document.documentElement.clientHeight;
     const elementCenter = rect.top + rect.height / 2;
     const viewportCenter = windowHeight / 2;
-    return Math.abs(elementCenter - viewportCenter) < 50; // 50px tolerance
+    return Math.abs(elementCenter - viewportCenter) < 200; // 50px tolerance
   }
 
   function handleScroll() {
@@ -213,11 +229,10 @@ const keyAttributes = [
       bubbles.forEach((bubble) => bubble.classList.remove("opacity-100"));
     }
   }
-  const isMobile = window.innerWidth < 768;
 
   document.addEventListener("DOMContentLoaded", () => {
-    if (isMobile) {
-      // bubble info appears when scrollin
+    if (isTouch) {
+      // bubble info appears when scrolling
       window.addEventListener("scroll", handleScroll);
 
       // dropdown cards
@@ -284,6 +299,21 @@ const keyAttributes = [
     }
     50% {
       transform: translateY(-15px);
+    }
+  }
+
+  @media (hover: none) {
+    .hover\:scale-105 {
+      scale: 1.05;
+    }
+    .hover\:bg-fg-alt\:10 {
+      background-color: rgba(var(--color-fg-alt), 0.1);
+    }
+    .hover\:text-primary {
+      color: var(--color-primary);
+    }
+    .hover\:border-primary\:50 {
+      border-color: rgba(var(--color-primary), 0.5);
     }
   }
 </style>

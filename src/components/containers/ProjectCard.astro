@@ -67,6 +67,8 @@ const { project, buttonCode, buttonDemo } = Astro.props as Props;
 </div>
 
 <script>
+  import { isTouchDevice } from "@/utils/deviceDetection.js";
+  const isTouch = isTouchDevice();
   function isElementInCenter(el: Element) {
     const rect = el.getBoundingClientRect();
     const windowHeight =
@@ -98,7 +100,7 @@ const { project, buttonCode, buttonDemo } = Astro.props as Props;
   const isMobile = windowWidth < 768;
 
   document.addEventListener("DOMContentLoaded", () => {
-    if (isMobile) {
+    if (isTouch || isMobile) {
       // bubble info appears when scrollin
       window.addEventListener("scroll", handleScroll);
     }

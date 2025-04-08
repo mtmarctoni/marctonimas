@@ -7,7 +7,8 @@ import { MY_NAME_LOGO } from "@/utils/constants";
     href="/#"
     class="text-xl font-bold flex items-center gap-2 transition-transform duration-300 hover:scale-105"
   >
-    <div class="relative w-9 h-9">
+    <!-- only show the next div when screen width is more than 400px -->
+    <div class="relative w-9 h-9 min-[400px]:block hidden">
       <div
         class="absolute inset-0 bg-gradient-to-r from-secondary to-primary rounded-full"
       ></div>
