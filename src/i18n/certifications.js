@@ -24,6 +24,16 @@ export const certifications = {
         img: "/icons/university-of-helsinki.svg",
         imgD: "/icons/university-of-helsinki-dark.svg",
       },
+      {
+        id: 2,
+        name: "Blockchai: Understanding its Uses and Implications (LFS170)",
+        description: "",
+        link: "https://ti-user-certificates.s3.amazonaws.com/e0df7fbf-a057-42af-8a1f-590912be5460/1f64fd21-0a3e-4a35-adc6-65c683e89a98-marc-antoni-mas-rdenas-e411411b-8d6c-4d86-add7-9d94bfdf8d2b-certificate.pdf",
+        institution: "The Linux Foundation",
+        date: "February 2025",
+        img: "/icons/lfx-logo.svg",
+        imgD: "/icons/lfx-logo.svg",
+      },
     ],
   },
   es: {
