@@ -42,6 +42,7 @@ export const skillsInfo = [
   },
   { name: "Solidity", level: 90, icon: SolidityIcon, category: "languages" },
   { name: "Python", level: 70, icon: PythonIcon, category: "languages" },
+  { name: "VBA", level: 95, icon: VbaIcon, category: "tools" },
 
   // Blockchain
   { name: "Ethereum", level: 85, icon: EthereumIcon, category: "blockchain" },
@@ -69,5 +70,4 @@ export const skillsInfo = [
   // Tools
   { name: "Git", level: 90, icon: GitIcon, category: "tools" },
   { name: "VS Code", level: 90, icon: VsCodeIcon, category: "tools" },
-  { name: "VBA", level: 95, icon: VbaIcon, category: "tools" },
 ];
