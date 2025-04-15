@@ -37,7 +37,7 @@ export const projectSection = {
         description: "",
         image: "",
         tags: ["Nextjs", "API", "Tailwind", "Vercel", "PostgreSQL", "Neon DB"],
-        demoUrl: "#",
+        demoUrl: "",
         codeUrl: "https://github.com/mtmarctoni/finanzap",
         status: "ongoing"
       },
