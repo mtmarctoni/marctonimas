@@ -12,8 +12,21 @@ const { project, buttonCode, buttonDemo } = Astro.props as Props;
 ---
 
 <div
-  class="project-card bg-bg-secondary rounded-xl overflow-hidden shadow-lg md:hover:shadow-xl md:hover:border-primary/70 md:hover:scale-107 transition-transform ease-in-out duration-750 border border-fg-alt group"
+  class="project-card relative bg-bg-secondary rounded-xl overflow-hidden shadow-lg md:hover:shadow-xl md:hover:border-primary/70 md:hover:scale-107 transition-transform ease-in-out duration-750 border border-fg-alt group"
 >
+  <div class="absolute top-3 right-3 z-10">
+    <span
+      class={`px-3 py-1 rounded-full text-sm font-medium ${
+        project.status === 'completed'
+          // ? 'bg-green-500/20 text-green-500 hover:bg-green-500/50'
+          ? 'hidden'
+          : 'bg-yellow-500/20 text-yellow-500 hover:bg-yellow-500/50'
+      }`}
+    >
+      {project.status === 'completed' ? 'Completed' : 'Ongoing'}
+    </span>
+  </div>
+
   <div class="relative h-48 overflow-hidden">
     <Image
       src={project.image || "/default-web3-image.jpg"}

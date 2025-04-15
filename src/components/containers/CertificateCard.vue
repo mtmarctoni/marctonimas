@@ -27,14 +27,14 @@
       </div>
 
       <!-- Text content -->
-      <div class="flex flex-col flex-grow">
-        <h3 class="text-xl font-bold text-primary mb-1 text-start">
+      <div class="flex flex-col flex-grow md:items-center">
+        <h3 class="text-xl font-bold text-primary mb-1 md:text-start">
           {{ name }}
         </h3>
         <p class="text-fg text-start">{{ description }}</p>
         <p class="text-sm italic text-start">{{ date }}</p>
         <!-- Action buttons -->
-        <div class="flex">
+        <div class="flex mt-4">
           <a
             v-if="status === 'completed'"
             :href="link"
