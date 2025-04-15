@@ -13,6 +13,7 @@ interface Certificate {
   link: string;
   description?: string;
   institution: string;
+  institutionLink: string;
   date: string;
   img: string;
   imgD: string;
@@ -57,7 +58,7 @@ const { title, button, inProgress, certificationList } = certifications;
             issuer={cert.institution}
             date={cert.date}
             link={cert.link}
-            issuerLink={cert.link}
+            issuerLink={cert.institutionLink}
             icon={cert.img}
             button={button}
             status={cert.status}
@@ -71,7 +72,7 @@ const { title, button, inProgress, certificationList } = certifications;
             issuer={cert.institution}
             date={cert.date}
             link={cert.link}
-            issuerLink={cert.link}
+            issuerLink={cert.institutionLink}
             icon={cert.imgD}
             button={button}
             status={cert.status}

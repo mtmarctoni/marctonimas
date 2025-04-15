@@ -54,6 +54,18 @@ export const certifications = {
         status: 'completed'
       },
       {
+        id: 5,
+        name: "Ethereum and Solidity: The Complete Developer's Guide",
+        description: "Use Ethereum, Solidity, and Smart Contracts to build production-ready apps based on the blockchain.",
+        link: "https://www.udemy.com/certificate/UC-dbc3d5e0-960b-414b-b6ea-2ecbc3f8829d/",
+        institution: "Udemy",
+        institutionLink: "https://udemy.com",
+        date: "April 2025",
+        img: "/icons/udemy-logo.svg",
+        imgD: "/icons/udemy-logo-dark.svg",
+        status: 'completed'
+      },
+      {
         id: 4,
         name: "Introduction to Hyperledger Self-Sovereign Identity Blockchain Solutions",
         description: "How Hyperledger Aries, Indy, AnonCreds, and Ursa add a necessary layer of trust to the Internet.",
@@ -64,7 +76,8 @@ export const certifications = {
         img: "/icons/lfx-logo.svg",
         imgD: "/icons/lfx-logo-dark.svg",
         status: 'in-progress'
-      }
+      },
+
     ],
   },
   es: {
@@ -119,6 +132,18 @@ export const certifications = {
         date: "April 2025",
         img: "/icons/lfx-logo.svg",
         imgD: "/icons/lfx-logo-dark.svg",
+        status: 'completed'
+      },
+      {
+        id: 5,
+        name: "Ethereum y Solidity: La guía completa para desarrolladores",
+        description: "Ethereum, Solidity y contratos inteligentes para crear aplicaciones listas para producción basadas en blockchain.",
+        link: "https://www.udemy.com/certificate/UC-dbc3d5e0-960b-414b-b6ea-2ecbc3f8829d/",
+        institution: "Udemy",
+        institutionLink: "https://udemy.com",
+        date: "April 2025",
+        img: "/icons/udemy-logo.svg",
+        imgD: "/icons/udemy-logo-dark.svg",
         status: 'completed'
       },
       {
