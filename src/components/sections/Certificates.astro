@@ -62,6 +62,7 @@ const { title, button, inProgress, certificationList } = certifications;
             button={button}
             status={cert.status}
             inProgress={inProgress}
+            client:load
           />
           <CertificateCard
             class:list={"hidden dark:grid"}
@@ -75,6 +76,7 @@ const { title, button, inProgress, certificationList } = certifications;
             button={button}
             status={cert.status}
             inProgress={inProgress}
+            client:load
           />
         ))
       }

@@ -27,12 +27,12 @@
       </div>
 
       <!-- Text content -->
-      <div class="flex flex-col flex-grow md:items-center">
-        <h3 class="text-xl font-bold text-primary mb-1 md:text-start">
+      <div class="flex flex-col flex-grow items-center md:items-start">
+        <h3 class="text-xl font-bold text-primary mb-1 text-center md:text-start">
           {{ name }}
         </h3>
-        <p class="text-fg text-start">{{ description }}</p>
-        <p class="text-sm italic text-start">{{ date }}</p>
+        <p class="text-fg text-center md:text-start">{{ description }}</p>
+        <p class="text-sm italic text-center md:text-start">{{ date }}</p>
         <!-- Action buttons -->
         <div class="flex mt-4">
           <a
