@@ -16,17 +16,19 @@ interface Certificate {
   date: string;
   img: string;
   imgD: string;
+  status?: 'completed' | 'in-progress';
 }
 
 interface Certifications {
   title: string;
   subtitle: string;
   button: string;
+  inProgress: string;
   certificationList: Certificate[];
 }
 
 const certifications = rawCertifications[lang] as unknown as Certifications;
-const { title, button, certificationList } = certifications;
+const { title, button, inProgress, certificationList } = certifications;
 ---
 
 <SectionContainer sectionId="certifications">
@@ -58,7 +60,8 @@ const { title, button, certificationList } = certifications;
             issuerLink={cert.link}
             icon={cert.img}
             button={button}
-            client:load
+            status={cert.status}
+            inProgress={inProgress}
           />
           <CertificateCard
             class:list={"hidden dark:grid"}
@@ -70,94 +73,11 @@ const { title, button, certificationList } = certifications;
             issuerLink={cert.link}
             icon={cert.imgD}
             button={button}
-            client:load
+            status={cert.status}
+            inProgress={inProgress}
           />
         ))
       }
     </div>
   </div>
 </SectionContainer>
-
-<!-- ---
-import SectionContainer from "@/components/containers/SectionContainer.astro";
-import { useTranslations, getLangFromUrl } from "@/i18n/utils";
-import { CertificateIcon } from "@/utils/icons"; // Assuming you have this icon
-
-const url = new URL(Astro.url);
-const lang = getLangFromUrl(url);
-const t = useTranslations(lang);
-
-const certifications = [
-  {
-    name: t("background.certifications.cert1.name"),
-    issuer: t("background.certifications.cert1.issuer"),
-    date: t("background.certifications.cert1.date"),
-    link: "#",
-    icon: "",
-  },
-  {
-    name: t("background.certifications.cert2.name"),
-    issuer: t("background.certifications.cert2.issuer"),
-    date: t("background.certifications.cert2.date"),
-    link: "#",
-    icon: "",
-  },
-  {
-    name: t("background.certifications.cert3.name"),
-    issuer: t("background.certifications.cert3.issuer"),
-    date: t("background.certifications.cert3.date"),
-    link: "#",
-    icon: "",
-  },
-  {
-    name: t("background.certifications.cert4.name"),
-    issuer: t("background.certifications.cert4.issuer"),
-    date: t("background.certifications.cert4.date"),
-    link: "#",
-    icon: "",
-  },
-];
----
-
-<SectionContainer sectionId="certifications">
-  <h2 class="text-3xl font-bold mb-8 text-center">
-    <span
-      class="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent"
-    >
-      {t("background.certifications_title")}
-    </span>
-  </h2>
-
-  <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-    {
-      certifications.map((cert, index) => (
-        <div class="group bg-bg-secondary rounded-xl p-6 border border-fg-alt/10 hover:border-primary/30 transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
-          <div class="flex items-start">
-            <div class="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center mr-4 group-hover:scale-110 transition-transform duration-300">
-              {cert.icon ? (
-                <img src={cert.icon} alt={cert.name} class="w-8 h-8" />
-              ) : (
-                <CertificateIcon class="w-6 h-6 text-primary" />
-              )}
-            </div>
-            <div class="flex-1">
-              <h3 class="text-lg font-semibold mb-1 group-hover:text-primary transition-colors duration-300">
-                {cert.name}
-              </h3>
-              <p class="text-fg-alt text-sm mb-2">{cert.issuer}</p>
-              <p class="text-fg-alt text-xs">{cert.date}</p>
-            </div>
-          </div>
-          <a
-            href={cert.link}
-            target="_blank"
-            rel="noopener noreferrer"
-            class="mt-4 inline-block text-sm text-primary hover:text-secondary transition-colors duration-300"
-          >
-            {t("background.view_certificate")} →
-          </a>
-        </div>
-      ))
-    }
-  </div>
-</SectionContainer> -->

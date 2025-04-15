@@ -29,7 +29,7 @@ const translations = {
 
     // Hero
     "hero.title":
-      "<h1 class='text-6xl font-bold'>Full Stack Developer & <span class='text-accent'>Blockchain</span> Enthusiast</h1>",
+      "<h1 class='text-6xl font-bold'>Full Stack Developer & <span class='bg-gradient-to-r from-accent to-tertiary bg-clip-text text-transparent'>Blockchain</span> Enthusiast</h1>",
     "hero.subtitle":
       "<p class=''>Bridging the gap between traditional web and <span class='font-semibold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent text-2xl md:text-3xl'>decentralized technologies</span></p>",
     "hero.cta_primary": "View Projects",
@@ -194,7 +194,7 @@ const translations = {
 
     // Hero
     "hero.title":
-      "<h1 class='text-6xl font-bold'>Desarrollador Full Stack orientado a <span class='text-accent'>Blockchain</span></h1>",
+      "<h1 class='text-6xl font-bold'>Desarrollador Full Stack orientado a <span class='bg-gradient-to-r from-accent to-tertiary bg-clip-text text-transparent'>Blockchain</span></h1>",
     "hero.subtitle":
       "<p class=''>Integrando <span class='font-semibold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent text-2xl md:text-3xl'>web3</span> y tecnologías <span class='font-semibold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent text-2xl md:text-3xl'>descentralizadas</span> en la web tradicional </p>",
     "hero.cta_primary": "Ver Proyectos",

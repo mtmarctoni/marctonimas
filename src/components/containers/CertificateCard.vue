@@ -36,6 +36,7 @@
         <!-- Action buttons -->
         <div class="flex">
           <a
+            v-if="status === 'completed'"
             :href="link"
             target="_blank"
             class="flex mx-auto items-center justify-center gap-2 px-4 py-2 bg-accent/50 text-fg hover:font-semibold rounded-lg hover:bg-accent/20 transition-colors"
@@ -45,6 +46,12 @@
             />
             <span>{{ button }}</span>
           </a>
+          <div
+            v-else
+            class="flex mx-auto items-center justify-center gap-2 px-4 py-2 bg-accent/30 text-accent px-3 py-1 rounded-full font-medium backdrop-blur-sm text-sm hover:text-bg-secondary hover:bg-accent/50 hover:scale-105 transition-all duration-300 "
+          >
+            <span class="text-accent/70">{{ inProgress }}</span>
+          </div>
         </div>
       </div>
     </div>
@@ -63,5 +70,11 @@ defineProps({
   issuerLink: String,
   icon: String,
   button: String,
+  inProgress: String,
+  status: {
+    type: String,
+    default: 'completed',
+    validator: (value) => ['completed', 'in-progress'].includes(value)
+  }
 });
 </script>

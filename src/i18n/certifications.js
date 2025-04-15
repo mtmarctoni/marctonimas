@@ -3,6 +3,7 @@ export const certifications = {
     title: "Certificates",
     subtitle: "Professional Certificates",
     button: " View Official Certification",
+    inProgress: "In Progress",
     certificationList: [
       {
         id: 0,
@@ -13,6 +14,7 @@ export const certifications = {
         date: "December 2024",
         img: "/icons/university-of-helsinki.svg",
         imgD: "/icons/university-of-helsinki-dark.svg",
+        status: 'completed'
       },
       {
         id: 1,
@@ -23,13 +25,35 @@ export const certifications = {
         date: "January 2025",
         img: "/icons/university-of-helsinki.svg",
         imgD: "/icons/university-of-helsinki-dark.svg",
+        status: 'completed'
       },
+      {
+        id: 2,
+        name: "Advanced JavaScript",
+        description: "",
+        institution: "University of Helsinki",
+        date: "Expected 2025",
+        img: "/icons/university-of-helsinki.svg",
+        imgD: "/icons/university-of-helsinki-dark.svg",
+        status: 'in-progress'
+      },
+      {
+        id: 3,
+        name: "React Native Development",
+        description: "",
+        institution: "University of Helsinki",
+        date: "Expected 2025",
+        img: "/icons/university-of-helsinki.svg",
+        imgD: "/icons/university-of-helsinki-dark.svg",
+        status: 'in-progress'
+      }
     ],
   },
   es: {
     title: "Certificados",
     subtitle: "",
     button: "Ver Certificado Oficial",
+    inProgress: "En Progreso",
     certificationList: [
       {
         id: 0,
@@ -40,6 +64,7 @@ export const certifications = {
         date: "Diciembre 2024",
         img: "/icons/university-of-helsinki.svg",
         imgD: "/icons/university-of-helsinki-dark.svg",
+        status: 'completed'
       },
       {
         id: 1,
@@ -50,7 +75,28 @@ export const certifications = {
         date: "Enero 2025",
         img: "/icons/university-of-helsinki.svg",
         imgD: "/icons/university-of-helsinki-dark.svg",
+        status: 'completed'
       },
+      {
+        id: 2,
+        name: "JavaScript Avanzado",
+        description: "",
+        institution: "Universidad de Helsinki",
+        date: "Previsto 2025",
+        img: "/icons/university-of-helsinki.svg",
+        imgD: "/icons/university-of-helsinki-dark.svg",
+        status: 'in-progress'
+      },
+      {
+        id: 3,
+        name: "Desarrollo con React Native",
+        description: "",
+        institution: "Universidad de Helsinki",
+        date: "Previsto 2025",
+        img: "/icons/university-of-helsinki.svg",
+        imgD: "/icons/university-of-helsinki-dark.svg",
+        status: 'in-progress'
+      }
     ],
   },
 };
