@@ -38,7 +38,7 @@ export const projectSection = {
         image: "",
         tags: ["Nextjs", "API", "Tailwind", "Vercel", "PostgreSQL", "Neon DB"],
         demoUrl: "",
-        codeUrl: "https://github.com/mtmarctoni/finanzap",
+        codeUrl: "https://github.com/mtmarctoni/finanzapp",
         status: "ongoing"
       },
       {
@@ -91,7 +91,7 @@ export const projectSection = {
         image: "",
         tags: ["Nextjs", "API", "Tailwind", "Vercel", "PostgreSQL", "Neon DB"],
         demoUrl: "#",
-        codeUrl: "https://github.com/mtmarctoni/finanzap",
+        codeUrl: "https://github.com/mtmarctoni/finanzapp",
         status: "ongoing"
       },
       {
