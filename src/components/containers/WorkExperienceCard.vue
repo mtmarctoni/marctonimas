@@ -49,11 +49,13 @@ const toggleDuties = () => {
               :src="job.img"
               :alt="job.company"
               class="w-full h-full object-contain dark:hidden"
+              loading="lazy"
             />
             <img
               :src="job.imgD"
               :alt="job.company"
               class="w-full h-full object-contain hidden dark:block"
+              loading="lazy"
             />
           </a>
         </div>

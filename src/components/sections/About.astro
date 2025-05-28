@@ -57,7 +57,7 @@ const keyAttributes = [
           >
             <Image
               src="/profile-picture.jpeg"
-              alt="Profile Picture"
+              alt={t("person.name") + " profile picture"}
               width={500}
               height={500}
               class="w-full h-full object-cover transition-all duration-700 group-hover:scale-110"
@@ -127,6 +127,7 @@ const keyAttributes = [
           set:html={t("about.short_bio")}
           class="text-fg text-lg leading-relaxed"
         />
+        <p class="text-fg text-lg leading-relaxed mt-4" set:html={t("about.learn_more_background")}></p>
 
         <!-- Interactive skill cards -->
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-1 gap-4">
