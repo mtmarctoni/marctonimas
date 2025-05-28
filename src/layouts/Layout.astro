@@ -17,13 +17,45 @@ const { title, description, lang = "en", keywords, ogImage, twitterImage } = Ast
 
 const t = useTranslations(lang);
 const defaultOgImageUrl = "https://marctonimas.com/og-image.jpg";
-const siteUrl = Astro.site ? Astro.site.toString().replace(/\/$/, "") : "https://marctonimas.com";
+const site = Astro.site ? Astro.site.toString().replace(/\/$/, "") : "https://marctonimas.com";
+
+const availableLanguages = ["en", "es"];
+const currentPathname = Astro.url.pathname;
+let basePath;
+
+if (lang === "es") {
+  basePath = currentPathname.startsWith("/es") ? currentPathname.substring(3) : currentPathname;
+} else { // lang === "en"
+  basePath = currentPathname;
+}
+
+// Normalize basePath
+if (basePath === "" || basePath === "/") {
+  basePath = "/";
+} else if (!basePath.startsWith("/")) {
+  basePath = "/" + basePath;
+}
+// Ensure basePath does not end with a slash if it's not the root
+if (basePath !== "/" && basePath.endsWith("/")) {
+  basePath = basePath.slice(0, -1);
+}
+
+
+const hreflangLinks = [];
+const enUrl = site + (basePath === "/" ? "" : basePath); // For root, site already has no trailing slash. For others, basePath has leading slash.
+hreflangLinks.push({ lang: "en", href: enUrl === site + "/" ? site : enUrl }); // Ensure no double slash for root
+
+const esUrl = site + "/es" + (basePath === "/" ? "" : basePath);
+hreflangLinks.push({ lang: "es", href: esUrl === site + "/es/" ? site + "/es" : esUrl }); // Ensure no double slash for root
+
+hreflangLinks.push({ lang: "x-default", href: enUrl === site + "/" ? site : enUrl });
+
 
 const webSiteSchema = {
   "@context": "https://schema.org",
   "@type": "WebSite",
   name: title,
-  url: siteUrl,
+  url: site, // Use 'site' instead of 'siteUrl'
   description: description,
 };
 
@@ -31,7 +63,7 @@ const personSchema = {
   "@context": "https://schema.org",
   "@type": "Person",
   name: t("person.name"),
-  url: t("person.url"), 
+  url: t("person.url"), // This should be the person's specific URL, potentially different from site. For now, uses translated value.
   jobTitle: t("person.jobTitle"),
   sameAs: [
     t("person.sameAs.linkedin"),
@@ -46,6 +78,7 @@ const personSchema = {
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{title}</title>
+    <link rel="canonical" href={Astro.url.href} />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <!-- <meta name="generator" content={Astro.generator} /> -->
     <meta name="description" content={description} />
@@ -62,6 +95,10 @@ const personSchema = {
     <meta property="og:url" content="https://marctonimas.com" />
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="Marc Antoni Mas" />
+
+    {hreflangLinks.map(link => (
+      <link rel="alternate" hreflang={link.lang} href={link.href} />
+    ))}
 
     <script type="application/ld+json" set:html={JSON.stringify(webSiteSchema)} />
     <script type="application/ld+json" set:html={JSON.stringify(personSchema)} />
