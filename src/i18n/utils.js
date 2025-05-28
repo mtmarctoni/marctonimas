@@ -11,6 +11,7 @@ const translations = {
     "site.cvLink": "/transcripts/CV_MarcToniMas.pdf",
     "site.title": "Marc Toni Mas",
     "site.description": "Web3 Developer Portfolio",
+    "site.keywords": "web3, blockchain, full stack developer, software engineer, portfolio",
 
     // Navigation
     "nav.name": "Marc Toni Mas",
@@ -176,6 +177,7 @@ const translations = {
   es: {
     "site.cvLink": "/transcripts/CV_MarcToniMas_ES.pdf",
     "site.title": "Portafolio de Desarrollador Web3",
+    "site.keywords": "web3, blockchain, desarrollador full stack, ingeniero de software, portafolio",
 
     // Navigation
     "nav.name": "Marc Toni Mas",
