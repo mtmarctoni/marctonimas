@@ -30,7 +30,7 @@ const { project, buttonCode, buttonDemo } = Astro.props as Props;
   <div class="relative h-48 overflow-hidden">
     <Image
       src={project.image || "/default-web3-image.jpg"}
-      alt={project.title}
+      alt={`Screenshot of ${project.title}`}
       width={500}
       height={300}
       class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"

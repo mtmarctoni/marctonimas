@@ -13,6 +13,12 @@ const translations = {
     "site.description": "Web3 Developer Portfolio",
     "site.keywords": "web3, blockchain, full stack developer, software engineer, portfolio",
 
+    "person.name": "Marc Toni Mas",
+    "person.url": "https://marctonimas.com",
+    "person.jobTitle": "Full Stack Developer & Blockchain Enthusiast",
+    "person.sameAs.linkedin": "https://www.linkedin.com/in/marctonimas/",
+    "person.sameAs.github": "https://github.com/marctonimas",
+
     // Navigation
     "nav.name": "Marc Toni Mas",
     "nav.about": "About",
@@ -178,6 +184,12 @@ const translations = {
     "site.cvLink": "/transcripts/CV_MarcToniMas_ES.pdf",
     "site.title": "Portafolio de Desarrollador Web3",
     "site.keywords": "web3, blockchain, desarrollador full stack, ingeniero de software, portafolio",
+
+    "person.name": "Marc Toni Mas",
+    "person.url": "https://marctonimas.com/es",
+    "person.jobTitle": "Desarrollador Full Stack y Entusiasta de Blockchain",
+    "person.sameAs.linkedin": "https://www.linkedin.com/in/marctonimas/",
+    "person.sameAs.github": "https://github.com/marctonimas",
 
     // Navigation
     "nav.name": "Marc Toni Mas",
