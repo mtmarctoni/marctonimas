@@ -17,7 +17,7 @@ const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 ---
 
-<Layout title={t("site.title")} description={t("site.description")} lang={lang}>
+<Layout title={t("site.title")} description={t("site.description")} lang={lang} keywords={t("site.keywords")}>
   <div class="relative">
     <BlockchainCanvas client:load client:only="canvas" />
     <Hero client:load client:only="hero" />

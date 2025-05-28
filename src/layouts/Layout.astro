@@ -7,9 +7,10 @@ interface Props {
   title: string;
   description?: string;
   lang?: string;
+  keywords?: string;
 }
 
-const { title, description, lang = "en" } = Astro.props;
+const { title, description, lang = "en", keywords } = Astro.props;
 ---
 
 <!doctype html>
@@ -21,6 +22,7 @@ const { title, description, lang = "en" } = Astro.props;
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <!-- <meta name="generator" content={Astro.generator} /> -->
     <meta name="description" content={description} />
+    {keywords && <meta name="keywords" content={keywords} />}
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:site" content="@mtmarctoni" />
     <meta name="twitter:title" content={title} />
