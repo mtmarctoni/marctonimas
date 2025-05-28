@@ -21,7 +21,7 @@
         <div
           class="relative w-16 h-16 rounded-full bg-bg-alt flex items-center justify-center"
         >
-          <img v-if="icon" :src="icon" :alt="issuer" class="w-12 h-12 text-white" />
+          <img v-if="icon" :src="icon" :alt="issuer" class="w-12 h-12 text-white" loading="lazy" />
           <CertificateIcon v-else class="w-6 h-6 text-primary" />
         </div>
       </div>

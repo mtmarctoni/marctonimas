@@ -61,16 +61,17 @@ const translations = {
     "about.attribute.web3": "Web3",
     "about.attribute.blockchain": "Blockchain",
     "about.short_bio":
-      "I'm a <span class='text-primary font-semibold underline'>developer</span> with a passion for <span class='text-primary font-semibold text-2xl'>blockchain</span> technology and <span class='text-primary font-semibold text-2xl'>web3</span> applications.",
+      "I'm a <span class='text-primary font-semibold underline'>full stack developer</span> and <span class='text-primary font-semibold underline'>software engineer</span> with a passion for <span class='text-primary font-semibold text-2xl'>blockchain</span> technology and innovative <span class='text-primary font-semibold text-2xl'>web3</span> applications.",
     "about.what_i_do_title": "What I Do",
     "about.what_i_do_description":
       "I'm skilled in developing applications using blockchain technology, including smart contracts and decentralized systems. My knowledge spans both public and private blockchains, and I'm eager to apply my skills in real-world projects.",
     "about.looking_for_title": "What I'm Looking For",
     "about.looking_for_description":
       "I'm excited to join a team working on innovative Web3 projects that push the boundaries of what's possible in the decentralized space. I'm looking for a collaborative environment where I can grow professionally and contribute to the development of cutting-edge Web3 applications.",
+    "about.learn_more_background": "Learn more about my <a href='/background' class='text-accent hover:underline'>professional journey and background</a>.",
 
     // Skills
-    "skills.title": "My Skills",
+    "skills.title": "Technical Skills & Expertise",
     "skills.blockchain_title": "Blockchain",
     "skills.languages_title": "Languages",
     "skills.frontend_title": "Frontend",
@@ -106,6 +107,8 @@ const translations = {
 
     // Background
     "background.title": "Professional Background",
+    "background.pageTitle": "My Professional Background & Journey",
+    "background.pageDescription": "Explore the professional background, work experience, and education of Marc Toni Mas, a Full Stack Developer & Blockchain Enthusiast.",
     "background.opening_statement":
       "Transitioning from renewable energy, I bring a robust foundation in software development and problem-solving, aiming to leverage my skills in full-stack development and contribute to innovative Web3 projects.",
     "background.career_transition_title": "My Journey to Full-Stack & Web3",
@@ -233,7 +236,7 @@ const translations = {
     "about.attribute.web3": "Web3",
     "about.attribute.blockchain": "Blockchain",
     "about.short_bio":
-      "<span class='text-primary font-semibold underline'>Desarrollador</span> apasionado por la tecnología <span class='text-primary font-semibold text-2xl'>blockchain</span> y las aplicaciones <span class='text-primary font-semibold text-2xl'>web3</span>.",
+      "Soy un <span class='text-primary font-semibold underline'>desarrollador full stack</span> e <span class='text-primary font-semibold underline'>ingeniero de software</span> apasionado por la tecnología <span class='text-primary font-semibold text-2xl'>blockchain</span> y las innovadoras aplicaciones <span class='text-primary font-semibold text-2xl'>web3</span>.",
 
     "about.what_i_do_title": "Lo Que Hago",
     "about.what_i_do_description":
@@ -241,9 +244,10 @@ const translations = {
     "about.looking_for_title": "Lo Que Busco",
     "about.looking_for_description":
       "Unirme a un equipo que trabaje en proyectos innovadores de Web3 que amplíen los límites de lo posible en el espacio descentralizado. Busco un entorno colaborativo donde pueda crecer profesionalmente y contribuir al desarrollo de aplicaciones Web3 de vanguardia.",
+    "about.learn_more_background": "Conoce más sobre mi <a href='/es/background' class='text-accent hover:underline'>trayectoria y experiencia profesional</a>.",
 
     // Skills
-    "skills.title": "Mis Aptitudes",
+    "skills.title": "Habilidades Técnicas y Conocimientos",
     "skills.blockchain_title": "Blockchain",
     "skills.languages_title": "Lenguajes",
     "skills.frontend_title": "Frontend",
@@ -279,6 +283,8 @@ const translations = {
 
     // Background
     "background.title": "Experiencia Profesional",
+    "background.pageTitle": "Mi Trayectoria y Experiencia Profesional",
+    "background.pageDescription": "Explora la trayectoria profesional, experiencia laboral y educación de Marc Toni Mas, Desarrollador Full Stack y Entusiasta de Blockchain.",
     "background.opening_statement":
       "Con una transición desde energías renovables, aporto una sólida base en desarrollo de software y resolución de problemas, con el objetivo de aplicar mis habilidades en desarrollo full-stack y contribuir a proyectos innovadores en Web3.",
     "background.career_transition_title": "Mi Transición a Full-Stack y Web3",

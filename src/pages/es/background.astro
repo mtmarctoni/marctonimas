@@ -3,13 +3,16 @@ import Layout from "@/layouts/Layout.astro";
 import { getLangFromUrl, useTranslations } from "@/i18n/utils";
 import WorkExperience from "@/components/sections/WorkExperience.astro";
 import Education from "@/components/sections/Education.astro";
+import Contact from "@/components/sections/Contact.astro"; // Added this import
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 ---
 
-<Layout title={t("site.title")} lang={lang}>
+<Layout title={t("background.pageTitle")} description={t("background.pageDescription")} lang={lang} keywords={t("site.keywords")}>
   <div class="h-[57px]"></div>
+  <h1 class="text-4xl font-bold text-center my-8 bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">{t("background.pageTitle")}</h1>
   <WorkExperience />
   <Education />
+  <Contact />
 </Layout>
