@@ -2,6 +2,11 @@
   "name": "marctonimas",
   "type": "module",
   "version": "0.0.1",
+  "author": "mtmarctoni",
+  "license": "MIT",
+  "engines": {
+    "node": ">=18.20.8"
+  },
   "scripts": {
     "dev": "astro dev --host",
     "build": "astro build",
