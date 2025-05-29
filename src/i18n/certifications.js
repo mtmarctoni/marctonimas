@@ -67,14 +67,50 @@ export const certifications = {
       },
       {
         id: 4,
-        name: "Introduction to Hyperledger Self-Sovereign Identity Blockchain Solutions",
+        name: "Introduction to Hyperledger Self-Sovereign Identity Blockchain Solutions (LFS172x)",
         description: "How Hyperledger Aries, Indy, AnonCreds, and Ursa add a necessary layer of trust to the Internet.",
+        link: "",
+        institution: "The Linux Foundation",
+        institutionLink: "https://www.linuxfoundation.org",
+        date: "May 2025",
+        img: "/icons/lfx-logo.svg",
+        imgD: "/icons/lfx-logo-dark.svg",
+        status: 'completed'
+      },
+      {
+        id: 6,
+        name: "Becoming a Hyperledger Aries Developer (LFS173x)",
+        description: "Develop identity focused applications using blockchain.",
         link: "",
         institution: "The Linux Foundation",
         institutionLink: "https://www.linuxfoundation.org",
         date: "2025",
         img: "/icons/lfx-logo.svg",
         imgD: "/icons/lfx-logo-dark.svg",
+        status: 'in-progress'
+      },
+      {
+        id: 7,
+        name: "Hyperledger Fabric: Design, Develop, and Deploy (LFS270)",
+        description: "Design, develop, and deploy blockchain solutions. Write smart contracts, manage Chaincode, handle private data, and create Node.js client applications.",
+        link: "",
+        institution: "The Linux Foundation",
+        institutionLink: "https://www.linuxfoundation.org",
+        date: "2025",
+        img: "/icons/lfx-logo.svg",
+        imgD: "/icons/lfx-logo-dark.svg",
+        status: 'in-progress'
+      },
+      {
+        id: 8,
+        name: "Full Stack open - Containers",
+        description: "Introduction to container technology and its use in web development.",
+        link: "",
+        institution: "University of Helsinki",
+        institutionLink: "https://www.helsinki.fi",
+        date: "2025",
+        img: "/icons/university-of-helsinki.svg",
+        imgD: "/icons/university-of-helsinki-dark.svg",
         status: 'in-progress'
       },
 
@@ -148,14 +184,50 @@ export const certifications = {
       },
       {
         id: 4,
-        name: "Introducción a Soluciones Blockchain de Identidad Autosoberana con Hyperledger",
+        name: "Introducción a Soluciones Blockchain de Identidad Autosoberana con Hyperledger (LFS172x)",
         description: "Cómo Hyperledger Aries, Indy, AnonCreds y Ursa añaden una capa necesaria de confianza a Internet.",
+        link: "",
+        institution: "The Linux Foundation",
+        institutionLink: "https://www.linuxfoundation.org",
+        date: "Mayo 2025",
+        img: "/icons/lfx-logo.svg",
+        imgD: "/icons/lfx-logo-dark.svg",
+        status: 'completed'
+      },
+      {
+        id: 6,
+        name: "Desarrollador de Hyperledger Aries (LFS173x)",
+        description: "Desarrollo de aplicaciones centradas en la identidad utilizando blockchain.",
         link: "",
         institution: "The Linux Foundation",
         institutionLink: "https://www.linuxfoundation.org",
         date: "2025",
         img: "/icons/lfx-logo.svg",
         imgD: "/icons/lfx-logo-dark.svg",
+        status: 'in-progress'
+      },
+      {
+        id: 7,
+        name: "Hyperledger Fabric: Diseño, Desarrollo e Implementación (LFS270)",
+        description: "Diseño, desarrollo e implementación de soluciones blockchain. Contratos inteligentes, gestión de Chaincode, manejo de datos privados y creación de aplicaciones cliente en Node.js.",
+        link: "",
+        institution: "The Linux Foundation",
+        institutionLink: "https://www.linuxfoundation.org",
+        date: "2025",
+        img: "/icons/lfx-logo.svg",
+        imgD: "/icons/lfx-logo-dark.svg",
+        status: 'in-progress'
+      },
+      {
+        id: 8,
+        name: "Full Stack open - Contenedores",
+        description: "Introducción a la tecnología de contenedores y su uso en desarrollo web.",
+        link: "",
+        institution: "Universidad de Helsinki",
+        institutionLink: "https://www.helsinki.fi",
+        date: "2025",
+        img: "/icons/university-of-helsinki.svg",
+        imgD: "/icons/university-of-helsinki-dark.svg",
         status: 'in-progress'
       }
     ],

@@ -60,11 +60,13 @@ const groupByIssuer = (certs: Certificate[]): Issuer[] => {
   // Sort certificates within each issuer by date (newest first)
   return Array.from(issuerMap.values()).map(issuer => ({
     ...issuer,
-    certificates: [...issuer.certificates].sort((a, b) => {
-      const dateA = new Date(a.date);
-      const dateB = new Date(b.date);
-      return dateB.getTime() - dateA.getTime();
-    })
+    certificates: [...issuer.certificates].sort((a, b) => a.id - b.id
+    // {
+    //   const dateA = new Date(a.date);
+    //   const dateB = new Date(b.date);
+    //   return dateB.getTime() - dateA.getTime();
+    // }
+  )
   }));
 };
 

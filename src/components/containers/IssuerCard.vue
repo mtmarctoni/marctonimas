@@ -33,7 +33,7 @@
           <p v-if="cert.description" class="text-sm text-fg/70 mt-1">{{ cert.description }}</p>
           <span 
             v-if="cert.status === 'in-progress'" 
-            class="text-xs px-4 py-2 bg-accent/30 text-accent rounded-full mx-auto"
+            class="text-xs px-4 py-2 bg-accent/30 text-accent rounded-full mx-auto mt-2"
           >
             {{ inProgress }}
           </span>
