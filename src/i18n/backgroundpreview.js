@@ -11,6 +11,17 @@ export const backgroundPreview = {
     viewFullBackground: "View My Full Background",
     relevantExperience: [
       {
+        id: 3,
+        title: "Full-Stack Development & Web3",
+        period: "2024-Present",
+        highlights: [
+          "Developed responsive web applications using modern frameworks",
+          "Integrated RESTful APIs and managed databases for end-to-end solutions",
+          "Implemented blockchain features including smart contracts and wallet integration"
+        ],
+        skills: ["Full-Stack Development", "Blockchain", "Web3", "APIs", "Responsive Design"]
+      },
+      {
         id: 1,
         title: "Software Development & Automation",
         period: "2021-2024",
@@ -45,6 +56,17 @@ export const backgroundPreview = {
     web3Description: "Combinando habilidades de desarrollo full-stack con un profundo interés en la tecnología blockchain para construir aplicaciones descentralizadas innovadoras.",
     viewFullBackground: "Ver Mi Historial Completo",
     relevantExperience: [
+      {
+        id: 5,
+        title: "Desarrollo Full-Stack y Web3",
+        period: "2024-Actualidad",
+        highlights: [
+          "Desarrollo de aplicaciones web responsivas con frameworks modernos",
+          "Integración de APIs RESTful y gestión de bases de datos",
+          "Implementación de características blockchain incluyendo contratos inteligentes"
+        ],
+        skills: ["Desarrollo Full-Stack", "Blockchain", "Web3", "APIs", "Diseño Responsivo"]
+      },
       {
         id: 1,
         title: "Desarrollo de Software y Automatización",
