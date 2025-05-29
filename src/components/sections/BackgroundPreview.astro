@@ -1,20 +1,25 @@
 ---
 import SectionContainer from "@/components/containers/SectionContainer.astro";
-import { useTranslations, getLangFromUrl } from "@/i18n/utils";
+import { getLangFromUrl } from "@/i18n/utils";
 import { CodeIcon, RocketIcon, ToolsIcon } from "@/utils/icons";
+import ExperienceCard from "@/components/containers/ExperienceCard.astro";
 import Certificates from "./Certificates.astro";
+import { backgroundPreview } from "@/i18n/backgroundpreview";
 
 const url = new URL(Astro.url);
-const lang = getLangFromUrl(url);
-const t = useTranslations(lang);
----
+const lang = getLangFromUrl(url) as 'en' | 'es';
+const background = backgroundPreview[lang];
 
+// Get the relevant experience
+const experiences = background.relevantExperience;
+---
+ 
 <SectionContainer sectionId="background">
   <h2 class="text-4xl font-bold mb-8 text-center">
     <span
       class="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent"
     >
-      {t("background.title")}
+      {background.title}
     </span>
   </h2>
 
@@ -23,108 +28,46 @@ const t = useTranslations(lang);
     class="mb-10 bg-bg-secondary p-6 rounded-lg border-l-4 border-primary shadow-lg"
   >
     <p class="text-lg font-semibold text-fg">
-      {t("background.opening_statement")}
+      {background.openingStatement}
     </p>
   </div>
 
-  <!-- Career Transition Story -->
+  <!-- Journey -->
   <div class="mb-10">
     <h3 class="text-xl font-bold mb-4 flex items-center">
       <RocketIcon class="w-6 h-6 mr-3 text-primary" />
-      {t("background.career_transition_title")}
+      {background.journeyTitle}
     </h3>
     <p class="text-fg leading-relaxed">
-      {t("background.career_transition_description")}
+      {background.journeyDescription}
     </p>
   </div>
 
-  <!-- Relevant Technical Experience -->
+  <!-- Relevant Experience -->
   <div class="mb-10">
     <h3 class="text-xl font-bold mb-4 flex items-center">
       <CodeIcon class="w-6 h-6 mr-3 text-primary" />
-      {t("background.relevant_experience_title")}
+      {background.experienceTitle}
     </h3>
 
     <div class="space-y-6">
-      <div
-        class="bg-bg-alt/50 rounded-lg p-5 border border-fg-alt/5 hover:border-primary/20 transition-all duration-300"
-      >
-        <div
-          class="flex flex-col md:flex-row md:items-center md:justify-between mb-2"
-        >
-          <h4 class="text-lg font-bold">
-            {t("background.relevant_experience.job1_title")}
-          </h4>
-          <span
-            class="px-3 py-1 bg-primary/10 text-primary rounded-full text-sm"
-          >
-            {t("background.relevant_experience.job1_date")}
-          </span>
-        </div>
-        <ul class="list-disc pl-5 space-y-2 text-fg-alt">
-          <li>
-            {t("background.relevant_experience.job1_duty1")}
-          </li>
-          <li>
-            {t("background.relevant_experience.job1_duty2")}
-          </li>
-          <li>
-            {t("background.relevant_experience.job1_duty3")}
-          </li>
-          <li>
-            {t("background.relevant_experience.job1_duty4")}
-          </li>
-        </ul>
-      </div>
-
-      <div
-        class="bg-bg-alt/50 rounded-lg p-5 border border-fg-alt/5 hover:border-primary/20 transition-all duration-300"
-      >
-        <div
-          class="flex flex-col md:flex-row md:items-center md:justify-between mb-2"
-        >
-          <h4 class="text-lg font-bold">
-            {t("background.relevant_experience.job2_title")}
-          </h4>
-          <span
-            class="px-3 py-1 bg-primary/10 text-primary rounded-full text-sm"
-          >
-            {t("background.relevant_experience.job1_date")}
-          </span>
-        </div>
-        <ul class="list-disc pl-5 space-y-2 text-fg-alt">
-          <li>
-            {t("background.relevant_experience.job2_duty1")}
-          </li>
-          <li>
-            {t("background.relevant_experience.job2_duty2")}
-          </li>
-          <li>
-            {t("background.relevant_experience.job2_duty3")}
-          </li>
-        </ul>
-      </div>
+      {experiences.map((exp) => (
+        <ExperienceCard experience={exp} />
+      ))}
     </div>
   </div>
 
-  <!-- Transferable Skills -->
+  <!-- Skills -->
   <div class="mb-10">
     <h3 class="text-xl font-bold mb-4 flex items-center">
       <ToolsIcon class="w-6 h-6 mr-3 text-primary" />
-      {t("background.transferable_skills_title")}
+      {background.skillsTitle}
     </h3>
 
     <div class="flex flex-wrap gap-3">
-      {
-        [
-          "JavaScript",
-          "Data Analysis",
-          "Automation",
-          "Technical Leadership",
-          "Project Management",
-          "System Optimization",
-          "Software Development",
-        ].map((skill) => (
+      {experiences.flatMap(exp => exp.skills)
+        .filter((skill, index, self) => self.indexOf(skill) === index)
+        .map((skill) => (
           <span class="px-3 py-1 bg-secondary/30 text-fg rounded-full text-sm hover:bg-secondary hover:text-bg transition-colors duration-300">
             {skill}
           </span>
@@ -133,13 +76,13 @@ const t = useTranslations(lang);
     </div>
   </div>
 
-  <!-- Web3 Connection -->
+  <!-- Web3 Focus -->
   <div class="mb-10 bg-bg-alt/50 p-6 rounded-lg border border-secondary/20">
     <h3 class="text-xl font-bold mb-4 text-secondary">
-      {t("background.web3_connection_title")}
+      {background.web3Title}
     </h3>
     <p class="text-fg leading-relaxed">
-      {t("background.web3_connection_description")}
+      {background.web3Description}
     </p>
   </div>
 
@@ -149,7 +92,7 @@ const t = useTranslations(lang);
       href={lang === "es" ? "/es/background" : "/background/"}
       class="group z-50 flex items-center gap-2 bg-accent/70 px-6 py-3 rounded-full border border-fg-alt/10 hover:border-accent hover:bg-accent/30 transition-all duration-300 hover:shadow-md"
     >
-      <span>{t("background.view_full_background")}</span>
+      <span>{background.viewFullBackground}</span>
       <span
         class="w-4 h-4 pb-6 group-hover:translate-x-3 transition-transform duration-300 align-middle"
         >→</span

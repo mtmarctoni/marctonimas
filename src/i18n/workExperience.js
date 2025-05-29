@@ -5,6 +5,25 @@ export const workExperience = {
     dropdown: ["Show less", "Show more"],
     jobList: [
       {
+        id: 5,
+        company: "FREELANCE",
+        link: "",
+        img: "/icons/software-icon.svg",
+        imgD: "/icons/software-icon.svg",
+        title: "Full-Stack Developer",
+        period: "November 2024 - Present",
+        city: "Palma de Mallorca, Spain",
+        description: "Designed, developed, and deployed multiple web applications for personal projects and clients, covering both front-end and back-end functionality.",
+        duties: [
+          "Built responsive user interfaces using modern frameworks and ensured cross-browser compatibility and accessibility.",
+          "Integrated RESTful APIs and managed databases to deliver complete solutions from concept to deployment.",
+          "Explored and implemented blockchain features in web applications, including smart contract integration and wallet connectivity.",
+          "Managed all aspects of the development lifecycle independently, from requirements gathering and planning to testing and deployment.",
+          "Collaborated with clients to understand needs, propose solutions, and iterate on feedback to ensure satisfaction.",
+          "Continuously learned and applied new technologies and best practices to improve code quality and project outcomes."
+        ]
+      },
+      {
         id: 4,
         company: "EFIWATT",
         link: "https://efiwatt.com/",
@@ -108,6 +127,25 @@ export const workExperience = {
     subtitle: "",
     dropdown: ["Mostrar menos", "Mostrar más"],
     jobList: [
+      {
+        id: 5,
+        company: "FREELANCE",
+        link: "",
+        img: "/icons/software-icon.svg",
+        imgD: "/icons/software-icon.svg",
+        title: "Desarrollador Full-Stack",
+        period: "Noviembre 2024 - Actualidad",
+        city: "Palma de Mallorca, España",
+        description: "Diseño, desarrollo y despliegue de múltiples aplicaciones web para proyectos personales y clientes, cubriendo tanto el front-end como el back-end.",
+        duties: [
+          "Creación de interfaces de usuario responsivas utilizando frameworks modernos, asegurando compatibilidad entre navegadores y accesibilidad.",
+          "Integración de APIs RESTful y gestión de bases de datos para ofrecer soluciones completas desde la concepción hasta el despliegue.",
+          "Investigación e implementación de características de blockchain en aplicaciones web, incluyendo integración de contratos inteligentes y conectividad con carteras digitales.",
+          "Gestión de todos los aspectos del ciclo de vida del desarrollo de forma independiente, desde la recopilación de requisitos y planificación hasta las pruebas y el despliegue.",
+          "Colaboración con clientes para comprender sus necesidades, proponer soluciones e iterar según sus comentarios para garantizar su satisfacción.",
+          "Aprendizaje y aplicación contínuo de nuevas tecnologías y mejores prácticas para mejorar la calidad del código y los resultados de los proyectos."
+        ]
+      },
       {
         id: 4,
         company: "EFIWATT",

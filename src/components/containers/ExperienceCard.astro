@@ -1,0 +1,33 @@
+---
+interface Experience {
+  id: number;
+  title: string;
+  period: string;
+  highlights: string[];
+  skills?: string[];
+}
+
+interface Props {
+  experience: Experience;
+}
+
+const { experience } = Astro.props as Props;
+---
+
+<div class="bg-bg-alt/50 rounded-lg p-5 border border-fg-alt/5 hover:border-primary/20 transition-all duration-300">
+  <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-2">
+    <h4 class="text-lg font-bold text-center sm:text-left">
+      {experience.title}
+    </h4>
+    <span class="px-3 py-1 bg-primary/10 text-primary rounded-full text-sm mx-auto sm:mx-0 mt-1 sm:mt-0">
+      {experience.period}
+    </span>
+  </div>
+  <ul class="list-disc pl-5 space-y-2 text-fg-alt">
+    {experience.highlights.map((highlight: string) => (
+      <li>
+        {highlight}
+      </li>
+    ))}
+  </ul>
+</div>
