@@ -1,6 +1,6 @@
 ---
 import SectionContainer from "@/components/containers/SectionContainer.astro";
-import CertificateCard from "@/components/containers/CertificateCard.vue";
+import IssuerCard from "@/components/containers/IssuerCard.vue";
 import { certifications as rawCertifications } from "@/i18n/certifications";
 import { getLangFromUrl } from "@/i18n/utils";
 
@@ -8,7 +8,7 @@ const url = new URL(Astro.url);
 const lang = getLangFromUrl(url) as "en" | "es";
 
 interface Certificate {
-  id: string;
+  id: number;
   name: string;
   link: string;
   description?: string;
@@ -30,6 +30,45 @@ interface Certifications {
 
 const certifications = rawCertifications[lang] as unknown as Certifications;
 const { title, button, inProgress, certificationList } = certifications;
+
+// Group certificates by institution
+interface Issuer {
+  name: string;
+  link: string;
+  img: string;
+  imgD: string;
+  certificates: Certificate[];
+}
+
+const groupByIssuer = (certs: Certificate[]): Issuer[] => {
+  const issuerMap = new Map<string, Issuer>();
+  
+  certs.forEach(cert => {
+    const key = `${cert.institution}-${cert.institutionLink}`;
+    if (!issuerMap.has(key)) {
+      issuerMap.set(key, {
+        name: cert.institution,
+        link: cert.institutionLink,
+        img: cert.img,
+        imgD: cert.imgD,
+        certificates: []
+      });
+    }
+    issuerMap.get(key)?.certificates.push(cert);
+  });
+
+  // Sort certificates within each issuer by date (newest first)
+  return Array.from(issuerMap.values()).map(issuer => ({
+    ...issuer,
+    certificates: [...issuer.certificates].sort((a, b) => {
+      const dateA = new Date(a.date);
+      const dateB = new Date(b.date);
+      return dateB.getTime() - dateA.getTime();
+    })
+  }));
+};
+
+const groupedCertificates = groupByIssuer(certificationList);
 ---
 
 <SectionContainer sectionId="certifications">
@@ -48,39 +87,31 @@ const { title, button, inProgress, certificationList } = certifications;
       </span>
     </h2>
 
-    <div class="grid grid-cols-1 gap-4">
-      {
-        certificationList.map((cert: Certificate) => (
-          <CertificateCard
+    <div class="grid grid-cols-1 gap-6">
+      {groupedCertificates.map((issuer) => (
+        <div class="space-y-6">
+          <IssuerCard
             class:list={"dark:hidden"}
-            name={cert.name}
-            description={cert.description}
-            issuer={cert.institution}
-            date={cert.date}
-            link={cert.link}
-            issuerLink={cert.institutionLink}
-            icon={cert.img}
+            issuer={issuer.name}
+            issuerLink={issuer.link}
+            icon={issuer.img}
+            certificates={issuer.certificates}
             button={button}
-            status={cert.status}
             inProgress={inProgress}
             client:load
           />
-          <CertificateCard
-            class:list={"hidden dark:grid"}
-            name={cert.name}
-            description={cert.description}
-            issuer={cert.institution}
-            date={cert.date}
-            link={cert.link}
-            issuerLink={cert.institutionLink}
-            icon={cert.imgD}
+          <IssuerCard
+            class:list={"hidden dark:block"}
+            issuer={issuer.name}
+            issuerLink={issuer.link}
+            icon={issuer.imgD}
+            certificates={issuer.certificates}
             button={button}
-            status={cert.status}
             inProgress={inProgress}
             client:load
           />
-        ))
-      }
+        </div>
+      ))}
     </div>
   </div>
 </SectionContainer>
