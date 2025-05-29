@@ -9,8 +9,8 @@ export const projectSection = {
         title: "Web3 Fund Me",
         description:
           "Basic Fund Me web3 app using foundry for testing and deploy the smart contract on local network.",
-        image: "/media/projects/fundme-main.png",
-        tags: [
+          image: "/media/projects/fundme-main.png",
+          tags: [
           "Solidity",
           "React",
           "Ethers.js",
@@ -34,12 +34,12 @@ export const projectSection = {
       },
       {
         title: "Personal Finance Tracker",
-        description: "",
-        image: "",
-        tags: ["Nextjs", "API", "Tailwind", "Vercel", "PostgreSQL", "Neon DB"],
-        demoUrl: "",
+        description: "A comprehensive personal finance management application. Tracking income, expenses, and investments in one place with powerful analytics and reporting features.",
+        image: "/media/projects/finanzapp-main.png",
+        tags: ["Nextjs", "API", "Tailwind", "Vercel", "PostgreSQL"],
+        demoUrl: "https://finanzapp-unicap.vercel.app/",
         codeUrl: "https://github.com/mtmarctoni/finanzapp",
-        status: "ongoing"
+        status: "completed"
       },
       {
         title: "Decentralize Lottery App",
