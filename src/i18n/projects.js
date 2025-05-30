@@ -92,7 +92,7 @@ export const projectSection = {
         tags: ["Nextjs", "API", "Tailwind", "Vercel", "PostgreSQL"],
         demoUrl: "https://finanzapp-unicap.vercel.app/",
         codeUrl: "https://github.com/mtmarctoni/finanzapp",
-        status: "ongoing"
+        status: "completed"
       },
       {
         title: "Aplicación de Lotería Descentralizada",
