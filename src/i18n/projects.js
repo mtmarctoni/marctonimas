@@ -87,10 +87,10 @@ export const projectSection = {
       },
       {
         title: "Gestor de Finanzas Personales",
-        description: "",
-        image: "",
-        tags: ["Nextjs", "API", "Tailwind", "Vercel", "PostgreSQL", "Neon DB"],
-        demoUrl: "#",
+        description: "Aplicación de gestión de finanzas personales con análisis y reportes.",
+        image: "/media/projects/finanzapp-main.png",
+        tags: ["Nextjs", "API", "Tailwind", "Vercel", "PostgreSQL"],
+        demoUrl: "https://finanzapp-unicap.vercel.app/",
         codeUrl: "https://github.com/mtmarctoni/finanzapp",
         status: "ongoing"
       },
