@@ -13,16 +13,17 @@ export const workExperience = {
         title: "Full-Stack Developer",
         period: "November 2024 - Present",
         city: "Palma de Mallorca, Spain",
-        description: "Designed, developed, and deployed multiple web applications for personal projects and clients, covering both front-end and back-end functionality.",
+        description: "Designed, developed, and deployed multiple web applications for personal projects and clients, covering both front-end and back-end functionality, with a strong focus on AI-powered solutions.",
         duties: [
           "Built responsive user interfaces using modern frameworks and ensured cross-browser compatibility and accessibility.",
           "Integrated RESTful APIs and managed databases to deliver complete solutions from concept to deployment.",
+          "Developed and deployed AI-driven features, including document data extraction, intelligent automation, and template-based data transformation for business applications.",
           "Explored and implemented blockchain features in web applications, including smart contract integration and wallet connectivity.",
           "Managed all aspects of the development lifecycle independently, from requirements gathering and planning to testing and deployment.",
           "Collaborated with clients to understand needs, propose solutions, and iterate on feedback to ensure satisfaction.",
-          "Continuously learned and applied new technologies and best practices to improve code quality and project outcomes."
+          "Continuously learned and applied new technologies and best practices, including AI and machine learning, to improve code quality and project outcomes."
         ]
-      },
+      },      
       {
         id: 4,
         company: "EFIWATT",
@@ -134,18 +135,19 @@ export const workExperience = {
         img: "/icons/software-icon.svg",
         imgD: "/icons/software-icon.svg",
         title: "Desarrollador Full-Stack",
-        period: "Noviembre 2024 - Actualidad",
+        period: "Noviembre 2024 - Presente",
         city: "Palma de Mallorca, España",
-        description: "Diseño, desarrollo y despliegue de múltiples aplicaciones web para proyectos personales y clientes, cubriendo tanto el front-end como el back-end.",
+        description: "Diseño, desarrollo y despliegue de aplicaciones web para proyectos personales y clientes, cubriendo tanto el front-end como el back-end, con un fuerte enfoque en soluciones impulsadas por IA.",
         duties: [
-          "Creación de interfaces de usuario responsivas utilizando frameworks modernos, asegurando compatibilidad entre navegadores y accesibilidad.",
-          "Integración de APIs RESTful y gestión de bases de datos para ofrecer soluciones completas desde la concepción hasta el despliegue.",
-          "Investigación e implementación de características de blockchain en aplicaciones web, incluyendo integración de contratos inteligentes y conectividad con carteras digitales.",
-          "Gestión de todos los aspectos del ciclo de vida del desarrollo de forma independiente, desde la recopilación de requisitos y planificación hasta las pruebas y el despliegue.",
-          "Colaboración con clientes para comprender sus necesidades, proponer soluciones e iterar según sus comentarios para garantizar su satisfacción.",
-          "Aprendizaje y aplicación contínuo de nuevas tecnologías y mejores prácticas para mejorar la calidad del código y los resultados de los proyectos."
+          "Desarrollar interfaces de usuario responsivas utilizando frameworks modernos, asegurando compatibilidad entre navegadores y accesibilidad.",
+          "Integrar APIs RESTful y gestionar bases de datos para ofrecer soluciones completas desde la concepción hasta el despliegue.",
+          "Desarrollar e implementar funcionalidades basadas en IA, incluyendo extracción de datos de documentos, automatización inteligente y transformación de datos mediante plantillas para aplicaciones empresariales.",
+          "Explorar e integrar características de blockchain en aplicaciones web, incluyendo contratos inteligentes y conectividad con wallets.",
+          "Gestionar de forma independiente todas las etapas del ciclo de desarrollo, desde la recopilación de requisitos y planificación hasta las pruebas y el despliegue.",
+          "Colaborar con clientes para entender sus necesidades, proponer soluciones e iterar en base a su feedback para garantizar su satisfacción.",
+          "Aprender y aplicar continuamente nuevas tecnologías y buenas prácticas, incluyendo IA y machine learning, para mejorar la calidad del código y los resultados de los proyectos."
         ]
-      },
+      },      
       {
         id: 4,
         company: "EFIWATT",
