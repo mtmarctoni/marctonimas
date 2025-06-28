@@ -26,6 +26,11 @@ import Nextjs from "@/assets/skill-icons/nextjs.svg?component";
 import Ethereum from "@/assets/skill-icons/ethereum.svg?component";
 import Docker from "@/assets/skill-icons/docker.svg?component";
 import Foundry from "@/assets/skill-icons/foundry.svg?component";
+import Windsurf from "@/assets/skill-icons/windsurf.svg?component";
+import Prisma from "@/assets/skill-icons/prisma.svg?component";
+// import Chromadb from "@/assets/skill-icons/chromadb.svg?component";
+// import Langchain from "@/assets/skill-icons/langchain.svg?component";
+// import Postgresql from "@/assets/skill-icons/postgresql.svg?component";
 
 export const JavaScriptIcon = JavaScript;
 export const ReactIcon = React;
@@ -55,6 +60,11 @@ export const NextjsIcon = Nextjs;
 export const EthereumIcon = Ethereum;
 export const DockerIcon = Docker;
 export const FoundryIcon = Foundry;
+export const WindsurfIcon = Windsurf;
+export const PrismaIcon = Prisma;
+// export const LangchainIcon = Langchain;
+// export const ChromadbIcon = Chromadb;
+// export const PostgresqlIcon = Postgresql;
 
 export default {
   JavaScriptIcon,
@@ -85,4 +95,9 @@ export default {
   Ethereum,
   DockerIcon,
   FoundryIcon,
+  WindsurfIcon,
+  PrismaIcon,
+  // ChromadbIcon,
+  // PostgresqlIcon,
+  // LangchainIcon,
 };

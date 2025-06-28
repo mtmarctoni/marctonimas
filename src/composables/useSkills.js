@@ -23,6 +23,11 @@ import {
   NextjsIcon,
   EthereumIcon,
   DockerIcon,
+  PrismaIcon,
+  PostgresqlIcon,
+  LangchainIcon,
+  ChromadbockerIcon,
+  WindsurfIcon,
 } from "@/utils/skillIcons";
 
 // Reorganize skills into a flat array with category information
@@ -42,8 +47,7 @@ export const skillsInfo = [
   },
   { name: "Solidity", level: 90, icon: SolidityIcon, category: "languages" },
   { name: "Python", level: 70, icon: PythonIcon, category: "languages" },
-  { name: "VBA", level: 95, icon: VbaIcon, category: "tools" },
-
+  
   // Blockchain
   { name: "Ethereum", level: 85, icon: EthereumIcon, category: "blockchain" },
   { name: "Foundry", level: 80, icon: FoundryIcon, category: "blockchain" },
@@ -66,8 +70,17 @@ export const skillsInfo = [
   { name: "SQL", level: 70, icon: SqlIcon, category: "backend" },
   { name: "Node.js", level: 80, icon: NodeIcon, category: "backend" },
   { name: "Docker", level: 50, icon: DockerIcon, category: "backend" },
-
+  { name: "Prisma", level: 50, icon: PrismaIcon, category: "backend" },
+  { name: "PostgreSQL", level: 50, icon: PostgresqlIcon, category: "backend" },
+  { name: "Langchain", level: 50, icon: LangchainIcon, category: "backend" },
+  { name: "ChromaDB", level: 50, icon: ChromadbockerIcon, category: "backend" },
+  
+  
+  
   // Tools
   { name: "Git", level: 90, icon: GitIcon, category: "tools" },
   { name: "VS Code", level: 90, icon: VsCodeIcon, category: "tools" },
+  { name: "Windsurf", level: 90, icon: WindsurfIcon, category: "tools" },
+  { name: "VBA", level: 95, icon: VbaIcon, category: "tools" },
+  // { name: "Pinecone", level: 50, icon: PineconeIcon, category: "tools" },
 ];
