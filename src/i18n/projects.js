@@ -49,7 +49,17 @@ export const projectSection = {
         demoUrl: "https://foundry-lottery.vercel.app/",
         codeUrl: "https://github.com/mtmarctoni/foundry-lottery",
         status: "ongoing"
+      },
+      {
+        title: "AI Order Processor",
+        description: "An AI-powered web app that automates extraction and transformation of order data from any file format (PDF, Excel, images, etc.) into ready-to-upload documents using custom templates.",
+        image: "",
+        tags: ["Typescript", "React", "Express", "Supabase", "AI", "OCR", "Tailwind", "Langchain", "Pinecone"],
+        demoUrl: "",
+        codeUrl: "https://github.com/mtmarctoni/order-processor",
+        status: "ongoing"
       }
+      
     ],
   },
   es: {
@@ -102,7 +112,17 @@ export const projectSection = {
         demoUrl: "https://foundry-lottery.vercel.app/",
         codeUrl: "https://github.com/mtmarctoni/foundry-lottery",
         status: "ongoing"
+      },
+      {
+        title: "Procesador de Pedidos con IA",
+        description: "Aplicación web impulsada por IA que automatiza la extracción y transformación de datos de pedidos desde cualquier formato de archivo (PDF, Excel, imágenes, etc.) a documentos listos para subir mediante plantillas personalizadas.",
+        image: "",
+        tags: ["Typescript", "React", "Express", "Supabase", "IA", "OCR", "Tailwind", "Langchain", "Pinecone"],
+        demoUrl: "",
+        codeUrl: "https://github.com/mtmarctoni/order-processor",
+        status: "en desarrollo"
       }
+      
     ],
   },
 };
