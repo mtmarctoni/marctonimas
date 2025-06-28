@@ -72,7 +72,7 @@ export const skillsInfo = [
   { name: "Docker", level: 50, icon: DockerIcon, category: "backend" },
   { name: "Prisma", level: 50, icon: PrismaIcon, category: "backend" },
   { name: "PostgreSQL", level: 50, icon: PostgresqlIcon, category: "backend" },
-  { name: "ChromaDB", level: 50, icon: ChromadbockerIcon, category: "backend" },
+  { name: "ChromaDB", level: 50, icon: ChromadbIcon, category: "backend" },
   { name: "Langchain", level: 50, icon: LangchainIcon, category: "backend" },
   
   

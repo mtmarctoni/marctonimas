@@ -113,6 +113,18 @@ export const certifications = {
         imgD: "/icons/university-of-helsinki-dark.svg",
         status: 'in-progress'
       },
+      {
+        id: 9,
+        name: "Generative AI for NodeJs: OpenAI, LangChain - TypeScript",
+        description: "Developed LLM-powered apps with LangChain, using wrappers, chains, and agents, and integrated vector databases like Pinecone and ChromaDB.",
+        link: "",
+        institution: "Udemy",
+        institutionLink: "https://udemy.com",
+        date: "June 2025",
+        img: "/icons/udemy-logo.svg",
+        imgD: "/icons/udemy-logo-dark.svg",
+        status: 'completed'
+      },
 
     ],
   },
@@ -229,6 +241,18 @@ export const certifications = {
         img: "/icons/university-of-helsinki.svg",
         imgD: "/icons/university-of-helsinki-dark.svg",
         status: 'in-progress'
+      },
+      {
+        id: 9,
+        name: "IA Generativa para NodeJs: OpenAI, LangChain - TypeScript",
+        description: "Desarrollo aplicaciones con LLM utilizando LangChain, empleando wrappers, chains y agentes, e integrando bases de datos vectoriales como Pinecone y ChromaDB.",
+        link: "",
+        institution: "Udemy",
+        institutionLink: "https://udemy.com",
+        date: "Junio 2025",
+        img: "/icons/udemy-logo.svg",
+        imgD: "/icons/udemy-logo-dark.svg",
+        status: 'completed'
       }
     ],
   },
