@@ -62,15 +62,26 @@ const translations = {
     "about.attribute.developer": "Developer",
     "about.attribute.web3": "Web3",
     "about.attribute.blockchain": "Blockchain",
+    // "about.short_bio":
+    //   "I'm a <span class='text-primary font-semibold underline'>full stack developer</span> and <span class='text-primary font-semibold underline'>software engineer</span> with a passion for <span class='text-primary font-semibold text-2xl'>blockchain</span> technology and innovative <span class='text-primary font-semibold text-2xl'>web3</span> applications.",
+    // "about.what_i_do_title": "What I Do",
+    // "about.what_i_do_description":
+    //   "I'm skilled in developing applications using blockchain technology, including smart contracts and decentralized systems. My knowledge spans both public and private blockchains, and I'm eager to apply my skills in real-world projects.",
+    // "about.looking_for_title": "What I'm Looking For",
+    // "about.looking_for_description":
+    //   "I'm excited to join a team working on innovative Web3 projects that push the boundaries of what's possible in the decentralized space. I'm looking for a collaborative environment where I can grow professionally and contribute to the development of cutting-edge Web3 applications.",
+    // "about.learn_more_background": "Learn more about my <a href='/background' class='text-accent hover:underline'>professional journey and background</a>.",
     "about.short_bio":
-      "I'm a <span class='text-primary font-semibold underline'>full stack developer</span> and <span class='text-primary font-semibold underline'>software engineer</span> with a passion for <span class='text-primary font-semibold text-2xl'>blockchain</span> technology and innovative <span class='text-primary font-semibold text-2xl'>web3</span> applications.",
+      "Passionate about <span class='text-primary font-semibold text-2xl'>AI-driven development</span>, <span class='text-primary font-semibold text-2xl'>blockchain</span> technology, and cutting-edge <span class='text-primary font-semibold text-2xl'>Web3</span> applications.",
     "about.what_i_do_title": "What I Do",
     "about.what_i_do_description":
-      "I'm skilled in developing applications using blockchain technology, including smart contracts and decentralized systems. My knowledge spans both public and private blockchains, and I'm eager to apply my skills in real-world projects.",
+      "I design and build robust, scalable applications on the full stack, integrating <span class='font-semibold text-secondary'>AI solutions</span> and <span class='font-semibold text-secondary'>blockchain technologies</span> into smart, secure, and intuitive experiences. My background includes the development of smart contracts, <span class='font-semibold text-secondary'>decentralized applications</span>, and the utilization of AI for <span class='font-semibold text-secondary'>process automation</span> and feature augmentation.",
     "about.looking_for_title": "What I'm Looking For",
     "about.looking_for_description":
-      "I'm excited to join a team working on innovative Web3 projects that push the boundaries of what's possible in the decentralized space. I'm looking for a collaborative environment where I can grow professionally and contribute to the development of cutting-edge Web3 applications.",
+      "I am looking forward to joining an <span class='font-semibold text-secondary'>innovative team</span> that develops projects that harness the power of <span class='font-semibold text-secondary'>AI, Web3,</span> and <span class='font-semibold text-secondary'>blockchain</span>. I'm seeking an open culture that allows me to <span class='font-semibold text-secondary'>collaborate, learn,</span> and <span class='font-semibold text-secondary'>work</span> towards providing next-generation digital solutions.",
     "about.learn_more_background": "Learn more about my <a href='/background' class='text-accent hover:underline'>professional journey and background</a>.",
+
+
 
     // Skills
     "skills.title": "Technical Skills & Expertise",
@@ -172,16 +183,27 @@ const translations = {
     "about.attribute.developer": "Desarrollador",
     "about.attribute.web3": "Web3",
     "about.attribute.blockchain": "Blockchain",
-    "about.short_bio":
-      "Soy un <span class='text-primary font-semibold underline'>desarrollador full stack</span> e <span class='text-primary font-semibold underline'>ingeniero de software</span> apasionado por la tecnología <span class='text-primary font-semibold text-2xl'>blockchain</span> y las innovadoras aplicaciones <span class='text-primary font-semibold text-2xl'>web3</span>.",
+    // "about.short_bio":
+    //   "Soy un <span class='text-primary font-semibold underline'>desarrollador full stack</span> e <span class='text-primary font-semibold underline'>ingeniero de software</span> apasionado por la tecnología <span class='text-primary font-semibold text-2xl'>blockchain</span> y las innovadoras aplicaciones <span class='text-primary font-semibold text-2xl'>web3</span>.",
 
-    "about.what_i_do_title": "Lo Que Hago",
-    "about.what_i_do_description":
-      "Desarrollo de aplicaciones utilizando tecnología blockchain, incluyendo contratos inteligentes y sistemas descentralizados. Mi conocimiento abarca tanto blockchains públicas como privadas, y estoy ansioso por aplicar mis habilidades en proyectos del mundo real.",
-    "about.looking_for_title": "Lo Que Busco",
-    "about.looking_for_description":
-      "Unirme a un equipo que trabaje en proyectos innovadores de Web3 que amplíen los límites de lo posible en el espacio descentralizado. Busco un entorno colaborativo donde pueda crecer profesionalmente y contribuir al desarrollo de aplicaciones Web3 de vanguardia.",
-    "about.learn_more_background": "Conoce más sobre mi <a href='/es/background' class='text-accent hover:underline'>trayectoria y experiencia profesional</a>.",
+    // "about.what_i_do_title": "Lo Que Hago",
+    // "about.what_i_do_description":
+    //   "Desarrollo de aplicaciones utilizando tecnología blockchain, incluyendo contratos inteligentes y sistemas descentralizados. Mi conocimiento abarca tanto blockchains públicas como privadas, y estoy ansioso por aplicar mis habilidades en proyectos del mundo real.",
+    // "about.looking_for_title": "Lo Que Busco",
+    // "about.looking_for_description":
+    //   "Unirme a un equipo que trabaje en proyectos innovadores de Web3 que amplíen los límites de lo posible en el espacio descentralizado. Busco un entorno colaborativo donde pueda crecer profesionalmente y contribuir al desarrollo de aplicaciones Web3 de vanguardia.",
+    // "about.learn_more_background": "Conoce más sobre mi <a href='/es/background' class='text-accent hover:underline'>trayectoria y experiencia profesional</a>.",
+"about.short_bio":
+  "Apasionado por el <span class='text-primary font-semibold text-2xl'>desarrollo impulsado por IA</span>, la tecnología <span class='text-primary font-semibold text-2xl'>blockchain</span> y las aplicaciones <span class='text-primary font-semibold text-2xl'>Web3</span> más innovadoras.",
+"about.what_i_do_title": "Lo que hago",
+"about.what_i_do_description":
+  "Desarrollo aplicaciones robustas y escalables en todo el stack, integrando <span class='font-semibold text-secondary'>soluciones de IA</span> y <span class='font-semibold text-secondary'>blockchain</span> para crear experiencias inteligentes, seguras e intuitivas. Mi experiencia incluye el desarrollo de smart contracts, <span class='font-semibold text-secondary'>aplicaciones descentralizadas</span> y el uso de IA para la <span class='font-semibold text-secondary'>automatización de procesos</span>.",
+"about.looking_for_title": "Qué busco",
+"about.looking_for_description":
+  "Estoy deseando unirme a un <span class='font-semibold text-secondary'>equipo innovador</span> que desarrolle proyectos que aprovechen el potencial de la <span class='font-semibold text-secondary'>IA, Web3</span> y la <span class='font-semibold text-secondary'>blockchain</span>. Busco una cultura abierta que me permita <span class='font-semibold text-secondary'>colaborar, aprender</span> y <span class='font-semibold text-secondary'>trabajar</span> para ofrecer soluciones digitales de próxima generación.",
+"about.learn_more_background": "Conoce más sobre mi <a href='/background' class='text-accent hover:underline'>trayectoria y experiencia profesional</a>.",
+
+
 
     // Skills
     "skills.title": "Habilidades Técnicas y Conocimientos",

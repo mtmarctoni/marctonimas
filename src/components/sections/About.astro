@@ -151,11 +151,9 @@ const keyAttributes = [
               data-expanded="false"
               class="card-description h-0 group-hover:h-30 duration-500 overflow-hidden"
             >
-              <p
+              <p set:html={t("about.what_i_do_description") }
                 class="text-fg-alt text-sm group-hover:opacity-100 text-justify transition-all duration-300 delay-300"
-              >
-                {t("about.what_i_do_description")}
-              </p>
+              />
             </div>
           </div>
 
@@ -181,11 +179,9 @@ const keyAttributes = [
               data-expanded="false"
               class="card-description h-0 group-hover:h-30 duration-500 overflow-hidden"
             >
-              <p
+              <p set:html={t("about.looking_for_description")}
                 class="text-fg-alt text-sm group-hover:opacity-100 text-justify transition-all duration-300 delay-300"
-              >
-                {t("about.looking_for_description")}
-              </p>
+              />
             </div>
             <!-- <div
               data-expanded="false"
