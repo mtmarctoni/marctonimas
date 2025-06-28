@@ -26,7 +26,7 @@ import {
   PrismaIcon,
   PostgresqlIcon,
   LangchainIcon,
-  ChromadbockerIcon,
+  ChromadbIcon,
   WindsurfIcon,
 } from "@/utils/skillIcons";
 
