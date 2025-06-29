@@ -1,5 +1,5 @@
 <template>
-  <div class="wallet-connect">
+  <div v-if="clientHasWallet" class="wallet-connect">
     <!-- Connected state with dropdown menu -->
     <div v-if="isConnected" class="relative">
       <button
@@ -61,6 +61,7 @@ const {
   connectWallet,
   disconnectWallet,
   shortenAddress,
+  clientHasWallet
 } = useWallet(t);
 
 const toggleDropdown = () => {

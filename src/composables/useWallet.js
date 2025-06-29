@@ -10,6 +10,7 @@ export function useWallet(t) {
   const isConnected = ref(false);
   const account = ref("");
   const balance = ref(null);
+  const clientHasWallet = ref(true);
 
   onMounted(() => {
     checkConnection();
@@ -32,8 +33,10 @@ export function useWallet(t) {
 
   const connectWallet = async () => {
     if (window.ethereum) {
+      clientHasWallet.value = true;
       await setupProvider();
     } else {
+      clientHasWallet.value = false;
       alert(t("wallet.no_ethereum_provider"));
     }
   };
@@ -119,5 +122,6 @@ export function useWallet(t) {
     connectWallet,
     disconnectWallet,
     shortenAddress,
+    clientHasWallet,
   };
 }
