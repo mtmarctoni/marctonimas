@@ -58,7 +58,18 @@ export const projectSection = {
         demoUrl: "",
         codeUrl: "https://github.com/mtmarctoni/order-processor",
         status: "ongoing"
+      },
+      {
+        title: "CodeCraft Studio - Portfolio & Business Website",
+        description: "A comprehensive business portfolio website featuring modern web development services, blockchain solutions, and business automation.",
+        image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&h=400&fit=crop&auto=format&q=80",
+        tags: ["Astro", "TypeScript", "Tailwind CSS", "Supabase", "Stripe", "Resend"],
+        demoUrl: "https://code-craft-studio.netlify.app/",
+        codeUrl: "https://github.com/mtmarctoni/freelance-ws",
+        status: "completed"
       }
+      
+      
       
     ],
   },
@@ -120,8 +131,28 @@ export const projectSection = {
         tags: ["Typescript", "React", "Express", "Supabase", "IA", "OCR", "Tailwind", "Langchain", "Pinecone"],
         demoUrl: "",
         codeUrl: "https://github.com/mtmarctoni/order-processor",
-        status: "en desarrollo"
+        status: "ongoing"
+      },
+      {
+        title: "Aplicación de Entrenamiento de Balonmano",
+        description: "Una aplicación de entrenador personal centrada en la preparación fuera de temporada de balonmano, fuerza, potencia, agilidad y entrenamiento de resistencia.",
+        image: "",
+        tags: ["TypeScript", "Next.js", "Prisma", "Tailwind", "React", "Fitness", "Balonmano", "Entrenamiento"],
+        demoUrl: "https://workout-plan-sage.vercel.app/",
+        codeUrl: "https://github.com/mtmarctoni/workout-plan",
+        status: "ongoing"
+      },
+      {
+        title: "CodeCraft Studio - Portafolio y Sitio Web Empresarial",
+        description: "Un sitio web de portafolio empresarial completo que presenta servicios de desarrollo web moderno, soluciones blockchain y automatización empresarial.",
+        image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&h=400&fit=crop&auto=format&q=80",
+        tags: ["Astro", "TypeScript", "Tailwind CSS", "Supabase", "Stripe", "Resend"],
+        demoUrl: "https://code-craft-studio.netlify.app/",
+        codeUrl: "https://github.com/mtmarctoni/freelance-ws",
+        status: "completed"
       }
+      
+
       
     ],
   },
