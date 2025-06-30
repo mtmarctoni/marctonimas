@@ -11,6 +11,7 @@ export const MY_PHONE = "+34 652 13 48 06";
 export const MY_EMAIL = "marctonimas@outlook.es";
 export const MY_DOMAIN = "marctonimas.com";
 export const MY_WEB = `https://${MY_DOMAIN}`;
+export const GITHUB_API_URL = `https://api.github.com/users/${MY_GITHUB}/repos?sort=updated&per_page=100`;
 
 export const socialMediaLinks = [
   {
