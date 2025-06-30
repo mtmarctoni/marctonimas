@@ -3,30 +3,50 @@ import SectionContainer from "../containers/SectionContainer.astro";
 import { getLangFromUrl } from "@/i18n/utils";
 import { projectSection } from "@/i18n/projects";
 import ProjectCard from "../containers/ProjectCard.astro";
+import { View } from 'astro:content';
 
 const url = new URL(Astro.url);
 const lang = getLangFromUrl(url) as "en" | "es";
 
-export interface Project {
-  title: string;
-  description: string;
-  image: string;
-  tags: string[];
-  demoUrl: string;
-  codeUrl: string;
-  status: "completed" | "ongoing";
-}
-
-interface ProjectSection {
-  title: string;
-  subtitle?: string;
-  buttonCode: string;
-  buttonDemo: string;
-  projectList: Project[];
-}
-
-const projects = projectSection[lang] as unknown as ProjectSection;
+const projects = projectSection[lang];
 const { title, buttonCode, buttonDemo, projectList } = projects;
+
+const INITIAL_DISPLAY_COUNT = 4;
+const showAll = projectList.length <= INITIAL_DISPLAY_COUNT;
+
+// Client-side script to handle show more/less functionality
+const showMoreScript = `
+  document.addEventListener('DOMContentLoaded', () => {
+    const projectGrid = document.querySelector('.project-grid');
+    const showMoreBtn = document.getElementById('show-more-btn');
+    const projects = Array.from(document.querySelectorAll('.project-card'));
+    
+    if (!showMoreBtn) return;
+    
+    // Initially hide projects beyond the initial count
+    projects.forEach((project, index) => {
+      if (index >= ${INITIAL_DISPLAY_COUNT}) {
+        project.classList.add('hidden');
+      }
+    });
+    
+    showMoreBtn.addEventListener('click', () => {
+      const isExpanded = showMoreBtn.getAttribute('aria-expanded') === 'true';
+      
+      // Toggle visibility of projects
+      projects.forEach((project, index) => {
+        if (index >= ${INITIAL_DISPLAY_COUNT}) {
+          project.classList.toggle('hidden', !isExpanded);
+        }
+      });
+      
+      // Update button text and aria attributes
+      const buttonText = isExpanded ? '${lang === 'es' ? 'Mostrar más' : 'Show More'}' : '${lang === 'es' ? 'Mostrar menos' : 'Show Less'}';
+      showMoreBtn.textContent = buttonText;
+      showMoreBtn.setAttribute('aria-expanded', String(!isExpanded));
+    });
+  });
+`;
 ---
 
 <SectionContainer sectionId="projects">
@@ -38,15 +58,32 @@ const { title, buttonCode, buttonDemo, projectList } = projects;
     </span>
   </h2>
 
-  <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+  <div class="project-grid grid grid-cols-1 md:grid-cols-2 gap-5">
     {
-      projectList.map((project) => (
-        <ProjectCard
-          project={project}
-          buttonCode={buttonCode}
-          buttonDemo={buttonDemo}
-        />
+      projectList.map((project, index) => (
+        <div class:list={['project-card', index >= INITIAL_DISPLAY_COUNT ? 'hidden' : '']}>
+          <ProjectCard
+            project={project}
+            buttonCode={buttonCode}
+            buttonDemo={buttonDemo}
+          />
+        </div>
       ))
     }
+  </div>
+  
+  {!showAll && (
+    <div class="mt-8 text-center">
+      <button 
+        id="show-more-btn"
+        class="px-6 py-2 bg-gradient-to-r from-primary to-secondary text-white rounded-full font-medium hover:opacity-90 transition-opacity"
+        aria-expanded="false"
+      >
+        {lang === 'es' ? 'Mostrar más' : 'Show More'}
+      </button>
+    </div>
+  )}
+  
+  <script is:inline>{showMoreScript}</script>
   </div>
 </SectionContainer>

@@ -4,6 +4,7 @@ import { BulbIcon, ZoomCheckIcon } from "@/utils/icons";
 import { useTranslations, getLangFromUrl } from "@/i18n/utils";
 import SectionContainer from "@/components/containers/SectionContainer.astro";
 import BackgroundBlobs from "@/components/ui/BackgroundBlobs.astro";
+import NoiseTexture from "../ui/NoiseTexture.astro";
 
 const url = new URL(Astro.url);
 const lang = getLangFromUrl(url);
@@ -135,6 +136,11 @@ const keyAttributes = [
           <div
             class="card-container cursor-pointer group bg-bg-secondary/80 backdrop-blur-sm rounded-xl p-6 border border-primary/10 hover:border-primary/30 transition-all ease-in duration-300 hover:shadow-lg hover:shadow-primary/5 hover:-translate-y-1"
           >
+          <NoiseTexture 
+          opacity={20} 
+          className="z-0 rounded-xl"
+          backgroundOpacity={25}
+        />
             <div class="flex items-center mb-2 justify-between">
               <div class="flex items-center">
                 <BulbIcon
@@ -149,7 +155,7 @@ const keyAttributes = [
             </div>
             <div
               data-expanded="false"
-              class="card-description h-0 group-hover:h-30 duration-500 overflow-hidden"
+              class="card-description h-0 group-hover:h-35 duration-500 overflow-hidden"
             >
               <p set:html={t("about.what_i_do_description") }
                 class="text-fg-alt text-sm group-hover:opacity-100 text-justify transition-all duration-300 delay-300"
@@ -161,6 +167,11 @@ const keyAttributes = [
           <div
             class="card-container cursor-pointer group bg-bg-secondary/80 backdrop-blur-sm rounded-xl p-6 border border-secondary/10 hover:border-primary/30 transition-all ease-in duration-300 hover:shadow-lg hover:shadow-secondary/5 hover:-translate-y-1"
           >
+          <NoiseTexture 
+          opacity={20} 
+          className="z-0 rounded-xl"
+          backgroundOpacity={25}
+        />
             <div class="flex items-center mb-2 justify-between">
               <div class="flex items-center">
                 <ZoomCheckIcon

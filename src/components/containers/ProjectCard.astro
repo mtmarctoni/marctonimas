@@ -1,6 +1,7 @@
 ---
 import { Image } from "astro:assets";
 import type { Project } from "../sections/Projects.astro";
+import NoiseTexture from "../ui/NoiseTexture.astro";
 
 interface Props {
   buttonCode: string;
@@ -14,6 +15,15 @@ const { project, buttonCode, buttonDemo } = Astro.props as Props;
 <div
   class="project-card relative bg-bg-secondary rounded-xl overflow-hidden shadow-lg md:hover:shadow-xl md:hover:border-primary/70 md:hover:scale-107 transition-transform ease-in-out duration-750 border border-fg-alt group"
 >
+  <!-- noise texture overlay -->
+  <NoiseTexture 
+  opacity={20} 
+  className="z-0 rounded-xl"
+  backgroundImage={project.image || '/default-web3-image.jpg'}
+  backgroundBlur={true}
+  backgroundOpacity={25}
+/>
+
   <div class="absolute top-3 right-3 z-10">
     <span
       class={`px-3 py-1 rounded-full text-sm font-medium ${
@@ -64,13 +74,14 @@ const { project, buttonCode, buttonDemo } = Astro.props as Props;
   </div>
 
   <div class="p-6">
+    
     <h3 class="text-xl font-bold mb-2">{project.title}</h3>
     <p class="text-fg mb-4">{project.description}</p>
 
     <div class="flex flex-wrap gap-2 mb-4">
       {
         project.tags.map((tag: string) => (
-          <span class="px-2 py-1 bg-accent/20 text-fg rounded-full text-xs hover:bg-accent/70">
+          <span class="z-20 px-2 py-1 bg-accent/20 text-fg rounded-full text-xs hover:bg-accent/70">
             {tag}
           </span>
         ))
