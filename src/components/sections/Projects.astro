@@ -3,7 +3,6 @@ import SectionContainer from "../containers/SectionContainer.astro";
 import { getLangFromUrl } from "@/i18n/utils";
 import { projectSection } from "@/i18n/projects";
 import ProjectCard from "../containers/ProjectCard.astro";
-import { View } from 'astro:content';
 
 const url = new URL(Astro.url);
 const lang = getLangFromUrl(url) as "en" | "es";
@@ -14,39 +13,10 @@ const { title, buttonCode, buttonDemo, projectList } = projects;
 const INITIAL_DISPLAY_COUNT = 4;
 const showAll = projectList.length <= INITIAL_DISPLAY_COUNT;
 
-// Client-side script to handle show more/less functionality
-const showMoreScript = `
-  document.addEventListener('DOMContentLoaded', () => {
-    const projectGrid = document.querySelector('.project-grid');
-    const showMoreBtn = document.getElementById('show-more-btn');
-    const projects = Array.from(document.querySelectorAll('.project-card'));
-    
-    if (!showMoreBtn) return;
-    
-    // Initially hide projects beyond the initial count
-    projects.forEach((project, index) => {
-      if (index >= ${INITIAL_DISPLAY_COUNT}) {
-        project.classList.add('hidden');
-      }
-    });
-    
-    showMoreBtn.addEventListener('click', () => {
-      const isExpanded = showMoreBtn.getAttribute('aria-expanded') === 'true';
-      
-      // Toggle visibility of projects
-      projects.forEach((project, index) => {
-        if (index >= ${INITIAL_DISPLAY_COUNT}) {
-          project.classList.toggle('hidden', !isExpanded);
-        }
-      });
-      
-      // Update button text and aria attributes
-      const buttonText = isExpanded ? '${lang === 'es' ? 'Mostrar más' : 'Show More'}' : '${lang === 'es' ? 'Mostrar menos' : 'Show Less'}';
-      showMoreBtn.textContent = buttonText;
-      showMoreBtn.setAttribute('aria-expanded', String(!isExpanded));
-    });
-  });
-`;
+// Split projects into visible and hidden
+const visibleProjects = projectList.slice(0, INITIAL_DISPLAY_COUNT);
+const hiddenProjects = projectList.slice(INITIAL_DISPLAY_COUNT);
+
 ---
 
 <SectionContainer sectionId="projects">
@@ -58,18 +28,24 @@ const showMoreScript = `
     </span>
   </h2>
 
-  <div class="project-grid grid grid-cols-1 md:grid-cols-2 gap-5">
-    {
-      projectList.map((project, index) => (
-        <div class:list={['project-card', index >= INITIAL_DISPLAY_COUNT ? 'hidden' : '']}>
-          <ProjectCard
-            project={project}
-            buttonCode={buttonCode}
-            buttonDemo={buttonDemo}
-          />
-        </div>
-      ))
-    }
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+    {visibleProjects.map((project) => (
+      <ProjectCard
+        project={project}
+        buttonCode={buttonCode}
+        buttonDemo={buttonDemo}
+      />
+    ))}
+    
+    {hiddenProjects.map((project, index) => (
+      <div id="hidden-projects" class="hidden">
+        <ProjectCard
+          project={project}
+          buttonCode={buttonCode}
+          buttonDemo={buttonDemo}
+        />
+      </div>
+    ))}
   </div>
   
   {!showAll && (
@@ -83,7 +59,32 @@ const showMoreScript = `
       </button>
     </div>
   )}
-  
-  <script is:inline>{showMoreScript}</script>
-  </div>
 </SectionContainer>
+  
+  
+  <script>
+
+    function handleClick() {
+      const hiddenProjects = document.querySelectorAll('#hidden-projects');
+      const button = document.getElementById('show-more-btn');
+      if (!button) return;
+      
+      // Get current state before toggling
+      const isExpanded = button.getAttribute('aria-expanded') === 'true';
+      
+      // Toggle the hidden class
+      hiddenProjects.forEach(project => project.classList.toggle('hidden'));
+      
+      // Update button text based on new state
+      button.textContent = isExpanded 
+        ? (document.documentElement.lang === 'es' ? 'Mostrar más' : 'Show More')
+        : (document.documentElement.lang === 'es' ? 'Mostrar menos' : 'Show Less');
+      
+      // Update the aria-expanded attribute with the new state
+      button.setAttribute('aria-expanded', String(!isExpanded));
+    }
+
+    document.getElementById('show-more-btn')?.addEventListener('click', handleClick);
+
+
+  </script>
