@@ -60,6 +60,15 @@ export const projectSection = {
         status: "ongoing"
       },
       {
+        title: "Handball Training App",
+        description: "A personal trainer app focused on handball off-season conditioning, strength, power, agility, and endurance training. Built with Next.js, Prisma ORM, and Tailwind CSS.",
+        image: "",
+        tags: ["TypeScript", "Next.js", "Prisma", "Tailwind CSS", "React", "Fitness", "Handball", "Training"],
+        demoUrl: "https://workout-plan-sage.vercel.app/",
+        codeUrl: "https://github.com/mtmarctoni/workout-plan",
+        status: "ongoing"
+      },
+      {
         title: "CodeCraft Studio - Portfolio & Business Website",
         description: "A comprehensive business portfolio website featuring modern web development services, blockchain solutions, and business automation.",
         image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&h=400&fit=crop&auto=format&q=80",
