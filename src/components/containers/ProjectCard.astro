@@ -13,27 +13,27 @@ const { project, buttonCode, buttonDemo } = Astro.props as Props;
 ---
 
 <div
-  class="project-card relative bg-bg-secondary rounded-xl overflow-hidden shadow-lg md:hover:shadow-xl md:hover:border-primary/70 md:hover:scale-107 transition-transform ease-in-out duration-750 border border-fg-alt group"
+  class="project-card flex flex-col h-full relative bg-bg-secondary rounded-xl overflow-hidden shadow-lg md:hover:shadow-xl md:hover:border-primary/70 md:hover:scale-107 transition-transform ease-in-out duration-750 border border-fg-alt group"
+  data-category={project.category}
 >
   <!-- noise texture overlay -->
-  <NoiseTexture 
-  opacity={20} 
-  className="z-0 rounded-xl"
-  backgroundImage={project.image || '/default-web3-image.jpg'}
-  backgroundBlur={true}
-  backgroundOpacity={25}
-/>
+  <NoiseTexture
+    opacity={20}
+    className="z-0 rounded-xl"
+    backgroundImage={project.image || "/default-web3-image.jpg"}
+    backgroundBlur={true}
+    backgroundOpacity={25}
+  />
 
-  <div class="absolute top-3 right-3 z-10">
+  <div class="absolute top-3 right-3 z-10 flex flex-col items-end gap-2">
     <span
       class={`px-3 py-1 rounded-full text-sm font-medium ${
-        project.status === 'completed'
-          // ? 'bg-green-500/20 text-green-500 hover:bg-green-500/50'
-          ? 'hidden'
-          : 'bg-accent-secondary/60 text-white/90'
+        project.status === "completed"
+          ? "hidden"
+          : "bg-accent-secondary/60 text-white/90"
       }`}
     >
-      {project.status === 'completed' ? 'Completed' : 'Ongoing'}
+      {project.status === "completed" ? "Completed" : "Ongoing"}
     </span>
   </div>
 
@@ -73,8 +73,7 @@ const { project, buttonCode, buttonDemo } = Astro.props as Props;
     </div>
   </div>
 
-  <div class="p-6">
-    
+  <div class="p-6 flex flex-col flex-1">
     <h3 class="text-xl font-bold mb-2">{project.title}</h3>
     <p class="text-fg mb-4">{project.description}</p>
 
@@ -86,6 +85,13 @@ const { project, buttonCode, buttonDemo } = Astro.props as Props;
           </span>
         ))
       }
+    </div>
+    <div class="mt-auto flex justify-end">
+      <span
+        class="px-4 py-1 rounded-full text-sm font-bold bg-gradient-to-r from-primary to-secondary text-white shadow-lg tracking-wide"
+      >
+        {project.category}
+      </span>
     </div>
   </div>
 </div>

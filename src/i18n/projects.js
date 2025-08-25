@@ -6,93 +6,38 @@ export const projectSection = {
     buttonDemo: "Live Demo",
     projectList: [
       {
-        title: "Web3 Fund Me",
-        description:
-          "Basic Fund Me web3 app using foundry for testing and deploy the smart contract on local network.",
-          image: "/media/projects/fundme-main.png",
-          tags: [
-          "Solidity",
-          "React",
-          "Ethers.js",
-          "Metamask",
-          "Foundry",
-          "Tailwind",
-        ],
-        demoUrl: "",
-        codeUrl: "https://github.com/mtmarctoni/foundry-fundme",
-        status: "completed"
-      },
-      {
-        title: "Psychology Website",
-        description:
-          "Comprehensive and responsive website for a psychology practice, PereBarceloPsicologo.",
-        image: "/media/projects/perebarcelo-main.png",
-        tags: ["Nextjs", "Typescrip", "Tailwind", "Headless WP", "Vercel"],
-        demoUrl: "https://app.perebarcelopsicologo.com",
-        codeUrl: "https://github.com/mtmarctoni/perebarcelopsicologo",
-        status: "completed"
-      },
-      {
         title: "Personal Finance Tracker",
-        description: "A comprehensive personal finance management application. Tracking income, expenses, and investments in one place with powerful analytics and reporting features.",
+        description:
+          "A comprehensive personal finance management application. Tracking income, expenses, and investments in one place with powerful analytics and reporting features.",
         image: "/media/projects/finanzapp-main.png",
-        tags: ["Nextjs", "API", "Tailwind", "Vercel", "PostgreSQL"],
+        tags: ["Nextjs", "API", "Tailwind", "Vercel", "PostgreSQL", "NeonDB"],
         demoUrl: "https://finanzapp-unicap.vercel.app/",
         codeUrl: "https://github.com/mtmarctoni/finanzapp",
-        status: "completed"
-      },
-      {
-        title: "Decentralize Lottery App",
-        description: "A lottery app on the ethereum blockchain using Chainlink as oracle",
-        image: "",
-        tags: ["Nextjs", "Typescript", "Solidity", "Foundry", "Tailwind", "Vercel"],
-        demoUrl: "https://foundry-lottery.vercel.app/",
-        codeUrl: "https://github.com/mtmarctoni/foundry-lottery",
-        status: "ongoing"
-      },
-      {
-        title: "AI Order Processor",
-        description: "An AI-powered web app that automates extraction and transformation of order data from any file format (PDF, Excel, images, etc.) into ready-to-upload documents using custom templates.",
-        image: "",
-        tags: ["Typescript", "React", "Express", "Supabase", "AI", "OCR", "Tailwind", "Langchain", "Pinecone"],
-        demoUrl: "",
-        codeUrl: "https://github.com/mtmarctoni/order-processor",
-        status: "ongoing"
+        status: "completed",
+        category: "full-stack",
       },
       {
         title: "Handball Training App",
-        description: "A personal trainer app focused on handball off-season conditioning, strength, power, agility, and endurance training. Built with Next.js, Prisma ORM, and Tailwind CSS.",
-        image: "",
-        tags: ["TypeScript", "Next.js", "Prisma", "Tailwind CSS", "React", "Fitness", "Handball", "Training"],
+        description:
+          "A personal trainer app focused on handball off-season conditioning, strength, power, agility, and endurance training.",
+        image: "/media/projects/handball-main.png",
+        tags: [
+          "TypeScript",
+          "Next.js",
+          "Prisma",
+          "PostgreSQL",
+          "NeonDB",
+          "Tailwind CSS",
+        ],
         demoUrl: "https://workout-plan-sage.vercel.app/",
         codeUrl: "https://github.com/mtmarctoni/workout-plan",
-        status: "ongoing"
+        status: "ongoing",
+        category: "full-stack",
       },
       {
-        title: "CodeCraft Studio - Portfolio & Business Website",
-        description: "A comprehensive business portfolio website featuring modern web development services, blockchain solutions, and business automation.",
-        image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&h=400&fit=crop&auto=format&q=80",
-        tags: ["Astro", "TypeScript", "Tailwind CSS", "Supabase", "Stripe", "Resend"],
-        demoUrl: "https://code-craft-studio.netlify.app/",
-        codeUrl: "https://github.com/mtmarctoni/freelance-ws",
-        status: "completed"
-      }
-      
-      
-      
-    ],
-  },
-  es: {
-    title: "Mis Proyectos",
-    subtitle: "",
-    buttonCode: "Ver Código",
-    buttonDemo: "Visitar página",
-    
-    projectList: [
-      {
-        title: "Web3 Finánciame en red local",
+        title: "Web3 Fund Me",
         description:
-          "Aplicación web3 básica de Fund Me que utiliza una fundición para probar e implementar el contrato inteligente en la red local.",
+          "Basic Fund Me web3 app using foundry for testing and deploy the smart contract on local network.",
         image: "/media/projects/fundme-main.png",
         tags: [
           "Solidity",
@@ -104,65 +49,322 @@ export const projectSection = {
         ],
         demoUrl: "",
         codeUrl: "https://github.com/mtmarctoni/foundry-fundme",
-        status: "completed"
+        status: "completed",
+        category: "blockchain",
       },
       {
-        title: "Sitio Web de Psicología",
-        description: "Sitio web completo y adaptable para la consulta de psicología PereBarceloPsicologo.",
+        title: "Psychology Website",
+        description:
+          "Comprehensive and responsive website for a psychology practice, PereBarceloPsicologo.",
         image: "/media/projects/perebarcelo-main.png",
         tags: ["Nextjs", "Typescrip", "Tailwind", "Headless WP", "Vercel"],
         demoUrl: "https://app.perebarcelopsicologo.com",
         codeUrl: "https://github.com/mtmarctoni/perebarcelopsicologo",
-        status: "completed"
+        status: "completed",
+        category: "full-stack",
       },
       {
-        title: "Gestor de Finanzas Personales",
-        description: "Aplicación de gestión de finanzas personales con análisis y reportes.",
-        image: "/media/projects/finanzapp-main.png",
-        tags: ["Nextjs", "API", "Tailwind", "Vercel", "PostgreSQL"],
-        demoUrl: "https://finanzapp-unicap.vercel.app/",
-        codeUrl: "https://github.com/mtmarctoni/finanzapp",
-        status: "completed"
-      },
-      {
-        title: "Aplicación de Lotería Descentralizada",
-        description: "Aplicación de lotería descentralizada en la red de Ethereum utilizando Chainlink como oráculo.",
+        title: "Decentralize Lottery App",
+        description:
+          "A lottery app on the ethereum blockchain using Chainlink as oracle",
         image: "",
-        tags: ["Nextjs", "Typescript", "Solidity", "Foundry", "Tailwind", "Vercel"],
+        tags: [
+          "Nextjs",
+          "Typescript",
+          "Solidity",
+          "Foundry",
+          "Tailwind",
+          "Vercel",
+        ],
         demoUrl: "https://foundry-lottery.vercel.app/",
         codeUrl: "https://github.com/mtmarctoni/foundry-lottery",
-        status: "ongoing"
+        status: "ongoing",
+        category: "blockchain",
       },
       {
-        title: "Procesador de Pedidos con IA",
-        description: "Aplicación web impulsada por IA que automatiza la extracción y transformación de datos de pedidos desde cualquier formato de archivo (PDF, Excel, imágenes, etc.) a documentos listos para subir mediante plantillas personalizadas.",
-        image: "",
-        tags: ["Typescript", "React", "Express", "Supabase", "IA", "OCR", "Tailwind", "Langchain", "Pinecone"],
+        title: "AI Order Processor",
+        description:
+          "An AI-powered web app that automates extraction and transformation of order data from any file format (PDF, Excel, images, etc.) into ready-to-upload documents using custom templates.",
+        image: "/media/projects/ai-order-processor-main.png",
+        tags: [
+          "Typescript",
+          "React",
+          "Express",
+          "Supabase",
+          "AI",
+          "OCR",
+          "Tailwind",
+          "Langchain",
+          "Pinecone",
+        ],
         demoUrl: "",
         codeUrl: "https://github.com/mtmarctoni/order-processor",
-        status: "ongoing"
+        status: "ongoing",
+        category: "automation",
+      },
+      // {
+      //   title: "CodeCraft Studio - Portfolio & Business Website",
+      //   description:
+      //     "A comprehensive business portfolio website featuring modern web development services, blockchain solutions, and business automation.",
+      //   image:
+      //     "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&h=400&fit=crop&auto=format&q=80",
+      //   tags: [
+      //     "Astro",
+      //     "TypeScript",
+      //     "Tailwind CSS",
+      //     "Supabase",
+      //     "Stripe",
+      //     "Resend",
+      //   ],
+      //   demoUrl: "https://code-craft-studio.netlify.app/",
+      //   codeUrl: "https://github.com/mtmarctoni/freelance-ws",
+      //   status: "completed",
+      //   category: "full-stack",
+      // },
+      {
+        title: "Learn Daily Word",
+        description:
+          "Daily English vocabulary app for friends. Generates a new word each day with definition, phonetics, Spanish translation, examples, and audio using a Hugging Face LLM. Features history, interactive review, and optimized for shared mobile/web use.",
+        image: "/media/projects/learndailyword-main.png",
+        tags: [
+          "TypeScript",
+          "Next.js",
+          "Supabase",
+          "Tailwind CSS",
+          "AI",
+          "Vercel",
+        ],
+        demoUrl: "https://v0-english-learning-app-nine-psi.vercel.app",
+        codeUrl: "https://github.com/mtmarctoni/learn-daily-word",
+        status: "completed",
+        category: "full-stack",
+      },
+      {
+        title: "Zano Monitor",
+        description:
+          "A monitoring dashboard for tracking Zano blockchain activity, node status, development activity and social activity. Designed for real-time visibility of network operations.",
+        image: "/media/projects/zanomonitor-main.png",
+        tags: ["Next.js", "TypeScript", "Tailwind CSS", "Vercel"],
+        demoUrl: "https://zano-monitor.vercel.app",
+        codeUrl: "https://github.com/mtmarctoni/zano-monitor",
+        status: "ongoing",
+        category: "full-stack",
+      },
+      {
+        title: "Crypto Casino Landing Page",
+        description:
+          "A modern crypto casino landing page featuring wallet integration, multiple gambling games, and responsive design.",
+        image: "/media/projects/cryptocasino-main.png",
+        tags: ["TypeScript", "Next.js", "Wagmi", "Tailwind CSS", "Vercel"],
+        demoUrl: "https://crypto-casino-landing.vercel.app/",
+        codeUrl: "https://github.com/mtmarctoni/crypto-casino-landing",
+        status: "completed",
+        category: "blockchain",
+      },
+      {
+        title: "Live Palette AI",
+        description:
+          "A smart color palette generator powered by AI, enabling users to create, edit, and manage beautiful palettes in real time. Features intuitive UI, responsive design, and seamless palette export.",
+        image: "",
+        tags: [
+          "TypeScript",
+          "Next.js",
+          "Tailwind CSS",
+          "AI",
+          "Supabase",
+          "Vercel",
+        ],
+        demoUrl: "https://live-palette-ai.vercel.app/",
+        codeUrl: "https://github.com/mtmarctoni/live-palette-ai",
+        status: "ongoing",
+        category: "full-stack",
+      },
+      {
+        title: "Web Scraping BOIB",
+        description:
+          "A robust web scraping application designed to extract and process data from the BOIB (Butlletí Oficial de les Illes Balears) website.",
+        image: "/media/projects/webscraping-main.png",
+        tags: ["node.js", "Typescript", "cheerio", "axios", "nodemailer"],
+        demoUrl: "",
+        codeUrl: "https://github.com/mtmarctoni/webscrapingboib",
+        status: "completed",
+        category: "automation",
+      },
+    ],
+  },
+  es: {
+    title: "Mis Proyectos",
+    subtitle: "",
+    buttonCode: "Ver Código",
+    buttonDemo: "Visitar página",
+
+    projectList: [
+      {
+        title: "Gestor de Finanzas Personales",
+        description:
+          "Una aplicación integral para la gestión de finanzas personales. Permite el seguimiento de ingresos, gastos e inversiones en un solo lugar, con potentes funciones de análisis y generación de informes.",
+        image: "/media/projects/finanzapp-main.png",
+        tags: ["Nextjs", "API", "Tailwind", "Vercel", "PostgreSQL", "NeonDB"],
+        demoUrl: "https://finanzapp-unicap.vercel.app/",
+        codeUrl: "https://github.com/mtmarctoni/finanzapp",
+        status: "completed",
+        category: "full-stack",
       },
       {
         title: "Aplicación de Entrenamiento de Balonmano",
-        description: "Una aplicación de entrenador personal centrada en la preparación fuera de temporada de balonmano, fuerza, potencia, agilidad y entrenamiento de resistencia.",
-        image: "",
-        tags: ["TypeScript", "Next.js", "Prisma", "Tailwind", "React", "Fitness", "Balonmano", "Entrenamiento"],
+        description:
+          "Aplicación de entrenador personal centrada en la preparación fuera de temporada de balonmano: fuerza, potencia, agilidad y resistencia.",
+        image: "/media/projects/handball-main.png",
+        tags: [
+          "TypeScript",
+          "Next.js",
+          "Prisma",
+          "PostgreSQL",
+          "NeonDB",
+          "Tailwind CSS",
+        ],
         demoUrl: "https://workout-plan-sage.vercel.app/",
         codeUrl: "https://github.com/mtmarctoni/workout-plan",
-        status: "ongoing"
+        status: "ongoing",
+        category: "full-stack",
       },
       {
-        title: "CodeCraft Studio - Portafolio y Sitio Web Empresarial",
-        description: "Un sitio web de portafolio empresarial completo que presenta servicios de desarrollo web moderno, soluciones blockchain y automatización empresarial.",
-        image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&h=400&fit=crop&auto=format&q=80",
-        tags: ["Astro", "TypeScript", "Tailwind CSS", "Supabase", "Stripe", "Resend"],
-        demoUrl: "https://code-craft-studio.netlify.app/",
-        codeUrl: "https://github.com/mtmarctoni/freelance-ws",
-        status: "completed"
-      }
-      
-
-      
+        title: "Web3 Finánciame",
+        description:
+          "Aplicación web3 básica de Fund Me que utiliza Foundry para probar e implementar el contrato inteligente en red local.",
+        image: "/media/projects/fundme-main.png",
+        tags: [
+          "Solidity",
+          "React",
+          "Ethers.js",
+          "Metamask",
+          "Foundry",
+          "Tailwind",
+        ],
+        demoUrl: "",
+        codeUrl: "https://github.com/mtmarctoni/foundry-fundme",
+        status: "completed",
+        category: "blockchain",
+      },
+      {
+        title: "Sitio Web de Psicología",
+        description:
+          "Sitio web completo y adaptable para la consulta de psicología PereBarceloPsicologo.",
+        image: "/media/projects/perebarcelo-main.png",
+        tags: ["Nextjs", "Typescrip", "Tailwind", "Headless WP", "Vercel"],
+        demoUrl: "https://app.perebarcelopsicologo.com",
+        codeUrl: "https://github.com/mtmarctoni/perebarcelopsicologo",
+        status: "completed",
+        category: "full-stack",
+      },
+      {
+        title: "Aplicación de Lotería Descentralizada",
+        description:
+          "Aplicación de lotería en la blockchain de Ethereum utilizando Chainlink como oráculo.",
+        image: "",
+        tags: [
+          "Nextjs",
+          "Typescript",
+          "Solidity",
+          "Foundry",
+          "Tailwind",
+          "Vercel",
+        ],
+        demoUrl: "https://foundry-lottery.vercel.app/",
+        codeUrl: "https://github.com/mtmarctoni/foundry-lottery",
+        status: "ongoing",
+        category: "blockchain",
+      },
+      {
+        title: "Procesador de Pedidos con IA",
+        description:
+          "Aplicación web impulsada por IA que automatiza la extracción y transformación de datos de pedidos desde cualquier formato de archivo (PDF, Excel, imágenes, etc.) a documentos listos para subir mediante plantillas personalizadas.",
+        image: "/media/projects/ai-order-processor-main.png",
+        tags: [
+          "Typescript",
+          "React",
+          "Express",
+          "Supabase",
+          "IA",
+          "OCR",
+          "Tailwind",
+          "Langchain",
+          "Pinecone",
+        ],
+        demoUrl: "",
+        codeUrl: "https://github.com/mtmarctoni/order-processor",
+        status: "ongoing",
+        category: "automation",
+      },
+      {
+        title: "Aprende Palabra Diaria",
+        description:
+          "Aplicación diaria de vocabulario en inglés para amigos. Genera una nueva palabra cada día con definición, fonética, traducción al español, ejemplos y audio usando un modelo LLM de Hugging Face. Incluye historial, repaso interactivo y está optimizada para uso compartido en móvil/web.",
+        image: "/media/projects/learndailyword-main.png",
+        tags: [
+          "TypeScript",
+          "Next.js",
+          "Supabase",
+          "Tailwind CSS",
+          "AI",
+          "Vercel",
+        ],
+        demoUrl: "https://v0-english-learning-app-nine-psi.vercel.app",
+        codeUrl: "https://github.com/mtmarctoni/learn-daily-word",
+        status: "completed",
+        category: "full-stack",
+      },
+      {
+        title: "Monitor de Zano",
+        description:
+          "Panel de control para monitorizar la actividad de la blockchain Zano, estado de nodos, actividad de desarrollo y actividad social. Diseñado para visibilidad en tiempo real de las operaciones de la red.",
+        image: "/media/projects/zanomonitor-main.png",
+        tags: ["Next.js", "TypeScript", "Tailwind CSS", "Vercel"],
+        demoUrl: "https://zano-monitor.vercel.app",
+        codeUrl: "https://github.com/mtmarctoni/zano-monitor",
+        status: "ongoing",
+        category: "full-stack",
+      },
+      {
+        title: "Landing Page de Casino Cripto",
+        description:
+          "Landing page moderna para casino cripto con integración de wallet, varios juegos de azar y diseño responsivo.",
+        image: "/media/projects/cryptocasino-main.png",
+        tags: ["TypeScript", "Next.js", "Wagmi", "Tailwind CSS", "Vercel"],
+        demoUrl: "https://crypto-casino-landing.vercel.app/",
+        codeUrl: "https://github.com/mtmarctoni/crypto-casino-landing",
+        status: "completed",
+        category: "blockchain",
+      },
+      {
+        title: "Live Palette IA",
+        description:
+          "Generador inteligente de paletas de colores impulsado por IA, permite crear, editar y gestionar paletas en tiempo real. Incluye UI intuitiva, diseño responsivo y exportación de paletas.",
+        image: "",
+        tags: [
+          "TypeScript",
+          "Next.js",
+          "Tailwind CSS",
+          "AI",
+          "Supabase",
+          "Vercel",
+        ],
+        demoUrl: "https://live-palette-ai.vercel.app/",
+        codeUrl: "https://github.com/mtmarctoni/live-palette-ai",
+        status: "ongoing",
+        category: "full-stack",
+      },
+      {
+        title: "Web Scraping BOIB",
+        description:
+          "Aplicación robusta de web scraping diseñada para extraer y procesar datos del BOIB (Butlletí Oficial de les Illes Balears).",
+        image: "/media/projects/webscraping-main.png",
+        tags: ["node.js", "Typescript", "cheerio", "axios", "nodemailer"],
+        demoUrl: "",
+        codeUrl: "https://github.com/mtmarctoni/webscrapingboib",
+        status: "completed",
+        category: "automation",
+      },
     ],
   },
 };
