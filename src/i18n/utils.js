@@ -1,4 +1,9 @@
-import {MY_NAME, MY_NAME_LOGO, MY_LINKEDIN, MY_GITHUB, MY_EMAIL, MY_LOCATION, MY_WEB} from "@/utils/constants"
+import {
+  MY_NAME_LOGO,
+  MY_LINKEDIN,
+  MY_GITHUB,
+  MY_WEB,
+} from "@/utils/constants";
 
 // Get the language from the URL
 export function getLangFromUrl(url) {
@@ -13,7 +18,8 @@ const translations = {
     "site.cvLink": "/transcripts/CV_MarcToniMas.pdf",
     "site.title": MY_NAME_LOGO,
     "site.description": "Web3 Developer Portfolio",
-    "site.keywords": "web3, blockchain, full stack developer, software engineer, portfolio",
+    "site.keywords":
+      "web3, blockchain, full stack developer, software engineer, portfolio",
 
     "person.name": MY_NAME_LOGO,
     "person.url": MY_WEB,
@@ -79,9 +85,8 @@ const translations = {
     "about.looking_for_title": "What I'm Looking For",
     "about.looking_for_description":
       "I am looking forward to joining an <span class='font-semibold text-secondary'>innovative team</span> that develops projects that harness the power of <span class='font-semibold text-secondary'>AI, Web3,</span> and <span class='font-semibold text-secondary'>blockchain</span>. I'm seeking an open culture that allows me to <span class='font-semibold text-secondary'>collaborate, learn,</span> and <span class='font-semibold text-secondary'>work</span> towards providing next-generation digital solutions.",
-    "about.learn_more_background": "Learn more about my <a href='/background' class='text-accent hover:underline'>professional journey and background</a>.",
-
-
+    "about.learn_more_background":
+      "Learn more about my <a href='/background' class='text-accent hover:underline'>professional journey and background</a>.",
 
     // Skills
     "skills.title": "Technical Skills & Expertise",
@@ -96,11 +101,19 @@ const translations = {
     "skills.basic_title": "Basic",
 
     // Projects
-   
+    "projects.all_title": "All",
+    "projects.full_stack_title": "Full Stack",
+    "projects.blockchain_title": "Blockchain",
+    "projects.automation_title": "Automation",
+    "projects.button_code": "View Code",
+    "projects.button_demo": "View Demo",
+    "projects.button_show": "Show More",
+
     // Background
     "background.title": "Professional Background",
     "background.pageTitle": "My Professional Background & Journey",
-    "background.pageDescription": "Explore the professional background, work experience, and education of Marc Toni Mas, a Full Stack Developer & Blockchain Enthusiast.",
+    "background.pageDescription":
+      "Explore the professional background, work experience, and education of Marc Toni Mas, a Full Stack Developer & Blockchain Enthusiast.",
 
     // Certifications
 
@@ -134,7 +147,8 @@ const translations = {
   es: {
     "site.cvLink": "/transcripts/CV_MarcToniMas_ES.pdf",
     "site.title": "Portafolio de Desarrollador Web3",
-    "site.keywords": "web3, blockchain, desarrollador full stack, ingeniero de software, portafolio",
+    "site.keywords":
+      "web3, blockchain, desarrollador full stack, ingeniero de software, portafolio",
 
     "person.name": MY_NAME_LOGO,
     "person.url": `${MY_WEB}/es`,
@@ -193,17 +207,16 @@ const translations = {
     // "about.looking_for_description":
     //   "Unirme a un equipo que trabaje en proyectos innovadores de Web3 que amplíen los límites de lo posible en el espacio descentralizado. Busco un entorno colaborativo donde pueda crecer profesionalmente y contribuir al desarrollo de aplicaciones Web3 de vanguardia.",
     // "about.learn_more_background": "Conoce más sobre mi <a href='/es/background' class='text-accent hover:underline'>trayectoria y experiencia profesional</a>.",
-"about.short_bio":
-  "Apasionado por el <span class='text-primary font-semibold text-2xl'>desarrollo impulsado por IA</span>, la tecnología <span class='text-primary font-semibold text-2xl'>blockchain</span> y las aplicaciones <span class='text-primary font-semibold text-2xl'>Web3</span> más innovadoras.",
-"about.what_i_do_title": "Lo que hago",
-"about.what_i_do_description":
-  "Desarrollo aplicaciones robustas y escalables en todo el stack, integrando <span class='font-semibold text-secondary'>soluciones de IA</span> y <span class='font-semibold text-secondary'>blockchain</span> para crear experiencias inteligentes, seguras e intuitivas. Mi experiencia incluye el desarrollo de smart contracts, <span class='font-semibold text-secondary'>aplicaciones descentralizadas</span> y el uso de IA para la <span class='font-semibold text-secondary'>automatización de procesos</span>.",
-"about.looking_for_title": "Qué busco",
-"about.looking_for_description":
-  "Estoy deseando unirme a un <span class='font-semibold text-secondary'>equipo innovador</span> que desarrolle proyectos que aprovechen el potencial de la <span class='font-semibold text-secondary'>IA, Web3</span> y la <span class='font-semibold text-secondary'>blockchain</span>. Busco una cultura abierta que me permita <span class='font-semibold text-secondary'>colaborar, aprender</span> y <span class='font-semibold text-secondary'>trabajar</span> para ofrecer soluciones digitales de próxima generación.",
-"about.learn_more_background": "Conoce más sobre mi <a href='/background' class='text-accent hover:underline'>trayectoria y experiencia profesional</a>.",
-
-
+    "about.short_bio":
+      "Apasionado por el <span class='text-primary font-semibold text-2xl'>desarrollo impulsado por IA</span>, la tecnología <span class='text-primary font-semibold text-2xl'>blockchain</span> y las aplicaciones <span class='text-primary font-semibold text-2xl'>Web3</span> más innovadoras.",
+    "about.what_i_do_title": "Lo que hago",
+    "about.what_i_do_description":
+      "Desarrollo aplicaciones robustas y escalables en todo el stack, integrando <span class='font-semibold text-secondary'>soluciones de IA</span> y <span class='font-semibold text-secondary'>blockchain</span> para crear experiencias inteligentes, seguras e intuitivas. Mi experiencia incluye el desarrollo de smart contracts, <span class='font-semibold text-secondary'>aplicaciones descentralizadas</span> y el uso de IA para la <span class='font-semibold text-secondary'>automatización de procesos</span>.",
+    "about.looking_for_title": "Qué busco",
+    "about.looking_for_description":
+      "Estoy deseando unirme a un <span class='font-semibold text-secondary'>equipo innovador</span> que desarrolle proyectos que aprovechen el potencial de la <span class='font-semibold text-secondary'>IA, Web3</span> y la <span class='font-semibold text-secondary'>blockchain</span>. Busco una cultura abierta que me permita <span class='font-semibold text-secondary'>colaborar, aprender</span> y <span class='font-semibold text-secondary'>trabajar</span> para ofrecer soluciones digitales de próxima generación.",
+    "about.learn_more_background":
+      "Conoce más sobre mi <a href='/background' class='text-accent hover:underline'>trayectoria y experiencia profesional</a>.",
 
     // Skills
     "skills.title": "Habilidades Técnicas y Conocimientos",
@@ -218,12 +231,20 @@ const translations = {
     "skills.basic_title": "Básico",
 
     // Projects
+    "projects.all_title": "Todos",
+    "projects.full_stack_title": "Full Stack",
+    "projects.blockchain_title": "Blockchain",
+    "projects.automation_title": "Automatización",
+    "projects.button_code": "Ver Código",
+    "projects.button_demo": "Ver Demo",
+    "projects.button_show": "Mostrar Más",
 
     // Background
     "background.title": "Experiencia Profesional",
     "background.pageTitle": "Mi Trayectoria y Experiencia Profesional",
-    "background.pageDescription": "Explora la trayectoria profesional, experiencia laboral y educación de Marc Toni Mas, Desarrollador Full Stack y Entusiasta de Blockchain.",
-   
+    "background.pageDescription":
+      "Explora la trayectoria profesional, experiencia laboral y educación de Marc Toni Mas, Desarrollador Full Stack y Entusiasta de Blockchain.",
+
     // Certificados
 
     // Contact

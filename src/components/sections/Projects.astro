@@ -1,11 +1,35 @@
 ---
 import SectionContainer from "../containers/SectionContainer.astro";
-import { getLangFromUrl } from "@/i18n/utils";
+import { getLangFromUrl, useTranslations } from "@/i18n/utils";
 import { projectSection } from "@/i18n/projects";
 import ProjectCard from "../containers/ProjectCard.astro";
 
 const url = new URL(Astro.url);
 const lang = getLangFromUrl(url) as "en" | "es";
+const t = useTranslations(lang);
+
+export interface Project {
+  title: string;
+  description: string;
+  image?: string;
+  tags: string[];
+  codeUrl?: string;
+  demoUrl?: string;
+  category: string;
+  status: "completed" | "ongoing";
+}
+
+// Define categories for the filter
+const categories = [
+  { id: "all", label: t("projects.all_title"), icon: null },
+  { id: "full-stack", label: t("projects.full_stack_title"), icon: null },
+  {
+    id: "blockchain",
+    label: t("projects.blockchain_title"),
+    icon: null,
+  },
+  { id: "automation", label: t("projects.automation_title"), icon: null },
+];
 
 const projects = projectSection[lang];
 const { title, buttonCode, buttonDemo, projectList } = projects;
@@ -13,10 +37,7 @@ const { title, buttonCode, buttonDemo, projectList } = projects;
 const INITIAL_DISPLAY_COUNT = 4;
 const showAll = projectList.length <= INITIAL_DISPLAY_COUNT;
 
-// Split projects into visible and hidden
-const visibleProjects = projectList.slice(0, INITIAL_DISPLAY_COUNT);
-const hiddenProjects = projectList.slice(INITIAL_DISPLAY_COUNT);
-
+const projectCards: Project[] = projectList as Project[];
 ---
 
 <SectionContainer sectionId="projects">
@@ -27,64 +48,158 @@ const hiddenProjects = projectList.slice(INITIAL_DISPLAY_COUNT);
       {title}
     </span>
   </h2>
+  <div class="flex justify-center mb-6 gap-2 flex-wrap" id="category-tabs">
+    {
+      categories.map((category) => (
+        <button
+          type="button"
+          class="data-[active=true]:bg-accent/20 data-[active=true]:border-accent data-[active=true]:text-accent data-[active=true]:shadow-lg data-[active=true]:transform data-[active=true]:scale-105
+                  category-tab px-4 py-2 rounded-full font-medium border transition-all hover:bg-accent hover:scale-110 ease-in"
+          data-category={category.id}
+          data-active={category.id === "all" ? "true" : "false"}
+        >
+          {category.label}
+        </button>
+      ))
+    }
+  </div>
 
-  <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
-    {visibleProjects.map((project) => (
-      <ProjectCard
-        project={project}
-        buttonCode={buttonCode}
-        buttonDemo={buttonDemo}
-      />
-    ))}
-    
-    {hiddenProjects.map((project, index) => (
-      <div id="hidden-projects" class="hidden">
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-5" id="projects-grid">
+    {
+      projectCards.map((project) => (
         <ProjectCard
           project={project}
           buttonCode={buttonCode}
           buttonDemo={buttonDemo}
         />
-      </div>
-    ))}
+      ))
+    }
   </div>
-  
-  {!showAll && (
-    <div class="mt-8 text-center">
-      <button 
-        id="show-more-btn"
-        class="px-6 py-2 bg-gradient-to-r from-primary to-secondary text-white rounded-full font-medium hover:opacity-90 transition-opacity"
-        aria-expanded="false"
-      >
-        {lang === 'es' ? 'Mostrar más' : 'Show More'}
-      </button>
-    </div>
-  )}
-</SectionContainer>
-  
-  
-  <script>
 
-    function handleClick() {
-      const hiddenProjects = document.querySelectorAll('#hidden-projects');
-      const button = document.getElementById('show-more-btn');
-      if (!button) return;
-      
-      // Get current state before toggling
-      const isExpanded = button.getAttribute('aria-expanded') === 'true';
-      
-      // Toggle the hidden class
-      hiddenProjects.forEach(project => project.classList.toggle('hidden'));
-      
-      // Update button text based on new state
-      button.textContent = isExpanded 
-        ? (document.documentElement.lang === 'es' ? 'Mostrar más' : 'Show More')
-        : (document.documentElement.lang === 'es' ? 'Mostrar menos' : 'Show Less');
-      
-      // Update the aria-expanded attribute with the new state
-      button.setAttribute('aria-expanded', String(!isExpanded));
+  {
+    !showAll && (
+      <div class="mt-8 text-center">
+        <button
+          id="show-more-btn"
+          class="mx-auto px-6 py-2 bg-gradient-to-r from-primary to-secondary text-white rounded-full font-medium hover:opacity-90 transition-opacity"
+          aria-expanded="false"
+        >
+          {t("projects.button_show")}
+        </button>
+      </div>
+    )
+  }
+</SectionContainer>
+
+<script>
+  function handleClick() {
+    const hiddenProjects = document.querySelectorAll("#hidden-projects");
+    const button = document.getElementById("show-more-btn");
+    if (!button) return;
+
+    // Get current state before toggling
+    const isExpanded = button.getAttribute("aria-expanded") === "true";
+
+    // Toggle the hidden class
+    hiddenProjects.forEach((project) => project.classList.toggle("hidden"));
+
+    // Update button text based on new state
+    button.textContent = isExpanded
+      ? document.documentElement.lang === "es"
+        ? "Mostrar más"
+        : "Show More"
+      : document.documentElement.lang === "es"
+        ? "Mostrar menos"
+        : "Show Less";
+
+    // Update the aria-expanded attribute with the new state
+    button.setAttribute("aria-expanded", String(!isExpanded));
+  }
+
+  document
+    .getElementById("show-more-btn")
+    ?.addEventListener("click", handleClick);
+</script>
+
+<script>
+  // Add interactive filtering for project categories and rearrange cards
+  document.addEventListener("DOMContentLoaded", () => {
+    const tabs = document.querySelectorAll(".category-tab");
+    const grid = document.getElementById("projects-grid");
+    const showMoreBtn = document.getElementById("show-more-btn");
+    let expanded = false;
+    let currentCategory = "all";
+    const INITIAL_DISPLAY_COUNT = 4;
+
+    function getCards() {
+      return Array.from(grid?.querySelectorAll(".project-card") || []);
     }
 
-    document.getElementById('show-more-btn')?.addEventListener('click', handleClick);
+    function updateGrid() {
+      const cards = getCards();
+      // Partition cards by filter
+      const matched: Element[] = [];
+      const unmatched: Element[] = [];
+      cards.forEach((card) => {
+        if (
+          currentCategory === "all" ||
+          card.getAttribute("data-category") === currentCategory
+        ) {
+          matched.push(card);
+        } else {
+          unmatched.push(card);
+        }
+      });
+      // Remove all cards from grid
+      cards.forEach((card) => grid?.removeChild(card));
+      // Show only INITIAL_DISPLAY_COUNT unless expanded
+      const visibleCount = expanded ? matched.length : INITIAL_DISPLAY_COUNT;
+      matched.forEach((card, idx) => {
+        if (idx < visibleCount) {
+          card.classList.remove("hidden");
+        } else {
+          card.classList.add("hidden");
+        }
+        grid?.appendChild(card);
+      });
+      unmatched.forEach((card) => {
+        card.classList.add("hidden");
+        grid?.appendChild(card);
+      });
+      // Show/hide Show More button
+      if (showMoreBtn) {
+        showMoreBtn.style.display =
+          matched.length > INITIAL_DISPLAY_COUNT ? "block" : "none";
+        showMoreBtn.textContent = expanded
+          ? document.documentElement.lang === "es"
+            ? "Mostrar menos"
+            : "Show Less"
+          : document.documentElement.lang === "es"
+            ? "Mostrar más"
+            : "Show More";
+        showMoreBtn.setAttribute("aria-expanded", String(expanded));
+      }
+    }
 
+    tabs.forEach((tab) => {
+      tab.addEventListener("click", () => {
+        // Update active tab
+        tabs.forEach((t) => t.setAttribute("data-active", "false"));
+        tab.setAttribute("data-active", "true");
+        currentCategory = tab?.getAttribute("data-category") || "all";
+        expanded = false;
+        updateGrid();
+      });
+    });
 
-  </script>
+    if (showMoreBtn) {
+      showMoreBtn.addEventListener("click", () => {
+        expanded = !expanded;
+        updateGrid();
+      });
+    }
+
+    // Initial render
+    updateGrid();
+  });
+</script>

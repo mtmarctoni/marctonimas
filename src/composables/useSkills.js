@@ -12,7 +12,7 @@ import {
   PythonIcon,
   SolidityIcon,
   VbaIcon,
-  SqlIcon,
+  // SqlIcon,
   TailwindIcon,
   TypescriptIcon,
   VsCodeIcon,
@@ -47,7 +47,7 @@ export const skillsInfo = [
   },
   { name: "Solidity", level: 90, icon: SolidityIcon, category: "languages" },
   { name: "Python", level: 70, icon: PythonIcon, category: "languages" },
-  
+
   // Blockchain
   { name: "Ethereum", level: 85, icon: EthereumIcon, category: "blockchain" },
   { name: "Foundry", level: 80, icon: FoundryIcon, category: "blockchain" },
@@ -74,9 +74,7 @@ export const skillsInfo = [
   { name: "PostgreSQL", level: 50, icon: PostgresqlIcon, category: "backend" },
   { name: "ChromaDB", level: 50, icon: ChromadbIcon, category: "backend" },
   { name: "Langchain", level: 50, icon: LangchainIcon, category: "backend" },
-  
-  
-  
+
   // Tools
   { name: "Git", level: 90, icon: GitIcon, category: "tools" },
   { name: "VS Code", level: 90, icon: VsCodeIcon, category: "tools" },
