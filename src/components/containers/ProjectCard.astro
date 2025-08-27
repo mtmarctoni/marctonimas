@@ -80,7 +80,7 @@ const { project, buttonCode, buttonDemo } = Astro.props as Props;
     <div class="flex flex-wrap gap-2 mb-4">
       {
         project.tags.map((tag: string) => (
-          <span class="z-20 px-2 py-1 bg-accent/20 text-fg rounded-full text-xs hover:bg-accent/70">
+          <span class="z-20 px-2 py-1 border-1 border-primary/20 bg-accent/20 text-fg rounded-full text-xs hover:bg-accent/70">
             {tag}
           </span>
         ))
@@ -88,7 +88,7 @@ const { project, buttonCode, buttonDemo } = Astro.props as Props;
     </div>
     <div class="mt-auto flex justify-end">
       <span
-        class="px-4 py-1 rounded-full text-sm font-bold bg-gradient-to-r from-primary to-secondary text-white shadow-lg tracking-wide"
+        class="z-10 px-4 py-1 rounded-full text-sm font-bold bg-gradient-to-r from-primary to-secondary text-white shadow-lg tracking-wide"
       >
         {project.category}
       </span>
