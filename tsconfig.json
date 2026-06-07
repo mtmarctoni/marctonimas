@@ -7,6 +7,8 @@
     "paths": {
       "@/*": ["src/*"]
     },
-    "jsx": "preserve"
+    "jsx": "preserve",
+    "noUncheckedIndexedAccess": true,
+    "forceConsistentCasingInFileNames": true
   }
 }

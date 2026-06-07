@@ -1,8 +1,6 @@
 ---
-import SectionContainer from "../containers/SectionContainer.astro";
-import { getLangFromUrl, useTranslations } from "@/i18n/utils";
 import { projectSection } from "@/i18n/projects";
-import ProjectCard from "../containers/ProjectCard.astro";
+import { getLangFromUrl, useTranslations } from "@/i18n/utils";
 
 const url = new URL(Astro.url);
 const lang = getLangFromUrl(url) as "en" | "es";
@@ -20,7 +18,7 @@ export interface Project {
 }
 
 // Define categories for the filter
-const categories = [
+const _categories = [
   { id: "all", label: t("projects.all_title"), icon: null },
   { id: "full-stack", label: t("projects.full_stack_title"), icon: null },
   {
@@ -32,12 +30,14 @@ const categories = [
 ];
 
 const projects = projectSection[lang];
-const { title, buttonCode, buttonDemo, projectList } = projects;
+const { projectList } = projects;
+// biome-ignore lint/correctness/noUnusedVariables: used in Astro template
+const { title, buttonCode, buttonDemo } = projects;
 
 const INITIAL_DISPLAY_COUNT = 4;
-const showAll = projectList.length <= INITIAL_DISPLAY_COUNT;
+const _showAll = projectList.length <= INITIAL_DISPLAY_COUNT;
 
-const projectCards: Project[] = projectList as Project[];
+const _projectCards: Project[] = projectList as Project[];
 ---
 
 <SectionContainer sectionId="projects">

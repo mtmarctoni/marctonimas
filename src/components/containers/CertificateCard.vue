@@ -59,8 +59,6 @@
 </template>
 
 <script setup>
-import { CertificateIcon } from "@/utils/icons";
-
 defineProps({
   name: String,
   description: String,
@@ -73,8 +71,8 @@ defineProps({
   inProgress: String,
   status: {
     type: String,
-    default: 'completed',
-    validator: (value) => ['completed', 'in-progress'].includes(value)
-  }
+    default: "completed",
+    validator: (value) => ["completed", "in-progress"].includes(value),
+  },
 });
 </script>

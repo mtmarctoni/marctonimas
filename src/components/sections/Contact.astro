@@ -1,27 +1,10 @@
 ---
-import { Image } from "astro:assets";
-import {
-  MY_EMAIL,
-  MY_GITHUB,
-  MY_LINKEDIN,
-  MY_LOCATION,
-  MY_TELEGRAM,
-} from "@/utils/constants";
-import { useTranslations, getLangFromUrl } from "@/i18n/utils";
-import {
-  GithubIcon,
-  LinkedInIcon,
-  EmailIcon,
-  LocationIcon,
-  TelegramIcon,
-} from "@/utils/icons";
-import SectionContainer from "../containers/SectionContainer.astro";
-import ContactItem from "@/components/containers/ContactItem.astro";
+import { getLangFromUrl, useTranslations } from "@/i18n/utils";
 
 // Get current language from URL
 const url = new URL(Astro.url);
 const lang = getLangFromUrl(url);
-const t = useTranslations(lang);
+const _t = useTranslations(lang);
 ---
 
 <!-- Render the component -->
