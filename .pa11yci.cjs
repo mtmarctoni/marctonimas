@@ -10,6 +10,7 @@ module.exports = {
     timeout: 30000,
     chromeLaunchConfig: {
       executablePath: process.env.CHROME_PATH || undefined,
+      args: ["--no-sandbox", "--disable-setuid-sandbox", "--disable-dev-shm-usage"],
     },
   },
   urls,
