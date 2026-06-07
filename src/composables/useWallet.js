@@ -1,5 +1,5 @@
-import { ref, onMounted } from "vue";
 import { ethers } from "ethers";
+import { onMounted, ref } from "vue";
 
 import Networks from "@/lib/networks.json";
 

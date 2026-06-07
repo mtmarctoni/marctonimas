@@ -1,17 +1,12 @@
 ---
-import { Image } from "astro:assets";
-import { BulbIcon, ZoomCheckIcon } from "@/utils/icons";
-import { useTranslations, getLangFromUrl } from "@/i18n/utils";
-import SectionContainer from "@/components/containers/SectionContainer.astro";
-import BackgroundBlobs from "@/components/ui/BackgroundBlobs.astro";
-import NoiseTexture from "../ui/NoiseTexture.astro";
+import { getLangFromUrl, useTranslations } from "@/i18n/utils";
 
 const url = new URL(Astro.url);
 const lang = getLangFromUrl(url);
 const t = useTranslations(lang);
 
 // Define key skills/attributes for the interactive elements
-const keyAttributes = [
+const _keyAttributes = [
   {
     icon: "💻",
     label: t("about.attribute.developer"),

@@ -1,19 +1,11 @@
 <script setup>
-import { ref, computed } from "vue";
-
-import MobileMenu from "./MobileMenu.vue";
-import ThemeSwitcher from "@/components/common/ThemeSwitcher.vue";
-import LanguageSwitcher from "@/components/common/LanguageSwitcher.vue";
-import NavLogo from "./NavLogo.vue";
-import NavLinks from "./NavLinks.vue";
-
-import { useTranslations, getLangFromUrl } from "@/i18n/utils";
+import { computed, ref } from "vue";
 import { useNavigation } from "@/composables/useNavigation";
-import { MenuIcon, CrossIcon } from "@/utils/icons";
+import { getLangFromUrl, useTranslations } from "@/i18n/utils";
 
 const mobileMenuOpen = ref(false);
 
-const toggleMobileMenu = () => {
+const _toggleMobileMenu = () => {
   mobileMenuOpen.value = !mobileMenuOpen.value;
 
   // Prevent scrolling when menu is open
@@ -57,6 +49,7 @@ const navItems = computed(() => [
   },
 ]);
 
+// biome-ignore lint/correctness/noUnusedVariables: used in Vue template
 const { activeSection, isScrolled } = useNavigation(navItems.value);
 </script>
 

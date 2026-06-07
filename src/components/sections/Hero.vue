@@ -1,14 +1,12 @@
 <script setup>
-import { useTranslations, getLangFromUrl } from "@/i18n/utils";
-import WalletConnect from "@/components/wallet/WalletConnect.vue";
-import { ArrowDownIcon } from "@/utils/icons";
+import { getLangFromUrl, useTranslations } from "@/i18n/utils";
 
 // Get current language from URL
 const lang = getLangFromUrl(new URL(window.location.href));
 const t = useTranslations(lang);
 
-const titleHtmlString = t("hero.title");
-const subtitleHtmlString = t("hero.subtitle");
+const _titleHtmlString = t("hero.title");
+const _subtitleHtmlString = t("hero.subtitle");
 </script>
 
 <template>

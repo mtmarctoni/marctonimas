@@ -47,15 +47,13 @@
 </template>
 
 <script setup>
-import { ref, onMounted, onUnmounted } from "vue";
-import ToggleDropDown from "./ToggleDropDown.vue";
-import { useTranslations, getLangFromUrl } from "../../i18n/utils";
-import { MoonIcon, SunIcon, SystemIcon } from "@/utils/icons";
+import { onMounted, onUnmounted, ref } from "vue";
+import { getLangFromUrl, useTranslations } from "../../i18n/utils";
 
 const themeDropdownOpen = ref(false);
 const currentTheme = ref("system");
 const lang = getLangFromUrl(new URL(window.location.href));
-const t = useTranslations(lang);
+const _t = useTranslations(lang);
 
 // delete
 // const toggleThemeDropdown = () => {
@@ -71,9 +69,7 @@ const closeDropdown = () => {
 onMounted(() => {
   // Get theme from localStorage or default to system
   const savedTheme = localStorage.getItem("theme");
-  const systemDarkMode = window.matchMedia(
-    "(prefers-color-scheme: dark)",
-  ).matches;
+  const systemDarkMode = window.matchMedia("(prefers-color-scheme: dark)").matches;
 
   if (savedTheme) {
     currentTheme.value = savedTheme;
@@ -89,14 +85,12 @@ onUnmounted(() => {
   document.removeEventListener("click", closeDropdown);
 });
 
-const setTheme = (theme) => {
+const _setTheme = (theme) => {
   currentTheme.value = theme;
   localStorage.setItem("theme", theme);
 
   if (theme === "system") {
-    const systemDarkMode = window.matchMedia(
-      "(prefers-color-scheme: dark)",
-    ).matches;
+    const systemDarkMode = window.matchMedia("(prefers-color-scheme: dark)").matches;
     document.documentElement.classList.toggle("dark", systemDarkMode);
   } else {
     document.documentElement.classList.toggle("dark", theme === "dark");

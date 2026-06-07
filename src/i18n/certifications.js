@@ -8,14 +8,15 @@ export const certifications = {
       {
         id: 0,
         name: "Full Stack open - Deep Dive Into Modern Web Development",
-        description: "React, Redux, Node.js, MongoDB. Introduction to modern JavaScript-based web development. Building web applications with ReactJS that use REST APIs built with Node.js.",
+        description:
+          "React, Redux, Node.js, MongoDB. Introduction to modern JavaScript-based web development. Building web applications with ReactJS that use REST APIs built with Node.js.",
         link: "https://studies.cs.helsinki.fi/stats/api/certificate/fullstackopen/en/b12b892e882f11923d0f088f7f38f426",
         institution: "University of Helsinki",
         institutionLink: "https://www.helsinki.fi",
         date: "December 2024",
         img: "/icons/university-of-helsinki.svg",
         imgD: "/icons/university-of-helsinki-dark.svg",
-        status: 'completed'
+        status: "completed",
       },
       {
         id: 1,
@@ -27,7 +28,7 @@ export const certifications = {
         date: "January 2025",
         img: "/icons/university-of-helsinki.svg",
         imgD: "/icons/university-of-helsinki-dark.svg",
-        status: 'completed'
+        status: "completed",
       },
       {
         id: 2,
@@ -39,7 +40,7 @@ export const certifications = {
         date: "February 2025",
         img: "/icons/lfx-logo.svg",
         imgD: "/icons/lfx-logo-dark.svg",
-        status: 'completed'
+        status: "completed",
       },
       {
         id: 3,
@@ -51,31 +52,33 @@ export const certifications = {
         date: "April 2025",
         img: "/icons/lfx-logo.svg",
         imgD: "/icons/lfx-logo-dark.svg",
-        status: 'completed'
+        status: "completed",
       },
       {
         id: 5,
         name: "Ethereum and Solidity: The Complete Developer's Guide",
-        description: "Use Ethereum, Solidity, and Smart Contracts to build production-ready apps based on the blockchain.",
+        description:
+          "Use Ethereum, Solidity, and Smart Contracts to build production-ready apps based on the blockchain.",
         link: "https://www.udemy.com/certificate/UC-dbc3d5e0-960b-414b-b6ea-2ecbc3f8829d/",
         institution: "Udemy",
         institutionLink: "https://udemy.com",
         date: "April 2025",
         img: "/icons/udemy-logo.svg",
         imgD: "/icons/udemy-logo-dark.svg",
-        status: 'completed'
+        status: "completed",
       },
       {
         id: 4,
         name: "Introduction to Hyperledger Self-Sovereign Identity Blockchain Solutions (LFS172x)",
-        description: "How Hyperledger Aries, Indy, AnonCreds, and Ursa add a necessary layer of trust to the Internet.",
+        description:
+          "How Hyperledger Aries, Indy, AnonCreds, and Ursa add a necessary layer of trust to the Internet.",
         link: "",
         institution: "The Linux Foundation",
         institutionLink: "https://www.linuxfoundation.org",
         date: "May 2025",
         img: "/icons/lfx-logo.svg",
         imgD: "/icons/lfx-logo-dark.svg",
-        status: 'completed'
+        status: "completed",
       },
       {
         id: 6,
@@ -87,19 +90,20 @@ export const certifications = {
         date: "2025",
         img: "/icons/lfx-logo.svg",
         imgD: "/icons/lfx-logo-dark.svg",
-        status: 'in-progress'
+        status: "in-progress",
       },
       {
         id: 7,
         name: "Hyperledger Fabric: Design, Develop, and Deploy (LFS270)",
-        description: "Design, develop, and deploy blockchain solutions. Write smart contracts, manage Chaincode, handle private data, and create Node.js client applications.",
+        description:
+          "Design, develop, and deploy blockchain solutions. Write smart contracts, manage Chaincode, handle private data, and create Node.js client applications.",
         link: "",
         institution: "The Linux Foundation",
         institutionLink: "https://www.linuxfoundation.org",
         date: "2025",
         img: "/icons/lfx-logo.svg",
         imgD: "/icons/lfx-logo-dark.svg",
-        status: 'in-progress'
+        status: "in-progress",
       },
       {
         id: 8,
@@ -111,21 +115,21 @@ export const certifications = {
         date: "2025",
         img: "/icons/university-of-helsinki.svg",
         imgD: "/icons/university-of-helsinki-dark.svg",
-        status: 'in-progress'
+        status: "in-progress",
       },
       {
         id: 9,
         name: "Generative AI for NodeJs: OpenAI, LangChain - TypeScript",
-        description: "Developed LLM-powered apps with LangChain, using wrappers, chains, and agents, and integrated vector databases like Pinecone and ChromaDB.",
+        description:
+          "Developed LLM-powered apps with LangChain, using wrappers, chains, and agents, and integrated vector databases like Pinecone and ChromaDB.",
         link: "",
         institution: "Udemy",
         institutionLink: "https://udemy.com",
         date: "June 2025",
         img: "/icons/udemy-logo.svg",
         imgD: "/icons/udemy-logo-dark.svg",
-        status: 'completed'
+        status: "completed",
       },
-
     ],
   },
   es: {
@@ -137,14 +141,15 @@ export const certifications = {
       {
         id: 0,
         name: "Full Stack Open: análisis profundo del desarrollo web moderno",
-        description: "React, Redux, Node.js, MongoDB. Introducción al desarrollo web moderno basado en JavaScript. Desarrollo de aplicaciones web con ReactJS que utilizan API REST desarrolladas con Node.js.",
+        description:
+          "React, Redux, Node.js, MongoDB. Introducción al desarrollo web moderno basado en JavaScript. Desarrollo de aplicaciones web con ReactJS que utilizan API REST desarrolladas con Node.js.",
         link: "https://studies.cs.helsinki.fi/stats/api/certificate/fullstackopen/en/b12b892e882f11923d0f088f7f38f426",
         institution: "Universidad de Helsinki",
         institutionLink: "https://www.helsinki.fi",
         date: "Diciembre 2024",
         img: "/icons/university-of-helsinki.svg",
         imgD: "/icons/university-of-helsinki-dark.svg",
-        status: 'completed'
+        status: "completed",
       },
       {
         id: 1,
@@ -156,7 +161,7 @@ export const certifications = {
         date: "Enero 2025",
         img: "/icons/university-of-helsinki.svg",
         imgD: "/icons/university-of-helsinki-dark.svg",
-        status: 'completed'
+        status: "completed",
       },
       {
         id: 2,
@@ -168,7 +173,7 @@ export const certifications = {
         date: "February 2025",
         img: "/icons/lfx-logo.svg",
         imgD: "/icons/lfx-logo-dark.svg",
-        status: 'completed'
+        status: "completed",
       },
       {
         id: 3,
@@ -180,31 +185,33 @@ export const certifications = {
         date: "April 2025",
         img: "/icons/lfx-logo.svg",
         imgD: "/icons/lfx-logo-dark.svg",
-        status: 'completed'
+        status: "completed",
       },
       {
         id: 5,
         name: "Ethereum y Solidity: La guía completa para desarrolladores",
-        description: "Ethereum, Solidity y contratos inteligentes para crear aplicaciones listas para producción basadas en blockchain.",
+        description:
+          "Ethereum, Solidity y contratos inteligentes para crear aplicaciones listas para producción basadas en blockchain.",
         link: "https://www.udemy.com/certificate/UC-dbc3d5e0-960b-414b-b6ea-2ecbc3f8829d/",
         institution: "Udemy",
         institutionLink: "https://udemy.com",
         date: "April 2025",
         img: "/icons/udemy-logo.svg",
         imgD: "/icons/udemy-logo-dark.svg",
-        status: 'completed'
+        status: "completed",
       },
       {
         id: 4,
         name: "Introducción a Soluciones Blockchain de Identidad Autosoberana con Hyperledger (LFS172x)",
-        description: "Cómo Hyperledger Aries, Indy, AnonCreds y Ursa añaden una capa necesaria de confianza a Internet.",
+        description:
+          "Cómo Hyperledger Aries, Indy, AnonCreds y Ursa añaden una capa necesaria de confianza a Internet.",
         link: "",
         institution: "The Linux Foundation",
         institutionLink: "https://www.linuxfoundation.org",
         date: "Mayo 2025",
         img: "/icons/lfx-logo.svg",
         imgD: "/icons/lfx-logo-dark.svg",
-        status: 'completed'
+        status: "completed",
       },
       {
         id: 6,
@@ -216,19 +223,20 @@ export const certifications = {
         date: "2025",
         img: "/icons/lfx-logo.svg",
         imgD: "/icons/lfx-logo-dark.svg",
-        status: 'in-progress'
+        status: "in-progress",
       },
       {
         id: 7,
         name: "Hyperledger Fabric: Diseño, Desarrollo e Implementación (LFS270)",
-        description: "Diseño, desarrollo e implementación de soluciones blockchain. Contratos inteligentes, gestión de Chaincode, manejo de datos privados y creación de aplicaciones cliente en Node.js.",
+        description:
+          "Diseño, desarrollo e implementación de soluciones blockchain. Contratos inteligentes, gestión de Chaincode, manejo de datos privados y creación de aplicaciones cliente en Node.js.",
         link: "",
         institution: "The Linux Foundation",
         institutionLink: "https://www.linuxfoundation.org",
         date: "2025",
         img: "/icons/lfx-logo.svg",
         imgD: "/icons/lfx-logo-dark.svg",
-        status: 'in-progress'
+        status: "in-progress",
       },
       {
         id: 8,
@@ -240,20 +248,21 @@ export const certifications = {
         date: "2025",
         img: "/icons/university-of-helsinki.svg",
         imgD: "/icons/university-of-helsinki-dark.svg",
-        status: 'in-progress'
+        status: "in-progress",
       },
       {
         id: 9,
         name: "IA Generativa para NodeJs: OpenAI, LangChain - TypeScript",
-        description: "Desarrollo aplicaciones con LLM utilizando LangChain, empleando wrappers, chains y agentes, e integrando bases de datos vectoriales como Pinecone y ChromaDB.",
+        description:
+          "Desarrollo aplicaciones con LLM utilizando LangChain, empleando wrappers, chains y agentes, e integrando bases de datos vectoriales como Pinecone y ChromaDB.",
         link: "",
         institution: "Udemy",
         institutionLink: "https://udemy.com",
         date: "Junio 2025",
         img: "/icons/udemy-logo.svg",
         imgD: "/icons/udemy-logo-dark.svg",
-        status: 'completed'
-      }
+        status: "completed",
+      },
     ],
   },
 };

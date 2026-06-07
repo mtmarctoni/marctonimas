@@ -1,6 +1,4 @@
 ---
-import SectionContainer from "../containers/SectionContainer.astro";
-import { Image } from "astro:assets";
 import { education as rawEducation } from "@/i18n/education";
 import { getLangFromUrl } from "@/i18n/utils";
 
@@ -29,6 +27,7 @@ interface EducationInfo {
 }
 const education = rawEducation[lang] as unknown as EducationInfo;
 
+// biome-ignore lint/correctness/noUnusedVariables: used in Astro template
 const { title, subtitle, educationList, transcriptButton } = education;
 ---
 

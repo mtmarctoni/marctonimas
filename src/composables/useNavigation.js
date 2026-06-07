@@ -1,5 +1,5 @@
 // useNavigation.js
-import { ref, onMounted, onUnmounted } from "vue";
+import { onMounted, onUnmounted, ref } from "vue";
 
 export function useNavigation(navItems) {
   const activeSection = ref("");

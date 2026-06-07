@@ -1,20 +1,9 @@
 ---
 import "@/styles/global.css";
-
 import { getLangFromUrl, useTranslations } from "@/i18n/utils";
-import Layout from "@/layouts/Layout.astro";
-import Hero from "@/components/sections/Hero.vue";
-import About from "@/components/sections/About.astro";
-import Skills from "@/components/sections/Skills.astro";
-import Projects from "@/components/sections/Projects.astro";
-import Contact from "@/components/sections/Contact.astro";
-import BlockchainCanvas from "@/components/common/BlockchainCanvas.vue";
-import Languages from "@/components/sections/Languages.astro";
-// import Certificates from "@/components/sections/Certificates.astro";
-import BackgroundPreview from "@/components/sections/BackgroundPreview.astro";
 
 const lang = getLangFromUrl(Astro.url);
-const t = useTranslations(lang);
+const _t = useTranslations(lang);
 ---
 
 <Layout title={t("site.title")} description={t("site.description")} lang={lang} keywords={t("site.keywords")}>

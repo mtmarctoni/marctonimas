@@ -1,17 +1,7 @@
 ---
-import SectionContainer from "@/components/containers/SectionContainer.astro";
-import { useTranslations, getLangFromUrl } from "@/i18n/utils";
-import {
-  BlockchainIcon,
-  CodeIcon,
-  ToolsIcon,
-  FrameIcon,
-  DatabaseIcon,
-} from "@/utils/icons";
 import { skillsInfo } from "@/composables/useSkills";
-
-import SkillCard from "@/components/containers/SkillCard.astro";
-import BackgroundBlobs from "@/components/ui/BackgroundBlobs.astro";
+import { getLangFromUrl, useTranslations } from "@/i18n/utils";
+import { BlockchainIcon, CodeIcon, DatabaseIcon, FrameIcon, ToolsIcon } from "@/utils/icons";
 
 const url = new URL(Astro.url);
 const lang = getLangFromUrl(url);
@@ -20,14 +10,14 @@ const t = useTranslations(lang);
 interface Skill {
   name: string;
   level: number;
-  icon?: any;
+  icon?: unknown;
   category: string;
 }
 
 const skills: Skill[] = skillsInfo;
 
 // Define categories for the filter
-const categories = [
+const _categories = [
   { id: "all", label: t("skills.all"), icon: null },
   { id: "languages", label: t("skills.languages_title"), icon: CodeIcon },
   {
@@ -43,13 +33,11 @@ const categories = [
 // Group skills by proficiency
 const XP_ADVANCED = 90;
 const XP_INTERMEDIATE = 75;
-const expertSkills = skills.filter((skill) => skill.level >= XP_ADVANCED);
-const advancedSkills = skills.filter(
+const _expertSkills = skills.filter((skill) => skill.level >= XP_ADVANCED);
+const _advancedSkills = skills.filter(
   (skill) => skill.level >= XP_INTERMEDIATE && skill.level < XP_ADVANCED,
 );
-const intermediateSkills = skills.filter(
-  (skill) => skill.level < XP_INTERMEDIATE,
-);
+const _intermediateSkills = skills.filter((skill) => skill.level < XP_INTERMEDIATE);
 ---
 
 <SectionContainer sectionId="skills">

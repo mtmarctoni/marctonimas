@@ -18,12 +18,12 @@
 </template>
 
 <script setup>
-import { ref, onMounted, onUnmounted } from "vue";
+import { onMounted, onUnmounted, ref } from "vue";
 
 const dropdownOpen = ref(false);
 const dropdown = ref(null);
 
-const toggleDropdown = () => {
+const _toggleDropdown = () => {
   dropdownOpen.value = !dropdownOpen.value;
 };
 

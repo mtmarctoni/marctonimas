@@ -1,21 +1,21 @@
 ---
-import { ClipboardIcon } from "@/utils/icons";
-
 interface Props {
   className?: string;
-  icon: any;
+  icon: unknown;
   text: string;
   value: string;
   href?: string;
 }
 
-const { icon, text, value, href = "" } = Astro.props as Props;
+const { icon, value, href = "" } = Astro.props as Props;
+// biome-ignore lint/correctness/noUnusedVariables: used in Astro template
+const { text } = Astro.props as Props;
 
-const Icon = icon;
+const _Icon = icon;
 
 const url: string = String(new URL(Astro.url));
-const lan = url.includes("es") ? "es" : "en";
-const copiedValue = href.includes("http") ? href : value;
+const _lan = url.includes("es") ? "es" : "en";
+const _copiedValue = href.includes("http") ? href : value;
 ---
 
 <a

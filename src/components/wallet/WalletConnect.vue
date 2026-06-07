@@ -43,11 +43,9 @@
 </template>
 
 <script setup>
-import { ref, onMounted, onUnmounted } from "vue";
-import { useTranslations, getLangFromUrl } from "@/i18n/utils";
-import { CheckIcon } from "@/utils/icons";
+import { onMounted, onUnmounted, ref } from "vue";
 import { useWallet } from "@/composables/useWallet";
-import WalletDropDownMenu from "./WalletDropDownMenu.vue";
+import { getLangFromUrl, useTranslations } from "@/i18n/utils";
 
 const lang = getLangFromUrl(new URL(window.location.href));
 const t = useTranslations(lang);
@@ -61,10 +59,19 @@ const {
   connectWallet,
   disconnectWallet,
   shortenAddress,
-  clientHasWallet
+  clientHasWallet,
 } = useWallet(t);
+// used in template below
+void isConnected;
+void account;
+void networkInfo;
+void balance;
+void connectWallet;
+void disconnectWallet;
+void shortenAddress;
+void clientHasWallet;
 
-const toggleDropdown = () => {
+const _toggleDropdown = () => {
   showDropdown.value = !showDropdown.value;
 };
 
