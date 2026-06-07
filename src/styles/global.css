@@ -8,9 +8,7 @@
   --color-secondary: var(--secondary); /* A lighter, more vibrant blue */
   --color-tertiary: var(--tertiary); /* A softer, sky blue */
   --color-accent: var(--accent); /* A greenish accent for contrast */
-  --color-accent-secondary: var(
-    --accent-secondary
-  ); /* An orange accent for highlights */
+  --color-accent-secondary: var(--accent-secondary); /* An orange accent for highlights */
 
   /* Backgrounds */
   --color-bg: var(--background);
@@ -136,7 +134,8 @@
   }
 }
 
-body, html {
+body,
+html {
   width: 100%;
   overflow-x: hidden;
 }
@@ -152,5 +151,3 @@ body, html {
 #skills {
   scroll-margin-top: 40px;
 }
-
-

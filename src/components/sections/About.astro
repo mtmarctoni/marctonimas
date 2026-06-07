@@ -1,9 +1,9 @@
 ---
 import { Image } from "astro:assets";
-import { BulbIcon, ZoomCheckIcon } from "@/utils/icons";
-import { useTranslations, getLangFromUrl } from "@/i18n/utils";
 import SectionContainer from "@/components/containers/SectionContainer.astro";
 import BackgroundBlobs from "@/components/ui/BackgroundBlobs.astro";
+import { getLangFromUrl, useTranslations } from "@/i18n/utils";
+import { BulbIcon, ZoomCheckIcon } from "@/utils/icons";
 import NoiseTexture from "../ui/NoiseTexture.astro";
 
 const url = new URL(Astro.url);
@@ -249,6 +249,7 @@ const keyAttributes = [
       cards.forEach((card, i) => {
         const currentCardDescription = cardDescriptions[i];
         const currentExpandIcon = expandIcons[i];
+        if (!currentCardDescription || !currentExpandIcon) return;
         card.addEventListener("click", () => {
           const isExpanded =
             currentCardDescription.getAttribute("data-expanded") === "true";

@@ -3,7 +3,7 @@
 </template>
 
 <script setup>
-import { ref, onMounted, onUnmounted } from "vue";
+import { onMounted, onUnmounted, ref } from "vue";
 
 const canvas = ref(null);
 let ctx;
@@ -152,10 +152,8 @@ const animate = () => {
       }
 
       // Calculate current position
-      const currentX =
-        fromParticle.x + (toParticle.x - fromParticle.x) * connection.progress;
-      const currentY =
-        fromParticle.y + (toParticle.y - fromParticle.y) * connection.progress;
+      const currentX = fromParticle.x + (toParticle.x - fromParticle.x) * connection.progress;
+      const currentY = fromParticle.y + (toParticle.y - fromParticle.y) * connection.progress;
 
       // Draw line
       ctx.beginPath();

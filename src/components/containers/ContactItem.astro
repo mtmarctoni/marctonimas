@@ -1,9 +1,10 @@
 ---
+import type { AstroComponentFactory } from "astro/runtime/server/index.js";
 import { ClipboardIcon } from "@/utils/icons";
 
 interface Props {
   className?: string;
-  icon: any;
+  icon: AstroComponentFactory;
   text: string;
   value: string;
   href?: string;

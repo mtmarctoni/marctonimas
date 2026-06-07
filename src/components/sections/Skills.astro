@@ -1,26 +1,21 @@
 ---
 import SectionContainer from "@/components/containers/SectionContainer.astro";
-import { useTranslations, getLangFromUrl } from "@/i18n/utils";
-import {
-  BlockchainIcon,
-  CodeIcon,
-  ToolsIcon,
-  FrameIcon,
-  DatabaseIcon,
-} from "@/utils/icons";
-import { skillsInfo } from "@/composables/useSkills";
-
 import SkillCard from "@/components/containers/SkillCard.astro";
 import BackgroundBlobs from "@/components/ui/BackgroundBlobs.astro";
+import { skillsInfo } from "@/composables/useSkills";
+import { getLangFromUrl, useTranslations } from "@/i18n/utils";
+import { BlockchainIcon, CodeIcon, DatabaseIcon, FrameIcon, ToolsIcon } from "@/utils/icons";
 
 const url = new URL(Astro.url);
 const lang = getLangFromUrl(url);
 const t = useTranslations(lang);
 
+import type { AstroComponentFactory } from "astro/runtime/server/index.js";
+
 interface Skill {
   name: string;
   level: number;
-  icon?: any;
+  icon?: AstroComponentFactory;
   category: string;
 }
 
@@ -47,9 +42,7 @@ const expertSkills = skills.filter((skill) => skill.level >= XP_ADVANCED);
 const advancedSkills = skills.filter(
   (skill) => skill.level >= XP_INTERMEDIATE && skill.level < XP_ADVANCED,
 );
-const intermediateSkills = skills.filter(
-  (skill) => skill.level < XP_INTERMEDIATE,
-);
+const intermediateSkills = skills.filter((skill) => skill.level < XP_INTERMEDIATE);
 ---
 
 <SectionContainer sectionId="skills">

@@ -1,13 +1,13 @@
 ---
-// Import necessary utilities
-import SectionContainer from "../containers/SectionContainer.astro";
+import { getLangFromUrl, useTranslations } from "@/i18n/utils";
 import {
-  SpanishFlagIcon,
+  CatalanFlagIcon,
   EnglishFlagIcon,
   GermanFlagIcon,
-  CatalanFlagIcon,
+  SpanishFlagIcon,
 } from "@/utils/flagIcons";
-import { useTranslations, getLangFromUrl } from "@/i18n/utils";
+// Import necessary utilities
+import SectionContainer from "../containers/SectionContainer.astro";
 
 // Get current language from URL
 const url = new URL(Astro.url);

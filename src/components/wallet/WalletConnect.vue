@@ -43,10 +43,10 @@
 </template>
 
 <script setup>
-import { ref, onMounted, onUnmounted } from "vue";
-import { useTranslations, getLangFromUrl } from "@/i18n/utils";
-import { CheckIcon } from "@/utils/icons";
+import { onMounted, onUnmounted, ref } from "vue";
 import { useWallet } from "@/composables/useWallet";
+import { getLangFromUrl, useTranslations } from "@/i18n/utils";
+import { CheckIcon } from "@/utils/icons";
 import WalletDropDownMenu from "./WalletDropDownMenu.vue";
 
 const lang = getLangFromUrl(new URL(window.location.href));
@@ -61,7 +61,7 @@ const {
   connectWallet,
   disconnectWallet,
   shortenAddress,
-  clientHasWallet
+  clientHasWallet,
 } = useWallet(t);
 
 const toggleDropdown = () => {

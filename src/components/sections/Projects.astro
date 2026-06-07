@@ -1,8 +1,8 @@
 ---
-import SectionContainer from "../containers/SectionContainer.astro";
-import { getLangFromUrl, useTranslations } from "@/i18n/utils";
 import { projectSection } from "@/i18n/projects";
+import { getLangFromUrl, useTranslations } from "@/i18n/utils";
 import ProjectCard from "../containers/ProjectCard.astro";
+import SectionContainer from "../containers/SectionContainer.astro";
 
 const url = new URL(Astro.url);
 const lang = getLangFromUrl(url) as "en" | "es";

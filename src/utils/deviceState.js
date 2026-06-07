@@ -1,7 +1,7 @@
-import { isTouchDevice } from './deviceDetection.js';
+import { isTouchDevice } from "./deviceDetection.js";
 
 export const deviceState = {
   get hasTouch() {
-    return typeof window !== 'undefined' && isTouchDevice();
-  }
+    return typeof window !== "undefined" && isTouchDevice();
+  },
 };

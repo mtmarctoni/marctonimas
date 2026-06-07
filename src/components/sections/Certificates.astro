@@ -1,6 +1,6 @@
 ---
-import SectionContainer from "@/components/containers/SectionContainer.astro";
 import IssuerCard from "@/components/containers/IssuerCard.vue";
+import SectionContainer from "@/components/containers/SectionContainer.astro";
 import { certifications as rawCertifications } from "@/i18n/certifications";
 import { getLangFromUrl } from "@/i18n/utils";
 
@@ -17,7 +17,7 @@ interface Certificate {
   date: string;
   img: string;
   imgD: string;
-  status?: 'completed' | 'in-progress';
+  status?: "completed" | "in-progress";
 }
 
 interface Certifications {
@@ -42,8 +42,8 @@ interface Issuer {
 
 const groupByIssuer = (certs: Certificate[]): Issuer[] => {
   const issuerMap = new Map<string, Issuer>();
-  
-  certs.forEach(cert => {
+
+  certs.forEach((cert) => {
     const key = `${cert.institution}-${cert.institutionLink}`;
     if (!issuerMap.has(key)) {
       issuerMap.set(key, {
@@ -51,22 +51,23 @@ const groupByIssuer = (certs: Certificate[]): Issuer[] => {
         link: cert.institutionLink,
         img: cert.img,
         imgD: cert.imgD,
-        certificates: []
+        certificates: [],
       });
     }
     issuerMap.get(key)?.certificates.push(cert);
   });
 
   // Sort certificates within each issuer by date (newest first)
-  return Array.from(issuerMap.values()).map(issuer => ({
+  return Array.from(issuerMap.values()).map((issuer) => ({
     ...issuer,
-    certificates: [...issuer.certificates].sort((a, b) => a.id - b.id
-    // {
-    //   const dateA = new Date(a.date);
-    //   const dateB = new Date(b.date);
-    //   return dateB.getTime() - dateA.getTime();
-    // }
-  )
+    certificates: [...issuer.certificates].sort(
+      (a, b) => a.id - b.id,
+      // {
+      //   const dateA = new Date(a.date);
+      //   const dateB = new Date(b.date);
+      //   return dateB.getTime() - dateA.getTime();
+      // }
+    ),
   }));
 };
 

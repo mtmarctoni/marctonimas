@@ -1,7 +1,7 @@
 <script setup>
+import { MY_EMAIL, MY_GITHUB, MY_LINKEDIN } from "@/utils/constants";
+import { EmailIcon, GithubIcon, LinkedInIcon } from "@/utils/icons";
 import SocialLinks from "./SocialLinks.vue";
-import { MY_EMAIL, MY_LINKEDIN, MY_GITHUB } from "@/utils/constants";
-import { EmailIcon, LinkedInIcon, GithubIcon } from "@/utils/icons";
 
 defineProps({
   navItems: {

@@ -1,6 +1,6 @@
 <script setup>
-import { useTranslations, getLangFromUrl } from "@/i18n/utils";
 import WalletConnect from "@/components/wallet/WalletConnect.vue";
+import { getLangFromUrl, useTranslations } from "@/i18n/utils";
 import { ArrowDownIcon } from "@/utils/icons";
 
 // Get current language from URL
