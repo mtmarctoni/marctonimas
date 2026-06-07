@@ -30,4 +30,4 @@ updates:
         patterns:
           - "*"
         exclude-patterns:
-          - "astro
+          - "astro"

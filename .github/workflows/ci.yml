@@ -110,7 +110,6 @@ jobs:
 
       - name: Run tests
         run: pnpm test
-        continue-on-error: true
 
   build:
     name: Build
@@ -136,7 +135,6 @@ jobs:
 
       - name: Build
         run: pnpm run build
-        continue-on-error: true
 
       - name: Verify no .env in repo
         run: |
@@ -169,7 +167,6 @@ jobs:
 
       - name: Knip dead-code analysis
         run: pnpm exec knip --include files,dependencies,exports
-        continue-on-error: true
 
   audit:
     name: Dependency Audit

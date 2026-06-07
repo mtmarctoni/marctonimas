@@ -35,7 +35,6 @@ jobs:
 
       - name: Build
         run: pnpm run build
-        continue-on-error: true
 
       - name: Run Lighthouse CI
         run: pnpm exec lhci autorun
@@ -65,18 +64,15 @@ jobs:
 
       - name: Build
         run: pnpm run build
-        continue-on-error: true
-
-      - name: Start preview server
-        run: pnpm run preview &
-        continue-on-error: true
-
-      - name: Wait for server
-        run: npx wait-on http://localhost:4321/ --timeout 30000
-        continue-on-error: true
 
       - name: Install Chrome for Puppeteer
         run: pnpm exec puppeteer browsers install chrome
 
+      - name: Start preview server
+        run: pnpm run preview &
+
+      - name: Wait for server
+        run: pnpm exec wait-on http://localhost:4321/ --timeout 30000
+
       - name: Run Pa11y CI
-        run: pnpm exec pa11y-ci || true
+        run: pnpm exec pa11y-ci -c .pa11yci.cjs
