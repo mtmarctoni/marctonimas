@@ -1,4 +1,6 @@
 ---
+import NavBar from "@/components/navigation/NavBar.vue";
+import Footer from "@/components/sections/Footer.astro";
 import "@/styles/global.css";
 import { useTranslations } from "@/i18n/utils";
 
@@ -11,12 +13,10 @@ interface Props {
   twitterImage?: string;
 }
 
-const { title, description, lang = "en" } = Astro.props;
-// biome-ignore lint/correctness/noUnusedVariables: used in Astro template
-const { keywords, ogImage, twitterImage } = Astro.props;
+const { title, description, lang = "en", keywords, ogImage, twitterImage } = Astro.props;
 
 const t = useTranslations(lang);
-const _defaultOgImageUrl = "https://marctonimas.com/og-image.jpg";
+const defaultOgImageUrl = "https://marctonimas.com/og-image.jpg";
 const site = Astro.site ? Astro.site.toString().replace(/\/$/, "") : "https://marctonimas.com";
 
 const currentPathname = Astro.url.pathname;
@@ -55,7 +55,7 @@ hreflangLinks.push({
   href: enUrl === `${site}/` ? site : enUrl,
 });
 
-const _webSiteSchema = {
+const webSiteSchema = {
   "@context": "https://schema.org",
   "@type": "WebSite",
   name: title,
@@ -63,7 +63,7 @@ const _webSiteSchema = {
   description: description,
 };
 
-const _personSchema = {
+const personSchema = {
   "@context": "https://schema.org",
   "@type": "Person",
   name: t("person.name"),

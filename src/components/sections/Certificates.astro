@@ -1,4 +1,6 @@
 ---
+import IssuerCard from "@/components/containers/IssuerCard.vue";
+import SectionContainer from "@/components/containers/SectionContainer.astro";
 import { certifications as rawCertifications } from "@/i18n/certifications";
 import { getLangFromUrl } from "@/i18n/utils";
 
@@ -27,9 +29,7 @@ interface Certifications {
 }
 
 const certifications = rawCertifications[lang] as unknown as Certifications;
-const { certificationList } = certifications;
-// biome-ignore lint/correctness/noUnusedVariables: used in Astro template
-const { title, button, inProgress } = certifications;
+const { title, button, inProgress, certificationList } = certifications;
 
 // Group certificates by institution
 interface Issuer {
@@ -71,7 +71,7 @@ const groupByIssuer = (certs: Certificate[]): Issuer[] => {
   }));
 };
 
-const _groupedCertificates = groupByIssuer(certificationList);
+const groupedCertificates = groupByIssuer(certificationList);
 ---
 
 <SectionContainer sectionId="certifications">

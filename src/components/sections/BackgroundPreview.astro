@@ -1,13 +1,17 @@
 ---
+import ExperienceCard from "@/components/containers/ExperienceCard.astro";
+import SectionContainer from "@/components/containers/SectionContainer.astro";
 import { backgroundPreview } from "@/i18n/backgroundpreview";
 import { getLangFromUrl } from "@/i18n/utils";
+import { CodeIcon, RocketIcon, ToolsIcon } from "@/utils/icons";
+import Certificates from "./Certificates.astro";
 
 const url = new URL(Astro.url);
 const lang = getLangFromUrl(url) as "en" | "es";
 const background = backgroundPreview[lang];
 
 // Get the relevant experience
-const _experiences = background.relevantExperience;
+const experiences = background.relevantExperience;
 ---
  
 <SectionContainer sectionId="background">

@@ -53,6 +53,8 @@
 </template>
 
 <script setup>
+import { CertificateIcon } from "@/utils/icons";
+
 defineProps({
   issuer: {
     type: String,

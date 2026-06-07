@@ -1,10 +1,10 @@
 // @ts-check
-import { defineConfig } from "astro/config";
-import tailwindcss from "@tailwindcss/vite";
-import svgLoader from "vite-svg-loader";
-import path from 'path';
 
+import path from "node:path";
 import vue from "@astrojs/vue";
+import tailwindcss from "@tailwindcss/vite";
+import { defineConfig } from "astro/config";
+import svgLoader from "vite-svg-loader";
 
 // https://astro.build/config
 export default defineConfig({
@@ -12,9 +12,9 @@ export default defineConfig({
     plugins: [tailwindcss(), svgLoader()],
     resolve: {
       alias: {
-        '@': path.resolve('./src')
-      }
-    }
+        "@": path.resolve("./src"),
+      },
+    },
   },
   integrations: [vue()],
 });

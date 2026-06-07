@@ -6,13 +6,15 @@ import {
   GermanFlagIcon,
   SpanishFlagIcon,
 } from "@/utils/flagIcons";
+// Import necessary utilities
+import SectionContainer from "../containers/SectionContainer.astro";
 
 // Get current language from URL
 const url = new URL(Astro.url);
 const lang = getLangFromUrl(url);
 const t = useTranslations(lang);
 
-const _languages = [
+const languages = [
   {
     name: t("languages.spanish"),
     level: t("languages.spanish_level"),

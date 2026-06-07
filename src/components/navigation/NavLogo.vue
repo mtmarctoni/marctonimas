@@ -1,4 +1,5 @@
 <script setup>
+import { MY_NAME_LOGO } from "@/utils/constants";
 </script>
 
 <template>
