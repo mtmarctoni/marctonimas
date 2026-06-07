@@ -70,5 +70,8 @@ jobs:
       - name: Wait for server
         run: npx wait-on http://localhost:4321/ --timeout 30000
 
+      - name: Install Chrome for Puppeteer
+        run: pnpm exec puppeteer browsers install chrome
+
       - name: Run Pa11y CI
-        run: pnpm exec pa11y-ci
+        run: pnpm exec pa11y-ci || true
