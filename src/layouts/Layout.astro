@@ -105,11 +105,11 @@ const personSchema = {
       ))
     }
 
-    <script
+    <script is:inline
       type="application/ld+json"
       set:html={JSON.stringify(webSiteSchema)}
     />
-    <script
+    <script is:inline
       type="application/ld+json"
       set:html={JSON.stringify(personSchema)}
     />

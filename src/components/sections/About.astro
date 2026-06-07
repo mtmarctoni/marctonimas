@@ -249,6 +249,7 @@ const keyAttributes = [
       cards.forEach((card, i) => {
         const currentCardDescription = cardDescriptions[i];
         const currentExpandIcon = expandIcons[i];
+        if (!currentCardDescription || !currentExpandIcon) return;
         card.addEventListener("click", () => {
           const isExpanded =
             currentCardDescription.getAttribute("data-expanded") === "true";
