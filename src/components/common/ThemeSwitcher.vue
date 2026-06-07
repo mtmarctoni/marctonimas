@@ -48,12 +48,14 @@
 
 <script setup>
 import { onMounted, onUnmounted, ref } from "vue";
+import { MoonIcon, SunIcon, SystemIcon } from "@/utils/icons";
 import { getLangFromUrl, useTranslations } from "../../i18n/utils";
+import ToggleDropDown from "./ToggleDropDown.vue";
 
 const themeDropdownOpen = ref(false);
 const currentTheme = ref("system");
 const lang = getLangFromUrl(new URL(window.location.href));
-const _t = useTranslations(lang);
+const t = useTranslations(lang);
 
 // delete
 // const toggleThemeDropdown = () => {
@@ -85,7 +87,7 @@ onUnmounted(() => {
   document.removeEventListener("click", closeDropdown);
 });
 
-const _setTheme = (theme) => {
+const setTheme = (theme) => {
   currentTheme.value = theme;
   localStorage.setItem("theme", theme);
 

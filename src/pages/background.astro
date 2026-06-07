@@ -1,8 +1,12 @@
 ---
+import Contact from "@/components/sections/Contact.astro";
+import Education from "@/components/sections/Education.astro";
+import WorkExperience from "@/components/sections/WorkExperience.astro";
 import { getLangFromUrl, useTranslations } from "@/i18n/utils";
+import Layout from "@/layouts/Layout.astro";
 
 const lang = getLangFromUrl(Astro.url);
-const _t = useTranslations(lang);
+const t = useTranslations(lang);
 ---
 
 <Layout title={t("background.pageTitle")} description={t("background.pageDescription")} lang={lang} keywords={t("site.keywords")}>

@@ -23,7 +23,7 @@ import { onMounted, onUnmounted, ref } from "vue";
 const dropdownOpen = ref(false);
 const dropdown = ref(null);
 
-const _toggleDropdown = () => {
+const toggleDropdown = () => {
   dropdownOpen.value = !dropdownOpen.value;
 };
 

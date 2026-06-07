@@ -1,5 +1,6 @@
 <script setup>
 import { ref } from "vue";
+import { CheckIcon } from "@/utils/icons";
 
 defineProps({
   job: {
@@ -14,7 +15,7 @@ defineProps({
 
 const isExpanded = ref(false);
 
-const _toggleDuties = () => {
+const toggleDuties = () => {
   isExpanded.value = !isExpanded.value;
 };
 </script>

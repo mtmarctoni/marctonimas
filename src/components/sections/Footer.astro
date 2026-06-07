@@ -1,11 +1,13 @@
 ---
 import { getLangFromUrl, useTranslations } from "@/i18n/utils";
+import { MY_EMAIL, MY_GITHUB, MY_LINKEDIN } from "@/utils/constants";
+import { EmailIcon, GithubIcon, LinkedInIcon } from "@/utils/icons";
 
 const url = new URL(Astro.url);
 const lang = getLangFromUrl(url);
-const _t = useTranslations(lang);
+const t = useTranslations(lang);
 
-const _currentYear = new Date().getFullYear();
+const currentYear = new Date().getFullYear();
 ---
 
 <footer class="bg-bg text-fg py-8">

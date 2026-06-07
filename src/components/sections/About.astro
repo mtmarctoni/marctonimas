@@ -1,12 +1,17 @@
 ---
+import { Image } from "astro:assets";
+import SectionContainer from "@/components/containers/SectionContainer.astro";
+import BackgroundBlobs from "@/components/ui/BackgroundBlobs.astro";
 import { getLangFromUrl, useTranslations } from "@/i18n/utils";
+import { BulbIcon, ZoomCheckIcon } from "@/utils/icons";
+import NoiseTexture from "../ui/NoiseTexture.astro";
 
 const url = new URL(Astro.url);
 const lang = getLangFromUrl(url);
 const t = useTranslations(lang);
 
 // Define key skills/attributes for the interactive elements
-const _keyAttributes = [
+const keyAttributes = [
   {
     icon: "💻",
     label: t("about.attribute.developer"),
@@ -244,6 +249,7 @@ const _keyAttributes = [
       cards.forEach((card, i) => {
         const currentCardDescription = cardDescriptions[i];
         const currentExpandIcon = expandIcons[i];
+        if (!currentCardDescription || !currentExpandIcon) return;
         card.addEventListener("click", () => {
           const isExpanded =
             currentCardDescription.getAttribute("data-expanded") === "true";

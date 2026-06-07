@@ -1,17 +1,14 @@
 <script setup>
 import { getLangFromUrl, useTranslations } from "@/i18n/utils";
+import { LogoutIcon } from "@/utils/icons";
 
 const lang = getLangFromUrl(new URL(window.location.href));
-const _t = useTranslations(lang);
+const t = useTranslations(lang);
 const { network, balance, disconnectWallet } = defineProps([
   "network",
   "balance",
   "disconnectWallet",
 ]);
-// used in template below
-void network;
-void balance;
-void disconnectWallet;
 </script>
 
 <template>

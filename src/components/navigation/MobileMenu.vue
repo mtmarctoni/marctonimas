@@ -1,6 +1,7 @@
 <script setup>
 import { MY_EMAIL, MY_GITHUB, MY_LINKEDIN } from "@/utils/constants";
 import { EmailIcon, GithubIcon, LinkedInIcon } from "@/utils/icons";
+import SocialLinks from "./SocialLinks.vue";
 
 defineProps({
   navItems: {
@@ -28,7 +29,7 @@ defineProps({
 defineEmits(["close"]);
 
 // Social links
-const _socialLinks = [
+const socialLinks = [
   { href: `mailto:${MY_EMAIL}`, icon: EmailIcon, label: MY_EMAIL },
   {
     href: `https://linkedin.com/in/${MY_LINKEDIN}`,
@@ -42,7 +43,7 @@ const _socialLinks = [
   },
 ];
 
-const _currentYear = new Date().getFullYear();
+const currentYear = new Date().getFullYear();
 </script>
 
 <template>

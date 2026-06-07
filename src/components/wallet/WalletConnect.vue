@@ -46,6 +46,8 @@
 import { onMounted, onUnmounted, ref } from "vue";
 import { useWallet } from "@/composables/useWallet";
 import { getLangFromUrl, useTranslations } from "@/i18n/utils";
+import { CheckIcon } from "@/utils/icons";
+import WalletDropDownMenu from "./WalletDropDownMenu.vue";
 
 const lang = getLangFromUrl(new URL(window.location.href));
 const t = useTranslations(lang);
@@ -61,17 +63,8 @@ const {
   shortenAddress,
   clientHasWallet,
 } = useWallet(t);
-// used in template below
-void isConnected;
-void account;
-void networkInfo;
-void balance;
-void connectWallet;
-void disconnectWallet;
-void shortenAddress;
-void clientHasWallet;
 
-const _toggleDropdown = () => {
+const toggleDropdown = () => {
   showDropdown.value = !showDropdown.value;
 };
 

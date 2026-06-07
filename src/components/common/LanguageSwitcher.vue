@@ -37,6 +37,7 @@
 <script setup>
 import { onMounted, onUnmounted, ref } from "vue";
 import { getLangFromUrl } from "@/i18n/utils";
+import ToggleDropDown from "./ToggleDropDown.vue";
 
 const langDropdownOpen = ref(false);
 const currentLang = ref("en");
@@ -62,7 +63,7 @@ onUnmounted(() => {
   document.removeEventListener("click", closeDropdown);
 });
 
-const _setLang = (lang) => {
+const setLang = (lang) => {
   currentLang.value = lang;
   langDropdownOpen.value = false;
 };
