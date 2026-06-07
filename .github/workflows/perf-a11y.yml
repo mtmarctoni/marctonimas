@@ -66,7 +66,10 @@ jobs:
         run: pnpm run build
 
       - name: Install Chrome for Puppeteer
-        run: pnpm exec puppeteer browsers install chrome
+        id: setup-chrome
+        run: |
+          pnpm exec puppeteer browsers install chrome
+          echo "chrome-path=$(find /home/runner/.cache/puppeteer -name chrome -type f | head -1)" >> "$GITHUB_OUTPUT"
 
       - name: Start preview server
         run: pnpm run preview &
@@ -76,3 +79,5 @@ jobs:
 
       - name: Run Pa11y CI
         run: pnpm exec pa11y-ci -c .pa11yci.cjs
+        env:
+          CHROME_PATH: ${{ steps.setup-chrome.outputs.chrome-path }}
