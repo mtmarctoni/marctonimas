@@ -1,7 +1,7 @@
 ---
-import { useTranslations, getLangFromUrl } from "@/i18n/utils";
-import { MY_GITHUB, MY_LINKEDIN, MY_EMAIL } from "@/utils/constants";
-import { GithubIcon, LinkedInIcon, EmailIcon } from "@/utils/icons";
+import { getLangFromUrl, useTranslations } from "@/i18n/utils";
+import { MY_EMAIL, MY_GITHUB, MY_LINKEDIN } from "@/utils/constants";
+import { EmailIcon, GithubIcon, LinkedInIcon } from "@/utils/icons";
 
 const url = new URL(Astro.url);
 const lang = getLangFromUrl(url);

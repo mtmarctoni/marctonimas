@@ -47,10 +47,10 @@
 </template>
 
 <script setup>
-import { ref, onMounted, onUnmounted } from "vue";
-import ToggleDropDown from "./ToggleDropDown.vue";
-import { useTranslations, getLangFromUrl } from "../../i18n/utils";
+import { onMounted, onUnmounted, ref } from "vue";
 import { MoonIcon, SunIcon, SystemIcon } from "@/utils/icons";
+import { getLangFromUrl, useTranslations } from "../../i18n/utils";
+import ToggleDropDown from "./ToggleDropDown.vue";
 
 const themeDropdownOpen = ref(false);
 const currentTheme = ref("system");
@@ -71,9 +71,7 @@ const closeDropdown = () => {
 onMounted(() => {
   // Get theme from localStorage or default to system
   const savedTheme = localStorage.getItem("theme");
-  const systemDarkMode = window.matchMedia(
-    "(prefers-color-scheme: dark)",
-  ).matches;
+  const systemDarkMode = window.matchMedia("(prefers-color-scheme: dark)").matches;
 
   if (savedTheme) {
     currentTheme.value = savedTheme;
@@ -94,9 +92,7 @@ const setTheme = (theme) => {
   localStorage.setItem("theme", theme);
 
   if (theme === "system") {
-    const systemDarkMode = window.matchMedia(
-      "(prefers-color-scheme: dark)",
-    ).matches;
+    const systemDarkMode = window.matchMedia("(prefers-color-scheme: dark)").matches;
     document.documentElement.classList.toggle("dark", systemDarkMode);
   } else {
     document.documentElement.classList.toggle("dark", theme === "dark");

@@ -1,0 +1,27 @@
+#!/bin/sh
+set -e
+
+STAGED_ALL=$(git diff --cached --name-only --diff-filter=ACM)
+
+for file in $STAGED_ALL; do
+  basename=$(basename "$file")
+  case "$basename" in
+    .env|.env.local|.env.production|.env.development)
+      echo ""
+      echo "ERROR: Attempting to commit environment file: $file"
+      echo "Environment files contain secrets and must not be committed."
+      echo "If this is a template, use .env.example instead."
+      echo ""
+      exit 1
+      ;;
+    id_rsa|id_rsa.pub|id_dsa|id_dsa.pub|*.pem|*.key|*.p12|*.pfx|credentials.json|token.json|secret.json)
+      echo ""
+      echo "ERROR: Attempting to commit potential secret file: $file"
+      echo "If this is intentional, use 'git commit --no-verify' to bypass."
+      echo ""
+      exit 1
+      ;;
+  esac
+done
+
+npx lint-staged

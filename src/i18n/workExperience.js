@@ -13,7 +13,8 @@ export const workExperience = {
         title: "Full-Stack Developer",
         period: "November 2024 - Present",
         city: "Palma de Mallorca, Spain",
-        description: "Designed, developed, and deployed multiple web applications for personal projects and clients, covering both front-end and back-end functionality, with a strong focus on AI-powered solutions.",
+        description:
+          "Designed, developed, and deployed multiple web applications for personal projects and clients, covering both front-end and back-end functionality, with a strong focus on AI-powered solutions.",
         duties: [
           "Built responsive user interfaces using modern frameworks and ensured cross-browser compatibility and accessibility.",
           "Integrated RESTful APIs and managed databases to deliver complete solutions from concept to deployment.",
@@ -21,9 +22,9 @@ export const workExperience = {
           "Explored and implemented blockchain features in web applications, including smart contract integration and wallet connectivity.",
           "Managed all aspects of the development lifecycle independently, from requirements gathering and planning to testing and deployment.",
           "Collaborated with clients to understand needs, propose solutions, and iterate on feedback to ensure satisfaction.",
-          "Continuously learned and applied new technologies and best practices, including AI and machine learning, to improve code quality and project outcomes."
-        ]
-      },      
+          "Continuously learned and applied new technologies and best practices, including AI and machine learning, to improve code quality and project outcomes.",
+        ],
+      },
       {
         id: 4,
         company: "EFIWATT",
@@ -113,8 +114,7 @@ export const workExperience = {
         title: "Researcher",
         period: "June 2016 - October 2016",
         city: "Barcelona, Spain",
-        description:
-          "Ultrafast Optical Dynamics of Solids Gruop led by Professor Simon Wall.",
+        description: "Ultrafast Optical Dynamics of Solids Gruop led by Professor Simon Wall.",
         duties: [
           "Work with femtosecond laser.",
           "Characterization of ultra-fast laser pulses.",
@@ -137,7 +137,8 @@ export const workExperience = {
         title: "Desarrollador Full-Stack",
         period: "Noviembre 2024 - Presente",
         city: "Palma de Mallorca, España",
-        description: "Diseño, desarrollo y despliegue de aplicaciones web para proyectos personales y clientes, cubriendo tanto el front-end como el back-end, con un fuerte enfoque en soluciones impulsadas por IA.",
+        description:
+          "Diseño, desarrollo y despliegue de aplicaciones web para proyectos personales y clientes, cubriendo tanto el front-end como el back-end, con un fuerte enfoque en soluciones impulsadas por IA.",
         duties: [
           "Desarrollar interfaces de usuario responsivas utilizando frameworks modernos, asegurando compatibilidad entre navegadores y accesibilidad.",
           "Integrar APIs RESTful y gestionar bases de datos para ofrecer soluciones completas desde la concepción hasta el despliegue.",
@@ -145,9 +146,9 @@ export const workExperience = {
           "Explorar e integrar características de blockchain en aplicaciones web, incluyendo contratos inteligentes y conectividad con wallets.",
           "Gestionar de forma independiente todas las etapas del ciclo de desarrollo, desde la recopilación de requisitos y planificación hasta las pruebas y el despliegue.",
           "Colaborar con clientes para entender sus necesidades, proponer soluciones e iterar en base a su feedback para garantizar su satisfacción.",
-          "Aprender y aplicar continuamente nuevas tecnologías y buenas prácticas, incluyendo IA y machine learning, para mejorar la calidad del código y los resultados de los proyectos."
-        ]
-      },      
+          "Aprender y aplicar continuamente nuevas tecnologías y buenas prácticas, incluyendo IA y machine learning, para mejorar la calidad del código y los resultados de los proyectos.",
+        ],
+      },
       {
         id: 4,
         company: "EFIWATT",

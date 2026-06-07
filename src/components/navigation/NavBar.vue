@@ -1,15 +1,13 @@
 <script setup>
-import { ref, computed } from "vue";
-
-import MobileMenu from "./MobileMenu.vue";
-import ThemeSwitcher from "@/components/common/ThemeSwitcher.vue";
+import { computed, ref } from "vue";
 import LanguageSwitcher from "@/components/common/LanguageSwitcher.vue";
-import NavLogo from "./NavLogo.vue";
-import NavLinks from "./NavLinks.vue";
-
-import { useTranslations, getLangFromUrl } from "@/i18n/utils";
+import ThemeSwitcher from "@/components/common/ThemeSwitcher.vue";
 import { useNavigation } from "@/composables/useNavigation";
-import { MenuIcon, CrossIcon } from "@/utils/icons";
+import { getLangFromUrl, useTranslations } from "@/i18n/utils";
+import { CrossIcon, MenuIcon } from "@/utils/icons";
+import MobileMenu from "./MobileMenu.vue";
+import NavLinks from "./NavLinks.vue";
+import NavLogo from "./NavLogo.vue";
 
 const mobileMenuOpen = ref(false);
 

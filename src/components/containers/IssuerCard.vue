@@ -58,27 +58,27 @@ import { CertificateIcon } from "@/utils/icons";
 defineProps({
   issuer: {
     type: String,
-    required: true
+    required: true,
   },
   issuerLink: {
     type: String,
-    required: true
+    required: true,
   },
   icon: {
     type: String,
-    default: ''
+    default: "",
   },
   certificates: {
     type: Array,
-    required: true
+    required: true,
   },
   button: {
     type: String,
-    required: true
+    required: true,
   },
   inProgress: {
     type: String,
-    required: true
-  }
+    required: true,
+  },
 });
 </script>

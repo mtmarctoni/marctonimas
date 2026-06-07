@@ -1,9 +1,11 @@
 ---
+import type { AstroComponentFactory } from "astro/runtime/server/index.js";
+
 interface Props {
   skill: {
     name: string;
     level: number;
-    icon?: any;
+    icon?: AstroComponentFactory;
     category: string;
   };
   className: string;

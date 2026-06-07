@@ -35,9 +35,9 @@
 </template>
 
 <script setup>
-import { ref, onMounted, onUnmounted } from "vue";
-import ToggleDropDown from "./ToggleDropDown.vue";
+import { onMounted, onUnmounted, ref } from "vue";
 import { getLangFromUrl } from "@/i18n/utils";
+import ToggleDropDown from "./ToggleDropDown.vue";
 
 const langDropdownOpen = ref(false);
 const currentLang = ref("en");

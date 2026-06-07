@@ -13,22 +13,67 @@
     "build": "astro build",
     "preview": "astro preview",
     "astro": "astro",
+    "lint": "biome check src/",
+    "lint:fix": "biome check --write --unsafe src/",
+    "format": "biome format --write src/",
+    "format:check": "biome format src/",
+    "typecheck": "tsc --noEmit",
+    "check": "astro check",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:coverage": "vitest run --coverage",
+    "knip": "knip",
+    "audit": "pnpm audit",
+    "prepare": "husky",
     "lighthouse": "lhci autorun",
     "a11y": "pa11y-ci"
   },
   "dependencies": {
+    "@astrojs/check": "^0.9.9",
     "@astrojs/vue": "^5.1.0",
     "astro": "^5.10.1",
     "ethers": "^6.13.5",
+    "typescript": "^6.0.3",
     "vue": "^3.5.13"
   },
   "devDependencies": {
+    "@biomejs/biome": "^2.4.16",
     "@lhci/cli": "^0.15.1",
     "@tailwindcss/vite": "^4.0.13",
+    "@vitest/coverage-v8": "^4.1.8",
+    "husky": "^9.1.7",
+    "knip": "^6.16.1",
+    "lint-staged": "^17.0.7",
     "pa11y-ci": "^4.1.1",
     "puppeteer": "^25.1.0",
     "tailwindcss": "^4.0.13",
-    "vite-svg-loader": "^5.1.0"
+    "vite-svg-loader": "^5.1.0",
+    "vitest": "^4.1.8"
+  },
+  "lint-staged": {
+    "*.{js,ts,vue,astro}": [
+      "biome check --write --no-errors-on-unmatched"
+    ],
+    "*.{json,md,yml,yaml}": [
+      "biome format --write --no-errors-on-unmatched"
+    ]
+  },
+  "knip": {
+    "entry": [
+      "src/**/*.astro",
+      "src/**/*.ts",
+      "src/**/*.js",
+      "src/**/*.vue"
+    ],
+    "project": [
+      "src/**/*.astro",
+      "src/**/*.ts",
+      "src/**/*.js",
+      "src/**/*.vue"
+    ],
+    "ignoreDependencies": [
+      "tailwindcss"
+    ]
   },
   "onlyBuiltDependencies": [
     "puppeteer",

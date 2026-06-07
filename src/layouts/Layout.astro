@@ -13,28 +13,17 @@ interface Props {
   twitterImage?: string;
 }
 
-const {
-  title,
-  description,
-  lang = "en",
-  keywords,
-  ogImage,
-  twitterImage,
-} = Astro.props;
+const { title, description, lang = "en", keywords, ogImage, twitterImage } = Astro.props;
 
 const t = useTranslations(lang);
 const defaultOgImageUrl = "https://marctonimas.com/og-image.jpg";
-const site = Astro.site
-  ? Astro.site.toString().replace(/\/$/, "")
-  : "https://marctonimas.com";
+const site = Astro.site ? Astro.site.toString().replace(/\/$/, "") : "https://marctonimas.com";
 
 const currentPathname = Astro.url.pathname;
-let basePath;
+let basePath: string;
 
 if (lang === "es") {
-  basePath = currentPathname.startsWith("/es")
-    ? currentPathname.substring(3)
-    : currentPathname;
+  basePath = currentPathname.startsWith("/es") ? currentPathname.substring(3) : currentPathname;
 } else {
   // lang === "en"
   basePath = currentPathname;
@@ -44,7 +33,7 @@ if (lang === "es") {
 if (basePath === "" || basePath === "/") {
   basePath = "/";
 } else if (!basePath.startsWith("/")) {
-  basePath = "/" + basePath;
+  basePath = `/${basePath}`;
 }
 // Ensure basePath does not end with a slash if it's not the root
 if (basePath !== "/" && basePath.endsWith("/")) {
@@ -53,17 +42,17 @@ if (basePath !== "/" && basePath.endsWith("/")) {
 
 const hreflangLinks = [];
 const enUrl = site + (basePath === "/" ? "" : basePath); // For root, site already has no trailing slash. For others, basePath has leading slash.
-hreflangLinks.push({ lang: "en", href: enUrl === site + "/" ? site : enUrl }); // Ensure no double slash for root
+hreflangLinks.push({ lang: "en", href: enUrl === `${site}/` ? site : enUrl }); // Ensure no double slash for root
 
-const esUrl = site + "/es" + (basePath === "/" ? "" : basePath);
+const esUrl = `${site}/es${basePath === "/" ? "" : basePath}`;
 hreflangLinks.push({
   lang: "es",
-  href: esUrl === site + "/es/" ? site + "/es" : esUrl,
+  href: esUrl === `${site}/es/` ? `${site}/es` : esUrl,
 }); // Ensure no double slash for root
 
 hreflangLinks.push({
   lang: "x-default",
-  href: enUrl === site + "/" ? site : enUrl,
+  href: enUrl === `${site}/` ? site : enUrl,
 });
 
 const webSiteSchema = {
@@ -116,11 +105,11 @@ const personSchema = {
       ))
     }
 
-    <script
+    <script is:inline
       type="application/ld+json"
       set:html={JSON.stringify(webSiteSchema)}
     />
-    <script
+    <script is:inline
       type="application/ld+json"
       set:html={JSON.stringify(personSchema)}
     />

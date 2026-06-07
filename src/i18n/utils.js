@@ -1,9 +1,4 @@
-import {
-  MY_NAME_LOGO,
-  MY_LINKEDIN,
-  MY_GITHUB,
-  MY_WEB,
-} from "@/utils/constants";
+import { MY_GITHUB, MY_LINKEDIN, MY_NAME_LOGO, MY_WEB } from "@/utils/constants";
 
 // Get the language from the URL
 export function getLangFromUrl(url) {
@@ -18,8 +13,7 @@ const translations = {
     "site.cvLink": "/transcripts/CV_MarcToniMas.pdf",
     "site.title": MY_NAME_LOGO,
     "site.description": "Web3 Developer Portfolio",
-    "site.keywords":
-      "web3, blockchain, full stack developer, software engineer, portfolio",
+    "site.keywords": "web3, blockchain, full stack developer, software engineer, portfolio",
 
     "person.name": MY_NAME_LOGO,
     "person.url": MY_WEB,

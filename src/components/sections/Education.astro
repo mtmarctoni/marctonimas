@@ -1,8 +1,8 @@
 ---
-import SectionContainer from "../containers/SectionContainer.astro";
 import { Image } from "astro:assets";
 import { education as rawEducation } from "@/i18n/education";
 import { getLangFromUrl } from "@/i18n/utils";
+import SectionContainer from "../containers/SectionContainer.astro";
 
 const url = new URL(Astro.url);
 const lang = getLangFromUrl(url) as "es" | "en";

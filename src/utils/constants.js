@@ -1,4 +1,4 @@
-import { EmailIcon, LinkedInIcon, GithubIcon } from "@/utils/icons";
+import { EmailIcon, GithubIcon, LinkedInIcon } from "@/utils/icons";
 
 export const MY_NAME = "Marc Antoni Mas";
 export const MY_NAME_LOGO = "Marc Toni Mas";
