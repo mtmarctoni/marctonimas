@@ -15,11 +15,20 @@ pnpm-debug.log*
 
 # environment variables
 .env
+.env.local
 .env.production
+.env.development
+
+# test coverage
+coverage/
 
 # macOS-specific files
 .DS_Store
 
 # jetbrains setting folder
 .idea/
-.env.local
+
+# vscode settings (keep extensions.json and settings.json)
+.vscode/*
+!.vscode/extensions.json
+!.vscode/settings.json
