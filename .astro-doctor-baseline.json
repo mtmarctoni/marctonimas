@@ -1,0 +1,15 @@
+{
+  "$schema": "https://doctor.santi020k.com/schema/baseline.json",
+  "version": 1,
+  "generatedAt": "2026-09-12T10:26:01.689Z",
+  "entries": [
+    {
+      "fingerprint": "src/components/sections/About.astro\u0000astro-doctor/no-set-html\u0000warning\u0000set:html injects raw HTML and is a potential XSS vector if the value is user-controlled. Use {expression} interpolation for escaped output, or sanitize the value before using set:html.",
+      "count": 4
+    },
+    {
+      "fingerprint": "src/components/sections/Hero.astro\u0000astro-doctor/no-set-html\u0000warning\u0000set:html injects raw HTML and is a potential XSS vector if the value is user-controlled. Use {expression} interpolation for escaped output, or sanitize the value before using set:html.",
+      "count": 2
+    }
+  ]
+}
