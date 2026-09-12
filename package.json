@@ -26,6 +26,8 @@
     "knip": "knip",
     "depcruise": "depcruise src",
     "audit": "pnpm audit",
+    "doctor": "astro-doctor --baseline .astro-doctor-baseline.json",
+    "doctor:full": "astro-doctor",
     "prepare": "husky",
     "lighthouse": "lhci autorun",
     "a11y": "pa11y-ci"
@@ -34,6 +36,7 @@
     "@astrojs/check": "^0.9.9",
     "astro": "^5.18.2",
     "ethers": "^6.13.5",
+    "isomorphic-dompurify": "^4.2.0",
     "typescript": "^6.0.3"
   },
   "devDependencies": {
@@ -41,6 +44,7 @@
     "@commitlint/cli": "^21.0.2",
     "@commitlint/config-conventional": "^21.0.2",
     "@lhci/cli": "^0.15.1",
+    "@santi020k/astro-doctor": "^1.3.2",
     "@tailwindcss/vite": "^4.0.13",
     "@vitest/coverage-v8": "^4.1.8",
     "dependency-cruiser": "^18.2.0",

@@ -2,6 +2,7 @@
 import WalletConnect from "@/components/wallet/WalletConnect.astro";
 import { getLangFromUrl, useTranslations } from "@/i18n/utils";
 import { ArrowDownIcon } from "@/utils/icons";
+import { sanitizeHtml } from "@/utils/sanitizeHtml";
 
 const url = new URL(Astro.url);
 const lang = getLangFromUrl(url);
@@ -14,8 +15,8 @@ const subtitleHtmlString = t("hero.subtitle");
 <section class="relative min-h-screen flex items-center pt-20">
   <div class="container mx-auto px-4 py-16 md:py-32 z-10">
     <div class="max-w-3xl mx-auto px-8 text-center">
-      <div set:html={titleHtmlString} />
-      <div set:html={subtitleHtmlString} class="text-xl md:text-2xl my-8" />
+      <div set:html={sanitizeHtml(titleHtmlString)} />
+      <div set:html={sanitizeHtml(subtitleHtmlString)} class="text-xl md:text-2xl my-8" />
 
       <div class="flex flex-col sm:flex-row gap-4 justify-center p-10">
         <a
