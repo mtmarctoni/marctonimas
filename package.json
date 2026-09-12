@@ -31,8 +31,8 @@
     "a11y": "pa11y-ci"
   },
   "dependencies": {
-    "@astrojs/check": "^0.9.9",
-    "astro": "^5.18.2",
+    "@astrojs/check": "^0.9.10",
+    "astro": "^7.3.2",
     "ethers": "^6.13.5",
     "typescript": "^6.0.3"
   },
