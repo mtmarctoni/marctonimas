@@ -51,10 +51,10 @@
 } */
 
 :root {
-  --primary: #4f46e5; /* A deep, rich blue */
-  --secondary: #59c9f9; /* A lighter, more vibrant blue */
+  --primary: #4338ca; /* A deep, rich blue */
+  --secondary: #0369a1; /* A lighter, more vibrant blue */
   --tertiary: #89ebe2; /* A softer, sky blue */
-  --accent: #10b981; /* A greenish accent for contrast */
+  --accent: #065f46; /* A greenish accent for contrast */
   --accent-secondary: #f59e0b; /* An orange accent for highlights */
 
   /* Backgrounds */
@@ -77,7 +77,7 @@
 }
 
 .dark {
-  --primary: #4f46e5; /* A deep, rich blue */
+  --primary: #a5b4fc; /* A deep, rich blue */
   --secondary: #59c9f9; /* A lighter, more vibrant blue */
   --tertiary: #87ceeb; /* A softer, sky blue */
   --accent: #10b981; /* A greenish accent for contrast */

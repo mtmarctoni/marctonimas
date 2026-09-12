@@ -53,7 +53,7 @@ const projectCards: Project[] = projectList as Project[];
       categories.map((category) => (
         <button
           type="button"
-          class="data-[active=true]:bg-accent/20 data-[active=true]:border-accent data-[active=true]:text-accent data-[active=true]:shadow-lg data-[active=true]:transform data-[active=true]:scale-105
+          class="data-[active=true]:bg-accent/10 data-[active=true]:border-accent data-[active=true]:text-accent data-[active=true]:shadow-lg data-[active=true]:transform data-[active=true]:scale-105
                   category-tab px-4 py-2 rounded-full font-medium border transition-all hover:bg-accent hover:scale-110 ease-in"
           data-category={category.id}
           data-active={category.id === "all" ? "true" : "false"}
@@ -81,7 +81,7 @@ const projectCards: Project[] = projectList as Project[];
       <div class="mt-8 text-center">
         <button
           id="show-more-btn"
-          class="mx-auto px-6 py-2 bg-gradient-to-r from-primary to-secondary text-white rounded-full font-medium hover:opacity-90 transition-opacity"
+          class="mx-auto px-6 py-2 bg-gradient-to-r from-primary to-secondary text-bg rounded-full font-medium hover:opacity-90 transition-opacity"
           aria-expanded="false"
         >
           {t("projects.button_show")}
