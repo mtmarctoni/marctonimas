@@ -60,20 +60,5 @@
     "*.{json,md,yml,yaml}": [
       "biome format --write --no-errors-on-unmatched"
     ]
-  },
-  "knip": {
-    "entry": [
-      "src/**/*.astro",
-      "src/**/*.ts",
-      "src/**/*.js"
-    ],
-    "project": [
-      "src/**/*.astro",
-      "src/**/*.ts",
-      "src/**/*.js"
-    ],
-    "ignoreDependencies": [
-      "tailwindcss"
-    ]
   }
 }
