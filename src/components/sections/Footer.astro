@@ -27,6 +27,7 @@ const currentYear = new Date().getFullYear();
             href={`https://github.com/${MY_GITHUB}`}
             target="_blank"
             rel="noopener noreferrer"
+            aria-label={t("footer.github")}
             class="text-fg-alt hover:text-fg transition-all duration-300 ease-in-out transform hover:scale-110"
           >
             <GithubIcon class="h-6 w-6" />
@@ -35,12 +36,14 @@ const currentYear = new Date().getFullYear();
             href={`https://linkedin.com/in/${MY_LINKEDIN}`}
             target="_blank"
             rel="noopener noreferrer"
+            aria-label={t("footer.linkedin")}
             class="text-fg-alt hover:text-fg transition-all duration-300 ease-in-out transform hover:scale-110"
           >
             <LinkedInIcon class="h-6 w-6" />
           </a>
           <a
             href={`mailto:${MY_EMAIL}`}
+            aria-label={t("footer.email")}
             class="text-fg-alt hover:text-fg transition-all duration-300 transform hover:scale-110"
           >
             <EmailIcon class="h-6 w-6" />
