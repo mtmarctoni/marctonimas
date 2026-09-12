@@ -1,0 +1,29 @@
+---
+import type { AstroComponentFactory } from "astro/runtime/server/index.js";
+
+interface Link {
+  href: string;
+  icon: AstroComponentFactory;
+  label: string;
+}
+
+interface Props {
+  links: Link[];
+}
+
+const { links } = Astro.props;
+---
+
+<div class="space-y-3">
+  {links.map((link) => (
+    <a
+      href={link.href}
+      target="_blank"
+      rel="noopener noreferrer"
+      class="flex items-center gap-3 py-3 px-4 rounded-lg hover:bg-fg-alt/10 transition-colors"
+    >
+      <link.icon class="w-6 h-6 text-primary" />
+      <span>{link.label}</span>
+    </a>
+  ))}
+</div>

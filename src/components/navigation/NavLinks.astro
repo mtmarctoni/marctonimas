@@ -1,0 +1,30 @@
+---
+interface NavItem {
+  href: string;
+  label: string;
+  id: string;
+}
+
+interface Props {
+  navItems: NavItem[];
+}
+
+const { navItems } = Astro.props;
+---
+
+<nav class="hidden md:flex gap-1">
+  {navItems.map((item) => (
+    <a
+      href={item.href}
+      data-nav-link
+      data-id={item.id}
+      data-active="false"
+      class="group px-3 py-2 rounded-lg transition-all duration-300 font-medium relative hover:text-primary data-[active=true]:text-primary"
+    >
+      {item.label}
+      <span
+        class="absolute bottom-0 left-0 w-full h-0.5 bg-gradient-to-r from-primary to-secondary transform scale-x-0 transition-transform duration-500 group-data-[active=true]:scale-x-100"
+      ></span>
+    </a>
+  ))}
+</nav>
