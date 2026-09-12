@@ -1,0 +1,144 @@
+---
+import LanguageSwitcher from "@/components/common/LanguageSwitcher.astro";
+import ThemeSwitcher from "@/components/common/ThemeSwitcher.astro";
+import { getLangFromUrl, useTranslations } from "@/i18n/utils";
+import { CrossIcon, MenuIcon } from "@/utils/icons";
+import MobileMenu from "./MobileMenu.astro";
+import NavLinks from "./NavLinks.astro";
+import NavLogo from "./NavLogo.astro";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+const sectionPrefix = lang === "en" ? "/" : "/es/";
+
+const navItems = [
+  { href: `${sectionPrefix}#about`, label: t("nav.about"), id: "about" },
+  { href: `${sectionPrefix}#skills`, label: t("nav.skills"), id: "skills" },
+  { href: `${sectionPrefix}#projects`, label: t("nav.projects"), id: "projects" },
+  {
+    href: `${sectionPrefix}#background`,
+    label: t("nav.background"),
+    id: "background",
+  },
+  { href: `${sectionPrefix}#contact`, label: t("nav.contact"), id: "contact" },
+];
+---
+
+<header
+  data-nav-header
+  data-scrolled="false"
+  class="fixed w-full top-0 z-100 transition-all duration-300 border-b border-transparent data-[scrolled=true]:bg-bg-secondary data-[scrolled=true]:shadow-md data-[scrolled=true]:border-primary/40 data-[scrolled=true]:py-2 data-[scrolled=false]:bg-transparent data-[scrolled=false]:py-4"
+>
+  <div
+    class="container mx-auto max-w-5xl px-4 flex justify-between items-center"
+  >
+    <!-- Logo -->
+    <NavLogo />
+
+    <div class="flex items-center gap-4">
+      <!-- Desktop Navigation -->
+      <NavLinks navItems={navItems} />
+
+      <!-- Theme & Language Switchers -->
+      <div class="flex items-center gap-2">
+        <ThemeSwitcher />
+        <LanguageSwitcher />
+
+        <!-- Mobile Menu Button -->
+        <button
+          type="button"
+          data-mobile-menu-toggle
+          aria-label="Toggle menu"
+          aria-expanded="false"
+          class="md:hidden p-2 rounded-lg hover:bg-fg-alt/10 transition-colors"
+        >
+          <div data-mobile-menu-icon-open class="h-10 w-10 md:h-6 md:w-6">
+            <MenuIcon />
+          </div>
+          <div data-mobile-menu-icon-close class="h-10 w-10 md:h-6 md:w-6 hidden">
+            <CrossIcon />
+          </div>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Mobile menu -->
+  <MobileMenu
+    navItems={navItems}
+    footerText={t("nav.mobile_menu_footer")}
+    connectText={t("nav.connect")}
+  />
+</header>
+
+<script>
+  const header = document.querySelector("[data-nav-header]");
+  const menuToggle = document.querySelector("[data-mobile-menu-toggle]");
+  const mobileMenu = document.querySelector("[data-mobile-menu]");
+  const iconOpen = document.querySelector("[data-mobile-menu-icon-open]");
+  const iconClose = document.querySelector("[data-mobile-menu-icon-close]");
+  const sectionIds = ["about", "skills", "projects", "background", "contact"];
+
+  const setActive = (activeId: string) => {
+    document.querySelectorAll("[data-nav-link]").forEach((link) => {
+      link.setAttribute(
+        "data-active",
+        link.getAttribute("data-id") === activeId ? "true" : "false",
+      );
+    });
+  };
+
+  const setScrolled = (scrolled: boolean) => {
+    header?.setAttribute("data-scrolled", scrolled ? "true" : "false");
+  };
+
+  const updateActiveSection = () => {
+    for (const id of sectionIds) {
+      const element = document.getElementById(id);
+      if (element) {
+        const rect = element.getBoundingClientRect();
+        // Adjust based on your header height
+        if (rect.top <= 200 && rect.bottom > 200) {
+          setActive(id);
+          return;
+        }
+      }
+    }
+    setActive("");
+  };
+
+  const onScroll = () => {
+    setScrolled(window.scrollY > 20);
+    updateActiveSection();
+  };
+
+  const openMobileMenu = (open: boolean) => {
+    mobileMenu?.setAttribute("data-mobile-open", open ? "true" : "false");
+    mobileMenu?.setAttribute("aria-hidden", String(!open));
+    menuToggle?.setAttribute("aria-expanded", String(open));
+    iconOpen?.classList.toggle("hidden", open);
+    iconClose?.classList.toggle("hidden", !open);
+    document.body.style.overflow = open ? "hidden" : "";
+  };
+
+  menuToggle?.addEventListener("click", () => {
+    const isOpen = mobileMenu?.getAttribute("data-mobile-open") === "true";
+    openMobileMenu(!isOpen);
+  });
+
+  mobileMenu?.addEventListener("click", (event) => {
+    const target = event.target as Element | null;
+    if (target?.closest("a")) {
+      openMobileMenu(false);
+    }
+  });
+
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape") {
+      openMobileMenu(false);
+    }
+  });
+
+  window.addEventListener("scroll", onScroll, { passive: true });
+  onScroll();
+</script>

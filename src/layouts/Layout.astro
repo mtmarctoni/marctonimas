@@ -1,5 +1,5 @@
 ---
-import NavBar from "@/components/navigation/NavBar.vue";
+import NavBar from "@/components/navigation/NavBar.astro";
 import Footer from "@/components/sections/Footer.astro";
 import "@/styles/global.css";
 import { useTranslations } from "@/i18n/utils";
@@ -138,7 +138,7 @@ const personSchema = {
     </script>
   </head>
   <body class="bg-bg text-fg transition-colors duration-300">
-    <NavBar client:load client:only="header" />
+    <NavBar />
     <main class="min-w-screen">
       <slot />
     </main>

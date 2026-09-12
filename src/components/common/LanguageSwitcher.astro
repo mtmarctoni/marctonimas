@@ -1,0 +1,33 @@
+---
+import { getLangFromUrl } from "@/i18n/utils";
+import ToggleDropDown from "./ToggleDropDown.astro";
+
+const lang = getLangFromUrl(Astro.url);
+---
+
+<ToggleDropDown buttonAriaLabel="Change language">
+  <span slot="button-content" class="contents">
+    <span class="text-xl md:text-base font-medium">{lang.toUpperCase()}</span>
+  </span>
+
+  <a
+    href="/"
+    class:list={[
+      "flex items-center w-full px-4 py-2 text-sm hover:bg-primary/10",
+      lang === "en" && "text-secondary",
+    ]}
+  >
+    <span class="mr-2">🇺🇸</span>
+    English
+  </a>
+  <a
+    href="/es/"
+    class:list={[
+      "flex items-center w-full px-4 py-2 text-sm hover:bg-primary/10",
+      lang === "es" && "text-secondary",
+    ]}
+  >
+    <span class="mr-2">🇪🇸</span>
+    Español
+  </a>
+</ToggleDropDown>
