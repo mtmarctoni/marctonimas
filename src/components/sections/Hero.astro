@@ -1,0 +1,46 @@
+---
+import WalletConnect from "@/components/wallet/WalletConnect.vue";
+import { getLangFromUrl, useTranslations } from "@/i18n/utils";
+import { ArrowDownIcon } from "@/utils/icons";
+
+const url = new URL(Astro.url);
+const lang = getLangFromUrl(url);
+const t = useTranslations(lang);
+
+const titleHtmlString = t("hero.title");
+const subtitleHtmlString = t("hero.subtitle");
+---
+
+<section class="relative min-h-screen flex items-center pt-20">
+  <div class="container mx-auto px-4 py-16 md:py-32 z-10">
+    <div class="max-w-3xl mx-auto px-8 text-center">
+      <div set:html={titleHtmlString} />
+      <div set:html={subtitleHtmlString} class="text-xl md:text-2xl my-8" />
+
+      <div class="flex flex-col sm:flex-row gap-4 justify-center p-10">
+        <a
+          href="#projects"
+          class="px-6 py-3 bg-gradient-to-r from-primary to-secondary text-white font-medium rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
+        >
+          {t("hero.cta_primary")}
+        </a>
+        <a
+          href="#contact"
+          class="px-6 py-3 bg-white dark:bg-gray-800 text-gray-900 dark:text-white font-medium rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 border border-gray-200 dark:border-gray-700"
+        >
+          {t("hero.cta_secondary")}
+        </a>
+      </div>
+
+      <div class="mt-16 flex justify-center">
+        <WalletConnect client:only="vue" />
+      </div>
+    </div>
+  </div>
+
+  <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce">
+    <a href="#about" class="text-gray-500 dark:text-gray-400">
+      <ArrowDownIcon class="h-8 w-8 text-primary/80" />
+    </a>
+  </div>
+</section>

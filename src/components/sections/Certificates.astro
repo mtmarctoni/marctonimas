@@ -1,5 +1,5 @@
 ---
-import IssuerCard from "@/components/containers/IssuerCard.vue";
+import IssuerCard from "@/components/containers/IssuerCard.astro";
 import SectionContainer from "@/components/containers/SectionContainer.astro";
 import { certifications as rawCertifications } from "@/i18n/certifications";
 import { getLangFromUrl } from "@/i18n/utils";
@@ -94,24 +94,13 @@ const groupedCertificates = groupByIssuer(certificationList);
       {groupedCertificates.map((issuer) => (
         <div class="space-y-6">
           <IssuerCard
-            class:list={"dark:hidden"}
             issuer={issuer.name}
             issuerLink={issuer.link}
             icon={issuer.img}
+            iconDark={issuer.imgD}
             certificates={issuer.certificates}
             button={button}
             inProgress={inProgress}
-            client:load
-          />
-          <IssuerCard
-            class:list={"hidden dark:block"}
-            issuer={issuer.name}
-            issuerLink={issuer.link}
-            icon={issuer.imgD}
-            certificates={issuer.certificates}
-            button={button}
-            inProgress={inProgress}
-            client:load
           />
         </div>
       ))}
