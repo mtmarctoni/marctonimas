@@ -3,14 +3,13 @@
 [![Deployed with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fmtmarctoni%2Fmarctonimas&project-name=marctonimas&repository-name=marctonimas)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Astro](https://img.shields.io/badge/Built_with-Astro-FF5D01.svg?logo=astro)](https://astro.build/)
-[![Vue.js](https://img.shields.io/badge/Vue.js-35495E?logo=vue.js&logoColor=4FC08D)](https://vuejs.org/)
 [![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
 
 Welcome to my professional portfolio website! This modern, performant, and accessible website showcases my skills, projects, and professional journey. Built with cutting-edge web technologies, it demonstrates my expertise in modern web development.
 
 ## 🚀 Features
 
-- **Modern Stack**: Built with Astro, Vue 3, and TypeScript for optimal performance
+- **Modern Stack**: Built with Astro and TypeScript for optimal performance
 - **Responsive Design**: Fully responsive layout that works on all devices
 - **Multilingual Support**: Built-in internationalization (i18n) with English and Spanish
 - **Performance Optimized**: Fast loading times with static site generation
@@ -21,7 +20,6 @@ Welcome to my professional portfolio website! This modern, performant, and acces
 ## 🛠️ Technologies Used
 
 - **Frontend Framework**: [Astro](https://astro.build/) (v5.8.0)
-- **UI Framework**: [Vue 3](https://vuejs.org/) (v3.5.13)
 - **Styling**: [Tailwind CSS](https://tailwindcss.com/) (v4.0.13)
 - **Type Safety**: [TypeScript](https://www.typescriptlang.org/)
 - **Package Manager**: npm
@@ -35,7 +33,7 @@ Welcome to my professional portfolio website! This modern, performant, and acces
 /
 ├── public/               # Static assets
 ├── src/
-│   ├── components/       # Reusable Vue and Astro components
+│   ├── components/       # Reusable Astro components
 │   ├── i18n/             # Internationalization setup
 │   ├── layouts/          # Layout components
 │   ├── pages/            # Page components (Astro pages)
@@ -111,6 +109,5 @@ Contributions are welcome! Please feel free to submit a Pull Request.
 ## 🙏 Acknowledgments
 
 - [Astro](https://astro.build/) for the amazing static site generator
-- [Vue.js](https://vuejs.org/) for the reactive components
 - [Tailwind CSS](https://tailwindcss.com/) for the utility-first CSS framework
 - All the open-source libraries and tools that made this project possible

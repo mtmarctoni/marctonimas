@@ -32,11 +32,9 @@
   },
   "dependencies": {
     "@astrojs/check": "^0.9.9",
-    "@astrojs/vue": "^5.1.4",
     "astro": "^5.18.2",
     "ethers": "^6.13.5",
-    "typescript": "^6.0.3",
-    "vue": "^3.5.13"
+    "typescript": "^6.0.3"
   },
   "devDependencies": {
     "@biomejs/biome": "^2.4.16",
@@ -52,12 +50,11 @@
     "pa11y-ci": "^4.1.1",
     "puppeteer": "^25.1.0",
     "tailwindcss": "^4.0.13",
-    "vite-svg-loader": "^5.1.0",
     "vitest": "^4.1.8",
     "wait-on": "^9.1.0"
   },
   "lint-staged": {
-    "*.{js,ts,vue,astro}": [
+    "*.{js,ts,astro}": [
       "biome check --write --no-errors-on-unmatched"
     ],
     "*.{json,md,yml,yaml}": [
@@ -68,14 +65,12 @@
     "entry": [
       "src/**/*.astro",
       "src/**/*.ts",
-      "src/**/*.js",
-      "src/**/*.vue"
+      "src/**/*.js"
     ],
     "project": [
       "src/**/*.astro",
       "src/**/*.ts",
-      "src/**/*.js",
-      "src/**/*.vue"
+      "src/**/*.js"
     ],
     "ignoreDependencies": [
       "tailwindcss"
