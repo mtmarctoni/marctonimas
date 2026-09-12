@@ -133,6 +133,14 @@ const navItems = [
     }
   });
 
+  document.addEventListener("click", (event) => {
+    const target = event.target as Node | null;
+    if (!target) return;
+    if (!mobileMenu?.contains(target) && !menuToggle?.contains(target)) {
+      openMobileMenu(false);
+    }
+  });
+
   document.addEventListener("keydown", (event) => {
     if (event.key === "Escape") {
       openMobileMenu(false);
