@@ -126,6 +126,9 @@ const translations = {
 
     // Footer
     "footer.copyright": "All rights reserved.",
+    "footer.github": "GitHub profile",
+    "footer.linkedin": "LinkedIn profile",
+    "footer.email": "Email",
 
     // languages
     "languages.title": "Languages",
@@ -259,6 +262,9 @@ const translations = {
 
     // Footer
     "footer.copyright": "Todos los derechos reservados.",
+    "footer.github": "Perfil de GitHub",
+    "footer.linkedin": "Perfil de LinkedIn",
+    "footer.email": "Correo electrónico",
 
     // languages
     "languages.title": "Idiomas",
