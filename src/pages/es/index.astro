@@ -1,7 +1,7 @@
 ---
 import "@/styles/global.css";
 
-import BlockchainCanvas from "@/components/common/BlockchainCanvas.vue";
+import BlockchainCanvas from "@/components/common/BlockchainCanvas.astro";
 import About from "@/components/sections/About.astro";
 // import Certificates from "@/components/sections/Certificates.astro";
 import BackgroundPreview from "@/components/sections/BackgroundPreview.astro";
@@ -19,7 +19,7 @@ const t = useTranslations(lang);
 
 <Layout title={t("site.title")} description={t("site.description")} lang={lang} keywords={t("site.keywords")}>
   <div class="relative">
-    <BlockchainCanvas client:load client:only="canvas" />
+    <BlockchainCanvas />
     <Hero />
   </div>
   <About />
