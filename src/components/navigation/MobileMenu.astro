@@ -37,7 +37,7 @@ const currentYear = new Date().getFullYear();
 <div
   data-mobile-menu
   aria-hidden="true"
-  class="md:hidden overflow-y-auto fixed inset-0 top-[73px] bg-bg flex flex-col h-[75vh] transform rounded-b-4xl border-b-2 border-primary/50 transition-all duration-700 ease-in-out -translate-y-full opacity-0 invisible pointer-events-none data-[mobile-open=true]:translate-y-0 data-[mobile-open=true]:opacity-100 data-[mobile-open=true]:visible data-[mobile-open=true]:pointer-events-auto"
+  class="md:hidden overflow-y-auto fixed inset-0 top-[73px] z-10 bg-bg flex flex-col h-[75vh] transform rounded-b-4xl border-b-2 border-primary/50 transition-all duration-700 ease-in-out -translate-y-full opacity-0 invisible pointer-events-none data-[mobile-open=true]:translate-y-0 data-[mobile-open=true]:opacity-100 data-[mobile-open=true]:visible data-[mobile-open=true]:pointer-events-auto"
 >
   <nav class="container mx-auto px-4 pt-8 flex flex-col">
     {navItems.map((item) => (
