@@ -30,7 +30,7 @@ const navItems = [
   class="fixed w-full top-0 z-100 transition-all duration-300 border-b border-transparent data-[scrolled=true]:bg-bg-secondary data-[scrolled=true]:shadow-md data-[scrolled=true]:border-primary/40 data-[scrolled=true]:py-2 data-[scrolled=false]:bg-transparent data-[scrolled=false]:py-4"
 >
   <div
-    class="container mx-auto max-w-5xl px-4 flex justify-between items-center"
+    class="relative z-20 container mx-auto max-w-5xl px-4 flex justify-between items-center"
   >
     <!-- Logo -->
     <NavLogo />
@@ -63,6 +63,13 @@ const navItems = [
     </div>
   </div>
 
+  <!-- Backdrop: blocks page interactions while the mobile menu is open -->
+  <div
+    data-mobile-menu-backdrop
+    aria-hidden="true"
+    class="fixed inset-0 z-0 bg-transparent hidden md:hidden"
+  ></div>
+
   <!-- Mobile menu -->
   <MobileMenu
     navItems={navItems}
@@ -77,6 +84,7 @@ const navItems = [
   const mobileMenu = document.querySelector("[data-mobile-menu]");
   const iconOpen = document.querySelector("[data-mobile-menu-icon-open]");
   const iconClose = document.querySelector("[data-mobile-menu-icon-close]");
+  const menuBackdrop = document.querySelector("[data-mobile-menu-backdrop]");
   const sectionIds = ["about", "skills", "projects", "background", "contact"];
 
   const setActive = (activeId: string) => {
@@ -118,7 +126,9 @@ const navItems = [
     menuToggle?.setAttribute("aria-expanded", String(open));
     iconOpen?.classList.toggle("hidden", open);
     iconClose?.classList.toggle("hidden", !open);
+    menuBackdrop?.classList.toggle("hidden", !open);
     document.body.style.overflow = open ? "hidden" : "";
+    document.documentElement.style.overflow = open ? "hidden" : "";
   };
 
   menuToggle?.addEventListener("click", () => {
@@ -140,6 +150,16 @@ const navItems = [
       openMobileMenu(false);
     }
   });
+
+  menuBackdrop?.addEventListener("click", () => {
+    openMobileMenu(false);
+  });
+
+  menuBackdrop?.addEventListener(
+    "touchmove",
+    (event) => event.preventDefault(),
+    { passive: false },
+  );
 
   document.addEventListener("keydown", (event) => {
     if (event.key === "Escape") {
