@@ -6,7 +6,7 @@ export default defineConfig({
     environment: "node",
     coverage: {
       provider: "v8",
-      include: ["src/**/*.{ts,astro,vue}"],
+      include: ["src/**/*.{ts,astro}"],
       exclude: ["src/**/*.d.ts", "src/**/*.config.*"],
     },
   },
