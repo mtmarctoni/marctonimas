@@ -51,6 +51,8 @@ const translations = {
     "wallet.chainId": "Chain ID",
     "wallet.balance": "Balance",
     "wallet.network": "Network",
+    "wallet.no_ethereum_provider":
+      "No Ethereum provider detected. Please install a wallet extension like MetaMask.",
 
     // About
     "about.title": "About Me",
@@ -180,6 +182,8 @@ const translations = {
     "wallet.chainId": "ID de cadena",
     "wallet.balance": "Saldo",
     "wallet.network": "Red",
+    "wallet.no_ethereum_provider":
+      "No se detectó un proveedor de Ethereum. Instala una extensión de billetera como MetaMask.",
 
     // About
     "about.title": "Sobre Mí",

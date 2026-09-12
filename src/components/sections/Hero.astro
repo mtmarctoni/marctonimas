@@ -1,5 +1,5 @@
 ---
-import WalletConnect from "@/components/wallet/WalletConnect.vue";
+import WalletConnect from "@/components/wallet/WalletConnect.astro";
 import { getLangFromUrl, useTranslations } from "@/i18n/utils";
 import { ArrowDownIcon } from "@/utils/icons";
 
@@ -33,7 +33,7 @@ const subtitleHtmlString = t("hero.subtitle");
       </div>
 
       <div class="mt-16 flex justify-center">
-        <WalletConnect client:only="vue" />
+        <WalletConnect />
       </div>
     </div>
   </div>
