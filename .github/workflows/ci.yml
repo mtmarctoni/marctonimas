@@ -34,7 +34,7 @@ jobs:
         run: pnpm install --frozen-lockfile --prefer-offline
 
       - name: Type check
-        run: pnpm exec tsc --noEmit
+        run: pnpm run typecheck
 
   lint:
     name: Biome Lint & Format

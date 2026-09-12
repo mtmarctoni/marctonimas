@@ -17,7 +17,7 @@
     "lint:fix": "biome check --write --unsafe src/",
     "format": "biome format --write src/",
     "format:check": "biome format src/",
-    "typecheck": "tsc --noEmit",
+    "typecheck": "astro sync && tsc --noEmit",
     "check": "astro check",
     "check:all": "pnpm run lint && pnpm run typecheck && pnpm run check && pnpm run test && pnpm run build && pnpm run knip && pnpm run depcruise",
     "test": "vitest run",
