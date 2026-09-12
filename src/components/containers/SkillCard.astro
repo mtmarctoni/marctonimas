@@ -15,7 +15,7 @@ const { skill, className } = Astro.props as Props;
 ---
 
 <div
-  class={`${className} opacity-0 transform translate-y-2 bg-bg-secondary rounded-xl p-4 border-2 border-fg/10 hover:border-secondary/70 transition-all duration-300 hover:shadow-md hover:scale-y-113 lg:hover:scale-x-110 md:hover:scale-x-109 sm:hover:scale-x-108 hover:scale-x-106 flex flex-col items-center text-center`}
+  class={`${className} transform translate-y-2 bg-bg-secondary rounded-xl p-4 border-2 border-fg/10 hover:border-secondary/70 transition-all duration-300 hover:shadow-md hover:scale-y-113 lg:hover:scale-x-110 md:hover:scale-x-109 sm:hover:scale-x-108 hover:scale-x-106 flex flex-col items-center text-center`}
   data-category={skill.category}
   data-level={skill.level >= 90
     ? "expert"
@@ -54,11 +54,9 @@ const { skill, className } = Astro.props as Props;
 
   @keyframes fadeIn {
     from {
-      opacity: 0;
       transform: translateY(10px);
     }
     to {
-      opacity: 1;
       transform: translateY(0);
     }
   }
