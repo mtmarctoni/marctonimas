@@ -1,0 +1,25 @@
+---
+import type { RichSegment } from "@/types/richText";
+
+interface Props {
+  segments: RichSegment[];
+}
+
+const { segments } = Astro.props;
+---
+
+{
+  segments.map((segment) => {
+    if (segment.href) {
+      return (
+        <a href={segment.href} class={segment.className}>
+          {segment.text}
+        </a>
+      );
+    }
+    if (segment.className) {
+      return <span class={segment.className}>{segment.text}</span>;
+    }
+    return segment.text;
+  })
+}

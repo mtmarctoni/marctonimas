@@ -2,7 +2,9 @@
 import { Image } from "astro:assets";
 import SectionContainer from "@/components/containers/SectionContainer.astro";
 import BackgroundBlobs from "@/components/ui/BackgroundBlobs.astro";
+import RichText from "@/components/ui/RichText.astro";
 import { getLangFromUrl, useTranslations } from "@/i18n/utils";
+import type { RichSegment } from "@/types/richText";
 import { BulbIcon, ZoomCheckIcon } from "@/utils/icons";
 import NoiseTexture from "../ui/NoiseTexture.astro";
 
@@ -125,10 +127,8 @@ const keyAttributes = [
 
         <!-- Bio summary - much shorter than before -->
         <p
-          set:html={t("about.short_bio")}
-          class="text-fg text-lg leading-relaxed"
-        />
-        <p class="text-fg text-lg leading-relaxed mt-4" set:html={t("about.learn_more_background")}></p>
+           class="text-fg text-lg leading-relaxed"><RichText segments={t("about.short_bio") as RichSegment[]} /></p>
+        <p class="text-fg text-lg leading-relaxed mt-4"  ><RichText segments={t("about.learn_more_background") as RichSegment[]} /></p>
 
         <!-- Interactive skill cards -->
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-1 gap-4">
@@ -157,9 +157,7 @@ const keyAttributes = [
               data-expanded="false"
               class="card-description h-0 group-hover:h-35 duration-500 overflow-hidden"
             >
-              <p set:html={t("about.what_i_do_description") }
-                class="text-fg-alt text-sm group-hover:opacity-100 text-justify transition-all duration-300 delay-300"
-              />
+              <p  class="text-fg-alt text-sm group-hover:opacity-100 text-justify transition-all duration-300 delay-300"><RichText segments={t("about.what_i_do_description") as RichSegment[]} /></p>
             </div>
           </div>
 
@@ -190,9 +188,7 @@ const keyAttributes = [
               data-expanded="false"
               class="card-description h-0 group-hover:h-30 duration-500 overflow-hidden"
             >
-              <p set:html={t("about.looking_for_description")}
-                class="text-fg-alt text-sm group-hover:opacity-100 text-justify transition-all duration-300 delay-300"
-              />
+              <p  class="text-fg-alt text-sm group-hover:opacity-100 text-justify transition-all duration-300 delay-300"><RichText segments={t("about.looking_for_description") as RichSegment[]} /></p>
             </div>
             <!-- <div
               data-expanded="false"
