@@ -26,6 +26,7 @@
     "knip": "knip",
     "depcruise": "depcruise src",
     "audit": "pnpm audit",
+    "doctor": "astro-doctor",
     "prepare": "husky",
     "lighthouse": "lhci autorun"
   },
@@ -40,6 +41,7 @@
     "@commitlint/cli": "^21.2.2",
     "@commitlint/config-conventional": "^21.2.2",
     "@lhci/cli": "^0.15.1",
+    "@santi020k/astro-doctor": "^1.3.2",
     "@tailwindcss/vite": "^4.3.3",
     "@vitest/coverage-v8": "^5.0.0",
     "dependency-cruiser": "^18.2.0",
