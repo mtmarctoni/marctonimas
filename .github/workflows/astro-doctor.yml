@@ -1,0 +1,41 @@
+name: Astro Doctor
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
+jobs:
+  doctor:
+    name: Astro Doctor Scan
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    permissions:
+      contents: read
+      pull-requests: write
+      security-events: write
+    steps:
+      - name: Checkout
+        # fetch-depth 0 is required if diff-only is ever switched back on
+        uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
+
+      - name: Run Astro Doctor
+        uses: santi020k/astro-doctor@v1
+        with:
+          fail-on: error
+          min-score: 90
+          # The project scans clean, so enforce the whole tree, not just the diff
+          diff-only: false
+          comment: true
+          sarif-report: astro-doctor.sarif
+          upload-sarif: true
