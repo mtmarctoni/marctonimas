@@ -115,26 +115,25 @@ const personSchema = {
     />
 
     <script is:inline>
-      // Initialize theme based on user preference or system setting
-      const getThemePreference = () => {
-        if (
-          typeof localStorage !== "undefined" &&
-          localStorage.getItem("theme")
-        ) {
-          return localStorage.getItem("theme");
+      // Runs before first paint to avoid a flash of the wrong theme.
+      // Mirrors the resolution logic in src/utils/theme.ts - keep both in sync.
+      (() => {
+        let stored = null;
+        try {
+          stored = localStorage.getItem("theme");
+        } catch {
+          // Storage can be unavailable (private mode); follow the system theme.
         }
-        return window.matchMedia("(prefers-color-scheme: dark)").matches
-          ? "dark"
-          : "light";
-      };
 
-      const theme = getThemePreference();
+        const preference =
+          stored === "light" || stored === "dark" ? stored : "system";
+        const isDark =
+          preference === "system"
+            ? window.matchMedia("(prefers-color-scheme: dark)").matches
+            : preference === "dark";
 
-      document.documentElement.classList.toggle("dark", theme === "dark");
-
-      if (typeof localStorage !== "undefined") {
-        localStorage.setItem("theme", theme);
-      }
+        document.documentElement.classList.toggle("dark", isDark);
+      })();
     </script>
   </head>
   <body class="bg-bg text-fg transition-colors duration-300">
