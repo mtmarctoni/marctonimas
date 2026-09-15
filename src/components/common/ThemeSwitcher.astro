@@ -40,23 +40,34 @@ const t = useTranslations(getLangFromUrl(Astro.url));
 </ToggleDropDown>
 
 <script>
+  import {
+    THEME_STORAGE_KEY,
+    type ThemePreference,
+    isDarkTheme,
+    readThemePreference,
+  } from "@/utils/theme";
+
   const indicators = document.querySelectorAll("[data-theme-icon]");
   const themeButtons = document.querySelectorAll("[data-theme]");
+  const systemDarkQuery = window.matchMedia("(prefers-color-scheme: dark)");
 
-  const applyTheme = (theme: string) => {
-    localStorage.setItem("theme", theme);
-    if (theme === "system") {
-      const systemDark = window.matchMedia(
-        "(prefers-color-scheme: dark)",
-      ).matches;
-      document.documentElement.classList.toggle("dark", systemDark);
-    } else {
-      document.documentElement.classList.toggle("dark", theme === "dark");
+  const currentPreference = (): ThemePreference => {
+    try {
+      return readThemePreference(localStorage.getItem(THEME_STORAGE_KEY));
+    } catch {
+      return "system";
     }
   };
 
+  const applyTheme = (preference: ThemePreference) => {
+    document.documentElement.classList.toggle(
+      "dark",
+      isDarkTheme(preference, systemDarkQuery.matches),
+    );
+  };
+
   const updateThemeUI = () => {
-    const current = localStorage.getItem("theme") ?? "system";
+    const current = currentPreference();
     indicators.forEach((icon) => {
       icon.classList.toggle(
         "hidden",
@@ -75,11 +86,24 @@ const t = useTranslations(getLangFromUrl(Astro.url));
 
   themeButtons.forEach((button) => {
     button.addEventListener("click", () => {
-      applyTheme(button.getAttribute("data-theme") ?? "");
+      const preference = readThemePreference(button.getAttribute("data-theme"));
+
+      applyTheme(preference);
+      try {
+        localStorage.setItem(THEME_STORAGE_KEY, preference);
+      } catch {
+        // Storage can be unavailable (private mode); the theme still applies.
+      }
       updateThemeUI();
+
       const dropdown = button.closest("[data-dropdown]");
       const panel = dropdown?.querySelector("[data-dropdown-panel]");
       panel?.classList.add("hidden");
     });
+  });
+
+  // Keep following the OS while "system" is selected.
+  systemDarkQuery.addEventListener("change", () => {
+    if (currentPreference() === "system") applyTheme("system");
   });
 </script>
