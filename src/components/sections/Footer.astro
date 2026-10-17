@@ -22,6 +22,12 @@ const currentYear = new Date().getFullYear();
       <div
         class="flex flex-col md:flex-row items-center space-y-4 md:space-y-0 md:space-x-6"
       >
+        <a
+          href={lang === "es" ? "/es/privacy-policy" : "/privacy-policy"}
+          class="text-fg-secondary text-sm underline-offset-4 hover:underline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-secondary rounded-sm py-2"
+        >
+          {t("footer.privacy")}
+        </a>
         <div class="flex space-x-4">
           <a
             href={`https://github.com/${MY_GITHUB}`}
