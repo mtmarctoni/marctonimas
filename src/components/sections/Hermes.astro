@@ -1,0 +1,82 @@
+---
+import { hermes } from "@/i18n/hermes";
+import { googleConnectionsUrl } from "@/i18n/privacyPolicy";
+import Layout from "@/layouts/Layout.astro";
+import { MY_EMAIL, MY_WEB } from "@/utils/constants";
+
+interface Props {
+  lang?: "en" | "es";
+}
+
+const { lang = "en" } = Astro.props;
+const content = hermes[lang];
+const prefix = lang === "es" ? "/es" : "";
+---
+
+<Layout
+  title="Hermes Personal Assistant | Marc Toni Mas"
+  description={content.description}
+  lang={lang}
+  canonicalUrl={`${MY_WEB}${prefix}/hermes`}
+>
+  <article class="hermes mx-auto max-w-3xl px-5 pt-28 pb-16 sm:px-8 sm:pt-32 sm:pb-24" aria-labelledby="hermes-title">
+    <a href={prefix || "/"} class="inline-block py-2 text-sm mb-8">&larr; {content.back}</a>
+    <header class="border-b border-secondary/30 pb-8 sm:pb-10">
+      <p class="text-sm font-semibold tracking-wide text-accent mb-3">{content.label}</p>
+      <h1 id="hermes-title" class="text-4xl sm:text-5xl font-bold tracking-tight leading-tight">Hermes Personal Assistant</h1>
+      <p class="mt-5 text-lg leading-relaxed">{content.introduction}</p>
+      <p class="mt-4 text-base leading-7 text-fg-secondary">{content.context}</p>
+    </header>
+
+    <div class="mt-8 space-y-10 sm:mt-10 sm:space-y-12">
+      {content.sections.map((section, index) => (
+        <section
+          id={section.id}
+          aria-labelledby={`${section.id}-title`}
+          class:list={[
+            "scroll-mt-28",
+            section.id === "capabilities" && "rounded-xl border border-secondary/20 bg-bg-secondary p-5 sm:p-6",
+          ]}
+        >
+          {section.id === "capabilities" && (
+            <p class="text-sm font-semibold text-accent mb-3">{content.currentLabel}</p>
+          )}
+          <h2 id={`${section.id}-title`} class="text-xl sm:text-2xl font-semibold leading-snug mb-4">
+            <span class="text-accent mr-2" aria-hidden="true">{String(index + 1).padStart(2, "0")}</span>
+            {section.title}
+          </h2>
+          <div class="space-y-4 text-base leading-7">
+            {section.paragraphs.map((paragraph) => <p>{paragraph}</p>)}
+            {section.id === "access" && (
+              <p><a href={googleConnectionsUrl}>{content.connections}</a></p>
+            )}
+            {section.id === "privacy" && (
+              <p><a href={`${MY_WEB}${prefix}/privacy-policy`} class="font-semibold">{content.privacy} &rarr;</a></p>
+            )}
+            {section.id === "contact" && (
+              <p><a href={`mailto:${MY_EMAIL}`} aria-label={`${content.contact}: ${MY_EMAIL}`} class="break-words">{MY_EMAIL}</a></p>
+            )}
+          </div>
+        </section>
+      ))}
+    </div>
+  </article>
+</Layout>
+
+<style>
+  .hermes a {
+    color: var(--secondary);
+    text-decoration: underline;
+    text-underline-offset: 0.2em;
+  }
+
+  .hermes a:hover {
+    text-decoration-thickness: 2px;
+  }
+
+  .hermes a:focus-visible {
+    outline: 2px solid var(--secondary);
+    outline-offset: 4px;
+    border-radius: 2px;
+  }
+</style>
