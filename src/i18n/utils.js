@@ -187,6 +187,7 @@ const translations = {
     "footer.github": "GitHub profile",
     "footer.linkedin": "LinkedIn profile",
     "footer.email": "Email",
+    "footer.privacy": "Privacy Policy",
 
     // languages
     "languages.title": "Languages",
@@ -403,6 +404,7 @@ const translations = {
     "footer.github": "Perfil de GitHub",
     "footer.linkedin": "Perfil de LinkedIn",
     "footer.email": "Correo electrónico",
+    "footer.privacy": "Política de privacidad",
 
     // languages
     "languages.title": "Idiomas",

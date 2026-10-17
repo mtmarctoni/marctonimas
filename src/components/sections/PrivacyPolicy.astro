@@ -1,0 +1,89 @@
+---
+import {
+  gmailScope,
+  googleConnectionsUrl,
+  privacyPolicy,
+  privacyPolicyUpdated,
+} from "@/i18n/privacyPolicy";
+import Layout from "@/layouts/Layout.astro";
+import { MY_EMAIL, MY_WEB } from "@/utils/constants";
+
+interface Props {
+  lang?: "en" | "es";
+}
+
+const { lang = "en" } = Astro.props;
+const policy = privacyPolicy[lang];
+const canonicalUrl = `${MY_WEB}${lang === "es" ? "/es" : ""}/privacy-policy`;
+---
+
+<Layout
+  title={`${policy.title} | Hermes Personal Assistant | Marc Toni Mas`}
+  description={policy.description}
+  lang={lang}
+  canonicalUrl={canonicalUrl}
+>
+  <article class="policy mx-auto max-w-3xl px-5 pt-32 pb-16 sm:px-8 sm:pt-36 sm:pb-24" aria-labelledby="policy-title">
+    <header class="border-b border-secondary/30 pb-8 sm:pb-10">
+      <p class="text-sm font-semibold tracking-wide text-accent mb-3">Hermes Personal Assistant</p>
+      <h1 id="policy-title" class="text-4xl sm:text-5xl font-bold tracking-tight leading-tight">{policy.title}</h1>
+      <p class="mt-5 text-lg leading-relaxed text-fg-secondary">{policy.summary}</p>
+      <p class="mt-6 text-sm text-fg-secondary">
+        {policy.updated}: <time datetime={privacyPolicyUpdated}>{policy.date}</time>
+      </p>
+    </header>
+
+    <nav aria-label={policy.contents} class="my-8 rounded-xl border border-secondary/20 bg-bg-secondary p-5 sm:p-6">
+      <h2 class="text-sm font-semibold mb-3">{policy.contents}</h2>
+      <ol class="grid gap-x-6 gap-y-2 sm:grid-cols-2 text-sm leading-relaxed">
+        {policy.sections.map((section, index) => (
+          <li><a href={`#${section.id}`}>{index + 1}. {section.title}</a></li>
+        ))}
+      </ol>
+    </nav>
+
+    <div class="space-y-10 sm:space-y-12">
+      {policy.sections.map((section, index) => (
+        <section id={section.id} aria-labelledby={`${section.id}-title`} class="scroll-mt-28">
+          <h2 id={`${section.id}-title`} class="text-xl sm:text-2xl font-semibold leading-snug mb-4">
+            <span class="text-accent mr-2">{String(index + 1).padStart(2, "0")}</span>
+            {section.title}
+          </h2>
+          <div class="space-y-4 text-base leading-7">
+            {section.paragraphs.map((paragraph) => <p>{paragraph}</p>)}
+            {section.id === "gmail-access" && (
+              <div class="rounded-lg border-l-2 border-accent bg-bg-secondary p-4">
+                <p class="text-sm font-semibold mb-2">{policy.scopeLabel}</p>
+                <code class="block text-sm leading-6 break-all">{gmailScope}</code>
+              </div>
+            )}
+            {section.id === "revoke-access" && (
+              <p><a href={googleConnectionsUrl}>{policy.revokeLink}</a></p>
+            )}
+            {section.id === "policy-contact" && (
+              <p><a href={`mailto:${MY_EMAIL}`} aria-label={`${policy.contactLabel}: ${MY_EMAIL}`} class="break-words">{MY_EMAIL}</a></p>
+            )}
+          </div>
+        </section>
+      ))}
+    </div>
+  </article>
+</Layout>
+
+<style>
+  .policy a {
+    color: var(--secondary);
+    text-decoration: underline;
+    text-underline-offset: 0.2em;
+  }
+
+  .policy a:hover {
+    text-decoration-thickness: 2px;
+  }
+
+  .policy a:focus-visible {
+    outline: 2px solid var(--secondary);
+    outline-offset: 4px;
+    border-radius: 2px;
+  }
+</style>
