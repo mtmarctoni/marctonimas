@@ -1,4 +1,5 @@
 ---
+import { Image } from "astro:assets";
 import { CheckIcon } from "@/utils/icons";
 
 interface Job {
@@ -46,15 +47,19 @@ const { job, dropdown } = Astro.props;
           rel="noopener noreferrer"
           class="block overflow-hidden transition-transform hover:scale-105"
         >
-          <img
+          <Image
             src={job.img}
             alt={job.company}
+            width={96}
+            height={96}
             class="w-full h-full object-contain dark:hidden"
             loading="lazy"
           />
-          <img
+          <Image
             src={job.imgD}
             alt={job.company}
+            width={96}
+            height={96}
             class="w-full h-full object-contain hidden dark:block"
             loading="lazy"
           />

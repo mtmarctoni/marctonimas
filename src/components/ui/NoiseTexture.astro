@@ -16,13 +16,14 @@ const {
 } = Astro.props;
 ---
 
-<div class={`absolute inset-0 w-full h-full overflow-hidden ${className}`} aria-hidden="true">
+<div class:list={["absolute inset-0 w-full h-full overflow-hidden", className]} aria-hidden="true">
   <!-- Optional Background Image -->
   {backgroundImage && (
     <div 
-      class={`absolute inset-0 bg-center bg-cover bg-no-repeat ${
-        backgroundBlur ? 'blur-lg' : ''
-      }`}
+      class:list={[
+        "absolute inset-0 bg-center bg-cover bg-no-repeat",
+        { "blur-lg": backgroundBlur },
+      ]}
       style={`
         background-image: url(${backgroundImage});
         opacity: ${backgroundOpacity}%;

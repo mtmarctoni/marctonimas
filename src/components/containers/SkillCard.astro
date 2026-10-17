@@ -15,7 +15,10 @@ const { skill, className } = Astro.props as Props;
 ---
 
 <div
-  class={`${className} transform translate-y-2 bg-bg-secondary rounded-xl p-4 border-2 border-fg/10 hover:border-secondary/70 transition-all duration-300 hover:shadow-md hover:scale-y-113 lg:hover:scale-x-110 md:hover:scale-x-109 sm:hover:scale-x-108 hover:scale-x-106 flex flex-col items-center text-center`}
+  class:list={[
+    className,
+    "transform translate-y-2 bg-bg-secondary rounded-xl p-4 border-2 border-fg/10 hover:border-secondary/70 transition-all duration-300 hover:shadow-md hover:scale-y-113 lg:hover:scale-x-110 md:hover:scale-x-109 sm:hover:scale-x-108 hover:scale-x-106 flex flex-col items-center text-center",
+  ]}
   data-category={skill.category}
   data-level={skill.level >= 90
     ? "expert"
@@ -38,7 +41,14 @@ const { skill, className } = Astro.props as Props;
   <div class="mt-auto pt-2 w-full">
     <div class="w-full h-1.5 bg-bg-alt rounded-full overflow-hidden">
       <div
-        class={`h-full rounded-full ${skill.level >= 90 ? "bg-primary" : skill.level >= 80 ? "bg-secondary" : "bg-tertiary"}`}
+        class:list={[
+          "h-full rounded-full",
+          {
+            "bg-primary": skill.level >= 90,
+            "bg-secondary": skill.level >= 80 && skill.level < 90,
+            "bg-tertiary": skill.level < 80,
+          },
+        ]}
         style={`width: ${skill.level}%`}
       >
       </div>
