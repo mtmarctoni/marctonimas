@@ -7,11 +7,17 @@ const { classBlob1, classBlob2 } = Astro.props as Props;
 ---
 
 <div
-  class={`${classBlob1} -z-50 blob-1 absolute top-10 left-10 w-64 h-64 bg-primary/20 rounded-full blur-3xl`}
+  class:list={[
+    classBlob1,
+    "-z-50 blob-1 absolute top-10 left-10 w-64 h-64 bg-primary/20 rounded-full blur-3xl",
+  ]}
 >
 </div>
 <div
-  class={`${classBlob2} -z-50 blob-2 absolute right-10 bottom-10 w-64 h-64 bg-secondary/20 rounded-full blur-3xl`}
+  class:list={[
+    classBlob2,
+    "-z-50 blob-2 absolute right-10 bottom-10 w-64 h-64 bg-secondary/20 rounded-full blur-3xl",
+  ]}
 >
 </div>
 

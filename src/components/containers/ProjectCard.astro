@@ -27,11 +27,13 @@ const { project, buttonCode, buttonDemo } = Astro.props as Props;
 
   <div class="absolute top-3 right-3 z-10 flex flex-col items-end gap-2">
     <span
-      class={`px-3 py-1 rounded-full text-sm font-medium ${
-        project.status === "completed"
-          ? "hidden"
-          : "bg-accent-secondary/60 text-white/90"
-      }`}
+      class:list={[
+        "px-3 py-1 rounded-full text-sm font-medium",
+        {
+          hidden: project.status === "completed",
+          "bg-accent-secondary/60 text-white/90": project.status !== "completed",
+        },
+      ]}
     >
       {project.status === "completed" ? "Completed" : "Ongoing"}
     </span>
