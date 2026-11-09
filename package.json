@@ -31,25 +31,25 @@
     "lighthouse": "lhci autorun"
   },
   "dependencies": {
-    "@astrojs/check": "^0.9.10",
+    "@astrojs/check": "^0.9.12",
     "astro": "^7.3.8",
     "ethers": "^6.17.0",
     "typescript": "^6.0.3"
   },
   "devDependencies": {
-    "@biomejs/biome": "^2.5.15",
-    "@commitlint/cli": "^21.2.3",
-    "@commitlint/config-conventional": "^21.2.3",
-    "@lhci/cli": "^0.15.1",
-    "@santi020k/astro-doctor": "^1.4.0",
-    "@tailwindcss/vite": "^4.3.3",
-    "@vitest/coverage-v8": "^5.0.3",
-    "dependency-cruiser": "^18.5.0",
+    "@biomejs/biome": "^2.6.5",
+    "@commitlint/cli": "^21.2.4",
+    "@commitlint/config-conventional": "^21.2.4",
+    "@lhci/cli": "^0.16.0",
+    "@santi020k/astro-doctor": "^1.7.0",
+    "@tailwindcss/vite": "^4.3.4",
+    "@vitest/coverage-v8": "^5.1.0",
+    "dependency-cruiser": "^18.7.2",
     "husky": "^9.1.7",
-    "knip": "^6.39.0",
+    "knip": "^6.44.1",
     "lint-staged": "^17.6.0",
-    "tailwindcss": "^4.3.3",
-    "vitest": "^5.0.3"
+    "tailwindcss": "^4.3.4",
+    "vitest": "^5.1.0"
   },
   "lint-staged": {
     "*.{js,ts,astro}": [
